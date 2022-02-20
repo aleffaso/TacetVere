@@ -1,4 +1,8 @@
-# Blog
+# Fatto Earth
+
+<p>
+    <img src="public/assets/img/wallpaper.png">
+</p>
 
 ## Overview
 The main purpose of this project is to create a webpage to a cliente about environmental engineering.
