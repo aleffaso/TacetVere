@@ -16,6 +16,6 @@ app.use(express.static('public'));
 app.use("/", routes);
 
 //Server
-app.listen(process.env.PORT || 3001, () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log("Server is running");
 })
