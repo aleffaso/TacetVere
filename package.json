@@ -3,10 +3,13 @@
     "dotenv": "^15.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.2",
+    "mysql2": "^2.3.3",
     "node": "^17.7.2",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "sequelize": "^6.19.2",
+    "slugify": "^1.6.5"
   },
-  "name": "fattoearth",
+  "name": "tacetvere",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -18,10 +21,10 @@
   "description": "## Overview The main purpose of this project is to create a webpage to a cliente about environmental engineering.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aleffaso/fattoEarth.git"
+    "url": "git+https://github.com/aleffaso/TacetVere.git"
   },
   "bugs": {
-    "url": "https://github.com/aleffaso/fattoEarth/issues"
+    "url": "https://github.com/aleffaso/TacetVere/issues"
   },
-  "homepage": "https://github.com/aleffaso/fattoEarth#readme"
+  "homepage": "https://github.com/aleffaso/TacetVere#readme"
 }
