@@ -17,6 +17,11 @@ const Article = connection.define('articles', {
     {
         type: Sequelize.TEXT,
         allowNull: false
+    },
+    author:
+    {
+        type: Sequelize.TEXT,
+        allowNull: false
     }
 });
 

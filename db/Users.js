@@ -19,6 +19,6 @@ const User = connection.define('users', {
     }
 });
 
-User.sync({force:false}).then(() => {}); //Create table in case of it dos not exist
+User.sync({force:false}).then(() => {}); //Create table in case of it does not exist
 
 module.exports = User;
