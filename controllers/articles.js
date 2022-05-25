@@ -4,7 +4,6 @@ const slugify = require("slugify");
 
 const Category = require('../db/Category');
 const Article = require('../db/Article');
-const User = require('../db/User');
 const adminAuth = require("../middlewares/adminAuth"); 
 
 //Article page
@@ -23,15 +22,15 @@ routes.get('/article/:id', (req,res) => {
         var year = dateObj.getUTCFullYear();
         var hour = dateObj.getUTCHours() - 3; //Brasilia time UTC -3
         var minute = dateObj.getUTCMinutes();
+        var email = article.dataValues;
 
         if(article != undefined){
-            Category.findByPk(id).then(category => {
-                if(category != undefined){
-                    User.findOne({where: {email: article.author}}).then(author => {
+                Category.findByPk(id).then(category => {
+                    if(category != undefined){
                         res.render("article", {
                             article: article,
                             category: category,
-                            author: author,
+                            author: email.author,
                             day: day,
                             month: month,
                             year: year,
@@ -39,11 +38,10 @@ routes.get('/article/:id', (req,res) => {
                             minute: minute,
                             token: req.session.token
                         });
-                    })
-                }else{
-                    res.redirect("/");
-                }
-            });
+                    }else{
+                        res.redirect("/");
+                    }
+                });
         }else{
             res.redirect("/");
         }
