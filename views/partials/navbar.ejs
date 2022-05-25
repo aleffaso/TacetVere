@@ -3,19 +3,35 @@
     <div class="container d-flex align-items-center">
 
       <a href="/" class="logo me-auto">
-        <img src="assets/img/logo_blue.png" alt="" class="img-fluid">
+        <img src="/assets/img/logo_blue.png" alt="" class="img-fluid">
       </a>
-
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="/#hero">Início</a></li>
-          <li><a class="nav-link scrollto" href="/#services">Serviços</a></li>
-          <li><a class="nav-link scrollto" href="/#team">Nosso time</a></li>
-          <li><a class="nav-link scrollto" href="/#contact">Contato</a></li>
-          <li><a href="/login" >Login</a></li>
+          <% if (token==undefined){ %>
+            <li><a class="nav-link scrollto active" href="/#hero">Início</a></li>
+            <li><a class="nav-link scrollto" href="/#services">Serviços</a></li>
+            <li><a class="nav-link scrollto" href="/#team">Nosso time</a></li>
+            <li><a class="nav-link scrollto" href="/#contact">Contato</a></li>
+            <li><a class="nav-link" href="/blog">Blog</a></li>
+            <li><a class="getstarted" href="/login">Login</a></li>
+          <% }else{ %>
+              <li><a class="nav-link scrollto active" href="/#hero">Início</a></li>
+              <li><a class="nav-link scrollto" href="/#services">Serviços</a></li>
+              <li><a class="nav-link scrollto" href="/#team">Nosso time</a></li>
+              <li><a class="nav-link scrollto" href="/#contact">Contato</a></li>
+              <li><a class="nav-link" href="/blog">Blog</a></li>
+                <li class="dropdown">
+                  <a class="getstarted" href="#">Admin</i></a>
+                  <ul>
+                    <li><a href="/admin/articles">Artigos</a></li>
+                    <li><a href="/admin/categories">Categorias</a></li>
+                    <li><a href="/admin/users">Usuários</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                  </ul>
+                </li>
+          <% } %>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
-
     </div>
   </header>

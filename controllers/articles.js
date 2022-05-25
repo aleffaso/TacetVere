@@ -36,7 +36,8 @@ routes.get('/article/:id', (req,res) => {
                             month: month,
                             year: year,
                             hour: hour, 
-                            minute: minute
+                            minute: minute,
+                            token: req.session.token
                         });
                     })
                 }else{
@@ -56,14 +57,14 @@ routes.get("/admin/articles", adminAuth, (req,res) => {
     Article.findAll({
         include: [{model: Category}] //include Category table
     }).then(articles => {
-        res.render("admin/articles/index", {articles: articles});
+        res.render("admin/articles/index", {articles: articles, token: req.session.token});
     })
 });
 
 //New article
 routes.get("/admin/article/new", adminAuth, (req,res) => { 
     Category.findAll().then(categories => {
-        res.render("admin/articles/new", {categories: categories});
+        res.render("admin/articles/new", {categories: categories, token: req.session.token});
     });
 });
 
@@ -96,7 +97,7 @@ routes.get("/admin/articles/edit/:id", adminAuth, (req,res) => {
         if(article != undefined){
 
             Category.findAll().then(categories => {
-                res.render("admin/articles/edit", {article: article, categories: categories});
+                res.render("admin/articles/edit", {article: article, categories: categories, token: req.session.token});
             });
 
         }else{

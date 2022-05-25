@@ -13,14 +13,14 @@ dotenv.config({path: './.env'})
 
 routes.get("/admin/users", adminAuth, (req, res) => {
     User.findAll().then(users => {
-        res.render("admin/users/index", {users:users});
+        res.render("admin/users/index", {users:users, token: req.session.token});
     })
 });
 
 //New user
 
 routes.get("/admin/user/new", adminAuth, (req, res) => {
-    res.render("admin/users/new");
+    res.render("admin/users/new", {token: req.session.token});
 });
 
 routes.post("/users/new", adminAuth, (req,res) => {
@@ -65,7 +65,7 @@ routes.get("/admin/users/edit/:id", adminAuth, (req,res) => {
 
     User.findByPk(id).then(user => { //Search user by its ID
         if(user != undefined){
-            res.render("admin/users/edit", {user: user});
+            res.render("admin/users/edit", {user: user, token: req.session.token});
         }else{
             res.redirect("/admin/users");
         }
@@ -122,7 +122,7 @@ routes.post("/users/delete", adminAuth, (req, res) => {
 //Login user
 
 routes.get("/login", (req,res) => {
-    res.render("login");
+    res.render("login", {token: req.session.token});
 });
 
 routes.post("/login", (req, res) => {
@@ -142,7 +142,7 @@ routes.post("/login", (req, res) => {
                             res.redirect("/login");
                         }else{
                             req.session.token = token
-                            res.redirect("/logged");   
+                            res.redirect("/");   
                         }
                     });
                 }else{
@@ -159,7 +159,7 @@ routes.post("/login", (req, res) => {
 
 routes.get("/logout", (req,res) => {
     req.session.token = undefined;
-    res.redirect("/login");
+    res.redirect("/");
 });
 
 module.exports = routes;

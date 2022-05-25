@@ -10,14 +10,14 @@ const adminAuth = require("../middlewares/adminAuth");
 
 routes.get("/admin/categories", adminAuth, (req, res) => {
     Category.findAll().then(categories => {
-        res.render("admin/categories/index", {categories:categories});
+        res.render("admin/categories/index", {categories:categories, token: req.session.token});
     })
 });
 
 //New category
 
 routes.get("/admin/category/new", adminAuth, (req, res) => {
-    res.render("admin/categories/new");
+    res.render("admin/categories/new", {token: req.session.token});
 });
 
 routes.post("/categories/new", adminAuth, (req,res) => {
@@ -53,7 +53,7 @@ routes.get("/admin/categories/edit/:id", adminAuth, (req,res) => {
 
     Category.findByPk(id).then(category => { //Search category by its ID
         if(category != undefined){
-            res.render("admin/categories/edit", {category: category});
+            res.render("admin/categories/edit", {category: category, token: req.session.token});
         }else{
             res.redirect("/admin/categories");
         }
