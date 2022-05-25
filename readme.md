@@ -11,9 +11,14 @@ The main purpose of this project is to create a webpage to a cliente about envir
 
 ## Libraries 
 
+- Bcrypt => Crypt passwords;
+- Dotenv => Hide keys;
 - EJS => Render HTML;
 - Express => Flexible framework;
-- Nodemon => Update server when save
+- Express-sessions => Create auth sessions;
+- TinyMCE => Text editor;
+- Sequelize => Connect database;
+- Slugify => Create string without space;
 
 <hr>
 
@@ -27,6 +32,9 @@ The main purpose of this project is to create a webpage to a cliente about envir
 
 ## Licenses
 <br>
+<p>
+    <img style="width:50px;height:auto;"src="https://cdn.worldvectorlogo.com/logos/tinymce.svg" href="https://www.tiny.cloud/get-tiny/self-hosted/">
+</p>
 <p>
     <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white">
 </p>

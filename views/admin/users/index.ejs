@@ -1,0 +1,43 @@
+<!--Header-->
+<%- include("../../partials/header.ejs") %>
+<!--Navbar-->
+<%- include("../navbar.ejs") %>
+
+<main id="pageform">
+    <section class="login">
+        <div class="d-flex justify-content-center mt-4">
+            <div class="card text-center mt-4">
+                <div class="container text-center mt-4">
+                    <a class="btn btn-send" href="/admin/user/new">Criar novo usuário</a>
+                    <table class="table table-bordered mt-4">
+                        <thead>
+                            <tr>
+                                <th>Usuário</th>
+                                <th>Editar</th>
+                                <th>Deletar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% users.forEach(users => {%>
+                            <tr>
+                                <td><%= users.name%></td>
+                                <td><a class="btn btn-warning" href="/admin/users/edit/<%= users.id %>">Editar</a></th>
+                                <form method="POST" action="/users/delete" onsubmit=deleteCheck(event,this)>
+                                    <input type="hidden" name="id" value="<%= users.id %>">
+                                    <td><button class="btn btn-danger">Deletar</button></td>
+                                </form>
+                            </tr>
+                            <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+
+<!--Footer-->
+<%- include("../../sections/07_footer.ejs") %>
+<!--Footer -->
+<%- include("../../partials/footer.ejs") %>
