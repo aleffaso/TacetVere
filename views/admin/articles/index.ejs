@@ -1,0 +1,44 @@
+<%- include ("../../partials/header.ejs") %>
+<%- include ("../navbar.ejs") %>
+
+
+<main id="pageform">
+    <section class="login">
+        <div class="d-flex justify-content-center mt-4">
+            <div class="card text-center mt-4">
+                <div class="container text-center mt-4">
+                    <a class="btn btn-send" href="/admin/article/new">Criar um novo artigo</a>
+                    <table class="table table-bordered mt-4">
+                        <thead>
+                            <tr>
+                                <th>Título</th>
+                                <th>Visualizar</th>
+                                <th>Editar</th>
+                                <th>Deletar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% articles.forEach(articles => {%>
+                            <tr>
+                                <td><%= articles.title%></td>
+                                <td><a class="btn btn-success" href="/article/<%= articles.id %>">Visualizar</a></th>
+                                <td><a class="btn btn-warning" href="/admin/articles/edit/<%= articles.id %>">Editar</a></th>
+                                <form method="POST" action="/articles/delete" onsubmit=deleteCheck(event,this)>
+                                    <input type="hidden" name="id" value="<%= articles.id %>">
+                                    <td><button class="btn btn-danger">Deletar</button></td>
+                                </form>
+                            </tr>
+                            <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+
+<!--Footer-->
+<%- include("../../sections/07_footer.ejs") %>
+<!--Footer -->
+<%- include("../../partials/footer.ejs") %>

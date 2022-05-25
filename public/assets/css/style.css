@@ -190,7 +190,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
 }
 .navbar .dropdown ul {
-  display: block;
+
   position: absolute;
   left: 14px;
   top: calc(100% + 30px);
@@ -1379,4 +1379,80 @@ section {
     transform: scale(1, 1);
     opacity: 0;
   }
+}
+
+/*--------------------------------------------------------------
+# Form page
+--------------------------------------------------------------*/
+
+#pageform{
+  height: 80vh;
+  background-image: url('../img/slide/slide-1.jpg');
+  background-position: center;
+  background-repeat: repeat;
+  background-size: 100%;
+}
+
+#pageform .login {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+#pageform .login img {
+  height: 50px;
+}
+
+/*--------------------------------------------------------------
+# Article page
+--------------------------------------------------------------*/
+
+#articlePage{
+  height: 100vh;
+  background-image: url('../img/slide/slide-1.jpg');
+  background-position: center;
+  background-repeat: repeat;
+  background-size: 100%;
+}
+
+#articlePage .new {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+/*--------------------------------------------------------------
+# Button sending post 
+--------------------------------------------------------------*/
+
+.btn-send {
+  color: #fff;
+  background-color: var(--dark-blue-color);
+  border-color: var(--dark-blue-color)
+}
+.btn-send:hover {
+  color: #fff;
+  background-color: var(--medium-blue-color);
+  border-color: var(--medium-blue-color);
+}
+.btn-check:focus + .btn-send, .btn-send:focus {
+  color: #fff;
+  background-color: var(--medium-blue-color);
+  border-color: var(--medium-blue-color);
+  box-shadow: 0 0 0 0.25rem rgba(24, 71, 102, 0.5);
+}
+.btn-check:checked + .btn-send, .btn-check:active + .btn-send, .btn-send:active, .btn-send.active, .show > .btn-send.dropdown-toggle {
+  color: #fff;
+  background-color: var(--medium-blue-color);
+  border-color: var(--medium-blue-color)
+}
+.btn-check:checked + .btn-send:focus, .btn-check:active + .btn-send:focus, .btn-send:active:focus, .btn-send.active:focus, .show > .btn-send.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.25rem rgba(24, 71, 102, 0.5);
+}
+.btn-send:disabled, .btn-send.disabled {
+  color: #fff;
+  background-color: var(--medium-blue-color);
+  border-color: var(--medium-blue-color);
 }

@@ -1,7 +1,30 @@
 <%- include ("../../partials/header.ejs") %>
 <%- include ("../navbar.ejs") %>
 
-<%- include ("../../partials/footer.ejs") %>
+
+<div class="container">
+    <div style="text-align:center;">
+        <p class="fs-4">Novo Artigo</p>
+    </div>
+    <form method="POST" action="/articles/new">
+        <input type="text" class="form-control fw-bolder mb-2" name="title" placeholder="Título" required/>
+        <select name="category" class="form-control mb-2">
+            <% categories.forEach((category) => {%>
+                <option value="<%= category.id %>"><%= category.title %></option>
+            <% }) %>
+        </select>
+        <input class="form-control" type="text" name="body" placeholder="Escreva o corpo do texto"  id="article" style="height: 450px;">
+        <div class="mb-2" style="text-align:center;">
+            <button type="submit" class="btn btn-success btn-block mt-2">Publicar</button>
+        </div>
+    </form>
+</div>
+
+
+<!--Footer-->
+<%- include("../../sections/07_footer.ejs") %>
+<!--Footer -->
+<%- include("../../partials/footer.ejs") %>
 
 <script>
     tinymce.init({

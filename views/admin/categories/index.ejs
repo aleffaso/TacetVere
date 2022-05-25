@@ -1,0 +1,43 @@
+<!--Header-->
+<%- include("../../partials/header.ejs") %>
+<!--Navbar-->
+<%- include("../navbar.ejs") %>
+
+<main id="pageform">
+    <section class="login">
+        <div class="d-flex justify-content-center mt-4">
+            <div class="card text-center mt-4">
+                <div class="container text-center mt-4">
+                    <a class="btn btn-send" href="/admin/category/new">Criar nova categoria</a>
+                    <table class="table table-bordered mt-4">
+                        <thead>
+                            <tr>
+                                <th>Categoria</th>
+                                <th>Editar</th>
+                                <th>Deletar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% categories.forEach(categories => {%>
+                            <tr>
+                                <td><%= categories.title%></td>
+                                <td><a class="btn btn-warning" href="/admin/categories/edit/<%= categories.id %>">Editar</a></th>
+                                <form method="POST" action="/categories/delete" onsubmit=deleteCheck(event,this)>
+                                    <input type="hidden" name="id" value="<%= categories.id %>">
+                                    <td><button class="btn btn-danger">Deletar</button></td>
+                                </form>
+                            </tr>
+                            <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+
+<!--Footer-->
+<%- include("../../sections/07_footer.ejs") %>
+<!--Footer -->
+<%- include("../../partials/footer.ejs") %>

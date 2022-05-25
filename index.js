@@ -4,9 +4,9 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 
 const connection = require("./db/db")
-const categoriesController = require("./controllers/Category");
-const articlesController = require("./controllers/Article");
-const usersController = require("./controllers/Users");
+const categoriesController = require("./controllers/categories");
+const articlesController = require("./controllers/articles");
+const usersController = require("./controllers/users");
 const routes = require('./config/routes');
 const dotenv = require('dotenv');
 
@@ -38,9 +38,9 @@ connection.authenticate().then(() => {
 });
 
 //routes
-// app.use("/", articlesController);
-// app.use("/", categoriesController);
-// app.use("/", usersController);
+app.use("/", articlesController);
+app.use("/", categoriesController);
+app.use("/", usersController);
 app.use("/", routes);
 
 //Server

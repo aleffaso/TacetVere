@@ -1,0 +1,35 @@
+<!--Header-->
+<%- include("../../partials/header.ejs") %>
+<!--Navbar-->
+<%- include("../navbar.ejs") %>
+
+<main id="pageform">
+    <section class="login">
+        <div class="container d-flex justify-content-center">
+            <div class="card text-dark bg-light text-center" style="width: 300px;">
+                <div class="card-header mt-3">
+                    <p class="fs-4">Editar Usuário</p>
+                </div>
+                <div class="card-body">
+                    <form method="POST" action="/users/update">
+                        <input class="form-control" name="name" type="text" placeholder="Nome Sobrenome" value="<%= user.name %>" required>
+                        <br>
+                        <input class="form-control" name="email" type="email" placeholder="email@exemplo.com" value="<%= user.email %>" required>
+                        <br>
+                        <input class="form-control" name="password" type="password" placeholder="Digite uma nova senha" required>
+                        <br>
+                        <input class="form-control" name="passwordCheck" type="password" placeholder="Digite a senha novamente" required>
+                        <br>
+                        <input type="hidden" name="id" value="<%=user.id %>"> 
+                        <button type="submit" class="btn btn-send btn-block">Atualizar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!--Footer-->
+<%- include("../../sections/07_footer.ejs") %>
+<!--Footer -->
+<%- include("../../partials/footer.ejs") %>

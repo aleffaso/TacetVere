@@ -20,7 +20,7 @@ const Article = connection.define('articles', {
     },
     author:
     {
-        type: Sequelize.TEXT,
+        type: Sequelize.STRING,
         allowNull: false
     }
 });
