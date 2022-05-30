@@ -12,7 +12,11 @@
                         <header>
                             <h1 class="fw-bolder mb-1 text-center mb-4"><%= article.title %></h1>
                             <div class="text-muted fst-italic mb-2 text-end">Publicado em <%= day %>/<%= month %>/<%= year %>  às <%= hour %>h<%= minute %> por <%= author %></div>
-                            <div class="text-end"><a class="badge " href="#!" style="color: white; background-color: #0c2232;"><%= category.title %></a></div>
+                            <% category.forEach(category => { %>
+                                <% if (article.categoryId == category.id){ %>
+                                    <div class="text-end"><a class="badge " href="#!" style="color: white; background-color: #0c2232;"><%= category.title %></a></div>
+                                <% } %>
+                            <% }) %>
                         </header>
                         <hr> 
                     </article> 

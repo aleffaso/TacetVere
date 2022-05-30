@@ -25,23 +25,23 @@ routes.get('/article/:id', (req,res) => {
         var email = article.dataValues;
 
         if(article != undefined){
-                Category.findByPk(id).then(category => {
-                    if(category != undefined){
-                        res.render("article", {
-                            article: article,
-                            category: category,
-                            author: email.author,
-                            day: day,
-                            month: month,
-                            year: year,
-                            hour: hour, 
-                            minute: minute,
-                            token: req.session.token
-                        });
-                    }else{
-                        res.redirect("/");
-                    }
-                });
+            Category.findAll().then(categories => {
+                if(categories != undefined){
+                   res.render("article", {
+                        article: article,
+                        author: email.author,
+                        category: categories,
+                        day: day,
+                        month: month,
+                        year: year,
+                        hour: hour, 
+                        minute: minute,
+                        token: req.session.token
+                    });
+                }else{
+                    res.redirect("/");
+                }
+            })
         }else{
             res.redirect("/");
         }
