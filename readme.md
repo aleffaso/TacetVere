@@ -16,17 +16,17 @@ The main purpose of this project is to create a webpage to a cliente about envir
 - EJS => Render HTML;
 - Express => Flexible framework;
 - Express-sessions => Create auth sessions;
+- MySql2 => Creatin dialect database
+- Nodemon => update server automatically
 - TinyMCE => Text editor;
 - Sequelize => Connect database;
 - Slugify => Create string without space;
 
 <hr>
 
-## Running the application
+## You can access the application on the link below
 
-- Run: `npm install`;
-- Run: `nodemon index.js`;
-- On web browser: http://localhost:3000/
+<a src="https://tacetvere.com">Tacet Vere</a>
 
 <hr>
 

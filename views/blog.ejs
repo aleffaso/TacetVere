@@ -14,16 +14,41 @@
             </article>
         </div>
         <% articles.forEach(articles => {%>
-            <div class="col-lg-4 mt-2">
-                <div class="text-center">
-                    <div class="card bg-light mb-3">
-                        <div class="card-header"><%= articles.title%></div>
-                        <div class="card-body">
-                            <a class="btn btn-send" href="/article/<%= articles.id %>">Visualizar</a>
+            <% const img = articles.body.match(/<img.*?src="(.*?)"/g) %>
+            <% const imgBody = []  %>
+
+            <% if (img != null){ %> 
+
+                <% const imgBody = img.toString().split(' ').slice(-1) %>
+                <% const imgBodySliced = imgBody.toString().split('"') %>
+               
+                <div class="col-lg-4 mt-2">
+                    <div class="text-center">
+                        <div class="card bg-light mb-3">
+                            <img class="card-img-top" src="<%= imgBodySliced[1] %>" style="max-height: 167px; object-fit: cover;"/>
+                            <div class="card-body">
+                                <h5 class="card-title"><%= articles.title%></h5>
+                                <a class="btn btn-send" href="/article/<%= articles.id %>">Visualizar</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+
+            <% }else{ %>
+
+                <div class="col-lg-4 mt-2">
+                    <div class="text-center">
+                        <div class="card bg-light mb-3">
+                            <img class="card-img-top" src="assets/img/slide/slide-1.jpg" style="max-height: 167px; object-fit: cover;"/>
+                            <div class="card-body">
+                                <h5 class="card-title"><%= articles.title%></h5>
+                                <a class="btn btn-send" href="/article/<%= articles.id %>">Visualizar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            <% } %>
         <% }) %>
     </div>  
 </div>
