@@ -26,4 +26,9 @@ routes.get('/blog', (req,res) => {
     });
 });
 
+//Not found page
+routes.get('*', (req, res) =>{
+    res.render("error", {token: req.session.token})
+});
+
 module.exports = routes;

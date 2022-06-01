@@ -65,7 +65,7 @@
         <div class="card-body">
             <% articles.forEach(articles => {%>
               <div class="text-start">
-                <a class="fs-5" href="#!"><%= articles.title %></a>
+                <a class="fs-5" href="/article/<%= articles.slug %>"><%= articles.title %></a>
                 <div class="text-muted fst-italic fs-6">
                   Publicado em <%= articles.createdAt.getDate() %>/<%= articles.createdAt.getMonth() %>/<%= articles.createdAt.getFullYear() %>
                 </div>

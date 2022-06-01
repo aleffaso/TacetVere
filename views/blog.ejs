@@ -24,13 +24,13 @@
                     <% const imgBodySliced = imgBody.toString().split('"') %>
                    
                     <div class="mt-2 mb-3 text-start">
-                        <a href="/article/<%= articles.id %>">
+                        <a href="/article/<%= articles.slug %>">
                             <h2><%= articles.title %></h2>
                         </a>
                         <div class="text-muted fst-italic">Publicado por <%= articles.author %></div>
                     </div>
                     <div class="container-img bg-light mb-3">
-                        <a href="/article/<%= articles.id %>">
+                        <a href="/article/<%= articles.slug %>">
                             <img class="card-img-top image" src="<%= imgBodySliced[1] %>"style="max-height: 350px; object-fit: cover;"/>
                             <div class="middle">
                                 <div class="text"><%= articles.title %></div>
@@ -46,20 +46,20 @@
                             <a href="" target="_blank"><i class="bi bi-whatsapp fs-4"></i></a>
                           </div>
                         <div class="mt-3 mb-5">
-                            <a class="btn btn-send" href="/article/<%= articles.id %>">Leia mais</a>
+                            <a class="btn btn-send" href="/article/<%= articles.slug %>">Leia mais</a>
                         </div>
                     </div>
     
                 <% }else{ %>
     
                     <div class="mt-2 mb-3 text-start">
-                        <a href="/article/<%= articles.id %>">
+                        <a href="/article/<%= articles.slug %>">
                             <h2><%= articles.title %></h2>
                         </a>
                         <div class="text-muted fst-italic">Publicado por <%= articles.author %></div>
                     </div>
                     <div class="container-img bg-light mb-3">
-                        <a href="/article/<%= articles.id %>">
+                        <a href="/article/<%= articles.slug %>">
                             <img class="card-img-top image" src="assets/img/slide/slide-1.jpg" style="max-height: 350px; object-fit: cover;"/>
                             <div class="middle">
                                 <div class="text"><%= articles.title %></div>
@@ -75,7 +75,7 @@
                             <a href="" target="_blank"><i class="bi bi-whatsapp fs-4"></i></a>
                           </div>
                         <div class="mt-3 mb-5">
-                            <a class="btn btn-send" href="/article/<%= articles.id %>">Leia mais</a>
+                            <a class="btn btn-send" href="/article/<%= articles.slug %>">Leia mais</a>
                         </div>
                     </div>
                 <% } %>

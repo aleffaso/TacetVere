@@ -7,14 +7,10 @@ const Article = require('../db/Article');
 const adminAuth = require("../middlewares/adminAuth"); 
 
 //Article page
-routes.get('/article/:id', (req,res) => {
-    var id = req.params.id;
+routes.get('/article/:slug', (req,res) => {
+    var slug = req.params.slug;
 
-    if(isNaN(id)){
-        res.redirect("/");
-    };
-
-    Article.findByPk(id).then(articles => { //Search article by its ID
+    Article.findOne({where: {slug: slug}}).then(articles => { //Search article by its ID
 
         var dateObj = articles.createdAt;
         var month = dateObj.getUTCMonth() + 1; //months from 1-12
