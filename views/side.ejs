@@ -1,0 +1,102 @@
+<div class="col-md-3 text-center">
+
+  <div class="card bg-light mb-3">
+    <div class="card-header">
+      <strong>Busca por palavra chave</strong>
+    </div>
+    <form>
+      <div class="row mt-2 mb-2">
+        <div class="card-body">
+          <input type="search" name="search" placeholder="Buscar" class="search-field">
+          <button type="submit" class="btn btn-send search-button">
+            <i class="bi bi-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="card bg-light mb-3">
+    <div class="card-header">
+      <strong>Categorias</strong>
+    </div>
+    <div class="card-body category-fs">
+      <table class="table">
+          <tbody>
+            <% categories.forEach(category => {%>
+              <tr>
+                <td>
+                  <div class="text-center">
+                    <a class="badge" href="#!" style="color: white; background-color: #0c2232;"><%= category.title %></a>
+                  </div>
+                </td>
+              </tr>
+            <% }) %>
+          </tbody>
+      </table>
+    </div>
+  </div>
+
+
+
+    <div class="card bg-light mb-3">
+      <div class="card-header">
+        <strong>Assine nossa newsletter</strong>
+      </div>
+      <div class="card-body">
+        <form class="text-center">
+          <div class="row mb-1">
+            <div class="col-sm mb-2">
+              <input type="email" name="email" class="newsletter-form" placeholder="seu-email@email.com">
+            </div>
+            <div class="col-sm mb-2">
+              <button type="submit" class="btn btn-send newsletter-form">Inscreva-se</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <% if (articles.length != undefined){ %>
+      <div class="card bg-light mb-3">
+        <div class="card-header">
+          <strong>Em destaque</strong>
+        </div>
+        <div class="card-body category-fs">
+            <% articles.forEach(articles => {%>
+              <div class="text-start">
+                <a class="fs-5" href="#!"><%= articles.title %></a>
+                <div class="text-muted fst-italic fs-6">
+                  Publicado em <%= articles.createdAt.getDate() %>/<%= articles.createdAt.getMonth() %>/<%= articles.createdAt.getFullYear() %>
+                </div>
+                <hr>
+              </div>
+            <% }) %>
+        </div>
+      </div>
+      
+      <div class="card bg-light mb-3">
+        <div class="card-header">
+          <strong>Siga-nos!</strong>
+        </div>
+        <div class="card-body">
+          <div class="social">
+            <a href="https://www.linkedin.com/company/tacet-vere/about/" target="_blank"><i class="bi bi-linkedin fs-1"></i></a>
+        </div>
+        </div>
+      </div>
+      <% }else{ %>
+        <div class="card bg-light mb-3">
+          <div class="card-header">
+            <strong>Siga-nos!</strong>
+          </div>
+          <div class="card-body">
+            <div class="social">
+              <a href="https://www.linkedin.com/company/tacet-vere/about/" target="_blank"><i class="bi bi-linkedin fs-1"></i></a>
+          </div>
+          </div>
+        </div>
+      <% } %>
+  
+
+</div>  

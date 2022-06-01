@@ -14,23 +14,23 @@ routes.get('/article/:id', (req,res) => {
         res.redirect("/");
     };
 
-    Article.findByPk(id).then(article => { //Search article by its ID
+    Article.findByPk(id).then(articles => { //Search article by its ID
 
-        var dateObj = article.createdAt;
+        var dateObj = articles.createdAt;
         var month = dateObj.getUTCMonth() + 1; //months from 1-12
         var day = dateObj.getUTCDate();
         var year = dateObj.getUTCFullYear();
         var hour = dateObj.getUTCHours() - 3; //Brasilia time UTC -3
         var minute = dateObj.getUTCMinutes();
-        var email = article.dataValues;
+        var email = articles.dataValues;
 
-        if(article != undefined){
+        if(articles != undefined){
             Category.findAll().then(categories => {
                 if(categories != undefined){
                    res.render("article", {
-                        article: article,
+                        articles: articles,
                         author: email.author,
-                        category: categories,
+                        categories: categories,
                         day: day,
                         month: month,
                         year: year,
