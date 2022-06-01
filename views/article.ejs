@@ -22,13 +22,24 @@
             <article>
                 <section style="padding-top: 0px;"><%- articles.body %></section>
             </article> 
-            <div class="text-start mb-5">
+            <div class="row mb-5">
                 <div class="text-muted fst-italic mb-3">Compartilhe este conteúdo</div>
-                <div class="social">
-                    <a href="" target="_blank"><i class="bi bi-facebook fs-4 me-2"></i></a>
-                    <a href="" target="_blank"><i class="bi bi-twitter fs-4 me-2"></i></a>
-                    <a href="" target="_blank"><i class="bi bi-linkedin fs-4 me-2"></i></a>
-                    <a href="" target="_blank"><i class="bi bi-whatsapp fs-4"></i></a>
+                <div class="col text-start social">
+                    <a href="https://www.facebook.com/sharer.php?u=https://www.tacetvere.com/article/<%=articles.slug%>" target="_blank">
+                        <i class="bi bi-facebook fs-4 me-2"></i>
+                    </a>
+                    <a href="https://twitter.com/share?url=https://www.tacetvere.com/article/<%=articles.slug%>&text=<%=articles.title%>&via=tacetvere" target="_blank">
+                        <i class="bi bi-twitter fs-4 me-2"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://tacetvere.com/article/<%=articles.slug%>&title=<%=articles.title%>" target="_blank">
+                        <i class="bi bi-linkedin fs-4 me-2"></i>
+                    </a>
+                    <a href="https://api.whatsapp.com/send?text=<%=articles.slug%> https://www.tacetvere.com/article/<%=articles.slug%>" target="_blank">
+                        <i class="bi bi-whatsapp fs-4"></i>
+                    </a>
+                </div>
+                <div class="col text-end">
+                    <button onclick="history.back(-1)" class="btn btn-send">voltar</button>
                 </div>
             </div>
         </div>
