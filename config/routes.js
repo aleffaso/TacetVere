@@ -13,7 +13,7 @@ routes.get('/', (req,res) => {
 //Blog page
 routes.get('/blog', (req,res) => {
     Article.findAll({
-        order:[['id', 'ASC']],
+        order:[['id', 'DESC']],
         include: [{model: Category}] //include Category table
     }).then(articles => {
         Category.findAll().then(categories => {

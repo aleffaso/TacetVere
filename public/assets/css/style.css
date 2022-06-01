@@ -1502,7 +1502,12 @@ section {
 }
 
 #blog .category-fs {
-  font-size: calc(1rem + 0.3vw) !important;
+  color: #0c2232; 
+}
+#blog .category-fs:hover {
+  transition: 0.3s;
+  color: #000; 
+  opacity: 0.3;
 }
 
 #blog .newsletter-form {
@@ -1520,7 +1525,7 @@ section {
 
 @media (max-width: 1280px) {
   #blog .category-fs {
-    font-size: calc(1rem + 0.3vw) !important;
+    font-size: calc(12px + 1.5vw);
   }
   #blog .newsletter-form {
     width: 200px;
@@ -1535,7 +1540,7 @@ section {
 
 @media (max-width: 768px) {
   #blog .category-fs {
-    font-size: 1rem !important;
+    font-size: smaller
   }
   #blog .newsletter-form {
     width: 120px;
@@ -1551,7 +1556,7 @@ section {
 
 @media (max-width: 520px) {
   #blog .category-fs {
-    font-size: calc(1.275rem + 0.3vw) !important;
+    font-size: calc(1rem + 0.3vw) !important;
   }
   #blog .newsletter-form {
     width: 200px;

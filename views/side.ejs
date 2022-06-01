@@ -16,18 +16,18 @@
     </form>
   </div>
 
-  <div class="card bg-light mb-3">
+  <div class="card bg-white mb-3">
     <div class="card-header">
       <strong>Categorias</strong>
     </div>
-    <div class="card-body category-fs">
+    <div class="card-body">
       <table class="table">
           <tbody>
             <% categories.forEach(category => {%>
               <tr>
                 <td>
                   <div class="text-center">
-                    <a class="badge" href="#!" style="color: white; background-color: #0c2232;"><%= category.title %></a>
+                    <a class="category-fs" href="#!"><%= category.title %></a>
                   </div>
                 </td>
               </tr>
@@ -62,7 +62,7 @@
         <div class="card-header">
           <strong>Em destaque</strong>
         </div>
-        <div class="card-body category-fs">
+        <div class="card-body">
             <% articles.forEach(articles => {%>
               <div class="text-start">
                 <a class="fs-5" href="#!"><%= articles.title %></a>
@@ -74,7 +74,7 @@
             <% }) %>
         </div>
       </div>
-      
+
       <div class="card bg-light mb-3">
         <div class="card-header">
           <strong>Siga-nos!</strong>
