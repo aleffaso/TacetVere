@@ -17,7 +17,7 @@ routes.get('/blog', (req,res) => {
         include: [{model: Category}] //include Category table
     }).then(articles => {
         Category.findAll().then(categories => {
-            res.render("blog", {articles: articles, token: req.session.token, categories: categories});
+            res.render("pages/blog", {articles: articles, token: req.session.token, categories: categories});
         }).catch(err => {
             res.redirect("/");
         });
@@ -26,9 +26,10 @@ routes.get('/blog', (req,res) => {
     });
 });
 
+
 //Not found page
 routes.get('*', (req, res) =>{
-    res.render("error", {token: req.session.token})
+    res.render("pages/error", {token: req.session.token})
 });
 
 module.exports = routes;

@@ -2,23 +2,52 @@ const express = require('express');
 const routes = express.Router();
 const slugify = require("slugify");
 
+const Article = require('../db/Article');
 const Category = require('../db/Category');
 const adminAuth = require("../middlewares/adminAuth"); 
 
 
-//Show all categories
+//Category page
+routes.get('/categories/:slug', (req,res) => {
+    var slug = req.params.slug;
 
+    Category.findOne({where: {slug: slug}}).then(categories => {
+        const id = categories.id
+
+        if(id != undefined){
+            Article.findAll({
+                where: {categoryId: id},
+                order:[['id', 'DESC']],
+            }).then(articles => {
+                if(articles.length != 0){
+                    res.render("pages/blog", {articles: articles, token: req.session.token, categories: categories});
+                }else{
+                    res.redirect("/");
+                }
+            }).catch(err => {
+                res.redirect("/");
+            })
+        }else{
+            res.redirect("/");
+        }
+    }).catch(err => {
+        res.redirect("/");
+    })
+});
+
+//Show all categories
 routes.get("/admin/categories", adminAuth, (req, res) => {
     Category.findAll().then(categories => {
         res.render("admin/categories/index", {categories:categories, token: req.session.token});
+    }).catch(err => {
+        res.redirect("/");
     })
 });
 
 //New category
-
 routes.get("/admin/category/new", adminAuth, (req, res) => {
     res.render("admin/categories/new", {token: req.session.token});
-});
+})
 
 routes.post("/categories/new", adminAuth, (req,res) => {
 
@@ -38,11 +67,12 @@ routes.post("/categories/new", adminAuth, (req,res) => {
         }else{
             res.send("Esta catregoria já existe");
         }
+    }).catch(err => {
+        res.redirect("/");
     })
 });
 
 //Update category
-
 routes.get("/admin/categories/edit/:id", adminAuth, (req,res) => {
 
     var id = req.params.id;
@@ -78,7 +108,6 @@ routes.post("/categories/update", adminAuth, (req,res) => {
 });
 
 //Delete category
-
 routes.post("/categories/delete", adminAuth, (req, res) => {
 
     var id = req.body.id;

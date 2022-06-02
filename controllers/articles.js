@@ -23,7 +23,7 @@ routes.get('/article/:slug', (req,res) => {
         if(articles != undefined){
             Category.findAll().then(categories => {
                 if(categories != undefined){
-                   res.render("article", {
+                   res.render("pages/article", {
                         articles: articles,
                         author: email.author,
                         categories: categories,

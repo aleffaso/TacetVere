@@ -17,21 +17,37 @@
   </div>
 
   <div class="card bg-white mb-3">
-    <div class="card-header">
-      <strong>Categorias</strong>
-    </div>
+    <% if (categories.length != undefined){ %>
+      <div class="card-header">
+        <strong>Categorias</strong>
+      </div>
+    <% }else{ %>
+      <div class="card-header">
+        <strong>Categoria</strong>
+      </div>
+    <% } %>
     <div class="card-body">
       <table class="table">
           <tbody>
-            <% categories.forEach(category => {%>
+            <% if (categories.length != undefined){ %>
+              <% categories.forEach(categories => {%>
+                <tr>
+                  <td>
+                    <div class="text-center">
+                      <a class="category-fs" href="/categories/<%= categories.slug %>"><%= categories.title %></a>
+                    </div>
+                  </td>
+                </tr>
+              <% }) %>
+            <% }else{ %>
               <tr>
                 <td>
                   <div class="text-center">
-                    <a class="category-fs" href="#!"><%= category.title %></a>
+                    <a class="category-fs" href="/categories/<%= categories.slug %>"><%= categories.title %></a>
                   </div>
                 </td>
               </tr>
-            <% }) %>
+            <% } %>
           </tbody>
       </table>
     </div>

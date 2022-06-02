@@ -1,7 +1,27 @@
 <!--Header-->
-<%- include("partials/header.ejs") %>
+<%- include("../partials/header.ejs") %>
 <!--Navbar-->
-<%- include("partials/navbar.ejs") %>
+<%- include("../partials/navbar.ejs") %>
+
+<% var img = articles.body.match(/<img.*?src="(.*?)"/g) %>
+<% var imgBody = []  %>
+<% var imgBodySliced = []  %>
+
+<% if (img != null){ %> 
+    
+    <% imgBody = img.toString().split(' ').slice(-1) %>
+    <% imgBodySliced = imgBody.toString().split('"') %>
+
+<% }else{ %>
+
+    <% imgBodySliced = ['', 'assets/img/slide/slide-1.jpg'] %>
+
+<% } %>
+
+<meta property='og:title' content='<%= articles.title %>'/>
+<meta property='og:image' content='<%= imgBodySliced[1] %>'/>
+<meta property='og:description' content='<%= articles.title %>'/>
+<meta property='og:url' content='https://www.tacetvere.com/article/<%=articles.slug%>' />
 
 <div id="blog" class="container mb-5">
     <div class="row">
@@ -31,7 +51,7 @@
                     <a href="https://twitter.com/share?url=https://www.tacetvere.com/article/<%=articles.slug%>&text=<%=articles.title%>&via=tacetvere" target="_blank">
                         <i class="bi bi-twitter fs-4 me-2"></i>
                     </a>
-                    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://tacetvere.com/article/<%=articles.slug%>&title=<%=articles.title%>" target="_blank">
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.tacetvere.com/article/<%=articles.slug%>" target="_blank">
                         <i class="bi bi-linkedin fs-4 me-2"></i>
                     </a>
                     <a href="https://api.whatsapp.com/send?text=<%=articles.slug%> https://www.tacetvere.com/article/<%=articles.slug%>" target="_blank">
@@ -49,6 +69,6 @@
 <hr>
 
 <!--Footer-->
-<%- include("sections/07_footer.ejs") %>
+<%- include("../sections/07_footer.ejs") %>
 <!--Footer -->
-<%- include("partials/footer.ejs") %>
+<%- include("../partials/footer.ejs") %>

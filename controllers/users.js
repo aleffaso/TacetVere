@@ -10,7 +10,6 @@ const adminAuth = require("../middlewares/adminAuth");
 dotenv.config({path: './.env'})
 
 //Show all user
-
 routes.get("/admin/users", adminAuth, (req, res) => {
     User.findAll().then(users => {
         res.render("admin/users/index", {users:users, token: req.session.token});
@@ -18,7 +17,6 @@ routes.get("/admin/users", adminAuth, (req, res) => {
 });
 
 //New user
-
 routes.get("/admin/user/new", adminAuth, (req, res) => {
     res.render("admin/users/new", {token: req.session.token});
 });
@@ -54,7 +52,6 @@ routes.post("/users/new", adminAuth, (req,res) => {
 });
 
 //Update user
-
 routes.get("/admin/users/edit/:id", adminAuth, (req,res) => {
 
     var id = req.params.id;
@@ -97,7 +94,6 @@ routes.post("/users/update", adminAuth, (req,res) => {
 });
 
 //Delete user
-
 routes.post("/users/delete", adminAuth, (req, res) => {
 
     var id = req.body.id;
@@ -120,9 +116,8 @@ routes.post("/users/delete", adminAuth, (req, res) => {
 });
 
 //Login user
-
 routes.get("/login", (req,res) => {
-    res.render("login", {token: req.session.token});
+    res.render("pages/login", {token: req.session.token});
 });
 
 routes.post("/login", (req, res) => {
