@@ -8,7 +8,15 @@
         <div class="col-md-12 mt-5">
             <article>
                 <header>
-                    <h1 class="fw-bolder mb-1 text-center mb-4">Acompanhe nosso blog</h1>
+                    <% if (path == '/blog'){ %>
+                        <h1 class="fw-bolder mb-1 text-center mb-4">Acompanhe nosso blog</h1>
+                    <% } else if (path == '/categories/:slug'){ %>
+                        <h1 class="fw-bolder mb-1 text-center mb-4">Categoria: <%= categories.title %></h1>
+                    <% } else if (articleId != ''){ %>
+                        <h1 class="fw-bolder mb-1 text-center mb-4">Resultados para "<%= keyword %>"</h1>
+                    <% }else if (articleId){ %>
+                        <h1 class="fw-bolder mb-1 text-center mb-4">Não foi encontrado nenhum resultado para "<%= keyword %>"</h1>
+                    <% } %>
                 </header>
                 <hr> 
             </article>

@@ -10,6 +10,7 @@ const adminAuth = require("../middlewares/adminAuth");
 //Category page
 routes.get('/categories/:slug', (req,res) => {
     var slug = req.params.slug;
+    const path = req.route.path
 
     Category.findOne({where: {slug: slug}}).then(categories => {
         const id = categories.id
@@ -20,7 +21,12 @@ routes.get('/categories/:slug', (req,res) => {
                 order:[['id', 'DESC']],
             }).then(articles => {
                 if(articles.length != 0){
-                    res.render("pages/blog", {articles: articles, token: req.session.token, categories: categories});
+                    res.render("pages/blog", {
+                        articles: articles,
+                        token: req.session.token,
+                        categories: categories,
+                        path: path
+                    });
                 }else{
                     res.redirect("/");
                 }
