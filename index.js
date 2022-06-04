@@ -7,6 +7,7 @@ const connection = require("./db/db")
 const categoriesController = require("./controllers/categories");
 const articlesController = require("./controllers/articles");
 const usersController = require("./controllers/users");
+const newsletter = require("./controllers/newsletter");
 const routes = require('./config/routes');
 const dotenv = require('dotenv');
 
@@ -41,6 +42,7 @@ connection.authenticate().then(() => {
 app.use("/", articlesController);
 app.use("/", categoriesController);
 app.use("/", usersController);
+app.use("/", newsletter);
 app.use("/", routes);
 
 //Server

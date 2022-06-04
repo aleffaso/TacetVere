@@ -1,0 +1,41 @@
+<!--Header-->
+<%- include("../../partials/header.ejs") %>
+<!--Navbar-->
+<%- include ("../../partials/navbar.ejs") %>
+
+<main id="pageform">
+    <section class="login">
+        <div class="d-flex justify-content-center mt-4">
+            <div class="card text-center mt-4">
+                <div class="container text-center mt-4">
+                    <h2>Newsletter</h2>
+                    <table class="table table-bordered mt-4">
+                        <thead>
+                            <tr>
+                                <th>E-mail</th>
+                                <th>Deletar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% emails.forEach(emails => {%>
+                            <tr>
+                                <td><%= emails.email%></td>
+                                <form method="POST" action="/newsletter/delete" onsubmit=deleteCheck(event,this)>
+                                    <input type="hidden" name="id" value="<%= emails.id %>">
+                                    <td><button class="btn btn-danger">Deletar</button></td>
+                                </form>
+                            </tr>
+                            <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+
+<!--Footer-->
+<%- include("../../sections/07_footer.ejs") %>
+<!--Footer -->
+<%- include("../../partials/footer.ejs") %>
