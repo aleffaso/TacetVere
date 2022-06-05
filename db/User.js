@@ -16,6 +16,26 @@ const User = connection.define('users', {
     {
         type: Sequelize.STRING,
         allowNull: false
+    },
+    picture: 
+    {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    position: 
+    {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    about: 
+    {
+        type: Sequelize.TEXT,
+        allowNull: false
+    },
+    linkedin: 
+    {
+        type: Sequelize.STRING,
+        allowNull: false
     }
 });
 

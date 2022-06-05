@@ -4,7 +4,7 @@
 <%- include ("../../partials/navbar.ejs") %>
 
 <main id="pageform">
-    <section class="login">
+    <section class="form-user">
         <div class="container d-flex justify-content-center">
             <div class="card text-dark bg-light text-center" style="width: 300px;">
                 <div class="card-header mt-3">
@@ -15,6 +15,14 @@
                         <input class="form-control" name="name" type="text" placeholder="Nome Sobrenome" value="<%= user.name %>" required>
                         <br>
                         <input class="form-control" name="email" type="email" placeholder="email@exemplo.com" value="<%= user.email %>" required>
+                        <br>
+                        <input class="form-control" name="picture" type="text" placeholder="link da imagem" value="<%= user.picture %>" required>
+                        <br>
+                        <input class="form-control" name="position" type="text" placeholder="Cargo que ocupa" value="<%= user.position %>" required>
+                        <br>
+                        <textarea class="form-control" name="about" type="text" required><%= user.about %></textarea>
+                        <br>
+                        <input class="form-control" name="linkedin" type="text" placeholder="https://linkedin.com/in/perfil" value="<%= user.linkedin %>" required>
                         <br>
                         <input class="form-control" name="password" type="password" placeholder="Digite uma nova senha" required>
                         <br>

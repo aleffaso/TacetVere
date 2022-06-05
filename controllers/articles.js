@@ -4,6 +4,7 @@ const slugify = require('slugify');
 
 const Category = require('../db/Category');
 const Article = require('../db/Article');
+const User = require('../db/User');
 const adminAuth = require('../middlewares/adminAuth'); 
 
 //Article page
@@ -23,17 +24,20 @@ routes.get('/article/:slug', (req,res) => {
         if(articles != undefined){
             Category.findAll().then(categories => {
                 if(categories != undefined){
-                   res.render('pages/article', {
-                        articles: articles,
-                        author: email.author,
-                        categories: categories,
-                        day: day,
-                        month: month,
-                        year: year,
-                        hour: hour, 
-                        minute: minute,
-                        token: req.session.token
-                    });
+                    User.findAll().then(users => {
+                        res.render('pages/article', {
+                            articles: articles,
+                            author: email.author,
+                            users: users,
+                            categories: categories,
+                            day: day,
+                            month: month,
+                            year: year,
+                            hour: hour, 
+                            minute: minute,
+                            token: req.session.token
+                        });
+                    })
                 }else{
                     res.redirect('/');
                 }
@@ -58,22 +62,31 @@ routes.get('/admin/articles', adminAuth, (req,res) => {
 //New article
 routes.get('/admin/article/new', adminAuth, (req,res) => { 
     Category.findAll().then(categories => {
-        res.render('admin/articles/new', {categories: categories, token: req.session.token});
+        if(categories != undefined){
+            User.findAll().then(users => {
+                res.render('admin/articles/new', {
+                    categories: categories, 
+                    users: users,
+                    userId: req.loggedUser.email, 
+                    token: req.session.token});
+            })
+        }else{
+            res.redirect('/admin/articles');
+        }
     });
 });
 
 routes.post('/articles/new', adminAuth, (req,res) => {
-    var title = req.body.title;
-    var body = req.body.body;
-    var category = req.body.category;
-    var author = req.loggedUser.email;
+    var { title, body, category, userId } = req.body;
+    var author = req.loggedUser.email;   
 
     Article.create({
         title: title,
         slug: slugify(title),
         body: body,
         author: author,
-        categoryId: category
+        categoryId: category,
+        userId: userId
     }).then(() => {
         res.redirect('/admin/articles');
     });

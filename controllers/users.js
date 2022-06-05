@@ -23,7 +23,7 @@ routes.get("/admin/user/new", adminAuth, (req, res) => {
 
 routes.post("/users/new", adminAuth, (req,res) => {
 
-    var {name, email, password, passwordCheck} = req.body;
+    var {name, email, password, passwordCheck, picture, position, about, linkedin} = req.body;
 
     if(password != passwordCheck){
         res.send("É necessário informar a mesma senha");
@@ -39,7 +39,11 @@ routes.post("/users/new", adminAuth, (req,res) => {
             User.create({
                 name: name,
                 email: email,
-                password: hash
+                password: hash,
+                picture: picture,
+                position: position, 
+                about: about,
+                linkedin:linkedin
             }).then(() => {
                 res.redirect("/admin/users");
             }).catch((err) => {
@@ -73,7 +77,7 @@ routes.get("/admin/users/edit/:id", adminAuth, (req,res) => {
 
 routes.post("/users/update", adminAuth, (req,res) => {
 
-    var {id, name, email, password, passwordCheck} = req.body;
+    var {id, name, email, password, passwordCheck, picture, position, about, linkedin} = req.body;
 
     if(password != passwordCheck){
         res.send("É necessário informar a mesma senha");
@@ -82,7 +86,16 @@ routes.post("/users/update", adminAuth, (req,res) => {
     var salt = bcrypt.genSaltSync(10);
     var hash = bcrypt.hashSync(password,salt);
 
-    User.update({name: name, email: email, password: hash},{
+    User.update({
+        name: name, 
+        email: email, 
+        password: hash,
+        picture: picture,
+        position: position, 
+        about: about,
+        linkedin:linkedin
+    },
+    {
         where: {
             id:id
         }

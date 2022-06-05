@@ -1,6 +1,7 @@
 <%- include ("../../partials/header.ejs") %>
 <%- include ("../../partials/navbar.ejs") %>
 
+<% const user = [] %>
 
 <div class="container">
     <div style="text-align:center;">
@@ -8,6 +9,11 @@
     </div>
     <form method="POST" action="/articles/new">
         <input type="text" class="form-control fw-bolder mb-2" name="title" placeholder="Título" required/>
+        <% users.forEach((user) => {%>
+            <% if(user.email == userId){ %> 
+                <input type="hidden" name="userId" value="<%=user.id %>">
+            <% } %>
+        <% }) %>
         <select name="category" class="form-control mb-2">
             <% categories.forEach((category) => {%>
                 <option value="<%= category.id %>"><%= category.title %></option>

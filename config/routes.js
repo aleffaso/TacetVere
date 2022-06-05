@@ -3,6 +3,7 @@ const routes = express.Router();
 
 const Article = require('../db/Article');
 const Category = require('../db/Category');
+const User = require('../db/User');
 
 
 //main page
@@ -15,16 +16,18 @@ routes.get('/blog', (req,res) => {
     const path = req.route.path
 
     Article.findAll({
-        order:[['id', 'DESC']],
-        include: [{model: Category}] //include Category table
+        order:[['id', 'DESC']]
     }).then(articles => {
         Category.findAll().then(categories => {
-            res.render('pages/blog', {
-                articles: articles, 
-                token: req.session.token, 
-                categories: categories,
-                path: path
-            });
+            User.findAll().then(users => {
+                res.render('pages/blog', {
+                    articles: articles, 
+                    token: req.session.token, 
+                    categories: categories,
+                    users: users,
+                    path: path
+                });
+            })
         }).catch(err => {
             res.redirect('/');
         });
@@ -57,8 +60,7 @@ routes.get('/busca', async (req, res) => {
 
         Category.findAll({
             where:{id:id},
-            order:[['id', 'DESC']],
-            include: [{model: Article}]
+            order:[['id', 'DESC']]
         }).then(category => {
             const articleId = category.map(categories => {
                 return categories.id
@@ -67,14 +69,17 @@ routes.get('/busca', async (req, res) => {
                 where: {categoryId: articleId},
                 order:[['id', 'DESC']],
             }).then(articles => {
-                res.render('pages/blog', {
-                    articleId: articleId, 
-                    keyword: keyword.toLowerCase(),
-                    articles: articles,
-                    categories: category, 
-                    token: req.session.token, 
-                    path: path
-                })
+                User.findAll().then(users => {
+                    res.render('pages/blog', {
+                        users: users,
+                        articleId: articleId, 
+                        keyword: keyword.toLowerCase(),
+                        articles: articles,
+                        categories: category, 
+                        token: req.session.token, 
+                        path: path
+                    })
+                });
             })
         }).catch(err => {
             res.redirect('/');

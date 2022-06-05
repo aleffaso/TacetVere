@@ -43,7 +43,11 @@
                         <a href="/article/<%= articles.slug %>">
                             <h2><%= articles.title %></h2>
                         </a>
-                        <div class="text-muted fst-italic">Publicado por <%= articles.author %></div>
+                        <% users.forEach(user => {%>
+                            <% if(articles.author == user.email){ %>
+                                <div class="text-muted fst-italic">Publicado por <%= user.name %></div>
+                            <% } %>
+                        <% }) %>
                     </div>
                     <div class="container-img bg-light mb-3">
                         <a href="/article/<%= articles.slug %>">
@@ -82,7 +86,11 @@
                         <a href="/article/<%= articles.slug %>">
                             <h2><%= articles.title %></h2>
                         </a>
-                        <div class="text-muted fst-italic">Publicado por <%= articles.author %></div>
+                        <% users.forEach(user => {%>
+                            <% if(articles.author == user.email){ %>
+                                <div class="text-muted fst-italic">Publicado por <%= user.name %></div>
+                            <% } %>
+                        <% }) %>
                     </div>
                     <div class="container-img bg-light mb-3">
                         <a href="/article/<%= articles.slug %>">
@@ -115,7 +123,7 @@
                 <% } %>
             <% }) %>
         </div>
-        <%- include("side.ejs", {categories, articles}) %>
+        <%- include("side.ejs", {categories, articles, users}) %>
 </div>
 <hr>
 

@@ -4,6 +4,7 @@ const slugify = require("slugify");
 
 const Article = require('../db/Article');
 const Category = require('../db/Category');
+const User = require('../db/User');
 const adminAuth = require("../middlewares/adminAuth"); 
 
 
@@ -21,11 +22,14 @@ routes.get('/categories/:slug', (req,res) => {
                 order:[['id', 'DESC']],
             }).then(articles => {
                 if(articles.length != 0){
-                    res.render("pages/blog", {
-                        articles: articles,
-                        token: req.session.token,
-                        categories: categories,
-                        path: path
+                    User.findAll().then(users => {
+                        res.render("pages/blog", {
+                            users: users,
+                            articles: articles,
+                            token: req.session.token,
+                            categories: categories,
+                            path: path
+                        });
                     });
                 }else{
                     res.redirect("/");
