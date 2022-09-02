@@ -85,7 +85,6 @@ routes.post('/articles/new', adminAuth, (req,res) => {
         slug: slugify(title),
         body: body,
         author: author,
-        categories: category,
         categoryId: category,
         userId: userId
     }).then(() => {
@@ -122,8 +121,7 @@ routes.post('/articles/update', adminAuth, (req,res) => {
     Article.update({
         title: title, 
         slug: slugify(title), 
-        body: body, 
-        categoryId: category,
+        body: body,
         categories: category
     },
     { //Update title, slug and body by specified id
