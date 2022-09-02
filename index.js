@@ -8,6 +8,7 @@ const categoriesController = require("./controllers/categories");
 const articlesController = require("./controllers/articles");
 const usersController = require("./controllers/users");
 const newsletter = require("./controllers/newsletter");
+const calculator = require("./controllers/calculator");
 const routes = require('./config/routes');
 const dotenv = require('dotenv');
 
@@ -43,6 +44,7 @@ app.use("/", articlesController);
 app.use("/", categoriesController);
 app.use("/", usersController);
 app.use("/", newsletter);
+app.use("/", calculator);
 app.use("/", routes);
 
 //Server

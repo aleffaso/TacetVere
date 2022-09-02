@@ -85,6 +85,7 @@ routes.post('/articles/new', adminAuth, (req,res) => {
         slug: slugify(title),
         body: body,
         author: author,
+        categories: category,
         categoryId: category,
         userId: userId
     }).then(() => {
@@ -116,12 +117,16 @@ routes.get('/admin/articles/edit/:id', adminAuth, (req,res) => {
 });
 
 routes.post('/articles/update', adminAuth, (req,res) => {
-    var id = req.body.id;
-    var title = req.body.title;
-    var body = req.body.body;
-    var category = req.body.category
+    var {id, title, body, category} = req.body
 
-    Article.update({title: title, slug:slugify(title), body: body, categoryId:category},{ //Update title, slug and body by specified id
+    Article.update({
+        title: title, 
+        slug: slugify(title), 
+        body: body, 
+        categoryId: category,
+        categories: category
+    },
+    { //Update title, slug and body by specified id
         where: {
             id:id
         }
@@ -130,6 +135,7 @@ routes.post('/articles/update', adminAuth, (req,res) => {
     }).catch(err => {
         res.redirect('/admin/articles');
     });
+
 });
 
 //Delete article

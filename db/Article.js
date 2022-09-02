@@ -23,6 +23,11 @@ const Article = connection.define('articles', {
     {
         type: Sequelize.STRING,
         allowNull: false
+    },
+    categories:
+    {
+        type: Sequelize.STRING,
+        allowNull: false
     }
 });
 
