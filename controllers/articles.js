@@ -122,7 +122,7 @@ routes.post('/articles/update', adminAuth, (req,res) => {
         title: title, 
         slug: slugify(title), 
         body: body,
-        categories: category
+        categoryId: category,
     },
     { //Update title, slug and body by specified id
         where: {
