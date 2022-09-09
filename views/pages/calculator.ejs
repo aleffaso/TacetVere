@@ -1,0 +1,338 @@
+<button type="button" class="btn btn-send " data-bs-toggle="modal" data-bs-target="#calculator1">
+    Saiba Mais
+</button>
+
+<div class="modal fade" id="calculator1" tabindex="-1" role="dialog" aria-labelledby="calculator1Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Informações sobre sua empresa (1 de 6)</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-bs-hidden="true"></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-top mb-3">
+                    <h5>Comece falando um pouco da sua organização. Preencha alguns dados que descreverão sua organização no seu relato de cálculo</h5>
+                </div>
+                <form method="POST" action="/calculator">
+                    <fieldset>
+                        <input class="form-control" name="social_name" type="text" placeholder="Razão social">
+                        <br>
+                        <input class="form-control" name="company_name" type="text" placeholder="Nome fantasia" required>
+                        <br>
+                        <input class="form-control" name="cnpj" type="number" placeholder="CNPJ">
+                        <br>
+                        <input class="form-control" name="address" type="text" placeholder="Endereço">
+                        <br>
+                        <input class="form-control" name="people_organization_amount" type="number" placeholder="Número de pessoas na organização" required>
+                        <br>
+                        <input class="form-control" name="people_out_organization_amount" type="number" placeholder="Número de terceirizados fixos" required>
+                        <br>
+                    </fieldset>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-secondary btn-next">Próximo</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<button hidden type="button" class="btn btn-send" data-bs-toggle="modal" data-bs-target="#calculator2">
+    Processamento de Emissões
+</button>
+
+<div class="modal fade" id="calculator2" tabindex="-1" role="dialog" aria-labelledby="calculator2Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Informações sobre sua empresa (2 de 6)</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-bs-hidden="true"></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                    <fieldset>
+                        <select class="form-control" name="sector">
+                            <option>Selecione o setor</option>
+                            <option>Geração de Energia</option>
+                            <option>Óleo e Gás</option>
+                            <option>Extração Mineral de Carvão</option>
+                            <option>Alumínio</option>
+                            <option>Ferro e aço</option>
+                            <option>Químicos</option>
+                            <option>Cimento e Cal</option>
+                            <option>Resíduos</option>
+                            <option>Papel e Celulose</option>
+                            <option>Produção de HCFC22</option>
+                            <option>Produção de Semicondutores</option>
+                            <option>Produção de Serviços</option>
+                        </select>
+                        <br>
+                        <select class="form-control" name="task_nature">
+                            <option>Selecione a natureza das atividades</option>
+                            <option>Energia</option>
+                            <option>Manufatura ou Construção</option>
+                            <option>Comercial ou Institucional</option>
+                            <option>Residencial, Agricultura, Florestal ou Pesca</option>
+                          </select>
+                        <br>
+                        <select class="form-control" name="year">
+                            <option>Selecione o ano</option>
+                            <option>2007</option>
+                            <option>2008</option>
+                            <option>2009</option>
+                            <option>2010</option>
+                            <option>2011</option>
+                            <option>2012</option>
+                            <option>2013</option>
+                            <option>2014</option>
+                            <option>2015</option>
+                            <option>2016</option>
+                            <option>2017</option>
+                            <option>2018</option>
+                            <option>2019</option>
+                            <option>2020</option>
+                            <option>2021</option>
+                        </select>
+                        <br>
+                    </fieldset>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-secondary btn-prev">Anterior</button>
+                <button type="button" class="btn btn-send btn-next">Próximo</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<button hidden type="button" class="btn btn-send " data-bs-toggle="modal" data-bs-target="#calculator3">
+    Combustão Estacionária
+</button>
+
+<div class="modal fade" id="calculator3" tabindex="-1" role="dialog" aria-labelledby="calculator3Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Emissões Diretas (3 de 6)</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-bs-hidden="true"></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-top mb-3">
+                    <h4>Combustão Estacionária</h4>
+                    <h4>Agora, para calcular as emisões, vamos começar pelas emissões decorrentes de processos de combustão estacionária.</h4>
+                    <h5>Qual é o principal combustível e sua quantidade utilizados, quanto a:</h5>
+                </div>
+                    <fieldset>
+                        <hr>
+                        <input class="form-control" name="emission_source_one" type="text" value="Oxidação de desperdício orgânico volátil">
+                        <br>
+                        <input class="form-control" name="emission_gas_one" type="number" placeholder="Combustível">
+                        <br>
+                        <input class="form-control" name="emission_amount_one" type="number" placeholder="Quantidade">
+                        <br>
+                        <input class="form-control" name="emission_unit_one" type="Text" placeholder="Unidade">
+                        <br>
+                        <hr>
+                        <input class="form-control" name="emission_source_two" type="text" value="Produção de eletricidade, calor ou vapor">
+                        <br>
+                        <input class="form-control" name="emission_gas_two" type="number" placeholder="Combustível">
+                        <br>
+                        <input class="form-control" name="emission_amount_two" type="number" placeholder="Quantidade">
+                        <br>
+                        <input class="form-control" name="emission_unit_two" type="text" placeholder="Unidade">
+                        <br>
+                    </fieldset>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-secondary btn-prev">Anterior</button>
+                <button type="button" class="btn btn-send btn-next">Próximo</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<button hidden type="button" class="btn btn-send " data-bs-toggle="modal" data-bs-target="#calculator4">
+    Combustão móvel
+</button>
+
+<div class="modal fade" id="calculator4" tabindex="-1" role="dialog" aria-labelledby="calculator4Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Emissões Diretas (4 de 6)</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-bs-hidden="true"></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-top mb-3">
+                    <h4>Neste segundo momento, vamos lidar com emissões de origem móvel</h4>
+                    <h5>Qual é o principal combustível e sua quantidade utilizados em frotas de propriedade ou alugados pela organização:</h5>
+                </div>
+                    <fieldset>
+                        <input class="form-control" name="emission_source_three" type="text" value="Transporte de matérias primas/desperdício/produtos">
+                        <br>
+                        <input class="form-control" name="emission_gas_three" type="number" placeholder="Combustível">
+                        <br>
+                        <input class="form-control" name="emission_amount_three" type="number" placeholder="Quantidade">
+                        <br>
+                        <input class="form-control" name="emission_unit_three" type="text" placeholder="Unidade">
+                        <br>
+                    </fieldset>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-secondary btn-prev">Anterior</button>
+                <button type="button" class="btn btn-send btn-next">Próximo</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<button hidden type="button" class="btn btn-send " data-bs-toggle="modal" data-bs-target="#calculator5">
+    Emissões fugitivas
+</button>
+
+<div class="modal fade" id="calculator5" tabindex="-1" role="dialog" aria-labelledby="calculator4Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Emissões Diretas (5 de 6)</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-bs-hidden="true"></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-top mb-3">
+                    <h4>Para finalizar o escopo 1, vamos lidar com emissões fugitivas.</h4>
+                    <h5>Preencha os campos abaixo, conforme solicitado:</h5>
+                </div>
+                    <fieldset>
+                        <input class="form-control" name="emission_source_four" type="text" value="Processamento de fugas de gás armazenados">
+                        <br>
+                        <select class="form-control" name="equipment_four">
+                            <option>Selecione o Processo/Equipamento</option>
+                            <option>Ar condicionado split</option>
+                            <option>Ar condicionado central</option>
+                            <option>Extintores de incêndio</option>
+                            <option>Refrigerador, Geladeira, Freezer</option>
+                        </select>
+                        <br>
+                        <input class="form-control" name="emission_amount_four" type="number" placeholder="Quantidade">
+                        <br>
+                        <input class="form-control" name="emission_unit_four" type="text" placeholder="Unidade">
+                        <br>
+                    </fieldset>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-secondary btn-prev">Anterior</button>
+                <button type="button" class="btn btn-send btn-next">Próximo</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<button hidden type="button" class="btn btn-send " data-bs-toggle="modal" data-bs-target="#calculator6">
+    Emissões indiretas
+</button>
+
+<div class="modal fade" id="calculator6" tabindex="-1" role="dialog" aria-labelledby="calculator4Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Emissões Indiretas (6 de 6)</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-bs-hidden="true"></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-top mb-3">
+                    <h4>Combustão Estacionária</h4>
+                    <h4>Por último, no escopo 2, vamos calcular as emisões de compra de energia. </h4>
+                    <h5>Qual é a quantidade de eletricidade adquirida anualmente da rede de transmissão?</h5>
+                </div>
+                    <fieldset>
+                        <input class="form-control" name="emission_source_five" type="text" value="Consumo de eletricidade">
+                        <br>
+                        <input class="form-control" name="emission_source_five" type="text" value="Eletricidade de rede de transmissão">
+                        <br>
+                        <input class="form-control" name="emission_unit_five" type="number" placeholder="Quantidade">
+                        <br>
+                        <input class="form-control" name="emission_unit_five" type="text" value="kWh">
+                        <br>
+                        <button type="submit" class="btn btn-send btn-next">Calcular</button>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-secondary btn-prev">Anterior</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<button hidden type="button" class="btn btn-send " data-bs-toggle="modal" data-bs-target="#calculator7">
+    Resultados
+</button>
+
+<div class="modal fade" id="calculator7" tabindex="-1" role="dialog" aria-labelledby="calculator4Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Resultados</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-bs-hidden="true"></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h4>Escopo 1: Emissões totais de CO2e (t)</h4>
+                <input class="form-control" name="emission_source_five" type="text" value="4">
+                <br>
+                <hr>
+                <h4>Escopo 1: Emissões totais de CO2e (%)</h4>
+                <input class="form-control" name="emission_source_five" type="text" value="91.68%">
+                <br>
+                <hr>
+                <h4>Escopo 2: Emissões totais de CO2e (t)</h4>
+                <input class="form-control" name="emission_source_five" type="text" value="0">
+                <br>
+                <hr>
+                <h4>Escopo 2: Emissões totais de CO2e (%)</h4>
+                <input class="form-control" name="emission_source_five" type="text" value="8.32%">
+                <br>
+                <hr>
+                <h4>Emissões Totais de Gases do Efeito Estufa (tCO2e)</h4>
+                <input class="form-control" name="emission_source_five" type="text" value="5">
+                <br>
+                <hr>
+                <h4>Potencial de Aquecimento Global - GWP(100) AR6</h4>
+                <input class="form-control" name="emission_source_five" type="text" value="CO2 biogênico: 0">
+                <br>
+                <input class="form-control" name="emission_source_five" type="text" value="CO2 fóssil: 1">
+                <br>
+                <input class="form-control" name="emission_source_five" type="text" value="CH4: 27,9">
+                <br>
+                <input class="form-control" name="emission_source_five" type="text" value="N2O: 273">
+                <br>
+                <input class="form-control" name="emission_source_five" type="text" value="HFC-32: 771">
+                <br>
+                <input class="form-control" name="emission_source_five" type="text" value="HFC-125: 3740">
+                <br>
+                <input class="form-control" name="emission_source_five" type="text" value="CFC-12: 11200">
+                <br>
+                <br>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
