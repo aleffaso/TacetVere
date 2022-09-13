@@ -1,0 +1,37 @@
+
+<div class="modal fade" id="calculator1" tabindex="-1" role="dialog" aria-labelledby="calculator1Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Informações sobre sua empresa (1 de 6)</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-bs-hidden="true"></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-top mb-3">
+                    <h5>Comece falando um pouco da sua organização. Preencha alguns dados que descreverão sua organização no seu relato de cálculo</h5>
+                </div>
+                <form method="POST" action="/calculator">
+                    <fieldset>
+                        <input class="form-control" name="social_name" type="text" placeholder="Razão social">
+                        <br>
+                        <input class="form-control" name="company_name" type="text" placeholder="Nome fantasia" required>
+                        <br>
+                        <input class="form-control" name="cnpj" type="number" placeholder="CNPJ">
+                        <br>
+                        <input class="form-control" name="address" type="text" placeholder="Endereço">
+                        <br>
+                        <input class="form-control" name="people_organization_amount" type="number" placeholder="Número de pessoas na organização" required>
+                        <br>
+                        <input class="form-control" name="people_out_organization_amount" type="number" placeholder="Número de terceirizados fixos" required>
+                        <br>
+                    </fieldset>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-secondary btn-next">Próximo</button>
+            </div>
+        </div>
+    </div>
+</div>

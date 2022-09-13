@@ -1,0 +1,68 @@
+<button hidden type="button" class="btn btn-send" data-bs-toggle="modal" data-bs-target="#calculator2">
+    Processamento de Emissões
+</button>
+
+<div class="modal fade" id="calculator2" tabindex="-1" role="dialog" aria-labelledby="calculator2Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Informações sobre sua empresa (2 de 6)</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-bs-hidden="true"></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                    <fieldset>
+                        <select id="sector" class="form-control" name="sector">
+                            <option value="-">Selecione o setor</option>
+                            <option value="geracao-de-energia">Geração de Energia</option>
+                            <option value="oleo-e-gas">Óleo e Gás</option>
+                            <option value="extracao-mineral-de-carvao">Extração Mineral de Carvão</option>
+                            <option value="aluminio">Alumínio</option>
+                            <option value="ferro-e-aco">Ferro e aço</option>
+                            <option value="quimicos">Químicos</option>
+                            <option value="cimento-e-cal">Cimento e Cal</option>
+                            <option value="residuos">Resíduos</option>
+                            <option value="papel-e-celulose">Papel e Celulose</option>
+                            <option value="producao-de-HCFC22">Produção de HCFC22</option>
+                            <option value="producao-semicondutores">Produção de Semicondutores</option>
+                            <option value="producao-de-servicos">Produção de Serviços</option>
+                        </select>
+                        <br>
+                        <select class="form-control" name="task_nature">
+                            <option>Selecione a natureza das atividades</option>
+                            <option>Energia</option>
+                            <option>Manufatura ou Construção</option>
+                            <option>Comercial ou Institucional</option>
+                            <option>Residencial, Agricultura, Florestal ou Pesca</option>
+                          </select>
+                        <br>
+                        <select class="form-control" name="year">
+                            <option>Selecione o ano</option>
+                            <option>2007</option>
+                            <option>2008</option>
+                            <option>2009</option>
+                            <option>2010</option>
+                            <option>2011</option>
+                            <option>2012</option>
+                            <option>2013</option>
+                            <option>2014</option>
+                            <option>2015</option>
+                            <option>2016</option>
+                            <option>2017</option>
+                            <option>2018</option>
+                            <option>2019</option>
+                            <option>2020</option>
+                            <option>2021</option>
+                        </select>
+                        <br>
+                    </fieldset>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-secondary btn-prev">Anterior</button>
+                <button type="button" class="btn btn-send btn-next">Próximo</button>
+            </div>
+        </div>
+    </div>
+</div>
