@@ -1,0 +1,90 @@
+<!--Header-->
+<%- include("../../partials/header.ejs") %>
+<!--Navbar-->
+<%- include ("../../partials/navbar.ejs") %>
+
+<main id="pageform">
+    <div class="container d-flex justify-content-center">
+            <form method="POST" action="/parameter/new">
+                <div class="row justify-content-center">
+                    <div class="col">
+                        <div class="card text-dark bg-light text-center mt-2">
+                            <div class="card-header">
+                                <h3>Novo Parâmetro</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-3">
+                        <div class="card text-dark bg-light text-center" style="min-height:470px">
+                            <div class="card-body">
+                                <fieldset>
+                                    <input class="form-control" name="category" type="text" placeholder="Categoria" required><br>
+                                    <input class="form-control" name="fuel" type="text" placeholder="Combustível" required><br>
+                                    <input class="form-control" name="unity_system" type="text" placeholder="Unidade" required><br>
+                                    <input class="form-control" name="co2_fossil" type="number" placeholder="CO2 fóssil (kg/unidade)" required><br>
+                                    <input class="form-control" name="ch4" type="number" placeholder="CH4 (kg/unidade)" required><br>
+                                    <input class="form-control" name="N20" type="number" placeholder="N2O (kg/unidade)" required><br>
+                                    <input class="form-control" name="biogenic_co2" type="number" placeholder="CO2 biogênico (kg/unidade)" required><br>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="card text-dark bg-light text-center" style="min-height:470px">
+                            <div class="card-body">
+                                <fieldset>
+                                    <p>CH4 (kg/unidade)</p><br>
+                                    <input class="form-control" name="ch4_energy" type="number" placeholder="Energia" required><br>
+                                    <input class="form-control" name="ch4_manufactured_built" type="number" placeholder="Manufatura ou Construção" required><br>
+                                    <input class="form-control" name="ch4_comercial_institutional" type="number" placeholder="Comercial ou Institucional" required><br>
+                                    <input class="form-control" name="ch4_rafp" type="number" placeholder="Residencial, Agricultura, Florestal ou Pesca" required><br>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="card text-dark bg-light text-center" style="min-height:470px">
+                            <div class="card-body">
+                                <fieldset>
+                                    <p>N2O (kg/unidade)</p><br>
+                                    <input class="form-control" name="n2o_energy" type="number" placeholder="Energia" required><br>
+                                    <input class="form-control" name="n2o_manufactured_built" type="number" placeholder="Manufatura ou Construção" required><br>
+                                    <input class="form-control" name="n2o_comercial_institutional" type="number" placeholder="Comercial ou Institucional" required><br>
+                                    <input class="form-control" name="n2o_rafp" type="number" placeholder="Residencial, Agricultura, Florestal ou Pesca" required><br>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="card text-dark bg-light text-center" style="min-height:470px">
+                            <div class="card-body">
+                                <fieldset>
+                                    <input class="form-control" name="hfc_32" type="number" placeholder="HFC-32 (kg/unidade)" required><br>
+                                    <input class="form-control" name="hfc_125" type="number" placeholder="HFC-125 (kg/unidade)" required><br>
+                                    <input class="form-control" name="cfc_12" type="number" placeholder="CFC-12 (kg/unidade)" required><br>
+                                    <input class="form-control" name="reference" type="text" placeholder="Referência" required><br>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col">
+                        <div class="card text-dark bg-light text-center mt-2 mb-2">
+                            <div class="card-header">
+                                <button type="submit" class="btn btn-send ">Criar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+
+<!--Footer-->
+<%- include("../../sections/07_footer.ejs") %>
+<!--Footer -->
+<%- include("../../partials/footer.ejs") %>

@@ -1,0 +1,91 @@
+<%- include ("../../partials/header.ejs") %>
+<%- include ("../../partials/navbar.ejs") %>
+
+<section>
+    <div class="mb-1 text-center fw-bolder mb-4">
+        <h1>Parâmetros</h1>
+    </div>
+    <div class="row text-center justify-content-md-center">
+        <div class="col-md-auto mb-4">
+            <a href="/admin/parameters/new" class="btn btn-send">Criar um novo parâmetro</a>
+        </div>
+    </div>
+    <hr>
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover text-center">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th colspan="4">CH4 (kg/unidade)</th>
+                        <th colspan="4">N2O (kg/unidade)</th>
+
+                    </tr>
+                    </thead>
+                <thead>
+                <tr>
+                    <th colspan="2">Ações</th>
+                    <th scope="col">Categoria</th>
+                    <th scope="col">Combustível</th>
+                    <th scope="col">Unidade</th>
+                    <th scope="col">CO2 fóssil (kg/unidade)</th>
+                    <th scope="col">CH4 (kg/unidade)</th>
+                    <th scope="col">N2O (kg/unidade)</th>
+                    <th scope="col">CO2 biogênico (kg/unidade)</th>
+                    <th scope="col">Energia</th>
+                    <th scope="col">Manufatura ou Construção</th>
+                    <th scope="col">Comercial ou Institucional</th>
+                    <th scope="col">Residencial, Agricultura, Florestal ou Pesca</th>
+                    <th scope="col">Energia</th>
+                    <th scope="col">Manufatura ou Construção</th>
+                    <th scope="col">Comercial ou Institucional</th>
+                    <th scope="col">Residencial, Agricultura, Florestal ou Pesca</th>
+                    <th scope="col">HFC-32 (kg/unidade)</th>
+                    <th scope="col">HFC-125 (kg/unidade)</th>
+                    <th scope="col">CFC-12 (kg/unidade)	Referência</th>
+                    
+                </tr>
+                </thead>
+                <tbody>
+                    <% parameters.forEach(parameter => { %>
+                        <tr>
+                            <td><a class="btn btn-send" href="/admin/parameters/edit/<%= parameter.id %>">Editar</a></td>
+                            <form method="POST" action="/parameters/delete" onsubmit=deleteCheck(event,this)>
+                                <input type="hidden" name="id" value="<%= parameter.id %>">
+                                <td><button class="btn btn-danger">Deletar</button></td>
+                            </form>
+                            <td scope="row"><%=parameter.category%></td>
+                            <td scope="row"><%=parameter.fuel%></td>
+                            <td scope="row"><%=parameter.unity_system%></td>
+                            <td scope="row"><%=parameter.co2_fossil%></td>
+                            <td scope="row"><%=parameter.ch4%></td>
+                            <td scope="row"><%=parameter.N20%></td>
+                            <td scope="row"><%=parameter.biogenic_co2%></td>
+                            <td scope="row"><%=parameter.ch4_energy%></td>
+                            <td scope="row"><%=parameter.ch4_manufactured_built%></td>
+                            <td scope="row"><%=parameter.ch4_comercial_institutional%></td>
+                            <td scope="row"><%=parameter.ch4_rafp%></td>
+                            <td scope="row"><%=parameter.n2o_energy%></td>
+                            <td scope="row"><%=parameter.n2o_manufactured_built%></td>
+                            <td scope="row"><%=parameter.n2o_comercial_institutional%></td>
+                            <td scope="row"><%=parameter.n2o_rafp%></td>
+                            <td scope="row"><%=parameter.hfc_32%></td>
+                            <td scope="row"><%=parameter.hfc_125%></td>
+                            <td scope="row"><%=parameter.cfc_12%></td>
+                        </tr>
+                    <%}) %>
+            </table>
+        </div>
+    </div>
+</section>
+
+  <!--Footer-->
+<%- include("../../sections/07_footer.ejs") %>
+<!--Footer -->
+<%- include("../../partials/footer.ejs") %>
