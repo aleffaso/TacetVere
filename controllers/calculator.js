@@ -5,7 +5,6 @@ const slugify = require('slugify');
 const Parameters = require('../db/Parameters');
 const Calculator = require('../db/Calculator');
 const adminAuth = require('../middlewares/adminAuth'); 
-const { route } = require('express/lib/router');
 
 //New category
 routes.get("/admin/calculator", adminAuth, (req, res) => {
