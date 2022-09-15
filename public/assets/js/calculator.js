@@ -112,7 +112,7 @@ $(document).ready(function () {
 //////########################################################################################################################
 
         }else if (val == "oleo-e-gas"){
-            var e1_1 = "<input class='form-control' name='ge1_1' type='text' value='Processamento de aquecedores'>"
+            var e1_1 = "<input class='form-control' name='e1_1' type='text' value='Processamento de aquecedores'>"
             var e1_2 = "<hr><input class='form-control' name='e1_2' type='text' value='Motores'>"
             var e1_3 = "<hr><input class='form-control' name='e1_3' type='text' value='Turbinas'>"
             var e1_4 = "<hr><input class='form-control' name='e1_4' type='text' value='Chamas'>"
@@ -1338,7 +1338,7 @@ $(document).ready(function () {
         }else{
             $("#emission_three").html(
                  "<div><hr><h4>É necessário selecionar o setor</h4></div>"
-                )
+            )
         }
     });
 });

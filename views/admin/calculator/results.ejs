@@ -1,0 +1,287 @@
+<%- include ("../../partials/header.ejs") %>
+<%- include ("../../partials/navbar.ejs") %>
+
+<section>
+    <div class="mb-1 text-center fw-bolder mb-4">
+        <h1>Dados coletados</h1>
+    </div>
+    <hr>
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover text-center">
+                <thead>
+                    <tr>
+                        <th colspan="9">Dados da empresa</th>
+                        <th colspan="8">Combustão estacionária </th>
+                        <th colspan="10">Escopo 1</th>
+                        <th colspan="4">Escopo 2</th>
+
+                    </tr>
+                    </thead>
+                <thead>
+                <tr>
+                    <th scope="col">Razão social</th>
+                    <th scope="col">Nome fantasia</th>
+                    <th scope="col">CNPJ</th>
+                    <th scope="col">Endereço</th>
+                    <th scope="col">Nº de pessoas na organização</th>
+                    <th scope="col">Nº de terceirizados fixos</th>
+                    <th scope="col">Setor</th>
+                    <th scope="col">Natureza das atividades</th>
+                    <th scope="col">Ano base</th>
+
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+
+                    <th scope="col">Consumo de eletricidade</th>
+                    <th scope="col">Eletricidade de rede de transmissão</th>
+                    <th scope="col">Quantidade</th>
+                    <th scope="col">Unidade</th>
+                    
+                </tr>
+                </thead>
+                <tbody>
+                    <% results.forEach(results => { %>
+                        <tr>
+                            <td scope="row"><%=results.social_name%></td>
+                            <td scope="row"><%=results.company_name%></td>
+                            <td scope="row"><%=results.cnpj%></td>
+                            <td scope="row"><%=results.address%></td>
+                            <td scope="row"><%=results.people_organization_amount%></td>
+                            <td scope="row"><%=results.people_out_of_organization_amount%></td>
+                            <td scope="row"><%=results.company_sector%></td>
+                            <td scope="row"><%=results.company_task_nature%></td>
+                            <td scope="row"><%=results.year%></td>
+
+                            <% if (results.e1_1){ %> 
+                                <td scope="row">
+                                    <strong>Fonte de emissão:</strong> <%=results.e1_1[0]%><br>
+                                    <strong>Combustível: </strong><%=results.e1_1[1]%><br>
+                                    <strong>Quantidade: </strong><%=results.e1_1[2]%><br>
+                                    <strong>Unidade: </strong><%=results.e1_1[3]%>
+                                </td>
+                            <% }else{ %>
+                                <td scope="row"><%=results.e1_1%></td>
+                            <% } %>
+                            
+                            <% if (results.e1_2){ %> 
+                                <td scope="row">
+                                    <strong>Fonte de emissão:</strong> <%=results.e1_2[0]%><br>
+                                    <strong>Combustível: </strong><%=results.e1_2[1]%><br>
+                                    <strong>Quantidade: </strong><%=results.e1_2[2]%><br>
+                                    <strong>Unidade: </strong><%=results.e1_2[3]%>
+                                </td>
+                            <% }else{ %>
+                                <td scope="row"><%=results.e1_2%></td>
+                            <% } %>
+
+                            <% if (results.e1_3){ %> 
+                                <td scope="row">
+                                    <strong>Fonte de emissão:</strong> <%=results.e1_3[0]%><br>
+                                    <strong>Combustível: </strong><%=results.e1_3[1]%><br>
+                                    <strong>Quantidade: </strong><%=results.e1_3[2]%><br>
+                                    <strong>Unidade: </strong><%=results.e1_3[3]%>
+                                </td>
+                            <% }else{ %>
+                                <td scope="row"><%=results.e1_3%></td>
+                            <% } %>
+
+                            <% if (results.e1_4){ %>
+                                <td scope="row">
+                                    <strong>Fonte de emissão:</strong> <%=results.e1_4[0]%><br>
+                                    <strong>Combustível: </strong><%=results.e1_4[1]%><br>
+                                    <strong>Quantidade: </strong><%=results.e1_4[2]%><br>
+                                    <strong>Unidade: </strong><%=results.e1_4[3]%>
+                                </td>
+                            <% }else{ %>
+                                <td scope="row"><%=results.e1_4%></td>
+                            <% } %>
+
+                            <% if (results.e1_5){ %>
+                                <td scope="row">
+                                    <strong>Fonte de emissão:</strong> <%=results.e1_5[0]%><br>
+                                    <strong>Combustível: </strong><%=results.e1_5[1]%><br>
+                                    <strong>Quantidade: </strong><%=results.e1_5[2]%><br>
+                                    <strong>Unidade: </strong><%=results.e1_5[3]%>
+                                </td>
+                            <% }else{ %>
+                                <td scope="row"><%=results.e1_5%></td>
+                            <% } %>
+                            
+                            <% if (results.e1_6){ %> 
+                                <td scope="row">
+                                    <strong>Fonte de emissão:</strong> <%=results.e1_6[0]%><br>
+                                    <strong>Combustível: </strong><%=results.e1_6[1]%><br>
+                                    <strong>Quantidade: </strong><%=results.e1_6[2]%><br>
+                                    <strong>Unidade: </strong><%=results.e1_6[3]%>
+                                </td>
+                            <% }else{ %>
+                                <td scope="row"><%=results.e1_6%></td>
+                            <% } %>
+
+                            <% if (results.e1_7){ %> 
+                                <td scope="row">
+                                    <strong>Fonte de emissão:</strong> <%=results.e1_7[0]%><br>
+                                    <strong>Combustível: </strong><%=results.e1_7[1]%><br>
+                                    <strong>Quantidade: </strong><%=results.e1_7[2]%><br>
+                                    <strong>Unidade: </strong><%=results.e1_7[3]%>
+                                </td>
+                            <% }else{ %>
+                                <td scope="row"><%=results.e1_7%></td>
+                            <% } %>
+                            
+                            <% if (results.e1_8){ %> 
+                            <td scope="row">
+                                <strong>Fonte de emissão:</strong> <%=results.e1_8[0]%><br>
+                                <strong>Combustível: </strong><%=results.e1_8[1]%><br>
+                                <strong>Quantidade: </strong><%=results.e1_8[2]%><br>
+                                <strong>Unidade: </strong><%=results.e1_8[3]%>
+                            </td>
+                            <% }else{ %>
+                                <td scope="row"><%=results.e1_8%></td>
+                            <% } %>
+
+
+                            <% if (results.e2_1){ %> 
+                                <td scope="row">
+                                    <strong>Fonte de emissão:</strong> <%=results.e2_1[0]%><br>
+                                    <strong>Combustível: </strong><%=results.e2_1[1]%><br>
+                                    <strong>Quantidade: </strong><%=results.e2_1[2]%><br>
+                                    <strong>Unidade: </strong><%=results.e2_1[3]%>
+                                </td>
+                            <% }else{ %>
+                                <td scope="row"><%=results.e2_1%></td>
+                            <% } %>
+
+                            <% if (results.e2_2){ %> 
+                                <td scope="row">
+                                    <strong>Fonte de emissão:</strong> <%=results.e2_2[0]%><br>
+                                    <strong>Combustível: </strong><%=results.e2_2[1]%><br>
+                                    <strong>Quantidade: </strong><%=results.e2_2[2]%><br>
+                                    <strong>Unidade: </strong><%=results.e2_2[3]%>
+                                </td>
+                            <% }else{ %>
+                                <td scope="row"><%=results.e2_2%></td>
+                            <% } %>
+
+                            <% if (results.e2_3){ %> 
+                                <td scope="row">
+                                    <strong>Fonte de emissão:</strong> <%=results.e2_3[0]%><br>
+                                    <strong>Combustível: </strong><%=results.e2_3[1]%><br>
+                                    <strong>Quantidade: </strong><%=results.e2_3[2]%><br>
+                                    <strong>Unidade: </strong><%=results.e2_3[3]%>
+                                </td>
+                            <% }else{ %>
+                                <td scope="row"><%=results.e2_3%></td>
+                            <% } %>
+
+                            <% if (results.e2_4){ %> 
+                                <td scope="row">
+                                    <strong>Fonte de emissão:</strong> <%=results.e2_4[0]%><br>
+                                    <strong>Combustível: </strong><%=results.e2_4[1]%><br>
+                                    <strong>Quantidade: </strong><%=results.e2_4[2]%><br>
+                                    <strong>Unidade: </strong><%=results.e2_4[3]%>
+                                </td>
+                            <% }else{ %>
+                                <td scope="row"><%=results.e2_4%></td>
+                            <% } %>
+
+                            <% if (results.e2_5){ %> 
+                                <td scope="row">
+                                    <strong>Fonte de emissão:</strong> <%=results.e2_5[0]%><br>
+                                    <strong>Combustível: </strong><%=results.e2_5[1]%><br>
+                                    <strong>Quantidade: </strong><%=results.e2_5[2]%><br>
+                                    <strong>Unidade: </strong><%=results.e2_5[3]%>
+                                </td>
+                            <% }else{ %>
+                                <td scope="row"><%=results.e2_5%></td>
+                            <% } %>
+                            
+
+                            <% if (results.e3_1){ %> 
+                                <td scope="row">
+                                    <strong>Fonte de emissão:</strong> <%=results.e3_1[0]%><br>
+                                    <strong>Processo / Equipamento: </strong><%=results.e3_1[1]%><br>
+                                    <strong>Quantidade: </strong><%=results.e3_1[2]%><br>
+                                    <strong>Unidade: </strong><%=results.e3_1[3]%>
+                                </td>
+                            <% }else{ %>
+                                <td scope="row"><%=results.e3_1%></td>
+                            <% } %>
+                            
+                            <% if (results.e3_2){ %> 
+                                <td scope="row">
+                                    <strong>Fonte de emissão:</strong> <%=results.e3_2[0]%><br>
+                                    <strong>Processo / Equipamento: </strong><%=results.e3_2[1]%><br>
+                                    <strong>Quantidade: </strong><%=results.e3_2[2]%><br>
+                                    <strong>Unidade: </strong><%=results.e3_2[3]%>
+                                </td>
+                            <% }else{ %>
+                                <td scope="row"><%=results.e3_2%></td>
+                            <% } %>
+
+                            <% if (results.e3_3){ %> 
+                                <td scope="row">
+                                    <strong>Fonte de emissão:</strong> <%=results.e3_3[0]%><br>
+                                    <strong>Processo / Equipamento: </strong><%=results.e3_3[1]%><br>
+                                    <strong>Quantidade: </strong><%=results.e3_3[2]%><br>
+                                    <strong>Unidade: </strong><%=results.e3_3[3]%>
+                                </td>
+                            <% }else{ %>
+                                <td scope="row"><%=results.e3_3%></td>
+                            <% } %>
+
+                            <% if (results.e3_4){ %> 
+                                <td scope="row">
+                                    <strong>Fonte de emissão:</strong> <%=results.e3_4[0]%><br>
+                                    <strong>Processo / Equipamento: </strong><%=results.e3_4[1]%><br>
+                                    <strong>Quantidade: </strong><%=results.e3_4[2]%><br>
+                                    <strong>Unidade: </strong><%=results.e3_4[3]%>
+                                </td>
+                            <% }else{ %>
+                                <td scope="row"><%=results.e3_4%></td>
+                            <% } %>
+                            
+                            <% if (results.e3_5){ %> 
+                                <td scope="row">
+                                    <strong>Fonte de emissão:</strong> <%=results.e3_5[0]%><br>
+                                    <strong>Processo / Equipamento: </strong><%=results.e3_5[1]%><br>
+                                    <strong>Quantidade: </strong><%=results.e3_5[2]%><br>
+                                    <strong>Unidade: </strong><%=results.e3_5[3]%>
+                                </td>
+                            <% }else{ %>
+                                <td scope="row"><%=results.e3_5%></td>
+                            <% } %>
+
+                            <td scope="row"><%=results.electricity_consume%></td>
+                            <td scope="row"><%=results.electricity_transmission%></td>
+                            <td scope="row"><%=results.electricity_quantity%></td>
+                            <td scope="row"><%=results.electricity_unity%></td>
+                        </tr>
+                    <%}) %>
+            </table>
+        </div>
+    </div>
+</section>
+
+  <!--Footer-->
+<%- include("../../sections/07_footer.ejs") %>
+<!--Footer -->
+<%- include("../../partials/footer.ejs") %>
