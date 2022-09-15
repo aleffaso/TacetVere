@@ -145,14 +145,14 @@ routes.post("/calculator", (req, res) => {
             res.render('index', {token: req.session.token, data: req.body, parameters: parameters}); 
         });
     }).catch((err) => {
-        res.redirect("index");
+        res.redirect("/");
     });
 });
 
 routes.get("/admin/results", adminAuth, (req, res) => {
     Parameters.findAll().then(parameters => {
         Calculator.findAll().then(results => {
-            res.render("admin/calculator/results", {token: req.session.token, results: results, parameters: parameters}); 
+            res.render("admin/calculator/results", {token: req.session.token, results: results, parameters: parameters, calculator:true}); 
         })
     });
 })
