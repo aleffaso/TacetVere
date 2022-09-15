@@ -1,6 +1,7 @@
 const express = require('express');
 const routes = express.Router();
 
+const Parameters = require('../db/Parameters');
 const Article = require('../db/Article');
 const Category = require('../db/Category');
 const User = require('../db/User');
