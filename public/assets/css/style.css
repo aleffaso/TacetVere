@@ -490,25 +490,19 @@ section {
 }
 
 .section-bg {
-  background-color: #f8fcf9;
+  background-color: rgb(245,245,245);
 }
 
 .section-blue-bg{
-  background-image: url('../img/background/background_blue.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
+  background-color: rgb(245,245,245);
 }
 
 .section-white-bg{
-  background-image: url('../img/background/background_white_bottom.jpg');
-  background-position: bottom;
-  background-repeat: no-repeat;
+  background-color: rgb(245,245,245);
 }
 
 .section-white-inverted-bg{
-  background-image: url('../img/background/background_white_top.jpg');
-  background-position:top;
-  background-repeat: no-repeat;
+  background-color: rgb(245,245,245);
 }
 
 .section-title {

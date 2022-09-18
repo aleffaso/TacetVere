@@ -18,20 +18,18 @@
                     <h5>Qual é a quantidade de eletricidade adquirida anualmente da rede de transmissão?</h5>
                 </div>
                     <fieldset>
-                        <input class="form-control" name="electricity_consume" type="text" value="Consumo de eletricidade">
+                        <input class="form-control" name="electricity_consume" type="text" value="Consumo de eletricidade" readonly="readonly">
                         <br>
-                        <input class="form-control" name="electricity_transmission" type="text" value="Eletricidade de rede de transmissão">
+                        <input class="form-control" name="electricity_transmission" type="text" value="Eletricidade de rede de transmissão (KWh)" readonly="readonly">
                         <br>
                         <input class="form-control" name="electricity_quantity" type="number" placeholder="Quantidade">
-                        <br>
-                        <input class="form-control" name="electricity_unity" type="text" value="kWh">
                         <br>
                         <button type="submit" class="btn btn-send">Calcular</button>
                     </fieldset>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal">Fechar</button>
                 <button type="button" class="btn btn-secondary btn-prev">Anterior</button>
             </div>
         </div>

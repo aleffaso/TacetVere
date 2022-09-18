@@ -10,7 +10,7 @@ const User = require('../db/User');
 //main page
 routes.get('/', (req,res) => {
     Parameters.findAll().then(parameters => {
-        res.render('index', {token: req.session.token, data: req.body, parameters: parameters, calculator:false}); 
+        res.render('index', {token: req.session.token, parameters: parameters, calculator:false}); 
     });
 });
 
