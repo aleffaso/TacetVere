@@ -224,6 +224,7 @@ routes.post("/calculator", (req, res) => {
                 var array_co2 = []
                 var array_ch4 = []
                 var array_n2o = []
+                var array_biogenic_co2 = []
 
                 //First escope
 
@@ -302,6 +303,16 @@ routes.post("/calculator", (req, res) => {
                     array_n2o.push(n2o_result_e6)
                     array_n2o.push(n2o_result_e7)
                     array_n2o.push(n2o_result_e8)
+
+                    array_biogenic_co2.push(biogenic_co2_result_e1)
+                    array_biogenic_co2.push(biogenic_co2_result_e2)
+                    array_biogenic_co2.push(biogenic_co2_result_e3)
+                    array_biogenic_co2.push(biogenic_co2_result_e4)
+                    array_biogenic_co2.push(biogenic_co2_result_e5)
+                    array_biogenic_co2.push(biogenic_co2_result_e6)
+                    array_biogenic_co2.push(biogenic_co2_result_e7)
+                    array_biogenic_co2.push(biogenic_co2_result_e8)
+
 
                     array.push(array_co2)
                     array.push(array_ch4)
