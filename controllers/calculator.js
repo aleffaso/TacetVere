@@ -128,6 +128,8 @@ routes.post("/calculator", (req, res) => {
         electricity_unity, e1_1, e1_2, e1_3, e1_4, e1_5, e1_6, e1_7, e1_8, e2_1, 
         e2_2, e2_3, e2_4, e2_5, e3_1, e3_2, e3_3, e3_4, e3_5 } = req.body
 
+        console.log(e2_1, e2_2, e2_3, e2_4, e2_5)
+
         var replace = ['', '', '0']
 
         if(e1_1 == undefined){
@@ -214,7 +216,6 @@ routes.post("/calculator", (req, res) => {
             var sum_ch4_two = 0;
             var sum_n2o_two = 0;
             var sum_biogenic_co2_two = 0;
-            var qtd = 79;
 
             const arrayPar = parameters.map( parameter => {
 
@@ -320,6 +321,8 @@ routes.post("/calculator", (req, res) => {
                     var n2o_result_two_e5 = N20 * e2_5[quant_calc]
                     var biogenic_co2_result_two_e5 = biogenic_co2 * e2_5[quant_calc]
 
+                    //////////////////Array push
+
                     array_co2.push(co2_fossil_result_e1)
                     array_co2.push(co2_fossil_result_e2)
                     array_co2.push(co2_fossil_result_e3)
@@ -407,26 +410,27 @@ routes.post("/calculator", (req, res) => {
                     
             })
 
-            for (var i=0 ; i< 55; i++){
+            for (var i=0 ; i < arrayPar.length - 23 ; i++){
                 if(arrayPar[i] != undefined){
                     sum_co2 += arrayPar[i][0][0]
+                    console.log(sum_co2, " += ", arrayPar[i][0][0], "posicao: ", i)
                     sum_ch4 += arrayPar[i][1][0]
                     sum_n2o += arrayPar[i][2][0]
                     sum_biogenic_co2 += arrayPar[i][3][0]
                 }
             }
 
-            console.log("Co2 Fóssil (t): ",sum_co2, "Ch4 (t): ",sum_ch4, "N2O (t): ",sum_n2o, "CO2 biogênico (t): ",sum_biogenic_co2)
-
-            for (var i=55 ; i<= qtd; i++){
+            for (var i = arrayPar.length - 23 ; i < arrayPar.length - 2; i++){
                 if(arrayPar[i] != undefined){
                     sum_co2_two += arrayPar[i][4][0]
+                    console.log(sum_co2_two, " += ", arrayPar[i][4][0], "posicao: ", i)
                     sum_ch4_two += arrayPar[i][5][0]
                     sum_n2o_two += arrayPar[i][6][0]
                     sum_biogenic_co2_two += arrayPar[i][7][0]  
                 }
-            }  
+            }
 
+            console.log("Co2 Fóssil (t): ",sum_co2, "Ch4 (t): ",sum_ch4, "N2O (t): ",sum_n2o, "CO2 biogênico (t): ",sum_biogenic_co2)
             console.log("Co2 Fóssil (t): ",sum_co2_two, "Ch4 (t): ",sum_ch4_two, "N2O (t): ",sum_n2o_two, "CO2 biogênico (t): ",sum_biogenic_co2_two)
 
             res.render('index', {token: req.session.token, 
@@ -436,14 +440,13 @@ routes.post("/calculator", (req, res) => {
                 sum_ch4: sum_ch4,
                 sum_n2o: sum_n2o,
                 sum_biogenic_co2: sum_biogenic_co2,
-                sum_co2_two: sum_co2,
-                sum_ch4_two: sum_ch4,
-                sum_n2o_two: sum_n2o,
+                sum_co2_two: sum_co2_two,
+                sum_ch4_two: sum_ch4_two,
+                sum_n2o_two: sum_n2o_two,
                 sum_biogenic_co2_two: sum_biogenic_co2_two
             }); 
-        })
 
-    // Calculator.create({
+                // Calculator.create({
     //     social_name: social_name, company_name: company_name, cnpj: cnpj, 
     //     address: address, people_organization_amount: people_organization_amount, 
     //     people_out_of_organization_amount: people_out_of_organization_amount, 
@@ -461,7 +464,7 @@ routes.post("/calculator", (req, res) => {
     // }).catch((err) => {
     //     res.redirect("/");
     // });
-
+        })
 });
 
 routes.get("/admin/results", adminAuth, (req, res) => {
