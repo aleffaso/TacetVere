@@ -9,72 +9,81 @@
           </div>
     
         <div class="row justify-content-md-center">
-            <div class="col-6 mb-4" data-aos="zoom-in" data-aos-delay="100" style="max-width:400px;">
+            <div class="col-4 mb-4" data-aos="zoom-in" data-aos-delay="100" >
                 <div class="card">
                     <div class="card-header text-center">
                         <h3>Escopo 1</h3>
                     </div>
                     <div class="card-body">
-                        <p>Emissões totais de CO2e (t): <%=sum_co2 + sum_ch4 + sum_n2o + sum_biogenic_co2%></p>
+                        <p><strong>CO2 fóssil (t): </strong><%=sum_co2 %></p>
+                        <p><strong>CH4 (t): </strong><%=sum_ch4 %></p>
+                        <p><strong>N2O (t): </strong><%=sum_n2o %></p>
+                        <p><strong>CO2 Biogênico (t): </strong><%=sum_biogenic_co2 %></p>
+                        <p><strong>CO2 Equivalente: </strong>
+                            <%=(sum_co2*1 + sum_ch4*27.9 + sum_n2o*273 + sum_biogenic_co2*0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")%>
+                        </p>
                         <script>
                             var sum_co2 = "<%= sum_co2 %>"   
                             var sum_ch4 = "<%= sum_ch4 %>"   
                             var sum_n2o = "<%= sum_n2o %>"   
-                            var sum_biogenic_co2 = "<%= sum_biogenic_co2 %>"          
+                            var sum_biogenic_co2 = "<%= sum_biogenic_co2 %>"
+                            var total_co2 = sum_co2*1 + sum_ch4*27.9 + sum_n2o*273 + sum_biogenic_co2*0
                          </script>
                     </div>
-                    <div class="row justify-content-md-center">
-                        <div class="col-12 mb-4" data-aos="zoom-in" data-aos-delay="100" style="max-width:400px;">
-                            <canvas id="emissionOne"></canvas>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <h4>Info:</h4>
-                        <p>O escopo 1 está relacionado com ..... Esses dados representam....</p>
+                    <div class="card-footer text-center" style="min-height: 230px;">
+                        <p><br><br><br>São as emissões diretas de gases de efeito estufa, provenientes de fontes de emissão de equipamentos/bens de propriedade ou controlados pela organização.</p>
                     </div>
                 </div>
             </div>
             
-            <div class="col-6 mb-4" data-aos="zoom-in" data-aos-delay="100" style="max-width:400px;">
+            <div class="col-4 mb-4" data-aos="zoom-in" data-aos-delay="100">
                 <div class="card">
                     <div class="card-header text-center">
                         <h3>Escopo 2</h3>
                     </div>
                     <div class="card-body">
-                        <p>Emissões totais de CO2e (t): <%=sum_co2_two + sum_ch4_two + sum_n2o_two + sum_biogenic_co2_two%></p>
+                        <p><strong>CO2 fóssil (t): </strong><%=sum_co2_two %></p>
+                        <p><strong>CH4 (t): </strong><%=sum_ch4_two %></p>
+                        <p><strong>N2O (t): </strong><%=sum_n2o_two %></p>
+                        <p><strong>CO2 Biogênico (t): </strong><%=sum_biogenic_co2_two %></p>
+                        <p><strong>CO2 Equivalente: </strong>
+                            <%=(sum_co2_two*1 + sum_ch4_two*27.9 + sum_n2o_two*273 + sum_biogenic_co2_two*0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")%>
+                        </p>
                         <script>
-                            var sum_co2_two = "<%= sum_co2_two %>"   
-                            var sum_ch4_two = "<%= sum_ch4_two %>"   
-                            var sum_n2o_two = "<%= sum_n2o_two %>"   
-                            var sum_biogenic_co2_two = "<%= sum_biogenic_co2_two %>"          
+                            var sum_co2_two = "<%= sum_co2_two %>"
+                            var sum_ch4_two = "<%= sum_ch4_two %>"
+                            var sum_n2o_two = "<%= sum_n2o_two %>"
+                            var sum_biogenic_co2_two = "<%= sum_biogenic_co2_two %>"  
+                            var total_co2_two = sum_co2_two*1 + sum_ch4_two*27.9 + sum_n2o_two*273 + sum_biogenic_co2_two*0
                          </script>
                     </div>
-                    <div class="row justify-content-md-center">
-                        <div class="col-12 mb-4" data-aos="zoom-in" data-aos-delay="100" style="max-width:400px;">
-                            <canvas id="emissionTwo"></canvas>
-                        </div>
-                    </div>
-                    </div>
-                    <div class="card-footer">
-                        <h4>Info:</h4>
-                        <p>O escopo 2 está relacionado com ..... Esses dados representam....</p>
+                    <div class="card-footer text-center" style="min-height: 230px;">
+                        <p>Contabiliza as emissões de gases do efeito estufa provenientes da geração de eletricidade comprada e consumida pela empresa. A eletricidade comprada é definida como a eletricidade que é adquirida ou trazida de alguma forma para o limite organizacional da empresa. As emissões do Escopo 2 ocorrem fisicamente na instalação onde a eletricidade é gerada.</p>
                     </div>
                 </div>
             </div>
         </div>
-    
+
         <div class="row justify-content-md-center">
-            <div class="col-12 mb-4" data-aos="zoom-in" data-aos-delay="100" style="max-width:400px;">
+            <div class="col-8 mb-4" data-aos="zoom-in" data-aos-delay="100">
                 <div class="card">
                     <div class="card-header text-center">
-                        <h3>Emissões Totais de Gases do Efeito Estufa (tCO2e)</h3>
+                        <h4><strong>Emissões Totais de Gases do Efeito Estufa</strong></h4>
                     </div>
                     <div class="card-body text-center">
-                        <h3>5</h3>
+                        <h3><%=(sum_co2*1 + sum_ch4*27.9 + sum_n2o*273 + sum_biogenic_co2*0 + sum_co2_two*1 + sum_ch4_two*27.9 + sum_n2o_two*273 + sum_biogenic_co2_two*0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")%> (tCO2e)</h3>
+
+                        <script>
+                            var scope_one = 100*(total_co2/(total_co2 + total_co2_two))
+                            var scope_two = 100*(total_co2_two/(total_co2_two + total_co2))
+                        </script>
                     </div>
-                    <div class="card-footer">
-                        <h4>Info:</h4>
-                        <p>As Emissões Totais de Gases  ..... Esses dados representam....</p>
+    
+                    <div class="row justify-content-md-center">
+                        <div class="col-12 mb-4" data-aos="zoom-in" data-aos-delay="100" style="max-width:400px;">
+                            <canvas id="emissionOne"></canvas>
+                        </div>
+                    </div>
                     </div>
                 </div>
             </div>

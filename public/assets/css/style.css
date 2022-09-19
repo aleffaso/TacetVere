@@ -352,7 +352,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 #hero .carousel-item::before {
   content: "";
-  background-color: rgba(24, 71, 102, 0.8);
+  background-color: #000;
 }
 #hero .carousel-container {
   display: flex;
@@ -496,7 +496,7 @@ section {
 }
 
 .section-bg {
-  background-color: rgb(245,245,245);
+  background-color: #000
 }
 
 .section-blue-bg{

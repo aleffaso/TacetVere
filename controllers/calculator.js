@@ -134,7 +134,7 @@ routes.post("/calculator", (req, res) => {
             e1_1 = replace
         }
         
-        if(e1_2 == null){
+        if(e1_2 == undefined){
             e1_2 = replace
         }
         
@@ -165,7 +165,7 @@ routes.post("/calculator", (req, res) => {
         
         if(e2_1 == undefined){
             e2_1 = replace
-        } 
+        }
         
         if(e2_2 == undefined){
             e2_2 = replace
@@ -185,7 +185,7 @@ routes.post("/calculator", (req, res) => {
 
 
         if(e3_1 == undefined){
-            e2_1 = replace
+            e3_1 = replace
         } 
         
         if(e3_2 == undefined){
@@ -204,8 +204,7 @@ routes.post("/calculator", (req, res) => {
             e3_5 = replace
         } 
 
-
-        Parameters.findAll().then(parameters => {
+        Parameters.findAll().then((parameters, index) => {
             
             var sum_co2 = 0;
             var sum_ch4 = 0;
@@ -215,9 +214,9 @@ routes.post("/calculator", (req, res) => {
             var sum_ch4_two = 0;
             var sum_n2o_two = 0;
             var sum_biogenic_co2_two = 0;
-            var qtd = 77;
+            var qtd = 79;
 
-            const arrayPar = parameters.map( (parameter, index) => {
+            const arrayPar = parameters.map( parameter => {
 
                 var { co2_fossil, ch4, N20, biogenic_co2, ch4_energy, ch4_manufactured_built,
                     ch4_comercial_institutional,ch4_rafp, n2o_energy, n2o_manufactured_built, 
@@ -237,7 +236,8 @@ routes.post("/calculator", (req, res) => {
 
                 //First escope
 
-                if (parameter.slug_fuel == e1_1[fuel_calc] || 
+                if (
+                   parameter.slug_fuel == e1_1[fuel_calc] || 
                    parameter.slug_fuel == e1_2[fuel_calc] || 
                    parameter.slug_fuel == e1_3[fuel_calc] ||
                    parameter.slug_fuel == e1_4[fuel_calc] ||
@@ -407,20 +407,26 @@ routes.post("/calculator", (req, res) => {
                     
             })
 
-            for (var i=0 ; i< qtd; i++){
+            for (var i=0 ; i< 55; i++){
                 if(arrayPar[i] != undefined){
                     sum_co2 += arrayPar[i][0][0]
                     sum_ch4 += arrayPar[i][1][0]
                     sum_n2o += arrayPar[i][2][0]
                     sum_biogenic_co2 += arrayPar[i][3][0]
+                }
+            }
 
+            console.log("Co2 Fóssil (t): ",sum_co2, "Ch4 (t): ",sum_ch4, "N2O (t): ",sum_n2o, "CO2 biogênico (t): ",sum_biogenic_co2)
+
+            for (var i=55 ; i<= qtd; i++){
+                if(arrayPar[i] != undefined){
                     sum_co2_two += arrayPar[i][4][0]
                     sum_ch4_two += arrayPar[i][5][0]
                     sum_n2o_two += arrayPar[i][6][0]
-                    sum_biogenic_co2_two += arrayPar[i][7][0]
+                    sum_biogenic_co2_two += arrayPar[i][7][0]  
                 }
-            }
-            console.log("Co2 Fóssil (t): ",sum_co2, "Ch4 (t): ",sum_ch4, "N2O (t): ",sum_n2o, "CO2 biogênico (t): ",sum_biogenic_co2)
+            }  
+
             console.log("Co2 Fóssil (t): ",sum_co2_two, "Ch4 (t): ",sum_ch4_two, "N2O (t): ",sum_n2o_two, "CO2 biogênico (t): ",sum_biogenic_co2_two)
 
             res.render('index', {token: req.session.token, 
@@ -435,7 +441,6 @@ routes.post("/calculator", (req, res) => {
                 sum_n2o_two: sum_n2o,
                 sum_biogenic_co2_two: sum_biogenic_co2_two
             }); 
-
         })
 
     // Calculator.create({
@@ -456,6 +461,7 @@ routes.post("/calculator", (req, res) => {
     // }).catch((err) => {
     //     res.redirect("/");
     // });
+
 });
 
 routes.get("/admin/results", adminAuth, (req, res) => {
