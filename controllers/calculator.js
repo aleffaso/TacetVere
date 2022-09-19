@@ -210,6 +210,11 @@ routes.post("/calculator", (req, res) => {
             var sum_co2 = 0;
             var sum_ch4 = 0;
             var sum_n2o = 0;
+            var sum_biogenic_co2 = 0;
+            var sum_co2_two = 0;
+            var sum_ch4_two = 0;
+            var sum_n2o_two = 0;
+            var sum_biogenic_co2_two = 0;
             var qtd = 77;
 
             const arrayPar = parameters.map( (parameter, index) => {
@@ -225,6 +230,10 @@ routes.post("/calculator", (req, res) => {
                 var array_ch4 = []
                 var array_n2o = []
                 var array_biogenic_co2 = []
+                var array_co2_two = []
+                var array_ch4_two = []
+                var array_n2o_two = []
+                var array_biogenic_co2_two = []
 
                 //First escope
 
@@ -235,7 +244,14 @@ routes.post("/calculator", (req, res) => {
                    parameter.slug_fuel == e1_5[fuel_calc] || 
                    parameter.slug_fuel == e1_6[fuel_calc] || 
                    parameter.slug_fuel == e1_7[fuel_calc] ||
-                   parameter.slug_fuel == e1_8[fuel_calc]){
+                   parameter.slug_fuel == e1_8[fuel_calc] ||
+                   
+                   parameter.slug_fuel == e2_1[fuel_calc] || 
+                   parameter.slug_fuel == e2_2[fuel_calc] || 
+                   parameter.slug_fuel == e2_3[fuel_calc] ||
+                   parameter.slug_fuel == e2_4[fuel_calc] ||
+                   parameter.slug_fuel == e2_5[fuel_calc] ){
+
 
                     var co2_fossil_result_e1 = co2_fossil * e1_1[quant_calc]
                     var ch4_result_e1 = ch4 * e1_1[quant_calc]
@@ -277,6 +293,33 @@ routes.post("/calculator", (req, res) => {
                     var n2o_result_e8 = N20 * e1_8[quant_calc]
                     var biogenic_co2_result_e8 = biogenic_co2 * e1_8[quant_calc]
 
+                    //////////////////Emission Two
+
+                    var co2_fossil_result_two_e1 = co2_fossil * e2_1[quant_calc]
+                    var ch4_result_two_e1 = ch4 * e2_1[quant_calc]
+                    var n2o_result_two_e1 = N20 * e2_1[quant_calc]
+                    var biogenic_co2_result_two_e1 = biogenic_co2 * e2_1[quant_calc]
+
+                    var co2_fossil_result_two_e2 = co2_fossil * e2_2[quant_calc]
+                    var ch4_result_two_e2 = ch4 * e2_2[quant_calc]
+                    var n2o_result_two_e2 = N20 * e2_2[quant_calc]
+                    var biogenic_co2_result_two_e2 = biogenic_co2 * e2_2[quant_calc]
+
+                    var co2_fossil_result_two_e3 = co2_fossil * e2_3[quant_calc]
+                    var ch4_result_two_e3 = ch4 * e2_3[quant_calc]
+                    var n2o_result_two_e3 = N20 * e2_3[quant_calc]
+                    var biogenic_co2_result_two_e3 = biogenic_co2 * e2_3[quant_calc]
+
+                    var co2_fossil_result_two_e4 = co2_fossil * e2_4[quant_calc]
+                    var ch4_result_two_e4 = ch4 * e2_4[quant_calc]
+                    var n2o_result_two_e4 = N20 * e2_4[quant_calc]
+                    var biogenic_co2_result_two_e4 = biogenic_co2 * e2_4[quant_calc]
+
+                    var co2_fossil_result_two_e5 = co2_fossil * e2_5[quant_calc]
+                    var ch4_result_two_e5 = ch4 * e2_5[quant_calc]
+                    var n2o_result_two_e5 = N20 * e2_5[quant_calc]
+                    var biogenic_co2_result_two_e5 = biogenic_co2 * e2_5[quant_calc]
+
                     array_co2.push(co2_fossil_result_e1)
                     array_co2.push(co2_fossil_result_e2)
                     array_co2.push(co2_fossil_result_e3)
@@ -313,10 +356,39 @@ routes.post("/calculator", (req, res) => {
                     array_biogenic_co2.push(biogenic_co2_result_e7)
                     array_biogenic_co2.push(biogenic_co2_result_e8)
 
+                    array_co2_two.push(co2_fossil_result_two_e1)
+                    array_co2_two.push(co2_fossil_result_two_e2)
+                    array_co2_two.push(co2_fossil_result_two_e3)
+                    array_co2_two.push(co2_fossil_result_two_e4)
+                    array_co2_two.push(co2_fossil_result_two_e5)
+
+                    array_ch4_two.push(ch4_result_two_e1)
+                    array_ch4_two.push(ch4_result_two_e2)
+                    array_ch4_two.push(ch4_result_two_e3)
+                    array_ch4_two.push(ch4_result_two_e4)
+                    array_ch4_two.push(ch4_result_two_e5)
+
+                    array_n2o_two.push(n2o_result_two_e1)
+                    array_n2o_two.push(n2o_result_two_e2)
+                    array_n2o_two.push(n2o_result_two_e3)
+                    array_n2o_two.push(n2o_result_two_e4)
+                    array_n2o_two.push(n2o_result_two_e5)
+
+                    array_biogenic_co2_two.push(biogenic_co2_result_two_e1)
+                    array_biogenic_co2_two.push(biogenic_co2_result_two_e2)
+                    array_biogenic_co2_two.push(biogenic_co2_result_two_e3)
+                    array_biogenic_co2_two.push(biogenic_co2_result_two_e4)
+                    array_biogenic_co2_two.push(biogenic_co2_result_two_e5)
 
                     array.push(array_co2)
                     array.push(array_ch4)
                     array.push(array_n2o)
+                    array.push(array_biogenic_co2)
+
+                    array.push(array_co2_two)
+                    array.push(array_ch4_two)
+                    array.push(array_n2o_two)
+                    array.push(array_biogenic_co2_two)
 
                     return array
 
@@ -340,10 +412,29 @@ routes.post("/calculator", (req, res) => {
                     sum_co2 += arrayPar[i][0][0]
                     sum_ch4 += arrayPar[i][1][0]
                     sum_n2o += arrayPar[i][2][0]
+                    sum_biogenic_co2 += arrayPar[i][3][0]
+
+                    sum_co2_two += arrayPar[i][4][0]
+                    sum_ch4_two += arrayPar[i][5][0]
+                    sum_n2o_two += arrayPar[i][6][0]
+                    sum_biogenic_co2_two += arrayPar[i][7][0]
                 }
             }
+            console.log("Co2 Fóssil (t): ",sum_co2, "Ch4 (t): ",sum_ch4, "N2O (t): ",sum_n2o, "CO2 biogênico (t): ",sum_biogenic_co2)
+            console.log("Co2 Fóssil (t): ",sum_co2_two, "Ch4 (t): ",sum_ch4_two, "N2O (t): ",sum_n2o_two, "CO2 biogênico (t): ",sum_biogenic_co2_two)
 
-            console.log("Co2 Fóssil (t): ",sum_co2, "Ch4 (t): ",sum_ch4, "N2O (t): ",sum_n2o)
+            res.render('index', {token: req.session.token, 
+                parameters: parameters, 
+                calculator:true,
+                sum_co2: sum_co2,
+                sum_ch4: sum_ch4,
+                sum_n2o: sum_n2o,
+                sum_biogenic_co2: sum_biogenic_co2,
+                sum_co2_two: sum_co2,
+                sum_ch4_two: sum_ch4,
+                sum_n2o_two: sum_n2o,
+                sum_biogenic_co2_two: sum_biogenic_co2_two
+            }); 
 
         })
 

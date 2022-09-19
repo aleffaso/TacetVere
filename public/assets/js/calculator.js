@@ -473,16 +473,16 @@ var form_quantity_two = "<br><input class='form-quantity-two form-control' name=
 const form_fuel_two =  "<br><select class='form-fuel-two form-control' name='emission_two'>" +
                         "<option value=''>Combustível</option>" +
                         "<option value='nao-aplicavel'>Não Aplicável</option>" +
-                        "<option value='gasolina-automotiva'>Gasolina Automotiva (pura) (Litros)</option>" +
-                        "<option value='ole-diesel'>Óleo Diesel (puro) (Litros)</option>" +
-                        "<option value='gas-natural'>Gás Natural Veicular (GNV) (Litros)</option>" +
-                        "<option value='gas-liquefeito-de-petroleo'>Gás Liquefeito de Petróleo (GLP) (Litros)</option>" +
+                        "<option value='gasolina-automotiva-pura'>Gasolina Automotiva (pura) (Litros)</option>" +
+                        "<option value='ole-diesel-puro'>Óleo Diesel (puro) (Litros)</option>" +
+                        "<option value='gas-natural-gnv'>Gás Natural Veicular (GNV) (Litros)</option>" +
+                        "<option value='gas-liquefeito-de-petroleo-glp'>Gás Liquefeito de Petróleo (GLP) (Litros)</option>" +
                         "<option value='querosene-de-aviacao'>Querosene de Aviação (Litros)</option>" +
                         "<option value='gasolina-de-aviacao'>Gasolina de Aviação (Litros)</option>" +
                         "<option value='lubrificante'>Lubrificantes (Litros)</option>" +
                         "<option value='oleo-combustivel'>Óleo Combustível (Litros)</option>" +
                         "<option value='etanol'>Etanol Hidratado (Litros)</option>" +
-                        "<option value='biodiesel'>Biodiesel (B100) (Litros)</option>" +
+                        "<option value='biodiesel-b100'>Biodiesel (B100) (Litros)</option>" +
                         "<option value='etanol-anidro'>Etanol Anidro (Litros)</option>" +
                         "<option value='carvao-vapor-3100-kcal'>Carvão Vapor 3100 kcal / kg (Toneladas)</option>" +
                         "<option value='carvao-vapor-3300-kcal'>Carvão Vapor 3300 kcal / kg (Toneladas)</option>" +

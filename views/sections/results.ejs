@@ -1,4 +1,4 @@
-<% if (token==undefined){ %>
+<% if (calculator==false){ %>
     <div></div>
 <% }else{ %>
     <section id="results" class="results section-white-bg">
@@ -9,14 +9,24 @@
           </div>
     
         <div class="row justify-content-md-center">
-            <div class="col-12 mb-4" data-aos="zoom-in" data-aos-delay="100" style="max-width:400px;">
+            <div class="col-6 mb-4" data-aos="zoom-in" data-aos-delay="100" style="max-width:400px;">
                 <div class="card">
                     <div class="card-header text-center">
                         <h3>Escopo 1</h3>
                     </div>
                     <div class="card-body">
-                        <p>Emissões totais de CO2e (t): 4</p>
-                        <p>Emissões totais de CO2e (%): 91.68%</p>
+                        <p>Emissões totais de CO2e (t): <%=sum_co2 + sum_ch4 + sum_n2o + sum_biogenic_co2%></p>
+                        <script>
+                            var sum_co2 = "<%= sum_co2 %>"   
+                            var sum_ch4 = "<%= sum_ch4 %>"   
+                            var sum_n2o = "<%= sum_n2o %>"   
+                            var sum_biogenic_co2 = "<%= sum_biogenic_co2 %>"          
+                         </script>
+                    </div>
+                    <div class="row justify-content-md-center">
+                        <div class="col-12 mb-4" data-aos="zoom-in" data-aos-delay="100" style="max-width:400px;">
+                            <canvas id="emissionOne"></canvas>
+                        </div>
                     </div>
                     <div class="card-footer">
                         <h4>Info:</h4>
@@ -24,17 +34,26 @@
                     </div>
                 </div>
             </div>
-        </div>
-    
-        <div class="row justify-content-md-center">
-            <div class="col-12 mb-4" data-aos="zoom-in" data-aos-delay="100" style="max-width:400px;">
+            
+            <div class="col-6 mb-4" data-aos="zoom-in" data-aos-delay="100" style="max-width:400px;">
                 <div class="card">
                     <div class="card-header text-center">
                         <h3>Escopo 2</h3>
                     </div>
                     <div class="card-body">
-                        <p>Emissões totais de CO2e (t): 0</p>
-                        <p>Emissões totais de CO2e (%): 8.32%</p>
+                        <p>Emissões totais de CO2e (t): <%=sum_co2_two + sum_ch4_two + sum_n2o_two + sum_biogenic_co2_two%></p>
+                        <script>
+                            var sum_co2_two = "<%= sum_co2_two %>"   
+                            var sum_ch4_two = "<%= sum_ch4_two %>"   
+                            var sum_n2o_two = "<%= sum_n2o_two %>"   
+                            var sum_biogenic_co2_two = "<%= sum_biogenic_co2_two %>"          
+                         </script>
+                    </div>
+                    <div class="row justify-content-md-center">
+                        <div class="col-12 mb-4" data-aos="zoom-in" data-aos-delay="100" style="max-width:400px;">
+                            <canvas id="emissionTwo"></canvas>
+                        </div>
+                    </div>
                     </div>
                     <div class="card-footer">
                         <h4>Info:</h4>
@@ -58,37 +77,6 @@
                         <p>As Emissões Totais de Gases  ..... Esses dados representam....</p>
                     </div>
                 </div>
-            </div>
-        </div>
-    
-        <div class="row justify-content-md-center">
-            <div class="col-12 mb-4" data-aos="zoom-in" data-aos-delay="100" style="max-width:400px;">
-                <div class="card">
-                    <div class="card-header text-center">
-                        <h3>Potencial de Aquecimento Global - GWP(100) AR6</h3>
-                    </div>
-                    <div class="card-body">
-                        <p>CO2 biogênico: 0</p>
-                        <p>CO2 fóssil: 1</p>
-                        <p>CO2 biogênico: 0</p>
-                        <p>CO2 fóssil: 1</p>
-                        <p>CH4: 27.9</p>
-                        <p>N2O: 273</p>
-                        <p>HFC-32: 771</p>
-                        <p>HFC-125: 3740</p>
-                        <p>CFC-12: 11200</p>
-                    </div>
-                    <div class="card-footer">
-                        <h4>Info:</h4>
-                        <p>O Potencial de Aquecimento Global está relacionado com ..... Esses dados representam....</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-        <div class="row justify-content-md-center">
-            <div class="col-12 mb-4" data-aos="zoom-in" data-aos-delay="100" style="max-width:400px;">
-                <canvas id="myChart"></canvas>
             </div>
         </div>
       </section>
