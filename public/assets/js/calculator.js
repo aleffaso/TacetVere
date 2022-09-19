@@ -1116,11 +1116,11 @@ $(document).ready(function () {
         }else if (val == "producao-de-servicos"){
 
             var e3_1 = "<hr><input class='form-control' name='e3_1' type='text' value='Emissões decorrentes do uso de equipamento de refrigeração e de ar condicionado' readonly='readonly'>"
-            var e3_2 = "<hr><input class='form-control' name='e3_2' type='text' value='Fuga a partir de contentores' readonly='readonly'>"
+            // var e3_2 = "<hr><input class='form-control' name='e3_2' type='text' value='Fuga a partir de contentores' readonly='readonly'>"
 
             $("#emission_three").html(
-                e3_1 + form_fuel_three +
-                e3_2 + form_fuel_three 
+                e3_1 + form_fuel_three
+                // e3_2 + form_fuel_three 
             )
 
             $("#calculator").append(e3_1+e3_2)

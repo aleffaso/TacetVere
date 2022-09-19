@@ -452,7 +452,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media (max-width: 992px) {
   #hero {
-    height: 100vh;
+    height: 40vh;
   }
   #hero .carousel-container {
     top: 66px;
@@ -460,15 +460,21 @@ h1, h2, h3, h4, h5, h6 {
   #hero .carousel-container img{
     width: 400px;
   }
+  #hero h2 {
+    font-size: 16px;
+  }
 }
 @media (max-width: 768px) {
   #hero h2 {
-    font-size: 28px;
+    font-size: 24px;
   }
 }
 @media (max-width: 520px) {
   #hero .carousel-container img{
     width: 250px;
+  }
+  #hero h2 {
+    font-size: 20px;
   }
 }
 @media (min-width: 1024px) {
@@ -478,7 +484,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media (max-height: 500px) {
   #hero {
-    height: 120vh;
+    height: 50vh;
   }
 }
 
@@ -1712,4 +1718,22 @@ section {
     margin-left: -190px;
     text-align: center;
   }
+}
+
+.bg-video-wrap {
+  position: relative;
+  overflow: hidden;
+  min-width: 100%;
+}
+video {
+  max-width: 100%;
+  max-height: 100%;
+  z-index: 1;
+}
+.overlay {
+  min-width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 30%;
+  z-index: 2;
 }
