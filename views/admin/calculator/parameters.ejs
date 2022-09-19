@@ -56,10 +56,6 @@
                     <% parameters.forEach(parameter => { %>
                         <tr>
                             <td><a class="btn btn-send" href="/admin/parameters/edit/<%= parameter.id %>">Editar</a></td>
-                            <form method="POST" action="/parameters/delete" onsubmit=deleteCheck(event,this)>
-                                <input type="hidden" name="id" value="<%= parameter.id %>">
-                                <td><button class="btn btn-danger">Deletar</button></td>
-                            </form>
                             <td scope="row"><%=parameter.category%></td>
                             <td scope="row"><%=parameter.fuel%></td>
                             <td scope="row"><%=parameter.unity_system%></td>

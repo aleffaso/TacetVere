@@ -128,8 +128,6 @@ routes.post("/calculator", (req, res) => {
         electricity_unity, e1_1, e1_2, e1_3, e1_4, e1_5, e1_6, e1_7, e1_8, e2_1, 
         e2_2, e2_3, e2_4, e2_5, e3_1, e3_2, e3_3, e3_4, e3_5 } = req.body
 
-        console.log(e2_1, e2_2, e2_3, e2_4, e2_5)
-
         var replace = ['', '', '0']
 
         if(e1_1 == undefined){
@@ -436,11 +434,11 @@ routes.post("/calculator", (req, res) => {
             res.render('index', {token: req.session.token, 
                 parameters: parameters, 
                 calculator:true,
-                sum_co2: sum_co2,
+                sum_co2: sum_co2.toFixed(2),
                 sum_ch4: sum_ch4,
                 sum_n2o: sum_n2o,
                 sum_biogenic_co2: sum_biogenic_co2,
-                sum_co2_two: sum_co2_two,
+                sum_co2_two: sum_co2_two.toFixed(2),
                 sum_ch4_two: sum_ch4_two,
                 sum_n2o_two: sum_n2o_two,
                 sum_biogenic_co2_two: sum_biogenic_co2_two
