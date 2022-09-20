@@ -12,7 +12,7 @@
             <div class="col-4 mb-4" data-aos="zoom-in" data-aos-delay="100" >
                 <div class="card">
                     <div class="card-header text-center">
-                        <h3>Escopo 1</h3>
+                        <h3>Escopo 1 - Emissões diretas</h3>
                     </div>
                     <div class="card-body">
                         <p><strong>CO2 fóssil (t): </strong><%=sum_co2 %></p>
@@ -39,7 +39,7 @@
             <div class="col-4 mb-4" data-aos="zoom-in" data-aos-delay="100">
                 <div class="card">
                     <div class="card-header text-center">
-                        <h3>Escopo 2</h3>
+                        <h3>Escopo 1 - Combustão Móvel</h3>
                     </div>
                     <div class="card-body">
                         <p><strong>CO2 fóssil (t): </strong><%=sum_co2_two %></p>
@@ -62,6 +62,62 @@
                     </div>
                 </div>
             </div>
+
+            <div class="col-4 mb-4" data-aos="zoom-in" data-aos-delay="100">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h3>Escopo 1 - Emissões Fugitivas</h3>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>CO2 fóssil (t): </strong><%=sum_co2_three %></p>
+                        <p><strong>CH4 (t): </strong><%=sum_ch4_three %></p>
+                        <p><strong>N2O (t): </strong><%=sum_n2o_three %></p>
+                        <p><strong>CO2 Biogênico (t): </strong><%=sum_biogenic_co2_three %></p>
+                        <p><strong>HFC-32 (t): </strong><%=sum_hfc32_three %></p>
+                        <p><strong>HFC-125 (t): </strong><%=sum_hfc125_three %></p>
+                        <p><strong>CFC-12 (t): </strong><%=sum_cfc12_three %></p>
+                        <p><strong>CO2 Equivalente: </strong>
+                            <%=(sum_co2_three*1 + sum_ch4_three*27.9 + sum_n2o_three*273 + sum_biogenic_co2_three*0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")%>
+                        </p>
+                        <script>
+                            var sum_co2_three = "<%= sum_co2_three %>"
+                            var sum_ch4_three = "<%= sum_ch4_three %>"
+                            var sum_n2o_three = "<%= sum_n2o_three %>"
+                            var sum_biogenic_co2_three = "<%= sum_biogenic_co2_three %>"  
+                            var sum_hfc32_three = "<%= sum_biogenic_co2_three %>"  
+                            var sum_hfc125_three = "<%= sum_biogenic_co2_three %>"  
+                            var sum_cfc12_three = "<%= sum_biogenic_co2_three %>"  
+                            var total_co2_three = sum_co2_three*1 + sum_ch4_three*27.9 + sum_n2o_three*273 + sum_biogenic_co2_three*0
+                         </script>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4 mb-4" data-aos="zoom-in" data-aos-delay="100">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h3>Escopo 2 - Emissões Indiretas</h3>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>CO2 fóssil (t): </strong><%=sum_co2_four %></p>
+                        <p><strong>CH4 (t): </strong><%=sum_ch4_four %></p>
+                        <p><strong>N2O (t): </strong><%=sum_n2o_four %></p>
+                        <p><strong>CO2 Biogênico (t): </strong><%=sum_biogenic_co2_four %></p>
+                        <p><strong>CO2 Equivalente: </strong>
+                            <%=(sum_co2_four*1 + sum_ch4_four*27.9 + sum_n2o_four*273 + sum_biogenic_co2_four*0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")%>
+                        </p>
+                        <script>
+                            var sum_co2_four = "<%= sum_co2_four %>"
+                            var sum_ch4_four = "<%= sum_ch4_four %>"
+                            var sum_n2o_four = "<%= sum_n2o_four %>"
+                            var sum_biogenic_co2_four = "<%= sum_biogenic_co2_four %>"  
+                            var total_co2_four = sum_co2_four*1 + sum_ch4_four*27.9 + sum_n2o_four*273 + sum_biogenic_co2_four*0
+                         </script>
+                    </div>
+                    <div class="card-footer text-center" style="min-height: 230px;">
+                        <p>Contabiliza as emissões de gases do efeito estufa provenientes da geração de eletricidade comprada e consumida pela empresa. A eletricidade comprada é definida como a eletricidade que é adquirida ou trazida de alguma forma para o limite organizacional da empresa. As emissões do Escopo 2 ocorrem fisicamente na instalação onde a eletricidade é gerada.</p>
+                    </div>
+                </div>
         </div>
 
         <div class="row justify-content-md-center">
