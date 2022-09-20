@@ -408,20 +408,18 @@ routes.post("/calculator", (req, res) => {
                     
             })
 
-            for (var i=0 ; i < arrayPar.length - 23 ; i++){
+            for (var i=0 ; i < arrayPar.length - 30 ; i++){
                 if(arrayPar[i] != undefined){
                     sum_co2 += arrayPar[i][0][0]
-                    console.log(sum_co2, " += ", arrayPar[i][0][0], "posicao: ", i)
                     sum_ch4 += arrayPar[i][1][0]
                     sum_n2o += arrayPar[i][2][0]
                     sum_biogenic_co2 += arrayPar[i][3][0]
                 }
             }
-
-            for (var i = arrayPar.length - 23 ; i < arrayPar.length - 2; i++){
+                console.log(arrayPar.length)
+            for (var i = arrayPar.length - 30 ; i <=arrayPar.length - 8; i++){
                 if(arrayPar[i] != undefined){
                     sum_co2_two += arrayPar[i][4][0]
-                    console.log(sum_co2_two, " += ", arrayPar[i][4][0], "posicao: ", i)
                     sum_ch4_two += arrayPar[i][5][0]
                     sum_n2o_two += arrayPar[i][6][0]
                     sum_biogenic_co2_two += arrayPar[i][7][0]  
@@ -430,6 +428,10 @@ routes.post("/calculator", (req, res) => {
 
             console.log("Co2 Fóssil (t): ",sum_co2, "Ch4 (t): ",sum_ch4, "N2O (t): ",sum_n2o, "CO2 biogênico (t): ",sum_biogenic_co2)
             console.log("Co2 Fóssil (t): ",sum_co2_two, "Ch4 (t): ",sum_ch4_two, "N2O (t): ",sum_n2o_two, "CO2 biogênico (t): ",sum_biogenic_co2_two)
+
+            const electricity_co2 = parameters.map(parameter => {
+                return parameter.co2_fossil * electricity_quantity
+            })
 
             res.render('index', {token: req.session.token, 
                 parameters: parameters, 
@@ -441,7 +443,8 @@ routes.post("/calculator", (req, res) => {
                 sum_co2_two: sum_co2_two.toFixed(2),
                 sum_ch4_two: sum_ch4_two,
                 sum_n2o_two: sum_n2o_two,
-                sum_biogenic_co2_two: sum_biogenic_co2_two
+                sum_biogenic_co2_two: sum_biogenic_co2_two,
+                electricity: electricity_co2[electricity_co2.length - 1]
             }); 
 
                 // Calculator.create({
