@@ -128,11 +128,8 @@ routes.post("/calculator", (req, res) => {
         electricity_unity, e1_1, e1_2, e1_3, e1_4, e1_5, e1_6, e1_7, e1_8, e2_1, 
         e2_2, e2_3, e2_4, e2_5, e3_1, e3_2, e3_3 } = req.body
 
-        console.log(e1_1, e1_2, e1_3, e1_4, e1_5, e1_6, e1_7, e1_8, e2_1, 
-            e2_2, e2_3, e2_4, e2_5, e3_1, e3_2, e3_3)
-
-        var replace = ['', '', '0']
-        var replace_3 = ['', '', '0', '0', '0']
+        var replace = ['nao-aplicavel', 'nao-aplicavel', '0']
+        var replace_3 = ['nao-aplicavel', 'nao-aplicavel', '0', '0', '0']
 
         if(e1_1 == undefined){
             e1_1 = replace
@@ -200,8 +197,7 @@ routes.post("/calculator", (req, res) => {
             e3_3 = replace_3
         } 
         
-        console.log(e1_1, e1_2, e1_3, e1_4, e1_5, e1_6, e1_7, e1_8, e2_1, 
-            e2_2, e2_3, e2_4, e2_5, e3_1, e3_2, e3_3)
+        console.log(req.body)
 
         Parameters.findAll().then((parameters, index) => {
             
@@ -497,14 +493,14 @@ routes.post("/calculator", (req, res) => {
                     
             })
 
-            for (var i=0 ; i <= 7 ; i++){
+            for (var i=0 ; i < 8 ; i++){
 
                 for(var j=0; j<= 3; j++){
                     for(var k=0; k<1; k++){
                         if(arrayPar[i][j][k] == undefined){
                             arrayPar[i][j][k] = 0;
                         }
-                        // console.log("Array:[",i,"]", "[",j,"]", "[",k,"]: ", arrayPar[i][j][k])
+                        // console.log("Array:[",i,"]", "[",j,"]", "[",k,"]: ", arrayPar[i][0][0])
                     }
                 }
 
@@ -514,14 +510,14 @@ routes.post("/calculator", (req, res) => {
                 sum_biogenic_co2 += arrayPar[i][3][0]
             }
 
-            for (var i=0 ; i < 7 ; i++){
+            for (var i=0 ; i < 3 ; i++){
 
                 for(var j=4; j < 7; j++){
                     for(var k=0; k<1; k++){
                         if(arrayPar[i][j][k] == undefined){
                             arrayPar[i][j][k] = 0;
                         }
-                        // console.log("Array:[",i,"]", "[",j,"]", "[",k,"]: ", arrayPar[i][j][k])
+                        // console.log("Array:[",i,"]", "[",j,"]", "[",k,"]: ", arrayPar[i][4][0])
                     }
                 }
 
