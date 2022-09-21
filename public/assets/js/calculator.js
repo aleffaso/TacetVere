@@ -474,7 +474,7 @@ const form_fuel_two =  "<br><select class='form-fuel-two form-control' name='emi
                         "<option value=''>Combustível</option>" +
                         "<option value='nao-aplicavel'>Não Aplicável</option>" +
                         "<option value='gasolina-automotiva-pura-movel'>Gasolina Automotiva (pura) (Litros)</option>" +
-                        "<option value='ole-diesel-puro'>Óleo Diesel (puro) (Litros)</option>" +
+                        "<option value='ole-diesel-puro-movel'>Óleo Diesel (puro) (Litros)</option>" +
                         "<option value='gas-natural-veicular-gnv'>Gás Natural Veicular (GNV) (Litros)</option>" +
                         "<option value='gas-liquefeito-de-petroleo-glp'>Gás Liquefeito de Petróleo (GLP) (Litros)</option>" +
                         "<option value='querosene-de-aviacao'>Querosene de Aviação (Litros)</option>" +

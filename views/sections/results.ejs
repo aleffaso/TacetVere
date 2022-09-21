@@ -78,7 +78,7 @@
                             </div>
                             <div class="col">
                                 <p><strong>CO2 Eq: </strong>
-                                    <%=(sum_co2_three*1 + sum_ch4_three*27.9 + sum_n2o_three*273 + sum_biogenic_co2_three*0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")%>
+                                    <%=(sum_co2_three*1 + sum_ch4_three*27.9 + sum_n2o_three*273 + sum_biogenic_co2_three*0 + sum_hfc32_three*771 + sum_hfc125_three*3740 + sum_cfc12_three*11200).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")%>
                                 </p>
                                 <p><strong>HFC-32 (t): </strong><%=sum_hfc32_three %></p>
                                 <p><strong>HFC-125 (t): </strong><%=sum_hfc125_three %></p>
@@ -93,7 +93,7 @@
                             var sum_hfc32_three = "<%= sum_biogenic_co2_three %>"  
                             var sum_hfc125_three = "<%= sum_biogenic_co2_three %>"  
                             var sum_cfc12_three = "<%= sum_biogenic_co2_three %>"  
-                            var total_co2_three = sum_co2_three*1 + sum_ch4_three*27.9 + sum_n2o_three*273 + sum_biogenic_co2_three*0
+                            var total_co2_three = sum_co2_three*1 + sum_ch4_three*27.9 + sum_n2o_three*273 + sum_biogenic_co2_three*0 + sum_hfc32_three*771 + sum_hfc125_three*3740 + sum_cfc12_three*11200 
                          </script>
                     </div>
                 </div>
@@ -132,8 +132,8 @@
                         <h3><%=(sum_co2*1 + sum_ch4*27.9 + sum_n2o*273 + sum_biogenic_co2*0 + sum_co2_two*1 + sum_ch4_two*27.9 + sum_n2o_two*273 + sum_biogenic_co2_two*0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")%> (tCO2e)</h3>
 
                         <script>
-                            var scope_one = 100*(total_co2/(total_co2 + total_co2_two))
-                            var scope_two = 100*(total_co2_two/(total_co2_two + total_co2))
+                            var scope_one = 100*((total_co2 + total_co2_two + total_co2_three)/(total_co2 + total_co2_two + total_co2_three + total_co2_four))
+                            var scope_two = 100*(total_co2_four/(total_co2 + total_co2_two + total_co2_three + total_co2_four))
                         </script>
                     </div>
     
