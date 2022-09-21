@@ -197,6 +197,24 @@ routes.post("/calculator", (req, res) => {
             e3_3 = replace_3
         } 
         
+        if(!people_organization_amount){
+            people_organization_amount = 0
+        }
+
+        if(!people_out_of_organization_amount){
+            people_out_of_organization_amount = 0
+        }
+
+        if(!year){
+            year = "0"
+        }
+
+        if(!electricity_quantity){
+            electricity_quantity = 0
+        }
+
+        console.log(year)
+
         Parameters.findAll().then((parameters, index) => {
             
             var sum_co2 = 0;
@@ -646,9 +664,9 @@ routes.post("/calculator", (req, res) => {
                 }
             }
 
-            console.log("Co2 Fóssil (t): ",sum_co2, "Ch4 (t): ",sum_ch4, "N2O (t): ",sum_n2o, "CO2 biogênico (t): ",sum_biogenic_co2)
-            console.log("Co2 Fóssil (t): ",sum_co2_two, "Ch4 (t): ",sum_ch4_two, "N2O (t): ",sum_n2o_two, "CO2 biogênico (t): ",sum_biogenic_co2_two)
-            console.log("Co2 Fóssil (t): ",sum_co2_three, "Ch4 (t): ",sum_ch4_three, "N2O (t): ",sum_n2o_three, "CO2 biogênico (t): ",sum_biogenic_co2_three, "HFC-32 (t): ", sum_hfc32_three,  "HFC-125 (t): ", sum_hfc125_three, "CFC-12 (t): ", sum_cfc12_three )
+            // console.log("Co2 Fóssil (t): ",sum_co2, "Ch4 (t): ",sum_ch4, "N2O (t): ",sum_n2o, "CO2 biogênico (t): ",sum_biogenic_co2)
+            // console.log("Co2 Fóssil (t): ",sum_co2_two, "Ch4 (t): ",sum_ch4_two, "N2O (t): ",sum_n2o_two, "CO2 biogênico (t): ",sum_biogenic_co2_two)
+            // console.log("Co2 Fóssil (t): ",sum_co2_three, "Ch4 (t): ",sum_ch4_three, "N2O (t): ",sum_n2o_three, "CO2 biogênico (t): ",sum_biogenic_co2_three, "HFC-32 (t): ", sum_hfc32_three,  "HFC-125 (t): ", sum_hfc125_three, "CFC-12 (t): ", sum_cfc12_three )
 
             const electricity_co2 = parameters.map(parameter => {
                 return parameter.co2_fossil * electricity_quantity
