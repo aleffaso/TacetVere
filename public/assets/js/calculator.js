@@ -33,7 +33,7 @@ var form_fuel = "<br><select class='form-fuel form-control' name='emission_one'>
                         "<option value='nafta'>Nafta (m³)</option>" +
                         "<option value='oleo-combustível'>Óleo Combustível (Litros)</option>" +
                         "<option value='oleo-de-xisto'>Óleo de Xisto (Toneladas)</option>" +
-                        "<option value='oleo-diesel-(puro)'>Óleo Diesel (puro) (Litros)</option>" +
+                        "<option value='oleo-diesel-puro'>Óleo Diesel (puro) (Litros)</option>" +
                         "<option value='oleos-residuais'>Óleos Residuais (Toneladas)</option>" +
                         "<option value='outros-produtos-de-petróleo'>Outros Produtos de Petróleo (Toneladas)</option>" +
                         "<option value='parafina'>Parafina (Toneladas)</option>" +
@@ -473,9 +473,9 @@ var form_quantity_two = "<br><input class='form-quantity-two form-control' name=
 const form_fuel_two =  "<br><select class='form-fuel-two form-control' name='emission_two'>" +
                         "<option value=''>Combustível</option>" +
                         "<option value='nao-aplicavel'>Não Aplicável</option>" +
-                        "<option value='gasolina-automotiva-pura'>Gasolina Automotiva (pura) (Litros)</option>" +
+                        "<option value='gasolina-automotiva-pura-movel'>Gasolina Automotiva (pura) (Litros)</option>" +
                         "<option value='ole-diesel-puro'>Óleo Diesel (puro) (Litros)</option>" +
-                        "<option value='gas-natural-gnv'>Gás Natural Veicular (GNV) (Litros)</option>" +
+                        "<option value='gas-natural-veicular-gnv'>Gás Natural Veicular (GNV) (Litros)</option>" +
                         "<option value='gas-liquefeito-de-petroleo-glp'>Gás Liquefeito de Petróleo (GLP) (Litros)</option>" +
                         "<option value='querosene-de-aviacao'>Querosene de Aviação (Litros)</option>" +
                         "<option value='gasolina-de-aviacao'>Gasolina de Aviação (Litros)</option>" +
