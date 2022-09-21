@@ -213,8 +213,6 @@ routes.post("/calculator", (req, res) => {
             electricity_quantity = 0
         }
 
-        console.log(year)
-
         Parameters.findAll().then((parameters, index) => {
             
             var sum_co2 = 0;
@@ -434,15 +432,24 @@ routes.post("/calculator", (req, res) => {
                     e3_5[air_calc] || e3_5[extinguish_calc] ||  e3_5[fridge_calc] ){
 
                     //////////////////Emission Three
+
+                    var co2_fossil_result_three_air = 0
+                    var ch4_result_three_air = 0
+                    var n2o_result_three_air = 0
+                    var biogenic_result_three_air = 0
+                    var hfc32_result_three_air = 0
+                    var hfc125_result_three_air = 0
+                    var cfc12_result_three_air = 0
+
                     if(parameter.slug_fuel == 'ar-condicionado-split'){
-                        var sum_air = parseInt(e3_1[air_calc]) + parseInt(e3_2[air_calc]) + parseInt(e3_3[air_calc])
-                        var co2_fossil_result_three_air = co2_fossil * sum_air
-                        var ch4_result_three_air = ch4 * sum_air
-                        var n2o_result_three_air = N20 * sum_air
-                        var biogenic_result_three_air = biogenic_co2 * sum_air
-                        var hfc32_result_three_air = hfc_32 * sum_air
-                        var hfc125_result_three_air = hfc_125 * sum_air
-                        var cfc12_result_three_air = cfc_12 * sum_air
+                        sum_air = parseInt(e3_1[air_calc]) + parseInt(e3_2[air_calc]) + parseInt(e3_3[air_calc])
+                        co2_fossil_result_three_air = co2_fossil * sum_air
+                        ch4_result_three_air = ch4 * sum_air
+                        n2o_result_three_air = N20 * sum_air
+                        biogenic_result_three_air = biogenic_co2 * sum_air
+                        hfc32_result_three_air = hfc_32 * sum_air
+                        hfc125_result_three_air = hfc_125 * sum_air
+                        cfc12_result_three_air = cfc_12 * sum_air
                     }else{
                         co2_fossil_result_three_air = 0
                         ch4_result_three_air = 0
@@ -453,15 +460,23 @@ routes.post("/calculator", (req, res) => {
                         cfc12_result_three_air = 0
                     }
 
+                    var co2_fossil_result_three_extinguish
+                    var ch4_result_three_extinguish
+                    var n2o_result_three_extinguish
+                    var biogenic_result_three_extinguish
+                    var hfc32_result_three_extinguish
+                    var hfc125_result_three_extinguish
+                    var cfc12_result_three_extinguish
+
                     if(parameter.slug_fuel == 'extintores-de-incendio'){
-                        var sum_extinguish = parseInt(e3_1[extinguish_calc]) + parseInt(e3_2[extinguish_calc]) + parseInt(e3_3[extinguish_calc])
-                        var co2_fossil_result_three_extinguish = co2_fossil * sum_extinguish
-                        var ch4_result_three_extinguish = ch4 * sum_extinguish
-                        var n2o_result_three_extinguish = N20 * sum_extinguish
-                        var biogenic_result_three_extinguish = biogenic_co2 * sum_extinguish
-                        var hfc32_result_three_extinguish = hfc_32 * sum_extinguish
-                        var hfc125_result_three_extinguish = hfc_125 * sum_extinguish
-                        var cfc12_result_three_extinguish = cfc_12 * sum_extinguish
+                        sum_extinguish = parseInt(e3_1[extinguish_calc]) + parseInt(e3_2[extinguish_calc]) + parseInt(e3_3[extinguish_calc])
+                        co2_fossil_result_three_extinguish = co2_fossil * sum_extinguish
+                        ch4_result_three_extinguish = ch4 * sum_extinguish
+                        n2o_result_three_extinguish = N20 * sum_extinguish
+                        biogenic_result_three_extinguish = biogenic_co2 * sum_extinguish
+                        hfc32_result_three_extinguish = hfc_32 * sum_extinguish
+                        hfc125_result_three_extinguish = hfc_125 * sum_extinguish
+                        cfc12_result_three_extinguish = cfc_12 * sum_extinguish
                     }else{
                         co2_fossil_result_three_extinguish = 0
                         ch4_result_three_extinguish = 0
@@ -472,15 +487,23 @@ routes.post("/calculator", (req, res) => {
                         cfc12_result_three_extinguish = 0
                     }
 
+                    var co2_fossil_result_three_fridge
+                    var ch4_result_three_fridge
+                    var n2o_result_three_fridge
+                    var biogenic_result_three_fridge
+                    var hfc32_result_three_fridge
+                    var hfc125_result_three_fridge
+                    var cfc12_result_three_fridge
+
                     if(parameter.slug_fuel == 'refrigerador-geladeira-freezer'){
-                        var sum_fridge = parseInt(e3_1[fridge_calc]) + parseInt(e3_2[fridge_calc]) + parseInt(e3_3[fridge_calc])
-                        var co2_fossil_result_three_fridge = co2_fossil * sum_fridge
-                        var ch4_result_three_fridge = ch4 * sum_fridge
-                        var n2o_result_three_fridge = N20 * sum_fridge
-                        var biogenic_result_three_fridge = biogenic_co2 * sum_fridge
-                        var hfc32_result_three_fridge = hfc_32 * sum_fridge
-                        var hfc125_result_three_fridge = hfc_125 * sum_fridge
-                        var cfc12_result_three_fridge = cfc_12 * sum_fridge
+                        sum_fridge = parseInt(e3_1[fridge_calc]) + parseInt(e3_2[fridge_calc]) + parseInt(e3_3[fridge_calc])
+                        co2_fossil_result_three_fridge = co2_fossil * sum_fridge
+                        ch4_result_three_fridge = ch4 * sum_fridge
+                        n2o_result_three_fridge = N20 * sum_fridge
+                        biogenic_result_three_fridge = biogenic_co2 * sum_fridge
+                        hfc32_result_three_fridge = hfc_32 * sum_fridge
+                        hfc125_result_three_fridge = hfc_125 * sum_fridge
+                        cfc12_result_three_fridge = cfc_12 * sum_fridge
                     }else{
                         co2_fossil_result_three_fridge = 0
                         ch4_result_three_fridge = 0
@@ -627,7 +650,6 @@ routes.post("/calculator", (req, res) => {
                                 arrayPar[i][6][j] = 0;
                                 arrayPar[i][7][j] = 0;
                         }
-
                         sum_co2_two += arrayPar[i][4][j]
                         sum_ch4_two += arrayPar[i][5][j]
                         sum_n2o_two += arrayPar[i][6][j]
@@ -657,16 +679,16 @@ routes.post("/calculator", (req, res) => {
                         sum_ch4_three += arrayPar[i][9][j]
                         sum_n2o_three += arrayPar[i][10][j]
                         sum_biogenic_co2_three += arrayPar[i][11][j]
-                        sum_hfc32_three += arrayPar[i][12][j]/1000
-                        sum_hfc125_three += arrayPar[i][13][j]/1000
-                        sum_cfc12_three += arrayPar[i][13][j]/1000
+                        sum_hfc32_three += arrayPar[i][12][j]
+                        sum_hfc125_three += arrayPar[i][13][j]
+                        sum_cfc12_three += arrayPar[i][13][j]
                     }
                 }
             }
 
-            console.log("Co2 Fóssil (t): ",sum_co2, "Ch4 (t): ",sum_ch4, "N2O (t): ",sum_n2o, "CO2 biogênico (t): ",sum_biogenic_co2)
-            console.log("Co2 Fóssil (t): ",sum_co2_two, "Ch4 (t): ",sum_ch4_two, "N2O (t): ",sum_n2o_two, "CO2 biogênico (t): ",sum_biogenic_co2_two)
-            console.log("Co2 Fóssil (t): ",sum_co2_three, "Ch4 (t): ",sum_ch4_three, "N2O (t): ",sum_n2o_three, "CO2 biogênico (t): ",sum_biogenic_co2_three, "HFC-32 (t): ", sum_hfc32_three,  "HFC-125 (t): ", sum_hfc125_three, "CFC-12 (t): ", sum_cfc12_three )
+            // console.log("Co2 Fóssil (t): ",sum_co2, "Ch4 (t): ",sum_ch4, "N2O (t): ",sum_n2o, "CO2 biogênico (t): ",sum_biogenic_co2)
+            // console.log("Co2 Fóssil (t): ",sum_co2_two, "Ch4 (t): ",sum_ch4_two, "N2O (t): ",sum_n2o_two, "CO2 biogênico (t): ",sum_biogenic_co2_two)
+            // console.log("Co2 Fóssil (t): ",sum_co2_three, "Ch4 (t): ",sum_ch4_three, "N2O (t): ",sum_n2o_three, "CO2 biogênico (t): ",sum_biogenic_co2_three, "HFC-32 (t): ", sum_hfc32_three,  "HFC-125 (t): ", sum_hfc125_three, "CFC-12 (t): ", sum_cfc12_three )
 
             const electricity_co2 = parameters.map(parameter => {
                 return parameter.co2_fossil * electricity_quantity
@@ -695,13 +717,6 @@ routes.post("/calculator", (req, res) => {
                     sum_ch4_two: sum_ch4_two.toFixed(2),
                     sum_n2o_two: sum_n2o_two.toFixed(2),
                     sum_biogenic_co2_two: sum_biogenic_co2_two.toFixed(2),
-                    sum_co2_three: sum_co2_three.toFixed(2),
-                    sum_ch4_three: sum_ch4_three.toFixed(2),
-                    sum_n2o_three: sum_n2o_three.toFixed(2),
-                    sum_biogenic_co2_three: sum_biogenic_co2_three.toFixed(2),
-                    sum_hfc32_three: sum_hfc32_three.toFixed(2),
-                    sum_hfc125_three: sum_hfc125_three.toFixed(2),
-                    sum_cfc12_three: sum_cfc12_three.toFixed(2),
                     sum_co2_three: sum_co2_three.toFixed(2),
                     sum_ch4_three: sum_ch4_three.toFixed(2),
                     sum_n2o_three: sum_n2o_three.toFixed(2),

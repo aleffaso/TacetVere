@@ -69,20 +69,20 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col">
-                                <p><strong>CO2 fóssil (t): </strong><%=sum_co2_three %></p>
-                                <p><strong>CH4 (t): </strong><%=sum_ch4_three %></p>
-                                <p><strong>N2O (t): </strong><%=sum_n2o_three %></p>
-                                <p><strong>CO2 Bio (t): </strong><%=sum_biogenic_co2_three %></p>
+                                <p><strong>CO2 fóssil (t): </strong><%=sum_co2_three/1000 %></p>
+                                <p><strong>CH4 (t): </strong><%=sum_ch4_three/1000 %></p>
+                                <p><strong>N2O (t): </strong><%=sum_n2o_three/1000 %></p>
+                                <p><strong>CO2 Bio (t): </strong><%=sum_biogenic_co2_three/1000 %></p>
                                 <br>
 
                             </div>
                             <div class="col">
                                 <p><strong>CO2 Eq: </strong>
-                                    <%=(sum_co2_three*1 + sum_ch4_three*27.9 + sum_n2o_three*273 + sum_biogenic_co2_three*0 + sum_hfc32_three*771 + sum_hfc125_three*3740 + sum_cfc12_three*11200).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")%>
+                                    <%=((sum_co2_three*1 + sum_ch4_three*27.9 + sum_n2o_three*273 + sum_biogenic_co2_three*0 + sum_hfc32_three*771 + sum_hfc125_three*3740 + sum_cfc12_three*11200)/1000)%>
                                 </p>
-                                <p><strong>HFC-32 (t): </strong><%=sum_hfc32_three %></p>
-                                <p><strong>HFC-125 (t): </strong><%=sum_hfc125_three %></p>
-                                <p><strong>CFC-12 (t): </strong><%=sum_cfc12_three %></p>
+                                <p><strong>HFC-32 (t): </strong><%=sum_hfc32_three/1000 %></p>
+                                <p><strong>HFC-125 (t): </strong><%=sum_hfc125_three/1000 %></p>
+                                <p><strong>CFC-12 (t): </strong><%=sum_cfc12_three/1000 %></p>
                             </div>
                         </div>
                         <script>
