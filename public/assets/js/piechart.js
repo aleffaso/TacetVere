@@ -1,13 +1,15 @@
 data = {
     datasets: [{
-        data: [scope_one, scope_two],
+        data: [co2_chart, ch4_chart, n2o_chart, biogenic_chart],
         backgroundColor: [ 'rgb(24, 71, 102)',
-                          'rgb(255, 205, 255)']
+                          'rgb(255, 0, 255)',
+                          'rgb(255, 0, 0)',
+                          'rgb(0, 255, 255)'
+                        ]
     }],
 
     // These labels appear in the legend and in the tooltips when hovering different arcs
-    labels: ['Escopo 1 (%)',
-            'Escopo 2 (%)']
+    labels: ['CO2 (%)', 'CH4 (%)', 'N2O (%)', 'CO2 Biogênico (%)']
 };
 
 const config = {

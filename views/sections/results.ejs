@@ -7,10 +7,16 @@
           <div class="section-title">
             <h2>Resultados</h2>
           </div>
-
-          <li><strong>Escopo 1: </strong> São as emissões diretas de gases de efeito estufa, provenientes de fontes de emissão de equipamentos/bens de propriedade ou controlados pela organização. </li><br>
-          <li><strong>Escopo 2: </strong>Contabiliza as emissões de gases do efeito estufa provenientes da geração de eletricidade comprada e consumida pela empresa. A eletricidade comprada é definida como a eletricidade que é adquirida ou trazida de alguma forma para o limite organizacional da empresa. As emissões do Escopo 2 ocorrem fisicamente na instalação onde a eletricidade é gerada</li>
-          <br>
+          <div class="row">
+            <div class="col-sm">
+                <h4 class="text-center"><strong>Escopo 1 </strong></h4>
+                <p style="text-indent: 50px; text-align: justify; ">São as emissões diretas de gases de efeito estufa, provenientes de fontes de emissão de equipamentos/bens de propriedade ou controlados pela organização.</p>
+            </div>
+            <div class="col-sm">
+                <h4 class="text-center"><strong>Escopo 2 </strong></h4>
+                <p style="text-indent: 50px; text-align: justify; ">Contabiliza as emissões de gases do efeito estufa provenientes da geração de eletricidade comprada e consumida pela empresa. A eletricidade comprada é definida como a eletricidade que é adquirida ou trazida de alguma forma para o limite organizacional da empresa. As emissões do Escopo 2 ocorrem fisicamente na instalação onde a eletricidade é gerada </p>
+            </div>
+          </div>
     
             <div class="row justify-content-md-center">
                 <div class="col-sm mb-4" data-aos="zoom-in" data-aos-delay="100" >
@@ -158,14 +164,19 @@
                         <h3><%=((sum_co2 + sum_co2_two + sum_co2_three + sum_co2_four)*1 + (sum_ch4 + sum_ch4_two + sum_ch4_three + sum_ch4_four)*27.9 + (sum_n2o + sum_n2o_two + sum_n2o_three + sum_n2o_four)*273 + (sum_biogenic_co2 + sum_biogenic_co2_two + sum_biogenic_co2_three + sum_biogenic_co2_four)*0).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")%> (tCO2e)</h3>
 
                         <script>
-                            var scope_one = "<%=100*((sum_co2 + sum_co2_two + sum_co2_three + sum_co2_four)*1 + (sum_ch4 + sum_ch4_two + sum_ch4_three + sum_ch4_four)*27.9 + (sum_n2o + sum_n2o_two + sum_n2o_three + sum_n2o_four)*273 + (sum_biogenic_co2 + sum_biogenic_co2_two + sum_biogenic_co2_three + sum_biogenic_co2_four)*0)/((sum_co2 + sum_co2_two + sum_co2_three + sum_co2_four)*1 + (sum_ch4 + sum_ch4_two + sum_ch4_three + sum_ch4_four)*27.9 + (sum_n2o + sum_n2o_two + sum_n2o_three + sum_n2o_four)*273 + (sum_biogenic_co2 + sum_biogenic_co2_two + sum_biogenic_co2_three + sum_biogenic_co2_four) + (sum_co2_four*1 + sum_ch4_four*27.9 + sum_n2o_four*273 + sum_biogenic_co2_four*0))%>"
+                            var co2_chart = "<%=100*((sum_co2 + sum_co2_two + sum_co2_three + sum_co2_four)*1)/((sum_co2 + sum_co2_two + sum_co2_three + sum_co2_four)*1 + (sum_ch4 + sum_ch4_two + sum_ch4_three + sum_ch4_four)*27.9 + (sum_n2o + sum_n2o_two + sum_n2o_three + sum_n2o_four)*273 + (sum_biogenic_co2 + sum_biogenic_co2_two + sum_biogenic_co2_three + sum_biogenic_co2_four) + (sum_co2_four*1 + sum_ch4_four*27.9 + sum_n2o_four*273 + sum_biogenic_co2_four*0)) %>"
 
-                            var scope_two = "<%=100*((sum_co2_four*1 + sum_ch4_four*27.9 + sum_n2o_four*273 + sum_biogenic_co2_four*0))/((sum_co2 + sum_co2_two + sum_co2_three + sum_co2_four)*1 + (sum_ch4 + sum_ch4_two + sum_ch4_three + sum_ch4_four)*27.9 + (sum_n2o + sum_n2o_two + sum_n2o_three + sum_n2o_four)*273 + (sum_biogenic_co2 + sum_biogenic_co2_two + sum_biogenic_co2_three + sum_biogenic_co2_four) + (sum_co2_four*1 + sum_ch4_four*27.9 + sum_n2o_four*273 + sum_biogenic_co2_four*0))%>"
+                            var ch4_chart = "<%=100*((sum_ch4 + sum_ch4_two + sum_ch4_three + sum_ch4_four)*27.9) /((sum_co2 + sum_co2_two + sum_co2_three + sum_co2_four)*1 + (sum_ch4 + sum_ch4_two + sum_ch4_three + sum_ch4_four)*27.9 + (sum_n2o + sum_n2o_two + sum_n2o_three + sum_n2o_four)*273 + (sum_biogenic_co2 + sum_biogenic_co2_two + sum_biogenic_co2_three + sum_biogenic_co2_four) + (sum_co2_four*1 + sum_ch4_four*27.9 + sum_n2o_four*273 + sum_biogenic_co2_four*0)) %>"
+
+                            var n2o_chart = "<%=100*((sum_n2o + sum_n2o_two + sum_n2o_three + sum_n2o_four)*273) /((sum_co2 + sum_co2_two + sum_co2_three + sum_co2_four)*1 + (sum_ch4 + sum_ch4_two + sum_ch4_three + sum_ch4_four)*27.9 + (sum_n2o + sum_n2o_two + sum_n2o_three + sum_n2o_four)*273 + (sum_biogenic_co2 + sum_biogenic_co2_two + sum_biogenic_co2_three + sum_biogenic_co2_four) + (sum_co2_four*1 + sum_ch4_four*27.9 + sum_n2o_four*273 + sum_biogenic_co2_four*0)) %>"
+
+                            var biogenic_chart = "<%=100*((sum_biogenic_co2 + sum_biogenic_co2_two + sum_biogenic_co2_three + sum_biogenic_co2_four)*0) /((sum_co2 + sum_co2_two + sum_co2_three + sum_co2_four)*1 + (sum_ch4 + sum_ch4_two + sum_ch4_three + sum_ch4_four)*27.9 + (sum_n2o + sum_n2o_two + sum_n2o_three + sum_n2o_four)*273 + (sum_biogenic_co2 + sum_biogenic_co2_two + sum_biogenic_co2_three + sum_biogenic_co2_four) + (sum_co2_four*1 + sum_ch4_four*27.9 + sum_n2o_four*273 + sum_biogenic_co2_four*0)) %>"
+
                         </script>
                     </div>
     
                     <div class="row justify-content-md-center">
-                        <div class="col-12 mb-4" data-aos="zoom-in" data-aos-delay="100" style="max-width:200px;">
+                        <div class="col-12 mb-4" data-aos="zoom-in" data-aos-delay="100" style="max-width:500px;">
                             <canvas id="emissionOne"></canvas>
                         </div>
                     </div>
