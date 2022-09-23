@@ -1616,6 +1616,32 @@ section {
   }
 }
 
+#privacy p{
+  text-align: justify; 
+  text-indent: 50px;
+}
+
+#privacy h5{
+  text-indent: 50px;
+}
+
+#privacy ul{
+  padding-left: 60px;
+}
+
+#userterm p{
+  text-align: justify; 
+  text-indent: 50px;
+}
+
+#userterm h5{
+  text-indent: 50px;
+}
+
+#userterm ul{
+  padding-left: 60px;
+}
+
 /*--------------------------------------------------------------
 # Error page
 --------------------------------------------------------------*/

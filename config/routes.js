@@ -93,6 +93,16 @@ routes.get('/busca', async (req, res) => {
     });
 })
 
+//Privacy Policy Page
+routes.get('/politica-de-privacidade', (req, res) =>{
+    res.render('pages/privacy_policy', {token: req.session.token})
+});
+
+//User term Page
+routes.get('/termos-de-uso', (req, res) =>{
+    res.render('pages/use_term', {token: req.session.token})
+});
+
 //Not found page
 routes.get('*', (req, res) =>{
     res.render('pages/error', {token: req.session.token})

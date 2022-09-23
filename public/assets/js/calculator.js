@@ -1,6 +1,6 @@
   //////##########################################################Emission_one##############################################################\\\\\\
 var form_quantity = "<br><input class='form-quantity form-control' name='emission_quantity_one' type='number' placeholder='Quantidade'>"
-var form_fuel = "<br><select class='form-fuel form-control' name='emission_one'>" + 
+var form_fuel = "<br><select id='form-fuel' class='form-fuel form-control' name='emission_one'>" + 
                         "<option value=''>Selecione o combustível</option>" + 
                         "<option value='nao-aplicavel'>Não Aplicável</option>" +
                         "<option value='acetileno'>Acetileno (kg) </option>" +
@@ -86,13 +86,15 @@ $(document).ready(function () {
             )
 
             $("#calculator").append(e1_1+e1_2+e1_3+e1_4+e1_5+e1_6)
-
-            $(".form-fuel").change(function () {
+            
+            $(".form-fuel").change( function () {
                 fuel[i++] = $(this).val()
                 $("#calculator").append(
                     "<input class='form-control' name='e1_"+ i +"' type='text' value='"+ fuel[fuel.length - 1] +"'>"
                 )
             })
+
+
 
             $(".form-quantity").change(function () {
                 quantity[j++] = $(this).val()
@@ -100,7 +102,6 @@ $(document).ready(function () {
                     "<input class='form-control' name='e1_"+ j +"' type='number' value='"+ quantity[quantity.length - 1] +"'>"
                 )
             })
-
 
 
 //////########################################################################################################################
@@ -801,7 +802,9 @@ $(document).ready(function () {
 
   //////##########################################################Emission_three##############################################################\\\\\\
 
-var form_quantity_air = "<br><input class='form-air-conditioner form-control' name='' value='Ar condicionado' readonly='readonly'><br><input class='form-quantity-air form-control' name='emission_quantity_three' type='number' placeholder='Quantidade'>"
+var form_quantity_air_conditionair = "<br><input class='form-air-conditioner form-control' name='' value='Ar condicionado central' readonly='readonly'><br><input class='form_quantity_air_conditionair form-control' name='emission_quantity_three' type='number' placeholder='Quantidade'>"
+
+var form_quantity_air_split = "<br><input class='form-air-split form-control' name='' value='Ar condicionado split' readonly='readonly'><br><input class='form_quantity_air_split form-control' name='emission_quantity_three' type='number' placeholder='Quantidade'>"
 
 var form_quantity_extinguish = "<br><input class='form-air-conditioner form-control' name='' value='Extintores' readonly='readonly'><br><input class='form-quantity-extinguish form-control' name='emission_quantity_three' type='number' placeholder='Quantidade'>"
 
@@ -811,11 +814,13 @@ $(document).ready(function () {
     $("#sector").change(function () {
         var val = $(this).val();
         var quantity_air = [];
+        var quantity_air_split = [];
         var quantity_extinguish = [];
         var quantity_fridge = [];
         var i = 0;
         var j = 0;
         var k = 0;
+        var w = 0;
 
         if (val == "geracao-de-energia") {
 
@@ -824,17 +829,25 @@ $(document).ready(function () {
             var e3_3 = "<hr><input class='form-control' name='e3_3' type='text' value='Emissões de SF6 do equipamento de transmissão e distribuição' readonly='readonly'>"
 
             $("#emission_three").html(
-                e3_1 + form_quantity_air + form_quantity_extinguish + form_quantity_fridge +
-                e3_2 + form_quantity_air + form_quantity_extinguish + form_quantity_fridge +
-                e3_3 + form_quantity_air + form_quantity_extinguish + form_quantity_fridge
+                e3_1 + form_quantity_air_conditionair + form_quantity_air_split + form_quantity_extinguish + form_quantity_fridge +
+                e3_2 + form_quantity_air_conditionair + form_quantity_air_split + form_quantity_extinguish + form_quantity_fridge +
+                e3_3 + form_quantity_air_conditionair + form_quantity_air_split + form_quantity_extinguish + form_quantity_fridge
             )
 
             $("#calculator").append(e3_1+e3_2+e3_3)
 
-            $(".form-quantity-air").change(function () {
+            $(".form_quantity_air_conditionair").change(function () {
                 quantity_air[i++] = $(this).val()
+                console.log(quantity_air[quantity_air.length - 1])
                 $("#calculator").append(
                     "<input class='form-control' name='e3_"+ i +"' type='number' value='"+ quantity_air[quantity_air.length - 1] +"'>"
+                )
+            })
+
+            $(".form_quantity_air_split").change(function () {
+                quantity_air_split[w++] = $(this).val()
+                $("#calculator").append(
+                    "<input class='form-control' name='e3_"+ w +"' type='number' value='"+ quantity_air_split[quantity_air_split.length - 1] +"'>"
                 )
             })
 
@@ -862,9 +875,9 @@ $(document).ready(function () {
             var e3_3 = "<hr><input class='form-control' name='e3_3' type='text' value='Captação à superfície' readonly='readonly'>"
 
             $("#emission_three").html(
-                e3_1 + form_quantity_air + form_quantity_extinguish + form_quantity_fridge +
-                e3_2 + form_quantity_air + form_quantity_extinguish + form_quantity_fridge +
-                e3_3 + form_quantity_air + form_quantity_extinguish + form_quantity_fridge
+                e3_1 + form_quantity_air_conditionair + form_quantity_air_split + form_quantity_extinguish + form_quantity_fridge +
+                e3_2 + form_quantity_air_conditionair + form_quantity_air_split + form_quantity_extinguish + form_quantity_fridge +
+                e3_3 + form_quantity_air_conditionair + form_quantity_air_split + form_quantity_extinguish + form_quantity_fridge
             )
 
             $("#calculator").append(e3_1+e3_2+e3_3)
@@ -898,7 +911,7 @@ $(document).ready(function () {
             var e3_1 = "<hr><input class='form-control' name='e3_1' type='text' value='Emissões de CH4 de minas de carvão locais e depósitos de carvão' readonly='readonly'>"
 
             $("#emission_three").html(
-                e3_1 + form_quantity_air + form_quantity_extinguish + form_quantity_fridge 
+                e3_1 + form_quantity_air_conditionair + form_quantity_air_split + form_quantity_extinguish + form_quantity_fridge 
             )
 
             $("#calculator").append(e3_1)
@@ -934,9 +947,9 @@ $(document).ready(function () {
             var e3_3 = "<hr><input class='form-control' name='e3_3' type='text' value='SF6 de estufa' readonly='readonly'>"
 
             $("#emission_three").html(
-                e3_1 + form_quantity_air + form_quantity_extinguish + form_quantity_fridge +
-                e3_2 + form_quantity_air + form_quantity_extinguish + form_quantity_fridge +
-                e3_3 + form_quantity_air + form_quantity_extinguish + form_quantity_fridge
+                e3_1 + form_quantity_air_conditionair + form_quantity_air_split + form_quantity_extinguish + form_quantity_fridge +
+                e3_2 + form_quantity_air_conditionair + form_quantity_air_split + form_quantity_extinguish + form_quantity_fridge +
+                e3_3 + form_quantity_air_conditionair + form_quantity_air_split + form_quantity_extinguish + form_quantity_fridge
             )
 
             $("#calculator").append(e3_1+e3_2+e3_3)
@@ -971,8 +984,8 @@ $(document).ready(function () {
             var e3_2 = "<hr><input class='form-control' name='e3_2' type='text' value='N2O' readonly='readonly'>"
             
             $("#emission_three").html(
-                e3_1 + form_quantity_air + form_quantity_extinguish + form_quantity_fridge +
-                e3_2 + form_quantity_air + form_quantity_extinguish + form_quantity_fridge
+                e3_1 + form_quantity_air_conditionair + form_quantity_air_split + form_quantity_extinguish + form_quantity_fridge +
+                e3_2 + form_quantity_air_conditionair + form_quantity_air_split + form_quantity_extinguish + form_quantity_fridge 
             )
 
             $("#calculator").append(e3_1+e3_2)
@@ -1007,8 +1020,8 @@ $(document).ready(function () {
             var e3_2 = "<hr><input class='form-control' name='e3_2' type='text' value='Fuga do tanque de armazenamento' readonly='readonly'>"
 
             $("#emission_three").html(
-                e3_1 + form_quantity_air + form_quantity_extinguish + form_quantity_fridge +
-                e3_2 + form_quantity_air + form_quantity_extinguish + form_quantity_fridge
+                e3_1 + form_quantity_air_conditionair + form_quantity_air_split + form_quantity_extinguish + form_quantity_fridge +
+                e3_2 + form_quantity_air_conditionair + form_quantity_air_split + form_quantity_extinguish + form_quantity_fridge 
             )
 
             $("#calculator").append(e3_1+e3_2)
@@ -1049,7 +1062,7 @@ $(document).ready(function () {
             var e3_1 = "<hr><input class='form-control' name='e3_1' type='text' value='Emissões de CH4 e CO2 de desperdício e da decomposição do produto animal' readonly='readonly'>"
 
             $("#emission_three").html(
-                e3_1 + form_quantity_air + form_quantity_extinguish + form_quantity_fridge
+                e3_1 + form_quantity_air_conditionair + form_quantity_air_split + form_quantity_extinguish + form_quantity_fridge 
             )
 
             $("#calculator").append(e3_1)
@@ -1083,7 +1096,7 @@ $(document).ready(function () {
             var e3_1 = "<hr><input class='form-control' name='e3_1' type='text' value='CH4 e CO2 de desperdício' readonly='readonly'>" 
 
             $("#emission_three").html(
-                e3_1 + form_quantity_air + form_quantity_extinguish + form_quantity_fridge
+                e3_1 + form_quantity_air_conditionair + form_quantity_air_split + form_quantity_extinguish + form_quantity_fridge 
             )
 
             $("#calculator").append(e3_1+e3_2+e3_3)
@@ -1117,7 +1130,7 @@ $(document).ready(function () {
             var e3_1 = "<hr><input class='form-control' name='e3_1' type='text' value='Uso de HFC' readonly='readonly'>"  
 
             $("#emission_three").html(
-                e3_1 + form_quantity_air + form_quantity_extinguish + form_quantity_fridge
+                e3_1 + form_quantity_air_conditionair + form_quantity_air_split + form_quantity_extinguish + form_quantity_fridge 
             )
 
             $("#calculator").append(e3_1)
@@ -1152,7 +1165,7 @@ $(document).ready(function () {
             // var e3_2 = "<hr><input class='form-control' name='e3_2' type='text' value='Fuga a partir de contentores'>" 
 
             $("#emission_three").html(
-                e3_1 + form_quantity_air + form_quantity_extinguish + form_quantity_fridge
+                e3_1 + form_quantity_air_conditionair + form_quantity_air_split + form_quantity_extinguish + form_quantity_fridge 
             )
 
             $("#calculator").append(e3_1)
@@ -1187,7 +1200,7 @@ $(document).ready(function () {
             // var e3_2 = "<hr><input class='form-control' name='e3_2' type='text' value='Fuga a partir de contentores' readonly='readonly'>"
 
             $("#emission_three").html(
-                e3_1 + form_quantity_air + form_quantity_extinguish + form_quantity_fridge
+                e3_1 + form_quantity_air_conditionair + form_quantity_air_split + form_quantity_extinguish + form_quantity_fridge
             )
 
             $("#calculator").append(e3_1)
