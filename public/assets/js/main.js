@@ -17,14 +17,18 @@ function deleteCheck(event, form){
   }
 }
 
-// $(window).on('load', function() {
-//   $('#cookieModal').modal('show');
-//   globalThis.cookie(0)
-// });
+if(document.cookie[document.cookie.length - 1] == undefined){
+  $(window).on('load', function() {
+    $('#cookieModal').modal('show');
+  });
+}
 
-// const button = document.querySelector('button');
-// button.addEventListener('click', () => {
-// });
+$(document).ready(function(){
+  $("#btnlocalStorage").on("click", function() {
+    document.cookie = "acceptCookie=" + 1
+  })
+});
+
 
 (function() {
   "use strict";
