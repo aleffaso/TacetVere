@@ -7,7 +7,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">Emissões Indiretas (6 de 6)</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> -->
                 <span aria-bs-hidden="true"></span>
                 </button>
             </div>
@@ -22,14 +22,16 @@
                         <br>
                         <input class="form-control" name="electricity_transmission" type="text" value="Eletricidade de rede de transmissão (KWh)" readonly="readonly">
                         <br>
-                        <input class="form-control" name="electricity_quantity" type="number" placeholder="Quantidade">
+                        <input class="form-control" name="electricity_quantity" type="number" placeholder="Quantidade" required>
                         <br>
                         <button type="submit" class="btn btn-send">Calcular</button>
                     </fieldset>
                 </form>
+                <br>
+                <p style="color:#184766"><strong><u>É preciso preencher todos os campos</strong></u></p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-success" data-bs-dismiss="modal">Fechar</button>
+                <!-- <button type="button" class="btn btn-success" data-bs-dismiss="modal">Fechar</button> -->
                 <button type="button" class="btn btn-secondary btn-prev">Anterior</button>
             </div>
         </div>

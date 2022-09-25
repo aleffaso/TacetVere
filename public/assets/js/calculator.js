@@ -1,7 +1,7 @@
   //////##########################################################Emission_one##############################################################\\\\\\
 var form_quantity = "<br><input class='form-quantity form-control' name='emission_quantity_one' type='number' placeholder='Quantidade'>"
 var form_fuel = "<br><select id='form-fuel' class='form-fuel form-control' name='emission_one'>" + 
-                        "<option value=''>Selecione o combustível</option>" + 
+                        "<option value='nao-aplicavel'>Selecione o combustível</option>" + 
                         "<option value='nao-aplicavel'>Não Aplicável</option>" +
                         "<option value='acetileno'>Acetileno (kg) </option>" +
                         "<option value='alcatrao'>Alcatrão (m³)</option>" +
@@ -93,8 +93,6 @@ $(document).ready(function () {
                     "<input class='form-control' name='e1_"+ i +"' type='text' value='"+ fuel[fuel.length - 1] +"'>"
                 )
             })
-
-
 
             $(".form-quantity").change(function () {
                 quantity[j++] = $(this).val()
