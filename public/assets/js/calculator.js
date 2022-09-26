@@ -811,14 +811,47 @@ var form_quantity_fridge = "<br><input class='form-air-conditioner form-control'
 $(document).ready(function () {
     $("#sector").change(function () {
         var val = $(this).val();
-        var quantity_air = [];
-        var quantity_air_split = [];
-        var quantity_extinguish = [];
-        var quantity_fridge = [];
-        var i = 0;
-        var j = 0;
-        var k = 0;
-        var w = 0;
+
+        function emissionThreeStandard(){
+            var quantity_air = [];
+            var quantity_air_split = [];
+            var quantity_extinguish = [];
+            var quantity_fridge = [];
+            var i = 0;
+            var j = 0;
+            var k = 0;
+            var w = 0;
+
+            $(".form_quantity_air_conditionair").change(function () {
+                quantity_air[i++] = $(this).val()
+                console.log(quantity_air[quantity_air.length - 1])
+                $("#calculator").append(
+                    "<input class='form-control' name='e3_"+ i +"' type='number' value='"+ quantity_air[quantity_air.length - 1] +"'>"
+                )
+            })
+    
+            $(".form_quantity_air_split").change(function () {
+                quantity_air_split[w++] = $(this).val()
+                $("#calculator").append(
+                    "<input class='form-control' name='e3_"+ w +"' type='number' value='"+ quantity_air_split[quantity_air_split.length - 1] +"'>"
+                )
+            })
+    
+            $(".form-quantity-extinguish").change(function () {
+                quantity_extinguish[j++] = $(this).val()
+                $("#calculator").append(
+                    "<input class='form-control' name='e3_"+ j +"' type='number' value='"+ quantity_extinguish[quantity_extinguish.length - 1] +"'>"
+                )
+            })
+    
+            $(".form-quantity-fridge").change(function () {
+                quantity_fridge[k++] = $(this).val()
+                $("#calculator").append(
+                    "<input class='form-control' name='e3_"+ k +"' type='number' value='"+ quantity_fridge[quantity_fridge.length - 1] +"'>"
+                )
+            })
+
+        }
 
         if (val == "geracao-de-energia") {
 
@@ -834,34 +867,9 @@ $(document).ready(function () {
 
             $("#calculator").append(e3_1+e3_2+e3_3)
 
-            $(".form_quantity_air_conditionair").change(function () {
-                quantity_air[i++] = $(this).val()
-                console.log(quantity_air[quantity_air.length - 1])
-                $("#calculator").append(
-                    "<input class='form-control' name='e3_"+ i +"' type='number' value='"+ quantity_air[quantity_air.length - 1] +"'>"
-                )
-            })
+            emissionThreeStandard()
 
-            $(".form_quantity_air_split").change(function () {
-                quantity_air_split[w++] = $(this).val()
-                $("#calculator").append(
-                    "<input class='form-control' name='e3_"+ w +"' type='number' value='"+ quantity_air_split[quantity_air_split.length - 1] +"'>"
-                )
-            })
 
-            $(".form-quantity-extinguish").change(function () {
-                quantity_extinguish[j++] = $(this).val()
-                $("#calculator").append(
-                    "<input class='form-control' name='e3_"+ j +"' type='number' value='"+ quantity_extinguish[quantity_extinguish.length - 1] +"'>"
-                )
-            })
-
-            $(".form-quantity-fridge").change(function () {
-                quantity_fridge[k++] = $(this).val()
-                $("#calculator").append(
-                    "<input class='form-control' name='e3_"+ k +"' type='number' value='"+ quantity_fridge[quantity_fridge.length - 1] +"'>"
-                )
-            })
 
 
 //////########################################################################################################################
@@ -880,26 +888,7 @@ $(document).ready(function () {
 
             $("#calculator").append(e3_1+e3_2+e3_3)
 
-            $(".form-quantity-air").change(function () {
-                quantity_air[i++] = $(this).val()
-                $("#calculator").append(
-                    "<input class='form-control' name='e3_"+ i +"' type='number' value='"+ quantity_air[quantity_air.length - 1] +"'>"
-                )
-            })
-
-            $(".form-quantity-extinguish").change(function () {
-                quantity_extinguish[j++] = $(this).val()
-                $("#calculator").append(
-                    "<input class='form-control' name='e3_"+ j +"' type='number' value='"+ quantity_extinguish[quantity_extinguish.length - 1] +"'>"
-                )
-            })
-
-            $(".form-quantity-fridge").change(function () {
-                quantity_fridge[k++] = $(this).val()
-                $("#calculator").append(
-                    "<input class='form-control' name='e3_"+ k +"' type='number' value='"+ quantity_fridge[quantity_fridge.length - 1] +"'>"
-                )
-            })
+            emissionThreeStandard()
 
 
 //////########################################################################################################################
@@ -914,26 +903,7 @@ $(document).ready(function () {
 
             $("#calculator").append(e3_1)
 
-            $(".form-quantity-air").change(function () {
-                quantity_air[i++] = $(this).val()
-                $("#calculator").append(
-                    "<input class='form-control' name='e3_"+ i +"' type='number' value='"+ quantity_air[quantity_air.length - 1] +"'>"
-                )
-            })
-
-            $(".form-quantity-extinguish").change(function () {
-                quantity_extinguish[j++] = $(this).val()
-                $("#calculator").append(
-                    "<input class='form-control' name='e3_"+ j +"' type='number' value='"+ quantity_extinguish[quantity_extinguish.length - 1] +"'>"
-                )
-            })
-
-            $(".form-quantity-fridge").change(function () {
-                quantity_fridge[k++] = $(this).val()
-                $("#calculator").append(
-                    "<input class='form-control' name='e3_"+ k +"' type='number' value='"+ quantity_fridge[quantity_fridge.length - 1] +"'>"
-                )
-            })
+            emissionThreeStandard()
 
 
 //////########################################################################################################################
@@ -952,26 +922,7 @@ $(document).ready(function () {
 
             $("#calculator").append(e3_1+e3_2+e3_3)
 
-            $(".form-quantity-air").change(function () {
-                quantity_air[i++] = $(this).val()
-                $("#calculator").append(
-                    "<input class='form-control' name='e3_"+ i +"' type='number' value='"+ quantity_air[quantity_air.length - 1] +"'>"
-                )
-            })
-
-            $(".form-quantity-extinguish").change(function () {
-                quantity_extinguish[j++] = $(this).val()
-                $("#calculator").append(
-                    "<input class='form-control' name='e3_"+ j +"' type='number' value='"+ quantity_extinguish[quantity_extinguish.length - 1] +"'>"
-                )
-            })
-
-            $(".form-quantity-fridge").change(function () {
-                quantity_fridge[k++] = $(this).val()
-                $("#calculator").append(
-                    "<input class='form-control' name='e3_"+ k +"' type='number' value='"+ quantity_fridge[quantity_fridge.length - 1] +"'>"
-                )
-            })
+            emissionThreeStandard()
 
 
 //////########################################################################################################################
@@ -988,26 +939,7 @@ $(document).ready(function () {
 
             $("#calculator").append(e3_1+e3_2)
 
-            $(".form-quantity-air").change(function () {
-                quantity_air[i++] = $(this).val()
-                $("#calculator").append(
-                    "<input class='form-control' name='e3_"+ i +"' type='number' value='"+ quantity_air[quantity_air.length - 1] +"'>"
-                )
-            })
-
-            $(".form-quantity-extinguish").change(function () {
-                quantity_extinguish[j++] = $(this).val()
-                $("#calculator").append(
-                    "<input class='form-control' name='e3_"+ j +"' type='number' value='"+ quantity_extinguish[quantity_extinguish.length - 1] +"'>"
-                )
-            })
-
-            $(".form-quantity-fridge").change(function () {
-                quantity_fridge[k++] = $(this).val()
-                $("#calculator").append(
-                    "<input class='form-control' name='e3_"+ k +"' type='number' value='"+ quantity_fridge[quantity_fridge.length - 1] +"'>"
-                )
-            })
+            emissionThreeStandard()
 
 
 //////########################################################################################################################
@@ -1024,26 +956,7 @@ $(document).ready(function () {
 
             $("#calculator").append(e3_1+e3_2)
 
-            $(".form-quantity-air").change(function () {
-                quantity_air[i++] = $(this).val()
-                $("#calculator").append(
-                    "<input class='form-control' name='e3_"+ i +"' type='number' value='"+ quantity_air[quantity_air.length - 1] +"'>"
-                )
-            })
-
-            $(".form-quantity-extinguish").change(function () {
-                quantity_extinguish[j++] = $(this).val()
-                $("#calculator").append(
-                    "<input class='form-control' name='e3_"+ j +"' type='number' value='"+ quantity_extinguish[quantity_extinguish.length - 1] +"'>"
-                )
-            })
-
-            $(".form-quantity-fridge").change(function () {
-                quantity_fridge[k++] = $(this).val()
-                $("#calculator").append(
-                    "<input class='form-control' name='e3_"+ k +"' type='number' value='"+ quantity_fridge[quantity_fridge.length - 1] +"'>"
-                )
-            })
+            emissionThreeStandard()
 
 
 //////########################################################################################################################
@@ -1065,26 +978,7 @@ $(document).ready(function () {
 
             $("#calculator").append(e3_1)
 
-            $(".form-quantity-air").change(function () {
-                quantity_air[i++] = $(this).val()
-                $("#calculator").append(
-                    "<input class='form-control' name='e3_"+ i +"' type='number' value='"+ quantity_air[quantity_air.length - 1] +"'>"
-                )
-            })
-
-            $(".form-quantity-extinguish").change(function () {
-                quantity_extinguish[j++] = $(this).val()
-                $("#calculator").append(
-                    "<input class='form-control' name='e3_"+ j +"' type='number' value='"+ quantity_extinguish[quantity_extinguish.length - 1] +"'>"
-                )
-            })
-
-            $(".form-quantity-fridge").change(function () {
-                quantity_fridge[k++] = $(this).val()
-                $("#calculator").append(
-                    "<input class='form-control' name='e3_"+ k +"' type='number' value='"+ quantity_fridge[quantity_fridge.length - 1] +"'>"
-                )
-            })
+            emissionThreeStandard()
 
 
 //////########################################################################################################################
@@ -1099,26 +993,7 @@ $(document).ready(function () {
 
             $("#calculator").append(e3_1+e3_2+e3_3)
 
-            $(".form-quantity-air").change(function () {
-                quantity_air[i++] = $(this).val()
-                $("#calculator").append(
-                    "<input class='form-control' name='e3_"+ i +"' type='number' value='"+ quantity_air[quantity_air.length - 1] +"'>"
-                )
-            })
-
-            $(".form-quantity-extinguish").change(function () {
-                quantity_extinguish[j++] = $(this).val()
-                $("#calculator").append(
-                    "<input class='form-control' name='e3_"+ j +"' type='number' value='"+ quantity_extinguish[quantity_extinguish.length - 1] +"'>"
-                )
-            })
-
-            $(".form-quantity-fridge").change(function () {
-                quantity_fridge[k++] = $(this).val()
-                $("#calculator").append(
-                    "<input class='form-control' name='e3_"+ k +"' type='number' value='"+ quantity_fridge[quantity_fridge.length - 1] +"'>"
-                )
-            })
+            emissionThreeStandard()
 
 
 //////########################################################################################################################
@@ -1133,26 +1008,7 @@ $(document).ready(function () {
 
             $("#calculator").append(e3_1)
 
-            $(".form-quantity-air").change(function () {
-                quantity_air[i++] = $(this).val()
-                $("#calculator").append(
-                    "<input class='form-control' name='e3_"+ i +"' type='number' value='"+ quantity_air[quantity_air.length - 1] +"'>"
-                )
-            })
-
-            $(".form-quantity-extinguish").change(function () {
-                quantity_extinguish[j++] = $(this).val()
-                $("#calculator").append(
-                    "<input class='form-control' name='e3_"+ j +"' type='number' value='"+ quantity_extinguish[quantity_extinguish.length - 1] +"'>"
-                )
-            })
-
-            $(".form-quantity-fridge").change(function () {
-                quantity_fridge[k++] = $(this).val()
-                $("#calculator").append(
-                    "<input class='form-control' name='e3_"+ k +"' type='number' value='"+ quantity_fridge[quantity_fridge.length - 1] +"'>"
-                )
-            })
+            emissionThreeStandard()
 
 
 //////########################################################################################################################
@@ -1168,26 +1024,7 @@ $(document).ready(function () {
 
             $("#calculator").append(e3_1)
 
-            $(".form-quantity-air").change(function () {
-                quantity_air[i++] = $(this).val()
-                $("#calculator").append(
-                    "<input class='form-control' name='e3_"+ i +"' type='number' value='"+ quantity_air[quantity_air.length - 1] +"'>"
-                )
-            })
-
-            $(".form-quantity-extinguish").change(function () {
-                quantity_extinguish[j++] = $(this).val()
-                $("#calculator").append(
-                    "<input class='form-control' name='e3_"+ j +"' type='number' value='"+ quantity_extinguish[quantity_extinguish.length - 1] +"'>"
-                )
-            })
-
-            $(".form-quantity-fridge").change(function () {
-                quantity_fridge[k++] = $(this).val()
-                $("#calculator").append(
-                    "<input class='form-control' name='e3_"+ k +"' type='number' value='"+ quantity_fridge[quantity_fridge.length - 1] +"'>"
-                )
-            })
+            emissionThreeStandard()
 
 
 //////########################################################################################################################
@@ -1203,26 +1040,7 @@ $(document).ready(function () {
 
             $("#calculator").append(e3_1)
 
-            $(".form-quantity-air").change(function () {
-                quantity_air[i++] = $(this).val()
-                $("#calculator").append(
-                    "<input class='form-control' name='e3_"+ i +"' type='number' value='"+ quantity_air[quantity_air.length - 1] +"'>"
-                )
-            })
-
-            $(".form-quantity-extinguish").change(function () {
-                quantity_extinguish[j++] = $(this).val()
-                $("#calculator").append(
-                    "<input class='form-control' name='e3_"+ j +"' type='number' value='"+ quantity_extinguish[quantity_extinguish.length - 1] +"'>"
-                )
-            })
-
-            $(".form-quantity-fridge").change(function () {
-                quantity_fridge[k++] = $(this).val()
-                $("#calculator").append(
-                    "<input class='form-control' name='e3_"+ k +"' type='number' value='"+ quantity_fridge[quantity_fridge.length - 1] +"'>"
-                )
-            })
+            emissionThreeStandard()
 
 
 //////########################################################################################################################

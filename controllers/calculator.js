@@ -213,8 +213,6 @@ routes.post("/calculator", (req, res) => {
             electricity_quantity = 0
         }
 
-        // console.log(req.body)
-
         Parameters.findAll().then((parameters, index) => {
             
             var sum_co2 = 0;
@@ -696,7 +694,7 @@ routes.post("/calculator", (req, res) => {
             for(var i=80; i<85; i++){
                 if(arrayPar[i] != undefined){
                     for(var j=0; j<3; j++){
-                        if(arrayPar[i][8][j] == undefined || arrayPar[i][9][j] == undefined ||
+                        if( arrayPar[i][8][j] == undefined  || arrayPar[i][9][j] == undefined ||
                             arrayPar[i][10][j] == undefined || arrayPar[i][11][j] == undefined ||
                             arrayPar[i][12][j] == undefined || arrayPar[i][13][j] == undefined ||
                             arrayPar[i][14][j] == undefined){
@@ -709,7 +707,6 @@ routes.post("/calculator", (req, res) => {
                                 arrayPar[i][13][j] = 0;
                                 arrayPar[i][14][j] = 0;
                         }
-
                         sum_co2_three += arrayPar[i][8][j]
                         sum_ch4_three += arrayPar[i][9][j]
                         sum_n2o_three += arrayPar[i][10][j]
@@ -729,18 +726,18 @@ routes.post("/calculator", (req, res) => {
                 return parameter.co2_fossil * electricity_quantity
             })
 
-            Calculator.create({
-                social_name: social_name, company_name: company_name, cnpj: cnpj, 
-                address: address, people_organization_amount: people_organization_amount, 
-                people_out_of_organization_amount: people_out_of_organization_amount, 
-                company_sector: company_sector, company_task_nature: company_task_nature, 
-                year: year, electricity_consume: electricity_consume, 
-                electricity_transmission: electricity_transmission,
-                electricity_quantity: electricity_quantity, electricity_unity:electricity_unity, 
-                e1_1: e1_1, e1_2: e1_2, e1_3: e1_3, e1_4: e1_4, e1_5: e1_5, e1_6: e1_6, e1_7: e1_7,
-                e1_8: e1_8, e2_1, e2_2: e2_2, e2_3: e2_3, e2_4: e2_4, e2_5: e2_5, e3_1: e3_1, 
-                e3_2: e3_2, e3_3: e3_3,
-            }).then(() => {
+            // Calculator.create({
+            //     social_name: social_name, company_name: company_name, cnpj: cnpj, 
+            //     address: address, people_organization_amount: people_organization_amount, 
+            //     people_out_of_organization_amount: people_out_of_organization_amount, 
+            //     company_sector: company_sector, company_task_nature: company_task_nature, 
+            //     year: year, electricity_consume: electricity_consume, 
+            //     electricity_transmission: electricity_transmission,
+            //     electricity_quantity: electricity_quantity, electricity_unity:electricity_unity, 
+            //     e1_1: e1_1, e1_2: e1_2, e1_3: e1_3, e1_4: e1_4, e1_5: e1_5, e1_6: e1_6, e1_7: e1_7,
+            //     e1_8: e1_8, e2_1, e2_2: e2_2, e2_3: e2_3, e2_4: e2_4, e2_5: e2_5, e3_1: e3_1, 
+            //     e3_2: e3_2, e3_3: e3_3,
+            // }).then(() => {
                 res.render('index', {token: req.session.token, 
                     parameters: parameters, 
                     calculator:true,
@@ -764,10 +761,10 @@ routes.post("/calculator", (req, res) => {
                     sum_n2o_four: 0,
                     sum_biogenic_co2_four: 0
                 }); 
-            }).catch((err) => {
-                console.log(err)
-                res.redirect("/");
-            });
+            // }).catch((err) => {
+            //     console.log(err)
+            //     res.redirect("/");
+            // });
         })
 });
 
