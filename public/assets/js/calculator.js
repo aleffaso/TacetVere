@@ -60,6 +60,21 @@ var form_fuel = "<br><select id='form-fuel' class='form-fuel form-control' name=
                         "<option value='residuos-vegetais'>Resíduos Vegetais (Toneladas)</option>" +
                     "</select>"
 
+var info_start ="<div class='row'>" +
+                    "<div class='col-11'>"
+var info_mid =  "</div>" + 
+                "<div class='col-1'>" +
+                        "<a class='badge badge-dark' data-bs-toggle='collapse' href='#stationInfo7' role='button' aria-bs-expanded='false' aria-bs-controls='stationInfo7'>" +
+                            "<i class='bi bi-info-circle-fill'></i>" +
+                        "</a>" +
+                    "</div>" +
+                "</div>"
+var info_end =  "<div class='collapse' id='stationInfo7'>" +
+                    "<div class='mt-2'>" +
+                        "Ex: Geradores a óleo diesel, aquecedores ou fornos/fogões/cooktops a gás, etc. Caso a alimentação da fonte de calor ou vapor seja a eletricidade, incluir somente na etapa de “Emissões Indiretas"+
+                    "</div>" +
+                "</div>"
+
 $(document).ready(function () {
     $("#sector").change(function () {
         var val = $(this).val();
@@ -77,7 +92,7 @@ $(document).ready(function () {
             var e1_6 = "<hr><input class='form-control' name='e1_6' type='text' value='Chama' readonly='readonly'>"
             
             $("#emission_one").html(
-                e1_1 + form_fuel + form_quantity +
+                info_start + e1_1 + info_mid + info_end + form_fuel + form_quantity +
                 e1_2 + form_fuel + form_quantity +
                 e1_3 + form_fuel + form_quantity +
                 e1_4 + form_fuel + form_quantity +

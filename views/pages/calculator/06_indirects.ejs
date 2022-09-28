@@ -1,15 +1,35 @@
-<button hidden type="button" class="btn btn-send " data-bs-toggle="modal" data-bs-target="#calculator6">
+<button hidden type="button" class="btn btn-send " data-bs-toggle="modal" data-bs-target="#calculator7">
     Emissões indiretas
 </button>
 
-<div class="modal fade" id="calculator6" tabindex="-1" role="dialog" aria-labelledby="calculator4Label" aria-hidden="true">
+<div class="modal fade" id="calculator7" tabindex="-1" role="dialog" aria-labelledby="calculator7Label" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">Emissões Indiretas (6 de 6)</h4>
-                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> -->
-                <span aria-bs-hidden="true"></span>
-                </button>
+            <div class="text-center">
+                <div class="row">
+                    <div class="col-9 text-end">
+                        <h4>
+                            <br>
+                            Emissões Indiretas (6 de 6)
+                        </h4>
+                    </div>
+                    <div class="col-3 text-start">
+                        <h4>
+                            <a class="badge badge-dark" data-bs-toggle="collapse" href="#stationInfo6" role="button" aria-bs-expanded="false" aria-bs-controls="stationInfo6">
+                                <i class="bi bi-info-circle-fill"></i>
+                            </a>
+                        </h4>
+                    </div>
+                </div>
+                <div class="collapse" id="stationInfo6">
+                    <div class="card-body">
+                        <hr>
+                        <div class="mt-2">
+                            Emissões indiretas são aquelas, cuja origem são as fontes de emissão fora da organização, mas que ocorrem devido às atividades organizacionais. Quando se trata de compra de energia, também são denominadas de Escopo 2. 
+                        </div>
+                        <hr>
+                    </div>
+                </div>
             </div>
             <div class="modal-body">
                 <div class="form-top mb-3">
@@ -20,15 +40,13 @@
                     <fieldset>
                         <input class="form-control" name="electricity_consume" type="text" value="Consumo de eletricidade" readonly="readonly">
                         <br>
-                        <input class="form-control" name="electricity_transmission" type="text" value="Eletricidade de rede de transmissão (KWh)" readonly="readonly">
+                        <input class="form-control" name="electricity_transmission" type="text" value="Eletricidade de rede de transmissão (kWh)" readonly="readonly">
                         <br>
                         <input class="form-control" name="electricity_quantity" type="number" placeholder="Quantidade" required>
                         <br>
                         <button type="submit" class="btn btn-send">Calcular</button>
                     </fieldset>
                 </form>
-                <br>
-                <p style="color:#184766"><strong><u>É preciso preencher todos os campos</strong></u></p>
             </div>
             <div class="modal-footer">
                 <!-- <button type="button" class="btn btn-success" data-bs-dismiss="modal">Fechar</button> -->

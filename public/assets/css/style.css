@@ -1762,3 +1762,9 @@ video {
   top: 30%;
   z-index: 2;
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
