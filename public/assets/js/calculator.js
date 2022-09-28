@@ -69,7 +69,7 @@ var info_badge_one =    "<div class='col-1 mt-2'>" +
 
 var info_one =  "<div class='collapse' id='stationInfo7'>" +
                     "<div class='card-body mt-2'>" +
-                        "Ex: Geradores a óleo diesel, aquecedores ou fornos/fogões/cooktops a gás, etc. Caso a alimentação da fonte de calor ou vapor seja a eletricidade, incluir somente na etapa de “Emissões Indiretas"+
+                        "Ex: Geradores a óleo diesel, aquecedores ou fornos/fogões/cooktops a gás, etc. Caso a alimentação da fonte de calor ou vapor seja a eletricidade, incluir somente na etapa de “Emissões Indiretas“"+
                     "</div>" +
                 "</div>"
 
@@ -494,9 +494,9 @@ $(document).ready(function () {
 
   //////##########################################################Emission_two##############################################################\\\\\\
 
-var form_quantity_two = "<br><input class='form-quantity-two form-control' name='emission_quantity_two' type='number' placeholder='Quantidade'>"
-const form_fuel_two =  "<br><select class='form-fuel-two form-control' name='emission_two'>" +
-                        "<option value=''>Combustível</option>" +
+var form_quantity_two = "<br><div class='col-11'><input class='form-quantity-two form-control' name='emission_quantity_two' type='number' placeholder='Quantidade - Campo obrigatório'></div>"
+const form_fuel_two =  "<br><div class='row'><div class='col-11'><select class='form-fuel-two form-control' name='emission_two'>" +
+                        "<option value=''>Combustível - Campo obrigatório</option>" +
                         "<option value='nao-aplicavel'>Não Aplicável</option>" +
                         "<option value='gasolina-automotiva-pura-movel'>Gasolina Automotiva (pura) (Litros)</option>" +
                         "<option value='ole-diesel-puro-movel'>Óleo Diesel (puro) (Litros)</option>" +
@@ -520,7 +520,7 @@ const form_fuel_two =  "<br><select class='form-fuel-two form-control' name='emi
                         "<option value='carvao-vapor-6000-kcal-kg-two'>Carvão Vapor 6000 kcal / kg (Toneladas)</option>" +
                         "<option value='carvao-vapor-sem-especificacao'>Carvão Vapor sem Especificação (Toneladas)</option>" +
                         "<option value='coque-de-carvao-mineral'>Coque de Carvão Mineral (Toneladas)</option>" +
-                    "</select>"
+                    "</select></div><div class='col-1 mt-2'><a class='badge badge-dark' data-bs-toggle='collapse' href='#stationInfo10' role='button' aria-bs-expanded='false' aria-bs-controls='stationInfo10'><i class='bi bi-info-circle-fill'></i></a></div></div><div class='collapse' id='stationInfo10'><div class='card-body mt-2'>Caso a sua organização não tenha esse tipo de fonte de emissão nos limites da operação dela, selecione a opção “Não Aplicável” e coloque “0” no espaço “Quantidade”.</div></div>"
 
 $(document).ready(function () {
     $("#sector").change(function () {
@@ -826,13 +826,13 @@ $(document).ready(function () {
 
   //////##########################################################Emission_three##############################################################\\\\\\
 
-var form_quantity_air_conditionair = "<br><input class='form-air-conditioner form-control' name='' value='Ar condicionado central' readonly='readonly'><br><input class='form_quantity_air_conditionair form-control' name='emission_quantity_three' type='number' placeholder='Quantidade'>"
+var form_quantity_air_conditionair = "<br><div class='row'><div class='col-11'><input class='form-air-conditioner form-control' name='' value='Ar condicionado central' readonly='readonly'><br><input class='form_quantity_air_conditionair form-control' name='emission_quantity_three' type='number' placeholder='Quantidade - Campo obrigatório'></div><div class='col-1 mt-2'><a class='badge badge-dark' data-bs-toggle='collapse' href='#stationInfo9' role='button' aria-bs-expanded='false' aria-bs-controls='stationInfo9'><i class='bi bi-info-circle-fill'></i></a></div></div><div class='collapse' id='stationInfo9'><div class='card-body mt-2'>Caso a sua organização não tenha esse tipo de fonte de emissão nos limites da operação dela, coloque “0” no espaço “Quantidade</div></div>"
 
-var form_quantity_air_split = "<br><input class='form-air-split form-control' name='' value='Ar condicionado split' readonly='readonly'><br><input class='form_quantity_air_split form-control' name='emission_quantity_three' type='number' placeholder='Quantidade'>"
+var form_quantity_air_split = "<br><div class='row'><div class='col-11'><input class='form-air-split form-control' name='' value='Ar condicionado split' readonly='readonly'><br><input class='form_quantity_air_split form-control' name='emission_quantity_three' type='number' placeholder='Quantidade - Campo obrigatório'></div><div class='col-1 mt-2'><a class='badge badge-dark' data-bs-toggle='collapse' href='#stationInfo9' role='button' aria-bs-expanded='false' aria-bs-controls='stationInfo9'><i class='bi bi-info-circle-fill'></i></a></div></div><div class='collapse' id='stationInfo9'><div class='card-body mt-2'>Caso a sua organização não tenha esse tipo de fonte de emissão nos limites da operação dela, coloque “0” no espaço “Quantidade</div></div>"
 
-var form_quantity_extinguish = "<br><input class='form-air-conditioner form-control' name='' value='Extintores' readonly='readonly'><br><input class='form-quantity-extinguish form-control' name='emission_quantity_three' type='number' placeholder='Quantidade'>"
+var form_quantity_extinguish = "<br><div class='row'><div class='col-11'><input class='form-air-conditioner form-control' name='' value='Extintores' readonly='readonly'><br><input class='form-quantity-extinguish form-control' name='emission_quantity_three' type='number' placeholder='Quantidade - Campo obrigatório'></div><div class='col-1 mt-2'><a class='badge badge-dark' data-bs-toggle='collapse' href='#stationInfo9' role='button' aria-bs-expanded='false' aria-bs-controls='stationInfo9'><i class='bi bi-info-circle-fill'></i></a></div></div><div class='collapse' id='stationInfo9'><div class='card-body mt-2'>Caso a sua organização não tenha esse tipo de fonte de emissão nos limites da operação dela, coloque “0” no espaço “Quantidade</div></div>"
 
-var form_quantity_fridge = "<br><input class='form-air-conditioner form-control' name='' value='Refrigerador, Geladeira, Freezer' readonly='readonly'><br><input class='form-quantity-fridge form-control' name='emission_quantity_three' type='number' placeholder='Quantidade'>"
+var form_quantity_fridge = "<br><div class='row'><div class='col-11'><input class='form-air-conditioner form-control' name='' value='Refrigerador, Geladeira, Freezer' readonly='readonly'><br><input class='form-quantity-fridge form-control' name='emission_quantity_three' type='number' placeholder='Quantidade - Campo obrigatório'></div><div class='col-1 mt-2'><a class='badge badge-dark' data-bs-toggle='collapse' href='#stationInfo9' role='button' aria-bs-expanded='false' aria-bs-controls='stationInfo9'><i class='bi bi-info-circle-fill'></i></a></div></div><div class='collapse' id='stationInfo9'><div class='card-body mt-2'>Caso a sua organização não tenha esse tipo de fonte de emissão nos limites da operação dela, coloque “0” no espaço “Quantidade</div></div>"
 
 $(document).ready(function () {
     $("#sector").change(function () {
@@ -881,12 +881,12 @@ $(document).ready(function () {
 
         if (val == "geracao-de-energia") {
 
-            var e3_1 = "<hr><input class='form-control' name='e3_1' type='text' value='Fuga de CH4 das instalações de transmissão e armazenamento' readonly='readonly'>" 
+            var e3_1 = "<input class='form-control' name='e3_1' type='text' value='Fuga de CH4 das instalações de transmissão e armazenamento' readonly='readonly'>" 
             var e3_2 = "<hr><input class='form-control' name='e3_2' type='text' value='Emissões de HFC das instalações de armazenamento de LPG' readonly='readonly'>"
             var e3_3 = "<hr><input class='form-control' name='e3_3' type='text' value='Emissões de SF6 do equipamento de transmissão e distribuição' readonly='readonly'>"
 
             $("#emission_three").html(
-                e3_1 + form_quantity_air_conditionair + form_quantity_air_split + form_quantity_extinguish + form_quantity_fridge +
+                e3_1 + form_quantity_air_conditionair + form_quantity_air_split + form_quantity_extinguish + form_quantity_fridge + 
                 e3_2 + form_quantity_air_conditionair + form_quantity_air_split + form_quantity_extinguish + form_quantity_fridge +
                 e3_3 + form_quantity_air_conditionair + form_quantity_air_split + form_quantity_extinguish + form_quantity_fridge
             )
