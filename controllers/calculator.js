@@ -726,18 +726,18 @@ routes.post("/calculator", (req, res) => {
                 return parameter.co2_fossil * electricity_quantity
             })
 
-            // Calculator.create({
-            //     social_name: social_name, company_name: company_name, cnpj: cnpj, 
-            //     address: address, people_organization_amount: people_organization_amount, 
-            //     people_out_of_organization_amount: people_out_of_organization_amount, 
-            //     company_sector: company_sector, company_task_nature: company_task_nature, 
-            //     year: year, electricity_consume: electricity_consume, 
-            //     electricity_transmission: electricity_transmission,
-            //     electricity_quantity: electricity_quantity, electricity_unity:electricity_unity, 
-            //     e1_1: e1_1, e1_2: e1_2, e1_3: e1_3, e1_4: e1_4, e1_5: e1_5, e1_6: e1_6, e1_7: e1_7,
-            //     e1_8: e1_8, e2_1, e2_2: e2_2, e2_3: e2_3, e2_4: e2_4, e2_5: e2_5, e3_1: e3_1, 
-            //     e3_2: e3_2, e3_3: e3_3,
-            // }).then(() => {
+            Calculator.create({
+                social_name: social_name, company_name: company_name, cnpj: cnpj, 
+                address: address, people_organization_amount: people_organization_amount, 
+                people_out_of_organization_amount: people_out_of_organization_amount, 
+                company_sector: company_sector, company_task_nature: company_task_nature, 
+                year: year, electricity_consume: electricity_consume, 
+                electricity_transmission: electricity_transmission,
+                electricity_quantity: electricity_quantity, electricity_unity:electricity_unity, 
+                e1_1: e1_1, e1_2: e1_2, e1_3: e1_3, e1_4: e1_4, e1_5: e1_5, e1_6: e1_6, e1_7: e1_7,
+                e1_8: e1_8, e2_1, e2_2: e2_2, e2_3: e2_3, e2_4: e2_4, e2_5: e2_5, e3_1: e3_1, 
+                e3_2: e3_2, e3_3: e3_3,
+            }).then(() => {
                 res.render('index', {token: req.session.token, 
                     parameters: parameters, 
                     calculator:true,
@@ -761,10 +761,9 @@ routes.post("/calculator", (req, res) => {
                     sum_n2o_four: 0,
                     sum_biogenic_co2_four: 0
                 }); 
-            // }).catch((err) => {
-            //     console.log(err)
-            //     res.redirect("/");
-            // });
+            }).catch((err) => {
+                res.redirect("/");
+            });
         })
 });
 
