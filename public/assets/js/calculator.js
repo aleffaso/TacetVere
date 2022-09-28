@@ -1,7 +1,7 @@
   //////##########################################################Emission_one##############################################################\\\\\\
-var form_quantity = "<br><input class='form-quantity form-control' name='emission_quantity_one' type='number' placeholder='Quantidade'>"
-var form_fuel = "<br><select id='form-fuel' class='form-fuel form-control' name='emission_one'>" + 
-                        "<option value='nao-aplicavel'>Selecione o combustível</option>" + 
+var form_quantity = "<div class='row'><div class='col-11'><br><input class='form-quantity form-control' name='emission_quantity_one' type='number' placeholder='Quantidade - Campo obrigatório'> </div></div>"
+var form_fuel = "<br><div class='row'><div class='col-11'><select id='form-fuel' class='form-fuel form-control' name='emission_one'>" + 
+                        "<option value='nao-aplicavel'>Selecione o combustível - Campo obrigatório</option>" + 
                         "<option value='nao-aplicavel'>Não Aplicável</option>" +
                         "<option value='acetileno'>Acetileno (kg) </option>" +
                         "<option value='alcatrao'>Alcatrão (m³)</option>" +
@@ -58,20 +58,31 @@ var form_fuel = "<br><select id='form-fuel' class='form-fuel form-control' name=
                         "<option value='melaco'>Melaço (Toneladas)</option>" +
                         "<option value='residuos-municipais-(fracao-biomassa)'>Resíduos Municipais (fração biomassa) (Toneladas)</option>" +
                         "<option value='residuos-vegetais'>Resíduos Vegetais (Toneladas)</option>" +
-                    "</select>"
+                    "</select></div>"
 
-var info_start ="<div class='row'>" +
-                    "<div class='col-11'>"
-var info_mid =  "</div>" + 
-                "<div class='col-1'>" +
-                        "<a class='badge badge-dark' data-bs-toggle='collapse' href='#stationInfo7' role='button' aria-bs-expanded='false' aria-bs-controls='stationInfo7'>" +
-                            "<i class='bi bi-info-circle-fill'></i>" +
-                        "</a>" +
+var info_badge_one =    "<div class='col-1 mt-2'>" +
+                            "<a class='badge badge-dark' data-bs-toggle='collapse' href='#stationInfo7' role='button' aria-bs-expanded='false' aria-bs-controls='stationInfo7'>" +
+                                "<i class='bi bi-info-circle-fill'></i>" +
+                            "</a>" +
+                        "</div>" +
+                    "</div>"
+
+var info_one =  "<div class='collapse' id='stationInfo7'>" +
+                    "<div class='card-body mt-2'>" +
+                        "Ex: Geradores a óleo diesel, aquecedores ou fornos/fogões/cooktops a gás, etc. Caso a alimentação da fonte de calor ou vapor seja a eletricidade, incluir somente na etapa de “Emissões Indiretas"+
                     "</div>" +
                 "</div>"
-var info_end =  "<div class='collapse' id='stationInfo7'>" +
-                    "<div class='mt-2'>" +
-                        "Ex: Geradores a óleo diesel, aquecedores ou fornos/fogões/cooktops a gás, etc. Caso a alimentação da fonte de calor ou vapor seja a eletricidade, incluir somente na etapa de “Emissões Indiretas"+
+
+var info_badge_two =    "<div class='col-1 mt-2'>" +
+                            "<a class='badge badge-dark' data-bs-toggle='collapse' href='#stationInfo8' role='button' aria-bs-expanded='false' aria-bs-controls='stationInfo8'>" +
+                                "<i class='bi bi-info-circle-fill'></i>" +
+                            "</a>" +
+                        "</div>" +
+                    "</div>"
+
+var info_two =  "<div class='collapse' id='stationInfo8'>" +
+                    "<div class='card-body mt-2'>" +
+                        "Caso a sua organização não tenha esse tipo de fonte de emissão nos limites da operação dela, selecione a opção “Não Aplicável” e coloque “0” logo abaixo"+
                     "</div>" +
                 "</div>"
 
@@ -84,20 +95,20 @@ $(document).ready(function () {
         var j = 0
 
         if (val == "geracao-de-energia") {
-            var e1_1 = "<input class='form-control' name='e1_1' type='text' value='Cadeiras e turbinas' readonly='readonly'>"
-            var e1_2 = "<hr><input class='form-control' name='e1_2' type='text' value='Produção de eletricidade' readonly='readonly'>"
-            var e1_3 = "<hr><input class='form-control' name='e1_3' type='text' value='Produção de calor ou vapor' readonly='readonly'>"
-            var e1_4 = "<hr><input class='form-control' name='e1_4' type='text' value='Bombas de combustível' readonly='readonly'>"
-            var e1_5 = "<hr><input class='form-control' name='e1_5' type='text' value='Células de combustível' readonly='readonly'>"
-            var e1_6 = "<hr><input class='form-control' name='e1_6' type='text' value='Chama' readonly='readonly'>"
+            var e1_1 = "<div class='row'><div class='col-11'><input class='form-control' name='e1_1' type='text' value='Cadeiras e turbinas' readonly='readonly'></div>"
+            var e1_2 = "<hr><div class='row'><div class='col-11'><input class='form-control' name='e1_2' type='text' value='Produção de eletricidade' readonly='readonly'></div>"
+            var e1_3 = "<hr><div class='row'><div class='col-11'><input class='form-control' name='e1_3' type='text' value='Produção de calor ou vapor' readonly='readonly'></div>"
+            var e1_4 = "<hr><div class='row'><div class='col-11'><input class='form-control' name='e1_4' type='text' value='Bombas de combustível' readonly='readonly'></div>"
+            var e1_5 = "<hr><div class='row'><div class='col-11'><input class='form-control' name='e1_5' type='text' value='Células de combustível' readonly='readonly'></div>"
+            var e1_6 = "<hr><div class='row'><div class='col-11'><input class='form-control' name='e1_6' type='text' value='Chama' readonly='readonly'></div>"
             
             $("#emission_one").html(
-                info_start + e1_1 + info_mid + info_end + form_fuel + form_quantity +
-                e1_2 + form_fuel + form_quantity +
-                e1_3 + form_fuel + form_quantity +
-                e1_4 + form_fuel + form_quantity +
-                e1_5 + form_fuel + form_quantity +
-                e1_6 + form_fuel + form_quantity 
+                e1_1 + info_badge_one + info_one + form_fuel + info_badge_two + info_two + form_quantity +
+                e1_2 + info_badge_one + info_one + form_fuel + info_badge_two + info_two + form_quantity +
+                e1_3 + info_badge_one + info_one + form_fuel + info_badge_two + info_two + form_quantity +
+                e1_4 + info_badge_one + info_one + form_fuel + info_badge_two + info_two + form_quantity +
+                e1_5 + info_badge_one + info_one + form_fuel + info_badge_two + info_two + form_quantity +
+                e1_6 + info_badge_one + info_one + form_fuel + info_badge_two + info_two + form_quantity 
             )
 
             $("#calculator").append(e1_1+e1_2+e1_3+e1_4+e1_5+e1_6)
@@ -120,24 +131,24 @@ $(document).ready(function () {
 //////########################################################################################################################
 
         }else if (val == "oleo-e-gas"){
-            var e1_1 = "<input class='form-control' name='e1_1' type='text' value='Processamento de aquecedores' readonly='readonly'>"
-            var e1_2 = "<hr><input class='form-control' name='e1_2' type='text' value='Motores' readonly='readonly'>"
-            var e1_3 = "<hr><input class='form-control' name='e1_3' type='text' value='Turbinas' readonly='readonly'>"
-            var e1_4 = "<hr><input class='form-control' name='e1_4' type='text' value='Chamas' readonly='readonly'>"
-            var e1_5 = "<hr><input class='form-control' name='e1_5' type='text' value='Incineradoras' readonly='readonly'>"
-            var e1_6 = "<hr><input class='form-control' name='e1_6' type='text' value='Oxidantes' readonly='readonly'>"
-            var e1_7 = "<hr><input class='form-control' name='e1_7' type='text' value='Produção de eletricidade' readonly='readonly'>"
-            var e1_8 = "<hr><input class='form-control' name='e1_8' type='text' value='Calor e vapor' readonly='readonly'>"
+            var e1_1 = "<div class='row'><div class='col-11'><input class='form-control' name='e1_1' type='text' value='Processamento de aquecedores' readonly='readonly'></div>"
+            var e1_2 = "<hr><div class='row'><div class='col-11'><input class='form-control' name='e1_2' type='text' value='Motores' readonly='readonly'></div>"
+            var e1_3 = "<hr><div class='row'><div class='col-11'><input class='form-control' name='e1_3' type='text' value='Turbinas' readonly='readonly'></div>"
+            var e1_4 = "<hr><div class='row'><div class='col-11'><input class='form-control' name='e1_4' type='text' value='Chamas' readonly='readonly'></div>"
+            var e1_5 = "<hr><div class='row'><div class='col-11'><input class='form-control' name='e1_5' type='text' value='Incineradoras' readonly='readonly'></div>"
+            var e1_6 = "<hr><div class='row'><div class='col-11'><input class='form-control' name='e1_6' type='text' value='Oxidantes' readonly='readonly'></div>"
+            var e1_7 = "<hr><div class='row'><div class='col-11'><input class='form-control' name='e1_7' type='text' value='Produção de eletricidade' readonly='readonly'></div>"
+            var e1_8 = "<hr><div class='row'><div class='col-11'><input class='form-control' name='e1_8' type='text' value='Calor e vapor' readonly='readonly'></div>"
 
             $("#emission_one").html(
-                e1_1 + form_fuel + form_quantity +
-                e1_2 + form_fuel + form_quantity +
-                e1_3 + form_fuel + form_quantity +
-                e1_4 + form_fuel + form_quantity +
-                e1_5 + form_fuel + form_quantity +
-                e1_6 + form_fuel + form_quantity +
-                e1_7 + form_fuel + form_quantity +
-                e1_8 + form_fuel + form_quantity 
+                e1_1 + info_badge_one + info_one + form_fuel + info_badge_two + info_two + form_quantity +
+                e1_2 + info_badge_one + info_one + form_fuel + info_badge_two + info_two + form_quantity +
+                e1_3 + info_badge_one + info_one + form_fuel + info_badge_two + info_two + form_quantity +
+                e1_4 + info_badge_one + info_one + form_fuel + info_badge_two + info_two + form_quantity +
+                e1_5 + info_badge_one + info_one + form_fuel + info_badge_two + info_two + form_quantity +
+                e1_6 + info_badge_one + info_one + form_fuel + info_badge_two + info_two + form_quantity +
+                e1_7 + info_badge_one + info_one + form_fuel + info_badge_two + info_two + form_quantity +
+                e1_8 + info_badge_one + info_one + form_fuel + info_badge_two + info_two + form_quantity
             )
 
             $("#calculator").append(e1_1+e1_2+e1_3+e1_4+e1_5+e1_6+e1_7+e1_8)
@@ -161,14 +172,14 @@ $(document).ready(function () {
 //////########################################################################################################################
 
         }else if (val == "extracao-mineral-de-carvao"){
-            var e1_1 = "<hr><input class='form-control' name='e1_1' type='text' value='Combustão à chama e à gás metano' readonly='readonly'>"
-            var e1_2 = "<hr><input class='form-control' name='e1_2' type='text' value='Uso de explosivos' readonly='readonly'>"
-            var e1_3 = "<hr><input class='form-control' name='e1_3' type='text' value='Fogos das minas' readonly='readonly'>"
+            var e1_1 = "<div class='row'><div class='col-11'><input class='form-control' name='e1_1' type='text' value='Combustão à chama e à gás metano' readonly='readonly'></div>"
+            var e1_2 = "<hr><div class='row'><div class='col-11'><input class='form-control' name='e1_2' type='text' value='Uso de explosivos' readonly='readonly'></div>"
+            var e1_3 = "<hr><div class='row'><div class='col-11'><input class='form-control' name='e1_3' type='text' value='Fogos das minas' readonly='readonly'></div>"
             
             $("#emission_one").html(
-                e1_1 + form_fuel + form_quantity +
-                e1_2 + form_fuel + form_quantity +
-                e1_3 + form_fuel + form_quantity
+                e1_1 + info_badge_one + info_one + form_fuel + info_badge_two + info_two + form_quantity +
+                e1_2 + info_badge_one + info_one + form_fuel + info_badge_two + info_two + form_quantity +
+                e1_3 + info_badge_one + info_one + form_fuel + info_badge_two + info_two + form_quantity
             )
 
             $("#calculator").append(e1_1+e1_2+e1_3)
@@ -192,18 +203,18 @@ $(document).ready(function () {
 //////########################################################################################################################
 
         }else if (val == "aluminio"){
-            var e1_1 = "<hr><input class='form-control' name='e1_1' type='text' value='Processamento de bauxita à alumínio' readonly='readonly'>"
-            var e1_2 = "<hr><input class='form-control' name='e1_2' type='text' value='Cozedura do coque' readonly='readonly'>"
-            var e1_3 = "<hr><input class='form-control' name='e1_3' type='text' value='Cal' readonly='readonly'>"
-            var e1_4 = "<hr><input class='form-control' name='e1_4' type='text' value='Precipitado de sódio e uso de combustível' readonly='readonly'>"
-            var e1_5 = "<hr><input class='form-control' name='e1_5' type='text' value='No local CHP' readonly='readonly'>"
+            var e1_1 = "<div class='row'><div class='col-11'><input class='form-control' name='e1_1' type='text' value='Processamento de bauxita à alumínio' readonly='readonly'></div>"
+            var e1_2 = "<hr><div class='row'><div class='col-11'><input class='form-control' name='e1_2' type='text' value='Cozedura do coque' readonly='readonly'></div>"
+            var e1_3 = "<hr><div class='row'><div class='col-11'><input class='form-control' name='e1_3' type='text' value='Cal' readonly='readonly'></div>"
+            var e1_4 = "<hr><div class='row'><div class='col-11'><input class='form-control' name='e1_4' type='text' value='Precipitado de sódio e uso de combustível' readonly='readonly'></div>"
+            var e1_5 = "<hr><div class='row'><div class='col-11'><input class='form-control' name='e1_5' type='text' value='No local CHP' readonly='readonly'></div>"
 
             $("#emission_one").html(
-                e1_1 + form_fuel + form_quantity +
-                e1_2 + form_fuel + form_quantity +
-                e1_3 + form_fuel + form_quantity +
-                e1_4 + form_fuel + form_quantity +
-                e1_5 + form_fuel + form_quantity 
+                e1_1 + info_badge_one + info_one + form_fuel + info_badge_two + info_two + form_quantity +
+                e1_2 + info_badge_one + info_one + form_fuel + info_badge_two + info_two + form_quantity +
+                e1_3 + info_badge_one + info_one + form_fuel + info_badge_two + info_two + form_quantity +
+                e1_4 + info_badge_one + info_one + form_fuel + info_badge_two + info_two + form_quantity +
+                e1_5 + info_badge_one + info_one + form_fuel + info_badge_two + info_two + form_quantity 
             )
 
             $("#calculator").append(e1_1+e1_2+e1_3+e1_4+e1_5)
@@ -228,16 +239,16 @@ $(document).ready(function () {
 
         }else if (val == "ferro-e-aco"){
 
-            var e1_1 = "<hr><input class='form-control' name='e1_1' type='text' value='Coque' readonly='readonly'>"
-            var e1_2 = "<hr><input class='form-control' name='e1_2' type='text' value='Carvão e fluxos de carbonato' readonly='readonly'>"
-            var e1_3 = "<hr><input class='form-control' name='e1_3' type='text' value='Caldeiras' readonly='readonly'>"
-            var e1_4 = "<hr><input class='form-control' name='e1_4' type='text' value='Chama' readonly='readonly'>"
+            var e1_1 = "<div class='row'><div class='col-11'><input class='form-control' name='e1_1' type='text' value='Coque' readonly='readonly'></div>"
+            var e1_2 = "<hr><div class='row'><div class='col-11'><input class='form-control' name='e1_2' type='text' value='Carvão e fluxos de carbonato' readonly='readonly'></div>"
+            var e1_3 = "<hr><div class='row'><div class='col-11'><input class='form-control' name='e1_3' type='text' value='Caldeiras' readonly='readonly'></div>"
+            var e1_4 = "<hr><div class='row'><div class='col-11'><input class='form-control' name='e1_4' type='text' value='Chama' readonly='readonly'></div>"
 
             $("#emission_one").html(
-                e1_1 + form_fuel + form_quantity +
-                e1_2 + form_fuel + form_quantity +
-                e1_3 + form_fuel + form_quantity +
-                e1_4 + form_fuel + form_quantity
+                e1_1 + info_badge_one + info_one + form_fuel + info_badge_two + info_two + form_quantity +
+                e1_2 + info_badge_one + info_one + form_fuel + info_badge_two + info_two + form_quantity +
+                e1_3 + info_badge_one + info_one + form_fuel + info_badge_two + info_two + form_quantity +
+                e1_4 + info_badge_one + info_one + form_fuel + info_badge_two + info_two + form_quantity 
             )
 
             $("#calculator").append(e1_1+e1_2+e1_3+e1_4)
@@ -262,18 +273,18 @@ $(document).ready(function () {
 
         }else if (val == "quimicos"){
 
-            var e1_1 = "<hr><input class='form-control' name='e1_1' type='text' value='Caldeiras' readonly='readonly'>"
-            var e1_2 = "<hr><input class='form-control' name='e1_2' type='text' value='Chama' readonly='readonly'>"
-            var e1_3 = "<hr><input class='form-control' name='e1_3' type='text' value='Fornos de fundição redutivos' readonly='readonly'>"
-            var e1_4 = "<hr><input class='form-control' name='e1_4' type='text' value='Reatores de chama' readonly='readonly'>"
-            var e1_5 = "<hr><input class='form-control' name='e1_5' type='text' value='Reformadores de vapor' readonly='readonly'>"
+            var e1_1 = "<div class='row'><div class='col-11'><input class='form-control' name='e1_1' type='text' value='Caldeiras' readonly='readonly'></div>"
+            var e1_2 = "<hr><div class='row'><div class='col-11'><input class='form-control' name='e1_2' type='text' value='Chama' readonly='readonly'></div>"
+            var e1_3 = "<hr><div class='row'><div class='col-11'><input class='form-control' name='e1_3' type='text' value='Fornos de fundição redutivos' readonly='readonly'></div>"
+            var e1_4 = "<hr><div class='row'><div class='col-11'><input class='form-control' name='e1_4' type='text' value='Reatores de chama' readonly='readonly'></div>"
+            var e1_5 = "<hr><div class='row'><div class='col-11'><input class='form-control' name='e1_5' type='text' value='Reformadores de vapor' readonly='readonly'></div>"
 
             $("#emission_one").html(
-                e1_1 + form_fuel + form_quantity +
-                e1_2 + form_fuel + form_quantity +
-                e1_3 + form_fuel + form_quantity +
-                e1_4 + form_fuel + form_quantity +
-                e1_5 + form_fuel + form_quantity
+                e1_1 + info_badge_one + info_one + form_fuel + info_badge_two + info_two + form_quantity +
+                e1_2 + info_badge_one + info_one + form_fuel + info_badge_two + info_two + form_quantity +
+                e1_3 + info_badge_one + info_one + form_fuel + info_badge_two + info_two + form_quantity +
+                e1_4 + info_badge_one + info_one + form_fuel + info_badge_two + info_two + form_quantity +
+                e1_5 + info_badge_one + info_one + form_fuel + info_badge_two + info_two + form_quantity 
             )
 
             $("#calculator").append(e1_1+e1_2+e1_3+e1_4+e1_5)
@@ -297,14 +308,14 @@ $(document).ready(function () {
 //////########################################################################################################################
 
         }else if (val == "cimento-e-cal"){
-            var e1_1 = "<hr><input class='form-control' name='e1_1' type='text' value='Forno de tijolo holandês' readonly='readonly'>"
-            var e1_2 = "<hr><input class='form-control' name='e1_2' type='text' value='Secagem de materiais' readonly='readonly'>"
-            var e1_3 = "<hr><input class='form-control' name='e1_3' type='text' value='Produção de eletricidade' readonly='readonly'>"
+            var e1_1 = "<div class='row'><div class='col-11'><input class='form-control' name='e1_1' type='text' value='Forno de tijolo holandês' readonly='readonly'></div>"
+            var e1_2 = "<hr><div class='row'><div class='col-11'><input class='form-control' name='e1_2' type='text' value='Secagem de materiais' readonly='readonly'></div>"
+            var e1_3 = "<hr><div class='row'><div class='col-11'><input class='form-control' name='e1_3' type='text' value='Produção de eletricidade' readonly='readonly'></div>"
 
             $("#emission_one").html(
-                e1_1 + form_fuel + form_quantity +
-                e1_2 + form_fuel + form_quantity +
-                e1_3 + form_fuel + form_quantity
+                e1_1 + info_badge_one + info_one + form_fuel + info_badge_two + info_two + form_quantity +
+                e1_2 + info_badge_one + info_one + form_fuel + info_badge_two + info_two + form_quantity +
+                e1_3 + info_badge_one + info_one + form_fuel + info_badge_two + info_two + form_quantity
             )
 
             $("#calculator").append(e1_1+e1_2+e1_3)
@@ -329,14 +340,14 @@ $(document).ready(function () {
 
         }else if (val == "residuos"){
 
-            var e1_1 = "<hr><input class='form-control' name='e1_1' type='text' value='Incineradoras' readonly='readonly'>"
-            var e1_2 = "<hr><input class='form-control' name='e1_2' type='text' value='Caldeiras' readonly='readonly'>"
-            var e1_3 = "<hr><input class='form-control' name='e1_3' type='text' value='Chama' readonly='readonly'>"
+            var e1_1 = "<div class='row'><div class='col-11'><input class='form-control' name='e1_1' type='text' value='Incineradoras' readonly='readonly'></div>"
+            var e1_2 = "<hr><div class='row'><div class='col-11'><input class='form-control' name='e1_2' type='text' value='Caldeiras' readonly='readonly'></div>"
+            var e1_3 = "<hr><div class='row'><div class='col-11'><input class='form-control' name='e1_3' type='text' value='Chama' readonly='readonly'></div>"
 
             $("#emission_one").html(
-                e1_1 + form_fuel + form_quantity +
-                e1_2 + form_fuel + form_quantity +
-                e1_3 + form_fuel + form_quantity
+                e1_1 + info_badge_one + info_one + form_fuel + info_badge_two + info_two + form_quantity +
+                e1_2 + info_badge_one + info_one + form_fuel + info_badge_two + info_two + form_quantity +
+                e1_3 + info_badge_one + info_one + form_fuel + info_badge_two + info_two + form_quantity
             )
 
             $("#calculator").append(e1_1+e1_2+e1_3)
@@ -360,12 +371,12 @@ $(document).ready(function () {
 //////########################################################################################################################
 
         }else if (val == "papel-e-celulose"){
-            var e1_1 = "<input class='form-control' name='e1_1' type='text' value='Produção de vapor e eletricidade' readonly='readonly'>"
-            var e1_2 = "<input class='form-control' name='e1_2' type='text' value='Emissões derivadas do combustível fóssil da calcinação de carbonato de cálcio em fornos de cal, da secagem de produtos com secadores infravermelhos cheios de combustíveis fósseis' readonly='readonly'>"
+            var e1_1 = "<div class='row'><div class='col-11'><input class='form-control' name='e1_1' type='text' value='Produção de vapor e eletricidade' readonly='readonly'></div>"
+            var e1_2 = "<hr><div class='row'><div class='col-11'><input class='form-control' name='e1_2' type='text' value='Emissões derivadas do combustível fóssil da calcinação de carbonato de cálcio em fornos de cal, da secagem de produtos com secadores infravermelhos cheios de combustíveis fósseis' readonly='readonly'></div>"
 
             $("#emission_one").html(
-                e1_1 + form_fuel + form_quantity +
-                e1_2 + form_fuel + form_quantity
+                e1_1 + info_badge_one + info_one + form_fuel + info_badge_two + info_two + form_quantity +
+                e1_2 + info_badge_one + info_one + form_fuel + info_badge_two + info_two + form_quantity
             )
 
             $("#calculator").append(e1_1+e1_2)
@@ -389,10 +400,10 @@ $(document).ready(function () {
 //////########################################################################################################################
 
         }else if (val == "producao-de-HCFC22"){
-            var e1_1 = "<input class='form-control' name='e1_1' type='text' value='Produção de eletricidade, calor ou vapor' readonly='readonly'>"
+            var e1_1 = "<div class='row'><div class='col-11'><input class='form-control' name='e1_1' type='text' value='Produção de eletricidade, calor ou vapor' readonly='readonly'></div>"
 
             $("#emission_one").html(
-                e1_1 + form_fuel + form_quantity
+                e1_1 + info_badge_one + info_one + form_fuel + info_badge_two + info_two + form_quantity
             )
 
             $("#calculator").append(e1_1)
@@ -417,12 +428,12 @@ $(document).ready(function () {
 
         }else if (val == "producao-semicondutores"){
 
-            var e1_1 = "<hr><input class='form-control' name='e1_1' type='text' value='Oxidação de desperdício orgânico volátil' readonly='readonly'>"
-            var e1_2 = "<hr><input class='form-control' name='e1_2' type='text' value='Produção de eletricidade, calor ou vapor' readonly='readonly'>"
+            var e1_1 = "<div class='row'><div class='col-11'><input class='form-control' name='e1_1' type='text' value='Oxidação de desperdício orgânico volátil' readonly='readonly'></div>"
+            var e1_2 = "<hr><div class='row'><div class='col-11'><input class='form-control' name='e1_2' type='text' value='Produção de eletricidade, calor ou vapor' readonly='readonly'></div>"
 
             $("#emission_one").html(
-                e1_1 + form_fuel + form_quantity +
-                e1_2 + form_fuel + form_quantity
+                e1_1 + info_badge_one + info_one + form_fuel + info_badge_two + info_two + form_quantity +
+                e1_2 + info_badge_one + info_one + form_fuel + info_badge_two + info_two + form_quantity
             )
 
             $("#calculator").append(e1_1+e1_2)
@@ -447,10 +458,10 @@ $(document).ready(function () {
 
         }else if (val == "producao-de-servicos"){
 
-            var e1_1 = "<hr><input class='form-control' name='e1_1' type='text' value='Produção de eletricidade, calor ou vapor locais' readonly='readonly'>"
+            var e1_1 = "<div class='row'><div class='col-11'><input class='form-control' name='e1_1' type='text' value='Produção de eletricidade, calor ou vapor locais' readonly='readonly'></div>"
 
             $("#emission_one").html(
-                e1_1 + form_fuel + form_quantity
+                e1_1 + info_badge_one + info_one + form_fuel + info_badge_two + info_two + form_quantity
             )
 
             $("#calculator").append(e1_1+e1_2)
