@@ -33,7 +33,7 @@
                             <option value="producao-de-servicos">Produção de Serviços</option>
                         </select>
                         <br>
-                        <select class="form-control" name="company_task_nature" required>
+                        <select id="companyTaskNature" class="form-control" name="company_task_nature" required>
                             <option>Selecione a natureza das atividades - Campo obrigatório</option>
                             <option>Energia</option>
                             <option>Manufatura ou Construção</option>
@@ -41,7 +41,7 @@
                             <option>Residencial, Agricultura, Florestal ou Pesca</option>
                           </select>
                         <br>
-                        <select class="form-control" name="year" required>
+                        <select id="year" class="form-control" name="year" required>
                             <option value="">Selecione o ano inventariado - Campo obrigatório</option>
                             <option value="2007">2007</option>
                             <option value="2008">2008</option>
@@ -63,10 +63,20 @@
                     </fieldset>
             </div>
             <div class="modal-footer">
-                <!-- <button type="button" class="btn btn-success" data-bs-dismiss="modal">Fechar</button> -->
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal" style="background-color:rgb(130,187,54); border:none;">Fechar</button>
                 <!-- <button type="button" class="btn btn-secondary btn-prev">Anterior</button> -->
-                <button type="button" class="btn btn-send btn-next">Próximo</button>
+                <button id='nextTwo' type="button" class="btn btn-send btn-next">Próximo</button>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    $('#sector, #companyTaskNature, #year').change(function () {
+        if(($('#sector').val().length > 0) && ($('#companyTaskNature').val().length) > 0 && ($('#year').val().length) > 0){
+            $('#nextTwo').prop("disabled", false);
+        }else{
+            $('#nextTwo').prop("disabled", true);
+        }
+    }).change()
+</script>

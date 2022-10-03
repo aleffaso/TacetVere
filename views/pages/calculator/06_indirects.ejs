@@ -42,16 +42,26 @@
                         <br>
                         <input class="form-control" name="electricity_transmission" type="text" value="Eletricidade de rede de transmissão (kWh)" readonly="readonly">
                         <br>
-                        <input class="form-control" name="electricity_quantity" type="number" placeholder="Quantidade - Campo obrigatório" required>
+                        <input id="electricityQuantity" class="form-control" name="electricity_quantity" type="number" placeholder="Quantidade - Campo obrigatório" required>
                         <br>
-                        <button type="submit" class="btn btn-send">Calcular</button>
+                        <button id="btnCalculator" type="submit" class="btn btn-send">Calcular</button>
                     </fieldset>
                 </form>
             </div>
             <div class="modal-footer">
-                <!-- <button type="button" class="btn btn-success" data-bs-dismiss="modal">Fechar</button> -->
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal" style="background-color:rgb(130,187,54); border:none;">Fechar</button>
                 <button type="button" class="btn btn-secondary btn-prev">Anterior</button>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    $('#electricityQuantity').change(function () {
+        if($('#electricityQuantity').val().length > 0){
+            $('#btnCalculator').prop("disabled", false);
+        }else{
+            $('#btnCalculator').prop("disabled", true);
+        }
+    }).change()
+</script>

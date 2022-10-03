@@ -7,7 +7,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">Informações sobre sua empresa (1 de 6)</h4>
-                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> -->
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                 <span aria-bs-hidden="true"></span>
                 </button>
             </div>
@@ -20,18 +20,28 @@
                         <br>
                         <input class="form-control" name="social_name" type="text" placeholder="Razão social">
                         <br>
-                        <input class="form-control" name="company_name" type="text" placeholder="Nome fantasia - Campo obrigatório" required>
+                        <input id="companyName" class="form-control" name="company_name" type="text" placeholder="Nome fantasia - Campo obrigatório" required>
                         <br>
                         <input class="form-control"  type="text" name="cnpj" id="cnpj" placeholder="XX.XXX.XXX/0001-XX" pattern="^\([0-9]{3}\)\s[0-9]{3}-[0-9]{4}$">
                         <br>
-                        <input class="form-control" name="address" type="text" placeholder="E-mail institucional - Campo obrigatório" required>
+                        <input id="address" class="form-control" name="address" type="text" placeholder="E-mail institucional - Campo obrigatório" required>
                         <br>
                     </fieldset>
             </div>
             <div class="modal-footer">
-                <!-- <button type="button" class="btn btn-success" data-bs-dismiss="modal">Fechar</button> -->
-                <button type="button" class="btn btn-secondary btn-next">Próximo</button>
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal" style="background-color:rgb(130,187,54); border:none;">Fechar</button>
+                <button id="nextOne" type="button" class="btn btn-send btn-next">Próximo</button>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    $('#companyName, #address').change(function () {
+        if(($('#companyName').val().length > 0) && ($('#address').val().length) > 0){
+            $('#nextOne').prop("disabled", false);
+        }else{
+            $('#nextOne').prop("disabled", true);
+        }
+    }).change()
+</script>

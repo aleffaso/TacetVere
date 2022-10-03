@@ -4,7 +4,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">Calculadora de Emissões de Gases do Efeito Estufa Organizacional</h4>
-                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> -->
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                 <span aria-bs-hidden="true"></span>
                 </button>
             </div>
@@ -20,14 +20,22 @@
                     </p>
                     <br>
                     <p class="text-center">
-                        Vamos lá?
+                        <input id="agreement" type="checkbox">
+                        Eu li e concordo com a política de privacidade e os termos de uso
                     </p>
+
                 </div>
             </div>
             <div class="modal-footer">
-                <!-- <button type="button" class="btn btn-success" data-bs-dismiss="modal">Fechar</button> -->
-                <button type="button" class="btn btn-secondary btn-next">Próximo</button>
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal" style="background-color:rgb(130,187,54); border:none;">Fechar</button>
+                <button id="btnagreement" type="button" class="btn btn-send btn-next">Próximo</button>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    $('#agreement').change(function () {
+        $('#btnagreement').prop("disabled", !this.checked);
+    }).change()
+</script>
