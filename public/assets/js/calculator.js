@@ -61,7 +61,7 @@ var form_fuel = "<br><div class='row'><div class='col-11'><select class='form-fu
                     "</select></div>"
 
 
-var info_badge_two =    "<div class='col-1 mt-2'>" +
+var info_badge_two =    "<div class='col-1 mt-2 text-start' style='margin-left: -20px'>" +
                             "<a class='badge badge-dark' data-bs-toggle='collapse' href='#stationInfo8' role='button' aria-bs-expanded='false' aria-bs-controls='stationInfo8'>" +
                                 "<i class='bi bi-info-circle-fill'></i>" +
                             "</a>" +
@@ -82,6 +82,14 @@ $(document).ready(function () {
         var quantity = []
         var i = 0
         var j = 0
+
+        function emissionThreeStandard(n, qtd){
+            if(n != qtd){
+                $('#nextThree').prop("disabled", true);
+            }else{
+                $('#nextThree').prop("disabled", false);
+            }
+        }
 
         if (val == "geracao-de-energia") {
             var e1_1 = "<input class='form-control' name='e1_1' type='text' value='Caldeiras e turbinas' readonly='readonly'>"
@@ -111,19 +119,13 @@ $(document).ready(function () {
 
             $(".form-quantity").change(function () {
                 quantity[j++] = $(this).val()
+
+                emissionThreeStandard(6)
+
                 $("#calculator").append(
                     "<input class='form-control' name='e1_"+ j +"' type='number' value='"+ quantity[quantity.length - 1] +"'>"
                 )
             })
-
-            $('.form-fuel, .form-quantity').change(function () {
-                if(j <= 11){
-                    $('#nextThree').prop("disabled", true);
-                }else{
-                    $('#nextThree').prop("disabled", false);
-                }
-            }).change()
-
 
 //////########################################################################################################################
 
@@ -159,18 +161,13 @@ $(document).ready(function () {
 
             $(".form-quantity").change(function () {
                 quantity[j++] = $(this).val()
+
+                emissionThreeStandard(8)
+
                 $("#calculator").append(
                     "<input class='form-control' name='e1_"+ j +"' type='number' value='"+ quantity[quantity.length - 1] +"'>"
                 )
             })
-
-            $('.form-fuel, .form-quantity').change(function () {
-                if(j <= 15){
-                    $('#nextThree').prop("disabled", true);
-                }else{
-                    $('#nextThree').prop("disabled", false);
-                }
-            }).change()
 
 
 
@@ -198,18 +195,13 @@ $(document).ready(function () {
 
             $(".form-quantity").change(function () {
                 quantity[j++] = $(this).val()
+
+                emissionThreeStandard(3)
+
                 $("#calculator").append(
                     "<input class='form-control' name='e1_"+ j +"' type='number' value='"+ quantity[quantity.length - 1] +"'>"
                 )
             })
-
-            $('.form-fuel, .form-quantity').change(function () {
-                if(j <= 5){
-                    $('#nextThree').prop("disabled", true);
-                }else{
-                    $('#nextThree').prop("disabled", false);
-                }
-            }).change()
 
 
 
@@ -241,18 +233,13 @@ $(document).ready(function () {
 
             $(".form-quantity").change(function () {
                 quantity[j++] = $(this).val()
+                
+                emissionThreeStandard(5)
+
                 $("#calculator").append(
                     "<input class='form-control' name='e1_"+ j +"' type='number' value='"+ quantity[quantity.length - 1] +"'>"
                 )
             })
-
-            $('.form-fuel, .form-quantity').change(function () {
-                if(j <= 9){
-                    $('#nextThree').prop("disabled", true);
-                }else{
-                    $('#nextThree').prop("disabled", false);
-                }
-            }).change()
 
 
 
@@ -283,19 +270,13 @@ $(document).ready(function () {
 
             $(".form-quantity").change(function () {
                 quantity[j++] = $(this).val()
+
+                emissionThreeStandard(4)
+
                 $("#calculator").append(
                     "<input class='form-control' name='e1_"+ j +"' type='number' value='"+ quantity[quantity.length - 1] +"'>"
                 )
             })
-
-            $('.form-fuel, .form-quantity').change(function () {
-                if(j <= 7){
-                    $('#nextThree').prop("disabled", true);
-                }else{
-                    $('#nextThree').prop("disabled", false);
-                }
-            }).change()
-
 
 
 //////########################################################################################################################
@@ -327,18 +308,13 @@ $(document).ready(function () {
 
             $(".form-quantity").change(function () {
                 quantity[j++] = $(this).val()
+
+                emissionThreeStandard(5)
+
                 $("#calculator").append(
                     "<input class='form-control' name='e1_"+ j +"' type='number' value='"+ quantity[quantity.length - 1] +"'>"
                 )
             })
-
-            $('.form-fuel, .form-quantity').change(function () {
-                if(j <= 9){
-                    $('#nextThree').prop("disabled", true);
-                }else{
-                    $('#nextThree').prop("disabled", false);
-                }
-            }).change()
 
 
 
@@ -366,18 +342,13 @@ $(document).ready(function () {
 
             $(".form-quantity").change(function () {
                 quantity[j++] = $(this).val()
+
+                emissionThreeStandard(3)
+
                 $("#calculator").append(
                     "<input class='form-control' name='e1_"+ j +"' type='number' value='"+ quantity[quantity.length - 1] +"'>"
                 )
             })
-
-            $('.form-fuel, .form-quantity').change(function () {
-                if(j <= 5){
-                    $('#nextThree').prop("disabled", true);
-                }else{
-                    $('#nextThree').prop("disabled", false);
-                }
-            }).change()
 
 
 
@@ -406,18 +377,13 @@ $(document).ready(function () {
 
             $(".form-quantity").change(function () {
                 quantity[j++] = $(this).val()
+
+                emissionThreeStandard(3)
+
                 $("#calculator").append(
                     "<input class='form-control' name='e1_"+ j +"' type='number' value='"+ quantity[quantity.length - 1] +"'>"
                 )
             })
-
-            $('.form-fuel, .form-quantity').change(function () {
-                if(j <= 5){
-                    $('#nextThree').prop("disabled", true);
-                }else{
-                    $('#nextThree').prop("disabled", false);
-                }
-            }).change()
 
 
 
@@ -443,18 +409,13 @@ $(document).ready(function () {
 
             $(".form-quantity").change(function () {
                 quantity[j++] = $(this).val()
+
+                emissionThreeStandard(2)
+
                 $("#calculator").append(
                     "<input class='form-control' name='e1_"+ j +"' type='number' value='"+ quantity[quantity.length - 1] +"'>"
                 )
             })
-
-            $('.form-fuel, .form-quantity').change(function () {
-                if(j <= 3){
-                    $('#nextThree').prop("disabled", true);
-                }else{
-                    $('#nextThree').prop("disabled", false);
-                }
-            }).change()
 
 
 
@@ -478,18 +439,13 @@ $(document).ready(function () {
 
             $(".form-quantity").change(function () {
                 quantity[j++] = $(this).val()
+
+                emissionThreeStandard(1)
+
                 $("#calculator").append(
                     "<input class='form-control' name='e1_"+ j +"' type='number' value='"+ quantity[quantity.length - 1] +"'>"
                 )
             })
-
-            $('.form-fuel, .form-quantity').change(function () {
-                if(j <= 1){
-                    $('#nextThree').prop("disabled", true);
-                }else{
-                    $('#nextThree').prop("disabled", false);
-                }
-            }).change()
 
 
 
@@ -516,18 +472,13 @@ $(document).ready(function () {
 
             $(".form-quantity").change(function () {
                 quantity[j++] = $(this).val()
+
+                emissionThreeStandard(2)
+
                 $("#calculator").append(
                     "<input class='form-control' name='e1_"+ j +"' type='number' value='"+ quantity[quantity.length - 1] +"'>"
                 )
             })
-
-            $('.form-fuel, .form-quantity').change(function () {
-                if(j <= 3){
-                    $('#nextThree').prop("disabled", true);
-                }else{
-                    $('#nextThree').prop("disabled", false);
-                }
-            }).change()
 
 
 
@@ -552,18 +503,13 @@ $(document).ready(function () {
 
             $(".form-quantity").change(function () {
                 quantity[j++] = $(this).val()
+
+                emissionThreeStandard(1)
+
                 $("#calculator").append(
                     "<input class='form-control' name='e1_"+ j +"' type='number' value='"+ quantity[quantity.length - 1] +"'>"
                 )
             })
-
-            $('.form-fuel, .form-quantity').change(function () {
-                if(j<= 1){
-                    $('#nextThree').prop("disabled", true);
-                }else{
-                    $('#nextThree').prop("disabled", false);
-                }
-            }).change()
 
 
 
@@ -605,7 +551,7 @@ const form_fuel_two =  "<br><div class='row'><div class='col-11'><select class='
                         "<option value='carvao-vapor-6000-kcal-kg-two'>Carvão Vapor 6000 kcal / kg (Toneladas)</option>" +
                         "<option value='carvao-vapor-sem-especificacao'>Carvão Vapor sem Especificação (Toneladas)</option>" +
                         "<option value='coque-de-carvao-mineral'>Coque de Carvão Mineral (Toneladas)</option>" +
-                    "</select></div><div class='col-1 mt-2'><a class='badge badge-dark' data-bs-toggle='collapse' href='#stationInfo10' role='button' aria-bs-expanded='false' aria-bs-controls='stationInfo10'><i class='bi bi-info-circle-fill'></i></a></div></div><div class='collapse' id='stationInfo10'><div class='card-body mt-2'>Caso a sua organização não tenha esse tipo de fonte de emissão nos limites da operação dela, selecione a opção “Não Aplicável” e coloque “0” no espaço “Quantidade”.</div></div>"
+                    "</select></div><div class='col-1 mt-2' style='margin-left: -20px;'><a class='badge badge-dark' data-bs-toggle='collapse' href='#stationInfo10' role='button' aria-bs-expanded='false' aria-bs-controls='stationInfo10'><i class='bi bi-info-circle-fill'></i></a></div></div><div class='collapse' id='stationInfo10'><div class='card-body mt-2'>Caso a sua organização não tenha esse tipo de fonte de emissão nos limites da operação dela, selecione a opção “Não Aplicável” e coloque “0” no espaço “Quantidade”.</div></div>"
 
 $(document).ready(function () {
     $("#sector").change(function () {
@@ -614,6 +560,14 @@ $(document).ready(function () {
         var quantity = []
         var i = 0
         var j = 0
+
+        function emissionTwoStandard(qtd){
+            if(j != qtd){
+                $('#nextFour').prop("disabled", true);
+            }else{
+                $('#nextFour').prop("disabled", false);
+            }
+        }
 
         if (val == "geracao-de-energia") {
             var e2_1 = "<hr><input class='form-control' name='e2_1' type='text' value='Furgões / vans' readonly='readonly'>"
@@ -637,18 +591,13 @@ $(document).ready(function () {
 
             $(".form-quantity-two").change(function () {
                 quantity[j++] = $(this).val()
+
+                emissionTwoStandard(3)
+
                 $("#calculator").append(
                     "<input class='form-control' name='e2_"+ j +"' type='number' value='"+ quantity[quantity.length - 1] +"'>"
                 )
             })
-
-            $('.form-fuel-two, .form-quantity-two').change(function () {
-                if(j <= 5){
-                    $('#nextFour').prop("disabled", true);
-                }else{
-                    $('#nextFour').prop("disabled", false);
-                }
-            }).change()
 
 
 //////########################################################################################################################
@@ -674,6 +623,9 @@ $(document).ready(function () {
 
             $(".form-quantity-two").change(function () {
                 quantity[j++] = $(this).val()
+
+                emissionTwoStandard(2)
+
                 $("#calculator").append(
                     "<input class='form-control' name='e2_"+ j +"' type='number' value='"+ quantity[quantity.length - 1] +"'>"
                 )
@@ -708,6 +660,9 @@ $(document).ready(function () {
 
             $(".form-quantity-two").change(function () {
                 quantity[j++] = $(this).val()
+
+                emissionTwoStandard(1)
+
                 $("#calculator").append(
                     "<input class='form-control' name='e2_"+ j +"' type='number' value='"+ quantity[quantity.length - 1] +"'>"
                 )
@@ -735,6 +690,9 @@ $(document).ready(function () {
 
             $(".form-quantity-two").change(function () {
                 quantity[j++] = $(this).val()
+
+                emissionTwoStandard(1)
+
                 $("#calculator").append(
                     "<input class='form-control' name='e2_"+ j +"' type='number' value='"+ quantity[quantity.length - 1] +"'>"
                 )
@@ -763,6 +721,9 @@ $(document).ready(function () {
 
             $(".form-quantity-two").change(function () {
                 quantity[j++] = $(this).val()
+
+                emissionTwoStandard(2)
+
                 $("#calculator").append(
                     "<input class='form-control' name='e2_"+ j +"' type='number' value='"+ quantity[quantity.length - 1] +"'>"
                 )
@@ -791,6 +752,9 @@ $(document).ready(function () {
 
             $(".form-quantity-two").change(function () {
                 quantity[j++] = $(this).val()
+
+                emissionTwoStandard(1)
+
                 $("#calculator").append(
                     "<input class='form-control' name='e2_"+ j +"' type='number' value='"+ quantity[quantity.length - 1] +"'>"
                 )
@@ -820,6 +784,9 @@ $(document).ready(function () {
 
             $(".form-quantity-two").change(function () {
                 quantity[j++] = $(this).val()
+
+                emissionTwoStandard(2)
+
                 $("#calculator").append(
                     "<input class='form-control' name='e2_"+ j +"' type='number' value='"+ quantity[quantity.length - 1] +"'>"
                 )
@@ -847,6 +814,9 @@ $(document).ready(function () {
 
             $(".form-quantity-two").change(function () {
                 quantity[j++] = $(this).val()
+
+                emissionTwoStandard(1)
+
                 $("#calculator").append(
                     "<input class='form-control' name='e2_"+ j +"' type='number' value='"+ quantity[quantity.length - 1] +"'>"
                 )
@@ -874,6 +844,9 @@ $(document).ready(function () {
 
             $(".form-quantity-two").change(function () {
                 quantity[j++] = $(this).val()
+
+                emissionTwoStandard(1)
+
                 $("#calculator").append(
                     "<input class='form-control' name='e2_"+ j +"' type='number' value='"+ quantity[quantity.length - 1] +"'>"
                 )
@@ -901,18 +874,13 @@ $(document).ready(function () {
 
             $(".form-quantity-two").change(function () {
                 quantity[j++] = $(this).val()
+
+                emissionTwoStandard(1)
+
                 $("#calculator").append(
                     "<input class='form-control' name='e2_"+ j +"' type='number' value='"+ quantity[quantity.length - 1] +"'>"
                 )
             })
-
-            $('.form-fuel-two, .form-quantity-two').change(function () {
-                if(j <= 1){
-                    $('#nextFour').prop("disabled", true);
-                }else{
-                    $('#nextFour').prop("disabled", false);
-                }
-            }).change()
 
 
 //////########################################################################################################################
@@ -927,13 +895,13 @@ $(document).ready(function () {
 
   //////##########################################################Emission_three##############################################################\\\\\\
 
-var form_quantity_air_conditionair = "<br><div class='row'><div class='col-11'><input class='form-air-conditioner form-control' name='' value='Ar condicionado central' readonly='readonly'><br><input class='form_quantity_air_conditionair form-control' name='emission_quantity_three' type='number' placeholder='Quantidade - Campo obrigatório'></div><div class='col-1 mt-2'><a class='badge badge-dark' data-bs-toggle='collapse' href='#stationInfo9' role='button' aria-bs-expanded='false' aria-bs-controls='stationInfo9'><i class='bi bi-info-circle-fill'></i></a></div></div><div class='collapse' id='stationInfo9'><div class='card-body mt-2'>Caso a sua organização não tenha esse tipo de fonte de emissão nos limites da operação dela, coloque “0” no espaço “Quantidade“</div></div>"
+var form_quantity_air_conditionair = "<br><div class='row'><div class='col-11'><input class='form-air-conditioner form-control' name='' value='Ar condicionado central' readonly='readonly'><br><input class='form-quantity-air-conditionair form-control' name='emission_quantity_three' type='number' placeholder='Quantidade - Campo obrigatório'></div><div class='col-1 mt-2' style='margin-left: -20px;'><a class='badge badge-dark' data-bs-toggle='collapse' href='#stationInfo9' role='button' aria-bs-expanded='false' aria-bs-controls='stationInfo9'><i class='bi bi-info-circle-fill'></i></a></div></div><div class='collapse' id='stationInfo9'><div class='card-body mt-2'>Caso a sua organização não tenha esse tipo de fonte de emissão nos limites da operação dela, coloque “0” no espaço “Quantidade“</div></div>"
 
-var form_quantity_air_split = "<br><div class='row'><div class='col-11'><input class='form-air-split form-control' name='' value='Ar condicionado split' readonly='readonly'><br><input class='form_quantity_air_split form-control' name='emission_quantity_three' type='number' placeholder='Quantidade - Campo obrigatório'></div><div class='col-1 mt-2'><a class='badge badge-dark' data-bs-toggle='collapse' href='#stationInfo9' role='button' aria-bs-expanded='false' aria-bs-controls='stationInfo9'><i class='bi bi-info-circle-fill'></i></a></div></div><div class='collapse' id='stationInfo9'><div class='card-body mt-2'>Caso a sua organização não tenha esse tipo de fonte de emissão nos limites da operação dela, coloque “0” no espaço “Quantidade“</div></div>"
+var form_quantity_air_split = "<br><div class='row'><div class='col-11'><input class='form-air-split form-control' name='' value='Ar condicionado split' readonly='readonly'><br><input class='form-quantity-air-split form-control' name='emission_quantity_three' type='number' placeholder='Quantidade - Campo obrigatório'></div><div class='col-1 mt-2' style='margin-left: -20px;'><a class='badge badge-dark' data-bs-toggle='collapse' href='#stationInfo9' role='button' aria-bs-expanded='false' aria-bs-controls='stationInfo9'><i class='bi bi-info-circle-fill'></i></a></div></div><div class='collapse' id='stationInfo9'><div class='card-body mt-2'>Caso a sua organização não tenha esse tipo de fonte de emissão nos limites da operação dela, coloque “0” no espaço “Quantidade“</div></div>"
 
-var form_quantity_extinguish = "<br><div class='row'><div class='col-11'><input class='form-air-conditioner form-control' name='' value='Extintores' readonly='readonly'><br><input class='form-quantity-extinguish form-control' name='emission_quantity_three' type='number' placeholder='Quantidade - Campo obrigatório'></div><div class='col-1 mt-2'><a class='badge badge-dark' data-bs-toggle='collapse' href='#stationInfo9' role='button' aria-bs-expanded='false' aria-bs-controls='stationInfo9'><i class='bi bi-info-circle-fill'></i></a></div></div><div class='collapse' id='stationInfo9'><div class='card-body mt-2'>Caso a sua organização não tenha esse tipo de fonte de emissão nos limites da operação dela, coloque “0” no espaço “Quantidade“</div></div>"
+var form_quantity_extinguish = "<br><div class='row'><div class='col-11'><input class='form-air-conditioner form-control' name='' value='Extintores' readonly='readonly'><br><input class='form-quantity-extinguish form-control' name='emission_quantity_three' type='number' placeholder='Quantidade - Campo obrigatório'></div><div class='col-1 mt-2' style='margin-left: -20px;'><a class='badge badge-dark' data-bs-toggle='collapse' href='#stationInfo9' role='button' aria-bs-expanded='false' aria-bs-controls='stationInfo9'><i class='bi bi-info-circle-fill'></i></a></div></div><div class='collapse' id='stationInfo9'><div class='card-body mt-2'>Caso a sua organização não tenha esse tipo de fonte de emissão nos limites da operação dela, coloque “0” no espaço “Quantidade“</div></div>"
 
-var form_quantity_fridge = "<br><div class='row'><div class='col-11'><input class='form-air-conditioner form-control' name='' value='Refrigerador, Geladeira, Freezer' readonly='readonly'><br><input class='form-quantity-fridge form-control' name='emission_quantity_three' type='number' placeholder='Quantidade - Campo obrigatório'></div><div class='col-1 mt-2'><a class='badge badge-dark' data-bs-toggle='collapse' href='#stationInfo9' role='button' aria-bs-expanded='false' aria-bs-controls='stationInfo9'><i class='bi bi-info-circle-fill'></i></a></div></div><div class='collapse' id='stationInfo9'><div class='card-body mt-2'>Caso a sua organização não tenha esse tipo de fonte de emissão nos limites da operação dela, coloque “0” no espaço “Quantidade“</div></div>"
+var form_quantity_fridge = "<br><div class='row'><div class='col-11'><input class='form-air-conditioner form-control' name='' value='Refrigerador, Geladeira, Freezer' readonly='readonly'><br><input class='form-quantity-fridge form-control' name='emission_quantity_three' type='number' placeholder='Quantidade - Campo obrigatório'></div><div class='col-1 mt-2' style='margin-left: -20px;'><a class='badge badge-dark' data-bs-toggle='collapse' href='#stationInfo9' role='button' aria-bs-expanded='false' aria-bs-controls='stationInfo9'><i class='bi bi-info-circle-fill'></i></a></div></div><div class='collapse' id='stationInfo9'><div class='card-body mt-2'>Caso a sua organização não tenha esse tipo de fonte de emissão nos limites da operação dela, coloque “0” no espaço “Quantidade“</div></div>"
 
 $(document).ready(function () {
     $("#sector").change(function () {
@@ -949,14 +917,14 @@ $(document).ready(function () {
             var k = 0;
             var w = 0;
 
-            $(".form_quantity_air_conditionair").change(function () {
+            $(".form-quantity-air-conditionair").change(function () {
                 quantity_air[i++] = $(this).val()
                 $("#calculator").append(
                     "<input class='form-control' name='e3_"+ i +"' type='number' value='"+ quantity_air[quantity_air.length - 1] +"'>"
                 )
             })
     
-            $(".form_quantity_air_split").change(function () {
+            $(".form-quantity-air-split").change(function () {
                 quantity_air_split[w++] = $(this).val()
                 $("#calculator").append(
                     "<input class='form-control' name='e3_"+ w +"' type='number' value='"+ quantity_air_split[quantity_air_split.length - 1] +"'>"
@@ -972,17 +940,17 @@ $(document).ready(function () {
     
             $(".form-quantity-fridge").change(function () {
                 quantity_fridge[k++] = $(this).val()
+
+                if(k != qtd){
+                    $('#nextFive').prop("disabled", true);
+                }else{
+                    $('#nextFive').prop("disabled", false);
+                }
+
                 $("#calculator").append(
                     "<input class='form-control' name='e3_"+ k +"' type='number' value='"+ quantity_fridge[quantity_fridge.length - 1] +"'>"
                 )
-
-                if($(this).val().length > 0){
-                    $('#nextFive').prop("disabled", false);
-                }else{
-                    $('#nextFive').prop("disabled", true);
-                }
-            }).change()
-
+            })
         }
 
         if (val == "geracao-de-energia") {
@@ -999,7 +967,7 @@ $(document).ready(function () {
 
             $("#calculator").append(e3_1+e3_2+e3_3)
 
-            emissionThreeStandard(2)
+            emissionThreeStandard(3)
 
 
 
@@ -1020,7 +988,7 @@ $(document).ready(function () {
 
             $("#calculator").append(e3_1+e3_2+e3_3)
 
-            emissionThreeStandard()
+            emissionThreeStandard(3)
 
 
 //////########################################################################################################################
@@ -1035,7 +1003,7 @@ $(document).ready(function () {
 
             $("#calculator").append(e3_1)
 
-            emissionThreeStandard()
+            emissionThreeStandard(1)
 
 
 //////########################################################################################################################
@@ -1054,7 +1022,7 @@ $(document).ready(function () {
 
             $("#calculator").append(e3_1+e3_2+e3_3)
 
-            emissionThreeStandard()
+            emissionThreeStandard(3)
 
 
 //////########################################################################################################################
@@ -1071,7 +1039,7 @@ $(document).ready(function () {
 
             $("#calculator").append(e3_1+e3_2)
 
-            emissionThreeStandard()
+            emissionThreeStandard(2)
 
 
 //////########################################################################################################################
@@ -1088,7 +1056,7 @@ $(document).ready(function () {
 
             $("#calculator").append(e3_1+e3_2)
 
-            emissionThreeStandard()
+            emissionThreeStandard(2)
 
 
 //////########################################################################################################################
@@ -1110,7 +1078,7 @@ $(document).ready(function () {
 
             $("#calculator").append(e3_1)
 
-            emissionThreeStandard()
+            emissionThreeStandard(1)
 
 
 //////########################################################################################################################
@@ -1125,7 +1093,7 @@ $(document).ready(function () {
 
             $("#calculator").append(e3_1+e3_2+e3_3)
 
-            emissionThreeStandard()
+            emissionThreeStandard(1)
 
 
 //////########################################################################################################################
@@ -1140,7 +1108,7 @@ $(document).ready(function () {
 
             $("#calculator").append(e3_1)
 
-            emissionThreeStandard()
+            emissionThreeStandard(1)
 
 
 //////########################################################################################################################
@@ -1156,7 +1124,7 @@ $(document).ready(function () {
 
             $("#calculator").append(e3_1)
 
-            emissionThreeStandard()
+            emissionThreeStandard(1)
 
 
 //////########################################################################################################################
@@ -1172,7 +1140,7 @@ $(document).ready(function () {
 
             $("#calculator").append(e3_1)
 
-            emissionThreeStandard()
+            emissionThreeStandard(1)
 
 
 //////########################################################################################################################
