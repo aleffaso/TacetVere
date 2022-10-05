@@ -74,6 +74,7 @@ var info_two =  "<div class='collapse' id='stationInfo8'>" +
                     "</div>" +
                 "</div>"
 
+
 $(document).ready(function () {
     $("#sector").change(function () {
 
@@ -83,10 +84,10 @@ $(document).ready(function () {
         var i = 0
         var j = 0
 
-        function emissionThreeStandard(n, qtd){
-            if(n != qtd){
-                $('#nextThree').prop("disabled", true);
-            }else{
+        $('#nextThree').prop("disabled", true);
+
+        function emissionThreeStandard(qtd){
+            if(j == qtd){
                 $('#nextThree').prop("disabled", false);
             }
         }
@@ -561,10 +562,10 @@ $(document).ready(function () {
         var i = 0
         var j = 0
 
+        $('#nextFour').prop("disabled", true);
+
         function emissionTwoStandard(qtd){
-            if(j != qtd){
-                $('#nextFour').prop("disabled", true);
-            }else{
+            if(j == qtd){
                 $('#nextFour').prop("disabled", false);
             }
         }
@@ -917,6 +918,8 @@ $(document).ready(function () {
             var k = 0;
             var w = 0;
 
+            $('#nextFive').prop("disabled", true);
+
             $(".form-quantity-air-conditionair").change(function () {
                 quantity_air[i++] = $(this).val()
                 $("#calculator").append(
@@ -941,9 +944,7 @@ $(document).ready(function () {
             $(".form-quantity-fridge").change(function () {
                 quantity_fridge[k++] = $(this).val()
 
-                if(k != qtd){
-                    $('#nextFive').prop("disabled", true);
-                }else{
+                if(k == qtd){
                     $('#nextFive').prop("disabled", false);
                 }
 

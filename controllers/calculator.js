@@ -213,8 +213,6 @@ routes.post("/calculator", (req, res) => {
             electricity_quantity = 0
         }
 
-        console.log(req.body)
-
         Parameters.findAll().then((parameters, index) => {
             
             var sum_co2 = 0;
