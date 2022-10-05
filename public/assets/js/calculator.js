@@ -636,6 +636,7 @@ $(document).ready(function () {
 //////########################################################################################################################
 
         }else if (val == "extracao-mineral-de-carvao" || val == "aluminio"){
+            $('#nextFour').prop("disabled", false);
             $("#emission_two").html(
                 "<div><hr><h4>Pode seguir para a próxima etapa</h4></div>"
             )
@@ -1063,6 +1064,7 @@ $(document).ready(function () {
 //////########################################################################################################################
 
         }else if (val == "cimento-e-cal"){
+            $('#nextFive').prop("disabled", false);
             $("#emission_three").html(
                 "<div><hr><h4>Pode seguir para a próxima etapa</h4></div>"
             )
