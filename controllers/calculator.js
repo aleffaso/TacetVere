@@ -738,7 +738,7 @@ routes.post("/calculator", (req, res) => {
                 e1_8: e1_8, e2_1, e2_2: e2_2, e2_3: e2_3, e2_4: e2_4, e2_5: e2_5, e3_1: e3_1, 
                 e3_2: e3_2, e3_3: e3_3,
             }).then(() => {
-                res.render('index', {token: req.session.token, 
+                res.render('pages/02_solutions', {token: req.session.token, 
                     parameters: parameters, 
                     calculator:true,
                     sum_co2: (sum_co2/1000),
@@ -762,7 +762,7 @@ routes.post("/calculator", (req, res) => {
                     sum_biogenic_co2_four: 0
                 }); 
             }).catch((err) => {
-                res.redirect("/");
+                res.redirect("pages/02_solutions");
             });
         })
 });

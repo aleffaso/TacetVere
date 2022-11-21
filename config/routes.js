@@ -8,11 +8,29 @@ const User = require('../db/User');
 
 
 //main page
-routes.get('/', (req,res) => {
+// routes.get('/', (req,res) => {
+//     Parameters.findAll().then(parameters => {
+//         res.render('index', {token: req.session.token, parameters: parameters, calculator:false}); 
+//     });
+// });
+
+routes.get('/', (req, res) => {
     Parameters.findAll().then(parameters => {
-        res.render('index', {token: req.session.token, parameters: parameters, calculator:false}); 
+        res.render('pages/01_home', {token: req.session.token}); 
     });
-});
+})
+
+routes.get('/solucoes', (req, res) => {
+    Parameters.findAll().then(parameters => {
+        res.render('pages/02_solutions', {token: req.session.token, parameters: parameters, calculator:false}); 
+    });
+})
+
+routes.get('/sobre', (req, res) => {
+    Parameters.findAll().then(parameters => {
+        res.render('pages/03_about', {token: req.session.token}); 
+    });
+})
 
 //Blog page
 routes.get('/blog', (req,res) => {
