@@ -10,6 +10,7 @@ const usersController = require("./controllers/users");
 const newsletter = require("./controllers/newsletter");
 const calculator = require("./controllers/calculator");
 const routes = require('./config/routes');
+const calcs = require('./config/calculators');
 const dotenv = require('dotenv');
 
 //Set envkeys
@@ -34,10 +35,12 @@ app.use(bodyParser.json());
 
 //database connection
 connection.authenticate().then(() => {
-    console.log("connection success");
-}).catch((error) => {
-    console.log(error);
-});
+    try {
+        console.log("connection success");
+    } catch (error) {
+        console.log(error);
+    }
+})
 
 //routes
 app.use("/", articlesController);
@@ -45,6 +48,7 @@ app.use("/", categoriesController);
 app.use("/", usersController);
 app.use("/", newsletter);
 app.use("/", calculator);
+app.use("/", calcs);
 app.use("/", routes);
 
 //Server

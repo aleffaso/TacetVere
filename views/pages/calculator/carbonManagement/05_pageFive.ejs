@@ -1,0 +1,34 @@
+<div class="page five">
+    <h1 class="event">
+      Evento
+    </h1>
+    <h1 class="explanation">
+      Continuando, sobre o evento, vamos entender melhor o que você está organizando.
+    </h1>
+    <div class="body">
+      <fieldset>
+        <div id="greenerCalculatorFour">
+            <select id="category" class="border-box" name="category">
+                <option disabled selected value>Em qual categoria você diria que esse evento melhor se insere?</option>
+                <option value="convention">Feira/Convenção/Exposição indoor</option>
+                <option value="show-outdoor">Show outdoor</option>
+                <option value="other">Outro</option>
+            </select>
+            <input id="otherCategory" class="border-box" name="otherCategory" type="text" placeholder="Qual?" style="display: none;">
+            <p id="convention" style="display: none; color:#0F0F0F; text-align: center;"></br></br>Neste caso, consideramos que já existe uma infraestrutura previamente estabelecida envolvendo: um imóvel, ar condicionado central e banheiros para realização do evento
+            </p>
+            <p id="show-outdoor" style="display: none; color:#0F0F0F; text-align: center;"></br></br>Neste caso, consideramos que não existe uma infraestrutura previamente estabelecida
+            </p>
+        </div>
+      </fieldset>
+    </div>
+    <button id='nextFour' class="btn-next-allow" onClick="slide('next')" style="display:none" disabled>
+      <div>Próximo</div>
+    </button>
+    <button id='nextFourOther' class="btn-next-allow" onClick="slideTwo('next')" style="display:none" disabled>
+      <div>Próximo</div>
+    </button>
+    <button class="btn-previous" onClick="slide('prev')">
+      < Voltar
+    </button>
+</div>

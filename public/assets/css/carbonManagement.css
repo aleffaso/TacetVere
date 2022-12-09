@@ -1,0 +1,342 @@
+:root {
+    --body-color: #19453B;
+    --text-color: #FFF;
+    --title-color: #0F0F0F;
+    --body-text-color: #000000;
+    --button-color: #2FAC66;
+    --border-gray: #BABABA;
+  }
+
+body {
+    background-color: var(--body-color);
+}
+
+h1, h2, h3, h4, h5 , p{
+    font-family: "Red-Hat-Display", sans-serif;
+    color: var(--text-color);
+    font-style: normal;
+}
+
+.logo{
+    position: absolute;
+    width: 193px;
+    height: 56px;
+    left: 70px;
+    top: 60px;
+    border-radius: 0px;
+}
+
+.converse-conosco-logo{
+    position: absolute;
+    left: -20%;
+    right: 0%;
+    top: -10%;
+    bottom: 0%;
+    color: var(--text-color);
+}
+
+.converse-conosco{
+    position: absolute;
+    width: 178px;
+    height: 36px;
+    left: 120px;
+    top: 176px;
+    font-weight: 900;
+    font-size: 18px;    
+}
+
+.converse-conosco-info {
+    position: absolute;
+    width: 297px;
+    height: 21px;
+    left: 120px;
+    top: 222px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+}
+
+.converse-conosco-contato {
+    position: absolute;
+    width: 187px;
+    height: 36px;
+    left: 120px;
+    top: 253px;
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 36px;
+}
+
+.WhatsApp-logo{
+    position: absolute;
+    left: -30%;
+    right: 0%;
+    top: 20%;
+    bottom: 0%;
+    color: var(--text-color);
+}
+
+.WhatsApp{
+    position: absolute;
+    width: 100px;
+    height: 36px;
+    left: 120px;
+    top: 335px;
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 36px;
+}
+
+.WhatsApp-info{
+    position: absolute;
+    width: 297px;
+    height: 21px;
+    left: 120px;
+    top: 381px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;  
+}
+
+.WhatsApp-contato{
+    position: absolute;
+    width: 147px;
+    height: 36px;
+    left: 120px;
+    top: 412px;
+    font-weight: 900;
+    font-size: 16px;    
+}
+
+.tacet-vere-logo{
+    position: absolute;
+    width: 200.55px;
+    height: auto;
+    left: 169px;
+    top: 828px;
+}
+
+/*--------------------------------------------------------------
+# Pages
+--------------------------------------------------------------*/
+
+.container{
+    position: absolute;
+    width: 700px;
+    height: 802px;
+    left: 590px;
+    top: 60px;
+    background: var(--text-color);
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 100px;
+}
+
+.container .pages {
+  position: absolute;
+  display: flex;
+  width: 900%;
+  box-sizing: border-box; 
+}
+
+.container .page {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    transition: all 0.7s;
+    color: white;
+}
+
+.container .title{
+    width: 500px;
+    height: 80px;
+    font-size: 24px;
+    line-height: 40px;
+    font-weight: 900;
+    text-align: center;
+    color: var(--title-color);
+    margin-top: 70px;
+}
+
+.container .event {
+    width: 560px;
+    left: 62px;
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 35px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 20px;
+    color: var(--body-color);
+}
+
+.container .explanation {
+    width: 486px;
+    height: 90px;
+    left: 99px;
+    top: 62px;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 35px;
+    text-align: center;
+    color: var(--title-color);
+    
+}
+
+.container .body{
+    width: 560px;
+    height: 416px;
+    left: 70px;
+    top: 207px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    color: var(--body-text-color);
+    text-align: justify;
+    margin-top: 30px;
+}
+
+.container .btn-next{
+    width: 541px;
+    height: 55px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.1s;
+    background: var(--button-color);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 26px;
+    text-align: center;
+    color: var(--text-color);
+    border-color: transparent;
+}
+
+.container .btn-next-allow{
+    width: 541px;
+    height: 55px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.1s;
+    background: var(--border-gray);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 26px;
+    text-align: center;
+    color: var(--text-color);
+    border-color: transparent;
+}
+
+.container .btn-previous{
+    cursor: pointer;
+    transition: 0.1s;
+    background: transparent;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 26px;
+    text-align: center;
+    color: var(--button-color);
+    border-color: transparent;
+}
+
+.container .border-box{
+    box-sizing: border-box;
+    width: 560px;
+    height: 56px;
+    border: 1px solid var(--border-gray);
+    border-radius: 4px;
+    margin: 15px 0 8px 0;
+}
+
+.container .border-box-rectangle{
+    box-sizing: border-box;
+    width: 138px;
+    height: 55px;
+    border: 1px solid var(--border-gray);
+    border-radius: 3px;
+}
+
+.container .border-box-rectangle-2{
+    box-sizing: border-box;
+    width: 238px;
+    height: 55px;
+    margin-top: 5px;
+    border: 1px solid var(--border-gray);
+    border-radius: 3px;
+}
+
+.container .title-box{
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 24px;
+    margin-bottom: 26px;
+    color: var(--body-text-color);
+}
+
+.container .title-hr{
+    font-weight: 700;
+    font-size:16px;
+    line-height: 24px;
+    margin-bottom: -3px;
+    color: var(--body-text-color);
+}
+
+.container .title-legend{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: var(--body-text-color);
+}
+
+.container .title-hr-2{
+    font-weight: 700;
+    font-size:16px;
+    line-height: 24px;
+    margin-top: 200px;
+    color: var(--body-text-color);
+}
+
+.container .title-hr-3{
+    font-weight: 700;
+    font-size:16px;
+    line-height: 24px;
+    color: var(--body-text-color);
+}
+
+input::placeholder{
+    font-weight: 700;
+    font-size: 12px;
+    padding-left: 10px;
+    padding-top: 10px;
+    color: var(--border-gray)
+}
+
+legend{
+    font-weight: 700;
+    font-size: 12px;
+    padding-left: 10px;
+    padding-top: 10px;
+    color: var(--border-gray)
+}
+
+input{
+    margin-left: 0.5rem;
+}
+
+select {
+    font-weight: 700;
+    font-size: 12px;
+    padding-left: 10px;
+    padding-top: 7px;
+    color: var(--border-gray);
+    -webkit-appearance: none;
+   -moz-appearance: none;
+}
+
+button:hover{
+  transform: scale(1.05);
+}

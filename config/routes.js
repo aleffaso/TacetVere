@@ -15,9 +15,7 @@ const User = require('../db/User');
 // });
 
 routes.get('/', (req, res) => {
-    Parameters.findAll().then(parameters => {
-        res.render('pages/01_home', {token: req.session.token}); 
-    });
+    res.render('pages/01_home', {token: req.session.token}); 
 })
 
 routes.get('/solucoes', (req, res) => {
@@ -27,9 +25,7 @@ routes.get('/solucoes', (req, res) => {
 })
 
 routes.get('/sobre', (req, res) => {
-    Parameters.findAll().then(parameters => {
-        res.render('pages/03_about', {token: req.session.token}); 
-    });
+    res.render('pages/03_about', {token: req.session.token}); 
 })
 
 //Blog page

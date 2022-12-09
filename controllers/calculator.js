@@ -6,7 +6,7 @@ const Parameters = require('../db/Parameters');
 const Calculator = require('../db/Calculator');
 const adminAuth = require('../middlewares/adminAuth'); 
 
-//New category
+
 routes.get("/admin/calculator", adminAuth, (req, res) => {
     res.render("admin/calculator/index", {token: req.session.token});
 });

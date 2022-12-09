@@ -1,0 +1,43 @@
+<div class="page fiveOne">
+    <h1 class="event">
+      Emissões diretas
+    </h1>
+    <h1 class="explanation">
+    Queima de Combustível <br>em Veículos Próprios
+    </h1>
+    <p style="color: #000;">
+        Deixe o campo vazio se não souber estimar
+    </p>
+    <div class="body">
+      <fieldset>
+        <div id="greenerCalculatorFiveOne">
+            <div style="width: 100%; padding-left: 80px;">
+                <div style="width:50%; float: left;">
+                    <legend class="title-box">Diesel</legend>
+                    <input id="own_diesel" class="border-box-rectangle" name="own_diesel" type="number" placeholder="Litros" min="0">
+                </div>
+                <div style="width:50%; float: right;">
+                    <legend class="title-box">Gasolina</legend>
+                    <input id="own_gas" class="border-box-rectangle" name="own_gas" type="number" placeholder="Litros" min="0">
+                </div>
+            </div>
+            <div style="width: 100%; padding-top: 150px; padding-left: 80px;">
+                <div style="width:50%; float: right;">
+                    <legend class="title-box">Gás (GNV)</legend>
+                    <input id="own_gnv" class="border-box-rectangle" name="own_gnv" type="number" placeholder="m³" min="0">
+                </div>
+                <div style="width:50%; float: right;">
+                    <legend class="title-box">Etanol</legend>
+                    <input id="own_etanol" class="border-box-rectangle" name="own_etanol" type="number" placeholder="Litros" min="0">
+                </div>
+            </div>
+        </div>
+      </fieldset>
+    </div>
+    <button id='nextFiveOne' class="btn-next" onClick="slide('next')">
+      <div>Próximo</div>
+    </button>
+    <button class="btn-previous" onClick="slide('prev')">
+      < Voltar
+    </button>
+</div>
