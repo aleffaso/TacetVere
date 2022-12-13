@@ -6,19 +6,17 @@
     Continuando, sobre o evento, vamos entender melhor o que você está organizando.
     </h1>
     <div class="body">
-        <fieldset>
-            <div id="greenerCalculatorThree">
-                <input id="hoursPerDay" class="border-box" name="hoursPerDay" type="number" placeholder="Quantas horas por dia deve durar?" min="0">
-                <input id="predictedArea" class="border-box" name="predictedArea" type="number" placeholder="Área prevista (em m²)?" min="0">
-                <legend>Dentre a área prevista na resposta acima, qual é a área sob responsabilidade direta da sua organização? Se houver outros CNPJs presentes na área do evento, desconte a área que eles ocupam.</legend>
-                <input id="predictedResponsibleArea" class="border-box" name="predictedResponsibleArea" type="text" placeholder="Área sob responsabilidade da organização (em m²)?" min="0">
-            </div>
-        </fieldset>
+        <div id="greenerCalculatorThree">
+            <input id="hoursPerDay" class="border-box" name="hoursPerDay" type="number" placeholder="Quantas horas por dia deve durar?" min="0">
+            <input id="predictedArea" class="border-box" name="predictedArea" type="number" placeholder="Área prevista (em m²)?" min="0">
+            <legend>Dentre a área prevista na resposta acima, qual é a área sob responsabilidade direta da sua organização? Se houver outros CNPJs presentes na área do evento, desconte a área que eles ocupam.</legend>
+            <input id="predictedResponsibleArea" class="border-box" name="predictedResponsibleArea" type="text" placeholder="Área sob responsabilidade da organização (em m²)?" min="0">
+        </div>
     </div>
-    <button id='nextThree' class="btn-next-allow" onClick="slide('next')" disabled>
+    <button id='nextThree' type="button" class="btn-next-allow" onClick="slide('next')" disabled>
     <div>Próximo</div>
     </button>
-    <button class="btn-previous" onClick="slide('prev')">
+    <button class="btn-previous" type="button" onClick="slide('prev')">
     < Voltar
     </button>
 </div>

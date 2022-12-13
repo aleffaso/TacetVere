@@ -6,29 +6,26 @@
     Para começar, vamos fazer um breve cadastro de seu evento. Ele será essencial para contextualização e para o cálculo das emissões. 
     </h1>
     <div class="body">
-        <form id="form" method="POST" action="/greener-carbon-managament">
-            <fieldset id="form">
-                <div id="greenerCalculator">
-                    <input id="email" class="border-box" name="email" type="text" placeholder="Seu melhor e-mail">
-                    <input id="name" class="border-box" name="name" type="text" placeholder="Como você se chama?">
-                    <input id="position" class="border-box" name="position" type="text" placeholder="Qual é a função que você exerce na organização do evento?">
-                    <select id="goal" class="border-box" name="goal">
+        <form id="greener-carbon-management" method="POST" action="/greener-carbon-management">
+            <div id="greenerCalculator">
+                <input id="email" class="border-box" name="email" type="text" placeholder="Seu melhor e-mail">
+                <input id="name" class="border-box" name="name" type="text" placeholder="Como você se chama?">
+                <input id="position" class="border-box" name="position" type="text" placeholder="Qual é a função que você exerce na organização do evento?">
+                <select id="goal" class="border-box" name="goal">
                     <option disabled selected value>Qual o objetivo para esta ação de gestão do carbono?</option>
                     <option>Cumprir determinação/solicitação de cliente</option>
                     <option>Adequar-se às propostas dos concorrentes, que já fazem esse tipo de ação</option>
                     <option>Realizar ações voluntárias e inovadoras</option>
                     <option>Gerir riscos e identificar oportunidades de redução de emissões</option>
                     <option value='other'>Outro</option>
-                    </select>
-                    <input id="otherGoal" class="border-box" name="otherGoal" type="text" placeholder="Qual?" style="display: none;">
-                </div>
-            </fieldset>
-        </form>
+                </select>
+                <input id="otherGoal" class="border-box" name="otherGoal" type="text" placeholder="Qual?" style="display: none;">
+            </div>
     </div>
-    <button id='nextOne' class="btn-next-allow" onClick="slide('next')" disabled>
-    <div>Próximo</div>
+    <button type="button" id='nextOne' class="btn-next-allow" onClick="slide('next')" disabled>
+        <div>Próximo</div>
     </button>
-    <button class="btn-previous" onClick="slide('prev')">
+    <button class="btn-previous" type="button" onClick="slide('prev')">
     < Voltar
     </button>
 </div>

@@ -9,55 +9,54 @@
         Deixe o campo vazio se não souber estimar
     </p>
     <div class="body">
-      <fieldset>
-        <div id="greenerCalculatorFiveTwo">
-          <div style="width:28%; float: left;">
-            <div class="title-hr">Em Geradores</div>
-            <hr>
-          </div>
-          <div style="width:64%; float: right;">
-            <div class="title-hr">Fornos, Fogões e Sistemas de Aquecimento</div>
-            <hr>
-          </div>
-          <br>
-          <div style="width: 100%;">
-            <div style="width:33%; float: left;">
-                <legend class="title-box">Diesel<br><br></legend>
-                <input id="equipment_diesel" class="border-box-rectangle" name="equipment_diesel" type="number" placeholder="Litros" min="0">
-            </div>
-            <div style="width:33%; float: right;">
-              <legend class="title-box">Gás natural<br>
-                <div class="title-legend">Encanado</div>
-              </legend>
-              <input id="equipment_gas_natural" class="border-box-rectangle" name="equipment_gas_natural" type="number" placeholder="m³" min="0">
-            </div>
-            <div style="width:33%; float: right;">
-                <legend class="title-box">GLP<br>
-                  <div class="title-legend">Gás Liquefeito</div>
-                </legend>
-                <input id="equipment_glp" class="border-box-rectangle" name="equipment_glp" type="number" placeholder="Litros" min="0">
-            </div>
-          </div>
-          <div style="width: 100%;">
-            <div class="title-hr-2">Emissões Fugitivas</div>
-            <hr>
-          </div>
-          <div style="width: 100%;">
-            <div style="width:60%; float: left;">
-              <div class="title-hr-3">Refrigeradores, freezers, geladeiras</div>
-              <input id="equipment_diesel" class="border-box-rectangle-2" name="equipment_diesel" type="number" placeholder="Quantidade" min="0">
-            </div>
-            <div style="width:40%; float: right;">
-              <div class="title-hr-3">Extintores de Incêndio</div>
-              <input id="equipment_gas_natural" class="border-box-rectangle-2" name="equipment_gas_natural" type="number" placeholder="Quantidade" min="0">
-            </div>
+      <div id="greenerCalculatorFiveTwo">
+        <div style="width:28%; float: left;">
+          <div class="title-hr">Em Geradores</div>
+          <hr>
         </div>
-      </fieldset>
+        <div style="width:64%; float: right;">
+          <div class="title-hr">Fornos, Fogões e Sistemas de Aquecimento</div>
+          <hr>
+        </div>
+        <br>
+        <div style="width: 100%;">
+          <div style="width:33%; float: left;">
+              <legend class="title-box">Diesel<br><br></legend>
+              <input id="equipment_diesel" class="border-box-rectangle" name="equipment_diesel" type="number" placeholder="Litros" min="0">
+          </div>
+          <div style="width:33%; float: right;">
+            <legend class="title-box">Gás natural<br>
+              <div class="title-legend">Encanado</div>
+            </legend>
+            <input id="equipment_gas_natural" class="border-box-rectangle" name="equipment_gas_natural" type="number" placeholder="m³" min="0">
+          </div>
+          <div style="width:33%; float: right;">
+              <legend class="title-box">GLP<br>
+                <div class="title-legend">Gás Liquefeito</div>
+              </legend>
+              <input id="equipment_glp" class="border-box-rectangle" name="equipment_glp" type="number" placeholder="Litros" min="0">
+          </div>
+        </div>
+        <div style="width: 100%;">
+          <div class="title-hr-2">Emissões Fugitivas</div>
+          <hr>
+        </div>
+        <div style="width: 100%;">
+          <div style="width:60%; float: left;">
+            <div class="title-hr-3">Refrigeradores, freezers, geladeiras</div>
+            <input id="refrigerators_freezers_fridges" class="border-box-rectangle-2" name="refrigerators_freezers_fridges" type="number" placeholder="Quantidade" min="0">
+          </div>
+          <div style="width:40%; float: right;">
+            <div class="title-hr-3">Extintores de Incêndio</div>
+            <input id="fire_extinguisher" class="border-box-rectangle-2" name="fire_extinguisher" type="number" placeholder="Quantidade" min="0">
+          </div>
+        </div>
+      </div>
     </div>
-    <button id='nextFiveTwo' class="btn-next" onClick="slide('next')">
+    <button id='nextFiveTwo' type="button" class="btn-next" onClick="slide('next')">
       <div>Próximo</div>
     </button>
-    <button class="btn-previous" onClick="slide('prev')">
+    <button class="btn-previous" type="button" onClick="slide('prev')">
       < Voltar
     </button>
 </div>
