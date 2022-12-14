@@ -1,7 +1,3 @@
-const pages = document.querySelectorAll(".page");
-const translateAmount = 100; 
-let translate = 0;
-
 document.querySelector('#event').onchange = () => {
   var checked = document.querySelector('#event').checked;
   if (checked !== true){
@@ -133,6 +129,11 @@ document.querySelector('#greenerCalculatorFour').onchange = () => {
 
 }
 
+const pages = document.querySelectorAll(".page");
+const faqBody = document.querySelectorAll(".faqBody")
+const translateAmount = 100; 
+let translate = 0;
+
 slide = (direction) => {
     direction === "next" ? translate -= translateAmount : translate += translateAmount;
       pages.forEach(
@@ -144,6 +145,13 @@ slideTwo = (direction) => {
   direction === "next" ? translate -= translateAmount + 300 : translate += 500 - translateAmount;
     pages.forEach(
       pages => (pages.style.transform = `translateX(${translate}%)`)
+    );
+}
+
+faq = (direction) => {
+  direction === "faq" ? translate -= -100: translate += -100;
+  faqBody.forEach(
+      faqBody => (faqBody.style.transform = `translateX(${translate}%)`)
     );
 }
 

@@ -145,12 +145,82 @@ h1, h2, h3, h4, h5 , p{
     line-height: 36px;
 }
 
-.tacet-vere-logo{
+.faqBody{
     position: absolute;
+    width: 500px;
+    height: 802px;
+    margin-left: -500px;
+    margin-top: 60px;
+    overflow-y: scroll;
+    background-color: white;
+    transition: all 0.7s;
+    overflow: hidden;
+    border-radius: 15px;
+    overflow: scroll;
+}
+
+.faqBodyPage{
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    transition: all 0.7s;
+    color: white;
+}
+
+.faqBodyPage .btn-next{
+    width: 125px;
+    height: 44px;
+    margin-left: 35%;
+    margin-top: 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.1s;
+    background: var( --faq-button);
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+    text-align: center;
+    letter-spacing: 0.2px;
+    color: var(--text-color);
+    border-color: transparent;
+}
+
+.faqBodyPage .faq-title{
+    width: 200px;
+    height: 80px;
+    margin-top: 30px;
+    margin-left: 43%; 
+    font-size: 24px;
+    line-height: 40px;
+    font-weight: 900;
+    color: var(--title-color);
+}
+
+.faqBodyPage .faq-body{
+    width: 350px;
+    font-size: 12px;
+    margin-bottom: -10px;
+    line-height: 40px;
+    font-weight: 500;
+    margin-left: 70px; 
+    text-align: justify;
+    color: var(--title-color);
+}
+
+.faqBodyPage .faq-body-sub{
+    width: 350px;
+    font-size: 14px;
+    line-height: 40px;
+    font-weight: 900;
+    color: var(--title-color);
+}
+
+.tacet-vere-logo{
     width: 200.55px;
     height: auto;
-    left: 90px;
-    top: 828px;
+    margin-left: 90px;
+    margin-top: 828px;
 }
 
 @media (max-width: 500px) {
@@ -495,7 +565,25 @@ h1, h2, h3, h4, h5 , p{
     color: var(--title-color);
 }
 
+.container .checkmark-title-disabled{
+    position: absolute;
+    padding-left: 50px;
+    margin-top: -30px;
+    margin-left: 15px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 24px;
+    color: var(--border-gray);
+}
+
 .container .checkmark-logo{
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 15px;
+    color: var(--text-color);
+}
+
+.container .checkmark-logo-disabled{
     position: absolute;
     margin-top: 0px;
     margin-left: 15px;
