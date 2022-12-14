@@ -11,10 +11,6 @@ app.get(route, (req, res) => {
     res.render('pages/calculator/carbonManagement/index', {message: false}); 
 })
 
-// app.get('/greener', (req, res) => {
-//     res.render('pages/calculator/carbonManagement/index'); 
-// })
-
 app.post('/greener-carbon-management', (req, res) => {
     
     async function writeData(auth){

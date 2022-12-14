@@ -18,29 +18,6 @@ h1, h2, h3, h4, h5 , p{
     font-style: normal;
 }
 
-.up-logo{
-    position: absolute;
-    width: 500px;
-    padding-bottom: 450px;
-}
-
-.start-logo{
-    position: absolute;
-    width: 350px;
-    padding-top: 50px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),var(--button-color);
-}
-
-.title-start{
-    margin-top: 600px;
-    font-size: 26px;
-    line-height: 40px;
-    font-weight: 900;
-    text-align: center;
-    text-transform: uppercase;
-    color: var(--title-color);
-}
-
 .logo{
     position: absolute;
     width: 193px;
@@ -148,6 +125,7 @@ h1, h2, h3, h4, h5 , p{
     bottom: 0%;
     color: var(--text-color);
 }
+
 .faq .btn-next{
     width: 125px;
     height: 44px;
@@ -173,6 +151,105 @@ h1, h2, h3, h4, h5 , p{
     font-weight: 900;
     font-size: 20px;
     line-height: 36px;
+}
+
+@media (max-width: 500px) {
+    .logo{
+        position: absolute;
+        width: 193px;
+        height: 56px;
+        left: 70px;
+        top: 60px;
+        border-radius: 0px;
+    }
+    
+    .converse-conosco-logo{
+        position: absolute;
+        margin-left: 60%;
+        top: -45px;
+    }
+    
+    .converse-conosco{
+        position: absolute;
+        top: 700px;
+    }
+    
+    .converse-conosco-info {
+        position: absolute;
+        width: 400px;
+        margin-left: -28%;
+        text-align: center;
+        top: 730px;
+    }
+    
+    .converse-conosco-contato {
+        position: absolute;
+        width: 200px;
+        margin-left: -5%;
+        text-align: center;
+        top: 750px;
+    }
+    
+    .WhatsApp-logo{
+        position: absolute;
+        margin-top: -30px;
+        margin-left: 60%;
+    }
+    
+    .WhatsApp{
+        position: absolute;
+        margin-top: 30px;
+        margin-left: 10%;
+        top: 800px;
+    }
+    
+    .WhatsApp-info{
+        position: absolute;
+        width: 400px;
+        margin-left: -28%;
+        text-align: center;
+        top: 870px;
+    }
+    
+    .WhatsApp-contato{
+        position: absolute;
+        width: 147px;
+        height: 36px;
+        left: 140px;
+        top: 900px;
+        font-weight: 900;
+        font-size: 16px;    
+    }
+    
+    .faq-logo{
+        position: absolute;
+        margin-top: 200px;
+        margin-left: 0px;
+    }
+    
+    .faq .btn-next{
+        position: absolute;
+        margin-top: 50px;
+        margin-left: -120px;
+    }
+    
+    .faq{
+        display: hidden;
+        position: absolute;
+        width: 400px;
+        text-align: center;
+        margin-left: -80px;
+        margin-top: 470px;
+    }
+
+    .tacet-vere-logo{
+        position: absolute;
+        width: 300.55px;
+        height: auto;
+        margin-top: 230px;
+        margin-left: -110px;
+        padding-bottom: 50px;
+    }
 }
 
 /*--------------------------------------------------------------
@@ -208,6 +285,29 @@ h1, h2, h3, h4, h5 , p{
     gap: 10px;
     transition: all 0.7s;
     color: white;
+}
+
+.container .up-logo{
+    position: absolute;
+    width: 500px;
+    padding-bottom: 450px;
+}
+
+.container .start-logo{
+    position: absolute;
+    width: 350px;
+    padding-top: 50px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),var(--button-color);
+}
+
+.container .title-start{
+    margin-top: 600px;
+    font-size: 26px;
+    line-height: 40px;
+    font-weight: 900;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--title-color);
 }
 
 .container .title{
@@ -442,3 +542,283 @@ legend{
 button:hover{
   transform: scale(1.05);
 }
+
+@media (max-width: 500px) {
+    .container {
+        position: absolute;
+        width: 370px;
+        height: 830px;
+        top: 60px;
+        background: var(--text-color);
+        border-radius: 15px;
+        overflow: hidden;
+        margin-top: 100px;
+        margin-bottom: 100px;
+        margin-left: -572px;
+    }
+
+    .container .pages {
+        position: absolute;
+        display: flex;
+        width: 1000%;
+        box-sizing: border-box; 
+      }
+      
+      .container .page {
+          display: flex;
+          width: 100%;
+          height: 100%;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          gap: 10px;
+          transition: all 0.7s;
+          color: white;
+      }
+      
+      .container .up-logo{
+          position: absolute;
+          width: 300px;
+          padding-bottom: 450px;
+      }
+      
+      .container .start-logo{
+          position: absolute;
+          width: 350px;
+          padding-top: 50px;
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),var(--button-color);
+      }
+      
+      .container .title-start{
+          margin-top: 600px;
+          font-size: 26px;
+          line-height: 40px;
+          font-weight: 900;
+          text-align: center;
+          text-transform: uppercase;
+          color: var(--title-color);
+      }
+      
+      .container .title{
+          width: 250px;
+          height: 80px;
+          font-size: 18px;
+          line-height: 40px;
+          font-weight: 900;
+          text-align: center;
+          color: var(--title-color);
+          margin-top: 70px;
+      }
+      
+      .container .event {
+          width: 230px;
+          left: 62px;
+          font-weight: 900;
+          font-size: 12px;
+          line-height: 35px;
+          text-align: center;
+          text-transform: uppercase;
+          margin-top: 20px;
+          color: var(--body-color);
+      }
+      
+      .container .explanation {
+          width: 246px;
+          height: 90px;
+          left: 99px;
+          top: 62px;
+          font-weight: 900;
+          font-size: 14px;
+          line-height: 35px;
+          text-align: center;
+          color: var(--title-color);
+          
+      }
+      
+      .container .body{
+          width: 230px;
+          height: 416px;
+          left: 70px;
+          top: 207px;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 21px;
+          color: var(--body-text-color);
+          text-align: justify;
+          margin-top: 30px;
+      }
+      
+      .container .btn-next{
+          width: 200px;
+          height: 60px;
+          border-radius: 8px;
+          cursor: pointer;
+          transition: 0.1s;
+          background: var(--button-color);
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 26px;
+          text-align: center;
+          color: var(--text-color);
+          border-color: transparent;
+      }
+      
+      .container .btn-next-allow{
+          width: 200px;
+          height: 60px;
+          border-radius: 8px;
+          cursor: pointer;
+          transition: 0.1s;
+          background: var(--border-gray);
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 26px;
+          text-align: center;
+          color: var(--text-color);
+          border-color: transparent;
+      }
+      
+      .container .btn-previous{
+          cursor: pointer;
+          transition: 0.1s;
+          background: transparent;
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 26px;
+          text-align: center;
+          color: var(--button-color);
+          border-color: transparent;
+      }
+      
+      .container .border-box{
+          box-sizing: border-box;
+          width: 230px;
+          height: 56px;
+          border: 1px solid var(--border-gray);
+          border-radius: 4px;
+          margin: 15px 0 8px 0;
+      }
+      .container .checkmark-box{
+        width: 221px;
+        height: 50px;
+        padding-top: 10px;
+        margin-bottom: 20px;
+        margin-left: 10px;
+        border-radius: 4px;
+        border: 1px solid var(--border-gray);
+    }
+
+    .container .checkmark-box .checkmark{
+        margin-left: 180px;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        border: 10px solid #2FAC66;
+    }
+    
+    .container .checkmark-title{
+        position: absolute;
+        padding-left: 50px;
+        margin-top: -30px;
+        margin-left: 10px;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 24px;
+        color: var(--title-color);
+    }
+    
+    .container .checkmark-logo{
+        position: absolute;
+        margin-top: 0px;
+        margin-left: 15px;
+        color: var(--text-color);
+    }
+
+    .container .border-box{
+        box-sizing: border-box;
+        width: 230px;
+        height: 56px;
+        border: 1px solid var(--border-gray);
+        border-radius: 4px;
+        margin: 15px 0 8px 0;
+    }
+    
+    .container .border-box-rectangle{
+        box-sizing: border-box;
+        width: 100px;
+        height: 55px;
+        border: 1px solid var(--border-gray);
+        border-radius: 3px;
+    }
+    
+    .container .border-box-rectangle-2{
+        box-sizing: border-box;
+        width: 100px;
+        height: 55px;
+        margin-top: 5px;
+        border: 1px solid var(--border-gray);
+        border-radius: 3px;
+    }
+    
+    .container .title-box{
+        font-weight: 900;
+        font-size: 20px;
+        line-height: 24px;
+        margin-bottom: 26px;
+        color: var(--body-text-color);
+    }
+    
+    .container .title-hr{
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 24px;
+        margin-bottom: -3px;
+        color: var(--body-text-color);
+    }
+    
+    .container .title-legend{
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 24px;
+        color: var(--body-text-color);
+    }
+    
+    .container .title-hr-2{
+        font-weight: 700;
+        font-size:12px;
+        line-height: 24px;
+        margin-top: 200px;
+        color: var(--body-text-color);
+    }
+    
+    .container .title-hr-3{
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 24px;
+        color: var(--body-text-color);
+    }
+    select {
+        font-weight: 700;
+        font-size: 10px;
+        padding-left: 10px;
+        padding-top: 7px;
+        -webkit-appearance: none;
+       -moz-appearance: none;
+    }
+    
+    select:valid{
+        font-weight: 700;
+        font-size: 10px;
+        padding-left: 10px;
+    }
+    
+    input{
+        font-weight: 700;
+        font-size: 10px;
+        padding-left: 10px;
+        padding-top: 10px;
+        margin-left: 0.5rem;
+        outline-color: #2fac66;
+    }
+  }
