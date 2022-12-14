@@ -109,14 +109,6 @@ h1, h2, h3, h4, h5 , p{
     font-size: 16px;    
 }
 
-.tacet-vere-logo{
-    position: absolute;
-    width: 200.55px;
-    height: auto;
-    left: 169px;
-    top: 828px;
-}
-
 .faq-logo{
     position: absolute;
     left: -80%;
@@ -147,10 +139,18 @@ h1, h2, h3, h4, h5 , p{
     width: 41px;
     height: 36px;
     left: 120px;
-    top: 494px;
+    top: 294px;
     font-weight: 900;
     font-size: 20px;
     line-height: 36px;
+}
+
+.tacet-vere-logo{
+    position: absolute;
+    width: 200.55px;
+    height: auto;
+    left: 90px;
+    top: 828px;
 }
 
 @media (max-width: 500px) {
