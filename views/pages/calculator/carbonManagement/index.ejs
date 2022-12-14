@@ -19,7 +19,9 @@
 
   <body>
     <div>
-      <img class="logo" src="assets/img/greener/Logo_greener.png">
+      <a href="https://begreener.io/" target="__blank">
+        <img class="logo" src="assets/img/greener/Logo_greener.png">
+      </a>
 
       <div>
         <h5 class="converse-conosco">
@@ -28,8 +30,8 @@
         </h5>
       </div>
 
-      <p class="converse-conosco-info">Lorem ipsum dolor sit amet, consectetur.</p>
-      <h5 class="converse-conosco-contato">contato@tacetvere.com</h5>
+      <p class="converse-conosco-info">Precisando de ajuda? Contate-nos via e-mail</p>
+      <h5 class="converse-conosco-contato">contact@begreener.io</h5>
 
       <div>
         <div>
@@ -38,12 +40,25 @@
             Whatsapp
           </h5>
         </div>
-        <p class="WhatsApp-info">Lorem ipsum dolor sit amet, consectetur.</p>
-        <h5 class="WhatsApp-contato">+55 19 97808-3223</h5>
+        <p class="WhatsApp-info">Tire suas dúvidas através de nosso WhatsApp</p>
+        <a href="https://api.whatsapp.com/send?phone=" target="__blank">
+          <h5 class="WhatsApp-contato">+55 11 xxxx-xxxx</h5>
+        </a>
       </div>
       <div>
-        <div >
-          <img class="tacet-vere-logo" src="assets/img/greener/selo.png">
+        <div>
+          <h5 class="faq">
+            <img class="faq-logo" src="assets/img/greener/icon_link.svg">
+            FAQ
+            <button class="btn-next" type="button">Abrir FAQ</button>
+          </h5>
+        </div>
+      </div>
+      <div>
+        <div>
+          <a href="https://www.tacetvere.com/" target="__blank">
+            <img class="tacet-vere-logo" src="assets/img/greener/selo.png">
+          </a>
         </div>
       </div>
     </div>
@@ -51,15 +66,17 @@
     <div>
       <div class="container">
         <div class="pages">
+          <%- include("../../calculator/carbonManagement/000_main.ejs") %> 
+          <%- include("../../calculator/carbonManagement/00_start.ejs") %> 
           <%- include("../../calculator/carbonManagement/01_agreement.ejs") %> 
-            <%- include("../../calculator/carbonManagement/02_pageTwo.ejs") %>
-            <%- include("../../calculator/carbonManagement/03_pageThree.ejs") %>
-            <%- include("../../calculator/carbonManagement/04_pageFour.ejs") %>
-            <%- include("../../calculator/carbonManagement/05_pageFive.ejs") %>
-            <%- include("../../calculator/carbonManagement/051_pageFiveOne.ejs") %>
-            <%- include("../../calculator/carbonManagement/052_pageFiveTwo.ejs") %>
-            <%- include("../../calculator/carbonManagement/053_pageFiveThree.ejs") %>
-            <%- include("../../calculator/carbonManagement/submitOther.ejs") %> 
+          <%- include("../../calculator/carbonManagement/02_pageTwo.ejs") %>
+          <%- include("../../calculator/carbonManagement/03_pageThree.ejs") %>
+          <%- include("../../calculator/carbonManagement/04_pageFour.ejs") %>
+          <%- include("../../calculator/carbonManagement/05_pageFive.ejs") %>
+          <%- include("../../calculator/carbonManagement/051_pageFiveOne.ejs") %>
+          <%- include("../../calculator/carbonManagement/052_pageFiveTwo.ejs") %>
+          <%- include("../../calculator/carbonManagement/053_pageFiveThree.ejs") %>
+          <%- include("../../calculator/carbonManagement/submitOther.ejs") %> 
         </div>
       </div>
     </div>

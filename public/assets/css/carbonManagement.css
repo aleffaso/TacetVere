@@ -5,6 +5,7 @@
     --body-text-color: #000000;
     --button-color: #2FAC66;
     --border-gray: #BABABA;
+    --faq-button: #1CD76E;
   }
 
 body {
@@ -15,6 +16,29 @@ h1, h2, h3, h4, h5 , p{
     font-family: "Red-Hat-Display", sans-serif;
     color: var(--text-color);
     font-style: normal;
+}
+
+.up-logo{
+    position: absolute;
+    width: 500px;
+    padding-bottom: 450px;
+}
+
+.start-logo{
+    position: absolute;
+    width: 350px;
+    padding-top: 50px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),var(--button-color);
+}
+
+.title-start{
+    margin-top: 600px;
+    font-size: 26px;
+    line-height: 40px;
+    font-weight: 900;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--title-color);
 }
 
 .logo{
@@ -47,10 +71,10 @@ h1, h2, h3, h4, h5 , p{
 
 .converse-conosco-info {
     position: absolute;
-    width: 297px;
+    width: 330px;
     height: 21px;
     left: 120px;
-    top: 222px;
+    top: 210px;
     font-weight: 500;
     font-size: 16px;
     line-height: 130%;
@@ -61,7 +85,7 @@ h1, h2, h3, h4, h5 , p{
     width: 187px;
     height: 36px;
     left: 120px;
-    top: 253px;
+    top: 235px;
     font-weight: 900;
     font-size: 16px;
     line-height: 36px;
@@ -89,7 +113,7 @@ h1, h2, h3, h4, h5 , p{
 
 .WhatsApp-info{
     position: absolute;
-    width: 297px;
+    width: 330px;
     height: 21px;
     left: 120px;
     top: 381px;
@@ -116,6 +140,41 @@ h1, h2, h3, h4, h5 , p{
     top: 828px;
 }
 
+.faq-logo{
+    position: absolute;
+    left: -80%;
+    right: 0%;
+    top: 20%;
+    bottom: 0%;
+    color: var(--text-color);
+}
+.faq .btn-next{
+    width: 125px;
+    height: 44px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.1s;
+    background: var( --faq-button);
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+    text-align: center;
+    letter-spacing: 0.2px;
+    color: var(--text-color);
+    border-color: transparent;
+}
+
+.faq{
+    position: absolute;
+    width: 41px;
+    height: 36px;
+    left: 120px;
+    top: 494px;
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 36px;
+}
+
 /*--------------------------------------------------------------
 # Pages
 --------------------------------------------------------------*/
@@ -135,7 +194,7 @@ h1, h2, h3, h4, h5 , p{
 .container .pages {
   position: absolute;
   display: flex;
-  width: 900%;
+  width: 1100%;
   box-sizing: border-box; 
 }
 
@@ -302,16 +361,73 @@ h1, h2, h3, h4, h5 , p{
 
 .container .title-hr-3{
     font-weight: 700;
-    font-size:16px;
+    font-size: 16px;
     line-height: 24px;
     color: var(--body-text-color);
 }
 
-input::placeholder{
+.container .checkmark-box{
+    width: 541px;
+    height: 50px;
+    padding-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    border-radius: 4px;
+    border: 1px solid var(--border-gray);
+}
+
+.container .checkmark-box .checkmark{
+    margin-left: 480px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 10px solid #2FAC66;
+}
+
+.container .checkmark-title{
+    position: absolute;
+    padding-left: 50px;
+    margin-top: -30px;
+    margin-left: 15px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 24px;
+    color: var(--title-color);
+}
+
+.container .checkmark-logo{
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 15px;
+    color: var(--text-color);
+}
+
+select {
     font-weight: 700;
     font-size: 12px;
     padding-left: 10px;
+    padding-top: 7px;
+    -webkit-appearance: none;
+   -moz-appearance: none;
+}
+
+
+select:valid{
+    font-weight: 700;
+    font-size: 16px;
+    padding-left: 10px;
+}
+
+input{
+    font-weight: 700;
+    font-size: 16px;
+    padding-left: 10px;
     padding-top: 10px;
+    margin-left: 0.5rem;
+    outline-color: #2fac66;
+}
+
+input::placeholder{
     color: var(--border-gray)
 }
 
@@ -321,20 +437,6 @@ legend{
     padding-left: 10px;
     padding-top: 10px;
     color: var(--border-gray)
-}
-
-input{
-    margin-left: 0.5rem;
-}
-
-select {
-    font-weight: 700;
-    font-size: 12px;
-    padding-left: 10px;
-    padding-top: 7px;
-    color: var(--border-gray);
-    -webkit-appearance: none;
-   -moz-appearance: none;
 }
 
 button:hover{

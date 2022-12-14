@@ -5,7 +5,7 @@ const {google} = require('googleapis');
 
 // const CarbonManagement = require('../db/CarbonManagement');
 
-const route = '/2b2062936e9bb5a6b1d17869cc48c3934142b563'
+const route = '/greener-calculator'
 
 app.get(route, (req, res) => {
     res.render('pages/calculator/carbonManagement/index', {message: false}); 

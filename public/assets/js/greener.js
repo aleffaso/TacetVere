@@ -2,14 +2,14 @@ const pages = document.querySelectorAll(".page");
 const translateAmount = 100; 
 let translate = 0;
 
-document.querySelector('#agreement').onfocus = () => {
-  var checked = document.querySelector('#agreement').checked;
-  if (checked){
-    document.querySelector('#agreementButton').disabled = true
-    document.querySelector('#agreementButton').className = 'btn-next-allow';
-  }else{
-    document.querySelector('#agreementButton').disabled = false
-    document.querySelector('#agreementButton').className = 'btn-next';
+document.querySelector('#event').onchange = () => {
+  var checked = document.querySelector('#event').checked;
+  if (checked !== true){
+    document.querySelector('#nextZero').disabled = true
+    document.querySelector('#nextZero').className = 'btn-next-allow';
+  }else if (checked !== false){
+    document.querySelector('#nextZero').disabled = false
+    document.querySelector('#nextZero').className = 'btn-next';
   }
 }
 
@@ -21,11 +21,13 @@ document.querySelector('#greenerCalculator').onchange = () =>{
   var goal = document.querySelector('#goal').value
   var otherGoal = document.querySelector('#otherGoal').value
 
+  var checkEmail = document.getElementById("email").validity.valid
+
   if (goal == "other"){
 
     document.querySelector("#otherGoal").style.display = "block";
 
-    if ((email.length && name.length && position.length && otherGoal.length) > 0){
+    if (((email.length && name.length && position.length && otherGoal.length) > 0) && checkEmail){
       document.querySelector('#nextOne').disabled = false
       document.querySelector('#nextOne').className = 'btn-next';
     }else{
@@ -35,7 +37,7 @@ document.querySelector('#greenerCalculator').onchange = () =>{
 
   }else{
 
-    if ((email.length && name.length && position.length && goal.length) > 0){
+    if (((email.length && name.length && position.length && goal.length) > 0) && checkEmail){
       document.querySelector('#nextOne').disabled = false
       document.querySelector('#nextOne').className = 'btn-next';
     }else{
@@ -175,9 +177,3 @@ function renderFailMessage(title){
     text: title,
   })
 }
-
-const element = document.querySelector('greener-carbon-management');
-element.addEventListener('submit', event => {
-  alert("Deseja enviar o formulário?")
-  event.preventDefault(); 
-});
