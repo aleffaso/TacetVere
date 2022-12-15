@@ -130,7 +130,7 @@ document.querySelector('#greenerCalculatorFour').onchange = () => {
 }
 
 const pages = document.querySelectorAll(".page");
-const faqBody = document.querySelectorAll(".faqBody")
+const faqBody = document.querySelector(".faqBody")
 const translateAmount = 100; 
 let translate = 0;
 
@@ -150,9 +150,7 @@ slideTwo = (direction) => {
 
 faq = (direction) => {
   direction === "faq" ? translate -= -100: translate += -100;
-  faqBody.forEach(
-      faqBody => (faqBody.style.transform = `translateX(${translate}%)`)
-    );
+  faqBody.style.transform = `translateX(${translate}%)`
 }
 
 var firstDay = document.getElementById('firstDay')

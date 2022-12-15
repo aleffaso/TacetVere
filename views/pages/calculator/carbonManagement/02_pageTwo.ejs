@@ -8,16 +8,17 @@
     <div class="body">
         <form id="greener-carbon-management" method="POST" action="/greener-carbon-management">
             <div id="greenerCalculator">
+                <label></label>
                 <input id="email" class="border-box" name="email" type="email" placeholder="Seu melhor e-mail">
-                <input id="name" class="border-box" name="name" type="text" placeholder="Como você se chama?">
-                <input id="position" class="border-box" name="position" type="text" placeholder="Qual é a função que você exerce na organização do evento?">
+                <input id="name" class="border-box" name="name" type="text" placeholder="Seu nome?">
+                <input id="position" class="border-box" name="position" type="text" placeholder="Sua função?">
                 <select id="goal" class="border-box" name="goal">
-                    <option disabled selected value>Qual o objetivo para esta ação de gestão do carbono?</option>
-                    <option>Cumprir determinação/solicitação de cliente</option>
-                    <option>Adequar-se às propostas dos concorrentes, que já fazem esse tipo de ação</option>
-                    <option>Realizar ações voluntárias e inovadoras</option>
-                    <option>Gerir riscos e identificar oportunidades de redução de emissões</option>
-                    <option value='other'>Outro</option>
+                    <option disabled selected value>Finalidade desta ação?</option>
+                    <option>Compensar emissões voluntariamente para inovar</option>
+                    <option>Compensar emissões a pedido de seu cliente</option>
+                    <option>Compensar emissões, assim como seus concorrentes fazem</option>
+                    <option>Compensar emissões, como parte da gestão do carbono de sua organização</option>
+                    <option value='other'>Outros</option>
                 </select>
                 <input id="otherGoal" class="border-box" name="otherGoal" type="text" placeholder="Qual?" style="display: none;">
             </div>

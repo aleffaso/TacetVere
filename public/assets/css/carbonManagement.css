@@ -481,6 +481,10 @@ h1, h2, h3, h4, h5 , p{
     margin: 15px 0 8px 0;
 }
 
+.container .border-box .border-box-label{
+    margin-top:-100px;
+}
+
 .container .border-box-rectangle{
     box-sizing: border-box;
     width: 138px;
@@ -588,6 +592,7 @@ h1, h2, h3, h4, h5 , p{
     margin-top: 0px;
     margin-left: 15px;
     color: var(--text-color);
+    filter: grayscale(100%);
 }
 
 select {
