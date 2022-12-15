@@ -8,12 +8,18 @@
     <div class="body">
         <form id="greener-carbon-management" method="POST" action="/greener-carbon-management">
             <div id="greenerCalculator">
-                <label></label>
-                <input id="email" class="border-box" name="email" type="email" placeholder="Seu melhor e-mail">
-                <input id="name" class="border-box" name="name" type="text" placeholder="Seu nome">
-                <input id="position" class="border-box" name="position" type="text" placeholder="Sua função">
+                <div class="label-placeholder">Seu melhor e-mail</div>
+                <input id="email" class="border-box" name="email" type="email">
+
+                <div class="label-placeholder">Seu nome</div>
+                <input id="name" class="border-box" name="name" type="text">
+
+                <div class="label-placeholder">Sua função</div>
+                <input id="position" class="border-box" name="position" type="text">
+                
+                <div class="label-placeholder">Finalidade desta ação</div>
                 <select id="goal" class="border-box" name="goal">
-                    <option disabled selected value>Finalidade desta ação</option>
+                    <option disabled selected value>Selecionar</option>
                     <option>Compensar emissões voluntariamente para inovar</option>
                     <option>Compensar emissões a pedido de seu cliente</option>
                     <option>Compensar emissões, assim como seus concorrentes fazem</option>

@@ -80,9 +80,11 @@ document.querySelector('#greenerCalculatorFour').onchange = () => {
 
   var category = document.querySelector('#category').value
   var otherCategory = document.querySelector('#otherCategory').value
+  var otherCategoryLabel = document.querySelector('#otherCategoryLabel').value
 
   if (category == "other"){
     document.querySelector("#otherCategory").style.display = "block";
+    document.querySelector("#otherCategoryLabel").style.display = "block";
     document.querySelector("#convention").style.display = "none";
     document.querySelector("#show-outdoor").style.display = "none";
     document.querySelector('#nextFour').style.display = "none"
@@ -98,6 +100,7 @@ document.querySelector('#greenerCalculatorFour').onchange = () => {
 
   }else if(category == "convention"){
     document.querySelector("#otherCategory").style.display = "none";
+    document.querySelector("#otherCategoryLabel").style.display = "none";
     document.querySelector('#nextFourOther').style.display = "none";
     document.querySelector("#convention").style.display = "block";
     document.querySelector("#show-outdoor").style.display = "none";
@@ -113,6 +116,7 @@ document.querySelector('#greenerCalculatorFour').onchange = () => {
 
   }else if(category == "show-outdoor"){
     document.querySelector("#otherCategory").style.display = "none";
+    document.querySelector("#otherCategoryLabel").style.display = "none";
     document.querySelector('#nextFourOther').style.display = "none";
     document.querySelector("#convention").style.display = "none";
     document.querySelector("#show-outdoor").style.display = "block";

@@ -31,9 +31,9 @@ app.post('/greener-carbon-management', (req, res) => {
           },
           (err, result) => {
             if (err) {
-              res.render('pages/calculator/carbonManagement/index', {message: err}); 
+              res.render('pages/calculator/carbonManagement/06_pageSix', {message: err}); 
             }
-            res.render('pages/calculator/carbonManagement/index', {message: result.status}); 
+            res.render('pages/calculator/carbonManagement/06_pageSix', {message: result.status}); 
           }
         );
     }
