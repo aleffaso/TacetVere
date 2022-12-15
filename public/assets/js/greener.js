@@ -153,7 +153,7 @@ slideTwo = (direction) => {
 }
 
 faq = (direction) => {
-  direction === "faq" ? translate -= -100: translate += -100;
+  direction === "faq" ? translate -= 1340: translate += 1340;
   faqBody.style.transform = `translateX(${translate}%)`
 }
 

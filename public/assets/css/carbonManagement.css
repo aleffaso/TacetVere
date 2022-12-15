@@ -147,9 +147,9 @@ h1, h2, h3, h4, h5 , p{
 
 .faqBody{
     position: absolute;
-    width: 500px;
+    width: 700px;
     height: 802px;
-    margin-left: -500px;
+    margin-left: 10000px;
     margin-top: 60px;
     overflow-y: scroll;
     background-color: white;
@@ -157,6 +157,7 @@ h1, h2, h3, h4, h5 , p{
     overflow: hidden;
     border-radius: 15px;
     overflow: scroll;
+    z-index: 101;
 }
 
 .faqBodyPage{
@@ -172,7 +173,8 @@ h1, h2, h3, h4, h5 , p{
     width: 125px;
     height: 44px;
     margin-left: 35%;
-    margin-top: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     border-radius: 8px;
     cursor: pointer;
     transition: 0.1s;
@@ -187,10 +189,8 @@ h1, h2, h3, h4, h5 , p{
 }
 
 .faqBodyPage .faq-title{
-    width: 200px;
-    height: 80px;
     margin-top: 30px;
-    margin-left: 43%; 
+    text-align: center;
     font-size: 24px;
     line-height: 40px;
     font-weight: 900;
@@ -198,10 +198,10 @@ h1, h2, h3, h4, h5 , p{
 }
 
 .faqBodyPage .faq-body{
-    width: 350px;
-    font-size: 12px;
+    width: 500px;
+    font-size: 14px;
     margin-bottom: -10px;
-    line-height: 40px;
+    line-height: 20px;
     font-weight: 500;
     margin-left: 70px; 
     text-align: justify;
@@ -209,8 +209,8 @@ h1, h2, h3, h4, h5 , p{
 }
 
 .faqBodyPage .faq-body-sub{
-    width: 350px;
-    font-size: 14px;
+    width: 500px;
+    font-size: 18px;
     line-height: 40px;
     font-weight: 900;
     color: var(--title-color);
