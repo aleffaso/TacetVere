@@ -620,6 +620,15 @@ input{
     outline-color: #2fac66;
 }
 
+input:invalid{
+    font-weight: 700;
+    font-size: 16px;
+    padding-left: 10px;
+    padding-top: 10px;
+    margin-left: 0.5rem;
+    outline-color: red;
+}
+
 input::placeholder{
     color: var(--border-gray)
 }
