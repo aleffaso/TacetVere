@@ -341,7 +341,7 @@ h1, h2, h3, h4, h5 , p{
 .container .pages {
   position: absolute;
   display: flex;
-  width: 1100%;
+  width: 1200%;
   box-sizing: border-box; 
 }
 

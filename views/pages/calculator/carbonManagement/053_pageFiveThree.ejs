@@ -3,7 +3,7 @@
       Emissões diretas
     </h1>
     <h1 class="explanation">
-    Emissões por uso de <br> Energia Elétrica
+    Emissões Fugitivas
     </h1>
     <p style="color: #000;">
       Deixe o campo vazio se não souber estimar, ou preencha com 0 se não for aplicável.
@@ -11,27 +11,20 @@
     <div class="body">
       <div id="greenerCalculatorFiveThree">
         <div style="width: 100%;">
-          <div class="title-hr">Aquisição de energia elétrica</div>
-          <hr>
-        </div>
-        <div>
-          <div class="title-box">Energia de Rede</div>
-          <input id="energy_consumed" class="border-box-rectangle-2" name="energy_consumed" type="number" placeholder="kWh" min="0">
-        </div>
-        <br><br>
-
-        <div style="width: 100%;">
-          <div class="title-hr-3">Produção de energia elétrica</div>
-          <hr>
-        </div>
-        <div>
-          <div class="title-box">Energia Renovável</div>
-          <input id="energy_renewed" class="border-box-rectangle-2" name="energy_renewed" type="number" placeholder="kWh" min="0">
+          <div style="width:50%; float: left;">
+            <div class="title-hr-3">Refrigeradores, freezers, geladeiras</div>
+            <input id="refrigerators_freezers_fridges" class="border-box-rectangle-2" name="refrigerators_freezers_fridges" type="number" placeholder="Quantidade" min="0">
+          </div>
+          <div style="width:42%; float: right;">
+            <div class="title-hr-3">Extintores de Incêndio</div>
+            <input id="fire_extinguisher" class="border-box-rectangle-2" name="fire_extinguisher" type="number" placeholder="Quantidade" min="0">
+          </div>
         </div>
       </div>
     </div>
-    <button class="btn-next" form="greener-carbon-management" type="submit">Enviar</button>
-  </form>
+    <button id='nextFiveThree' type="button" class="btn-next" onClick="slide('next')">
+      <div>Próximo</div>
+    </button>
     <button class="btn-previous" type="button" onClick="slide('prev')">
       < Voltar
     </button>
