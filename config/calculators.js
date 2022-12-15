@@ -15,7 +15,7 @@ app.post('/greener-carbon-management', (req, res) => {
     
     async function writeData(auth){
         const sheets = google.sheets({ version: 'v4', auth });
-        const today = new Date().toLocaleString();
+        const today = new Date().toLocaleString("pt-BR", {timeZone:"America/Sao_Paulo"});
         const array = Object.values(req.body)
         array.unshift(today)
         const values = [array]
