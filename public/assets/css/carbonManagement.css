@@ -6,10 +6,12 @@
     --button-color: #2FAC66;
     --border-gray: #BABABA;
     --faq-button: #1CD76E;
+    --progress-bar: #2F7767;
   }
 
 body {
     background-color: var(--body-color);
+    font-family: var(--bs-body-font-family);
 }
 
 h1, h2, h3, h4, h5 , p{
@@ -148,14 +150,12 @@ h1, h2, h3, h4, h5 , p{
 .faqBody{
     position: absolute;
     width: 700px;
-    height: 802px;
+    height: 100%;
     margin-left: 10000px;
-    margin-top: 60px;
     overflow-y: scroll;
     background-color: white;
     transition: all 0.7s;
     overflow: hidden;
-    border-radius: 15px;
     overflow: scroll;
     z-index: 101;
 }
@@ -418,7 +418,7 @@ h1, h2, h3, h4, h5 , p{
 
 .container .body{
     width: 560px;
-    height: 416px;
+    height: 390px;
     left: 70px;
     top: 207px;
     font-style: normal;
@@ -1069,4 +1069,76 @@ button:hover{
     font-size: 12px;
     text-align: center;
     color: var(--title-color);
+}
+
+  /*--------------------------------------------------------------
+# Last page
+--------------------------------------------------------------*/
+
+.progress-bar-all{
+    margin-top: 10px;
+    background-color: var(--progress-bar);
+    width: 300px;
+    height: 15px;
+    border-radius: 90px;
+}
+
+.progress-bar-page{
+    margin-top: -25px;
+    background-color: var(--button-color);
+    height: 15px;
+    border-radius: 90px;
+    overflow: visible;
+}
+
+.two .progress-bar-page{
+    margin-left: calc(-300px + (37.5 * 1px));
+    width: calc(37.5 * 1px);
+}
+
+.three .progress-bar-page{
+    margin-left: calc(-300px + (37.5 * 2px));
+    margin-left: calc(300 - (37.5 * 2px));
+    width: calc(37.5 * 2px);
+    
+}
+
+.four .progress-bar-page{
+    margin-left: calc(-300px + (37.5 * 3px));
+    width: calc(37.5 * 3px);
+}
+
+.five .progress-bar-page{
+    margin-left: calc(-300px + (37.5 * 4px));
+    width: calc(37.5 * 4px);
+}
+
+.fiveOne .progress-bar-page{
+    margin-left: calc(-300px + (37.5 * 5px));
+    width: calc(37.5 * 5px);
+}
+
+.fiveTwo .progress-bar-page{
+    margin-left: calc(-300px + (37.5 * 6px));
+    width: calc(37.5 * 6px);
+}
+
+.fiveThree .progress-bar-page{
+    margin-left: calc(-300px + (37.5 * 7px));
+    width: calc(37.5 * 7px);
+}
+
+.fiveFour .progress-bar-page{
+    margin-left: calc(-300px + (37.5 * 8px));
+    width: calc(37.5 * 8px);
+}
+
+.six .progress-bar-page{
+    margin-left: calc(-300px + (37.5 * 9px));
+    width: calc(37.5 * 9px);
+}
+
+.last .progress-bar-page{
+    margin-left: calc(-300px + (37.5 * 9px));
+    width: calc(37.5 * 9px);
 }
