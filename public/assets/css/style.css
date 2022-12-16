@@ -1640,13 +1640,21 @@ p{
   }
 }
 
+#privacy h1{
+  color: var(--medium-blue-color);
+  font-size: 56px;
+  font-weight: 700;
+}
+
 #privacy p{
   text-align: justify; 
-  text-indent: 50px;
 }
 
 #privacy h5{
-  text-indent: 50px;
+  color: var(--medium-blue-color);
+  font-weight: 900;
+  font-size: 26px;
+  padding: 30px 0 30px 0;
 }
 
 #privacy ul{
