@@ -1092,52 +1092,52 @@ button:hover{
 }
 
 .two .progress-bar-page{
-    margin-left: calc(-300px + (100/3 * 1px));
-    width: calc(100/3 * 1px);
+    margin-left: calc(-300px + (300/8 * 1px));
+    width: calc(300/8 * 1px);
 }
 
 .three .progress-bar-page{
-    margin-left: calc(-300px + (100/3 * 2px));
-    width: calc(100/3 * 2px);
+    margin-left: calc(-300px + (300/8 * 2px));
+    width: calc(300/8 * 2px);
     
 }
 
 .four .progress-bar-page{
-    margin-left: calc(-300px + (100/3 * 3px));
-    width: calc(100/3 * 3px);
+    margin-left: calc(-300px + (300/8 * 3px));
+    width: calc(300/8 * 3px);
 }
 
 .five .progress-bar-page{
-    margin-left: calc(-300px + (100/3 * 4px));
-    width: calc(100/3 * 4px);
+    margin-left: calc(-300px + (300/8 * 4px));
+    width: calc(300/8 * 4px);
 }
 
 .fiveOne .progress-bar-page{
-    margin-left: calc(-300px + (100/3 * 5px));
-    width: calc(100/3 * 5px);
+    margin-left: calc(-300px + (300/8 * 5px));
+    width: calc(300/8 * 5px);
 }
 
 .fiveTwo .progress-bar-page{
-    margin-left: calc(-300px + (100/3 * 6px));
-    width: calc(100/3 * 6px);
+    margin-left: calc(-300px + (300/8 * 6px));
+    width: calc(300/8 * 6px);
 }
 
 .fiveThree .progress-bar-page{
-    margin-left: calc(-300px + (100/3 * 7px));
-    width: calc(100/3 * 7px);
+    margin-left: calc(-300px + (300/8 * 7px));
+    width: calc(300/8 * 7px);
 }
 
 .fiveFour .progress-bar-page{
-    margin-left: calc(-300px + (100/3 * 8px));
-    width: calc(100/3 * 8px);
+    margin-left: calc(-300px + (300/8 * 8px));
+    width: calc(300/8 * 8px);
 }
 
 .six .progress-bar-page{
-    margin-left: calc(-300px + (100/3 * 9px));
-    width: calc(100/3 * 9px);
+    margin-left: calc(-300px + (300/8 * 8px));
+    width: calc(300/8 * 9px);
 }
 
 .last .progress-bar-page{
-    margin-left: calc(-300px + (100/3 * 9px));
-    width: calc(100/3 * 9px);
+    margin-left: calc(-300px + (300/8 * 8px));
+    width: calc(300/8 * 9px);
 }
