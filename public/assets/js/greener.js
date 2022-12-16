@@ -153,8 +153,8 @@ slideTwo = (direction) => {
 }
 
 faq = (direction) => {
-  direction === "faq" ? translate -= 1340: translate += 1340;
-  faqBody.style.transform = `translateX(${translate}%)`
+  direction === "faq" ? translate -= -100 : translate += -100;
+  faqBody.style.transform = `translateY(${translate}%)`
 }
 
 var firstDay = document.getElementById('firstDay')
