@@ -163,10 +163,10 @@ h1, h2, h3, h4, h5 , p{
 .faqBody{
     position: relative;
     z-index: 100;
-    width: 700px;
+    margin-left: 40%;
+    transform: translateY(-100%);
+    width: 60%;
     height: 900px;
-    margin-left: 590px;
-    margin-top: -902px;
     transition: all 0.7s;
     background-color: white;
     border-radius: 10px;
@@ -175,9 +175,11 @@ h1, h2, h3, h4, h5 , p{
 
 .btn-next-faq{
     position: fixed;
+    display: inline-block;
     width: 40px;
     height: 40px;
-    margin-top: 0px;
+    margin-top: 10px;
+    margin-left: 10px;
     border-radius: 8px;
     cursor: pointer;
     transition: 0.1s;
@@ -192,6 +194,20 @@ h1, h2, h3, h4, h5 , p{
     z-index: 101;
 }
 
+.btn-back-faq{
+    position: relative;
+    z-index: 100;
+    transform: translateY(-100%);
+    width: 40%;
+    height: 900px;
+    transition: all 0.7s;
+    background-color: transparent;
+}
+
+.btn-back-faq, button:hover{
+    transform: 0;
+}
+
 .faqBodyPage{
     align-items: center;
     justify-content: center;
@@ -201,8 +217,10 @@ h1, h2, h3, h4, h5 , p{
 }
 
 .faqBodyPage .faq-title{
-    width: 700px;
+    width: 80%;
     margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 10%; 
     text-align: center;
     font-size: 24px;
     line-height: 40px;
@@ -211,18 +229,18 @@ h1, h2, h3, h4, h5 , p{
 }
 
 .faqBodyPage .faq-body{
-    width: 550px;
+    width: 80%;
     font-size: 14px;
     margin-bottom: -10px;
     line-height: 20px;
     font-weight: 500;
-    margin-left: 70px; 
+    margin-left: 10%; 
     text-align: justify;
     color: var(--title-color);
 }
 
 .faqBodyPage .faq-body-sub{
-    width: 500px;
+    width: 70%;
     font-size: 18px;
     line-height: 40px;
     font-weight: 900;
