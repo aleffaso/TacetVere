@@ -170,6 +170,7 @@ h1, h2, h3, h4, h5 , p{
     transition: all 0.7s;
     background-color: white;
     border-radius: 10px;
+    overflow: hidden;
     overflow-y: scroll;
 }
 
@@ -585,6 +586,16 @@ h1, h2, h3, h4, h5 , p{
     border: 10px solid #2FAC66;
 }
 
+.container .checkmark-sub-title{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    color: var(--title-color);
+}
+
 .container .checkmark-title{
     position: absolute;
     padding-left: 50px;
@@ -593,6 +604,17 @@ h1, h2, h3, h4, h5 , p{
     font-weight: 700;
     font-size: 24px;
     line-height: 24px;
+    color: var(--title-color);
+}
+
+.container .checkmark-title-custom{
+    position: absolute;
+    padding-left: 50px;
+    margin-top: -23px;
+    margin-left: 15px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 14px;
     color: var(--title-color);
 }
 
@@ -727,7 +749,6 @@ button:hover{
           justify-content: center;
           flex-direction: column;
           gap: 10px;
-          transition: all 0.7s;
           color: white;
       }
       
@@ -1009,7 +1030,6 @@ button:hover{
     justify-content: center;
     flex-direction: column;
     gap: 10px;
-    transition: all 0.7s;
     color: white;
 }
 
@@ -1077,6 +1097,9 @@ button:hover{
     gap:20px;
 }
 
+.container-last .body-box a{
+    text-decoration: none;
+}
 
 .container-last .box-info{
     display: flex;

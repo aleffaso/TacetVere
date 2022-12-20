@@ -3,28 +3,39 @@
     Para qual segmento <br> será o cálculo?
     </h1>
     <div class="body">
-        <div id="startCalculator">
-            <div class="checkmark-box">
-                <img class="checkmark-logo" src="assets/img/greener/Icon_eventos.svg">
-                <input id="event" class="checkmark" type="checkbox">
-                <div class="checkmark-title">Eventos</div>
+        <form id="greener-carbon-management" method="POST" action="/greener-carbon-management">
+            <div id="startCalculator">
+                <div class="checkmark-box">
+                    <img class="checkmark-logo" src="assets/img/greener/Icon_eventos.svg">
+                    <input name="type" id="event" class="checkmark" type="checkbox" value="event">
+                    <div class="checkmark-title">Eventos</div>
+                </div>
+                <div class="checkmark-box">
+                    <img class="checkmark-logo-disabled" src="assets/img/greener/Icon_empresas.svg">
+                    <input name="type" id="enterprise" class="checkmark" value="enterprise" type="checkbox" disabled>
+                    <div class="checkmark-title-disabled">Empresas</div>
+                </div>
+                <div class="checkmark-box">
+                    <img class="checkmark-logo-disabled" src="assets/img/greener/Icon_produtos.svg">
+                    <input name="type" id="product" class="checkmark" value="product" type="checkbox" disabled>
+                    <div class="checkmark-title-disabled">Produtos</div>
+                </div>
+                <div class="checkmark-box">
+                    <img class="checkmark-logo-disabled" src="assets/img/greener/Icon_logistica.svg">
+                    <input name="type" id="logistic" class="checkmark" value="logistic" type="checkbox" disabled>
+                    <div class="checkmark-title-disabled">Logística</div>
+                </div>
+
+                <div>
+                    <div class="checkmark-sub-title">Selecione um dos nossos cálculos pré setados, para um cálculo personalizado, selecione “Cálculo Personalizado” e entraremos em contato.</div>
+                    <div class="checkmark-box">
+                        <!-- <img class="checkmark-logo" src="assets/img/greener/calculator.svg"> -->
+                        <input id="customNot" class="checkmark" value="Não" type="hidden" name="custom">
+                        <input id="custom" class="checkmark" value="Sim" type="checkbox" name="custom">
+                        <div class="checkmark-title-custom">Cálculo Personalizado</div>
+                    </div>
+                </div>
             </div>
-            <div class="checkmark-box">
-                <img class="checkmark-logo-disabled" src="assets/img/greener/Icon_empresas.svg">
-                <input id="enterprise" class="checkmark" value="enterprise" type="checkbox" disabled>
-                <div class="checkmark-title-disabled">Empresas</div>
-            </div>
-            <div class="checkmark-box">
-                <img class="checkmark-logo-disabled" src="assets/img/greener/Icon_produtos.svg">
-                <input id="product" class="checkmark" value="product" type="checkbox" disabled>
-                <div class="checkmark-title-disabled">Produtos</div>
-            </div>
-            <div class="checkmark-box">
-                <img class="checkmark-logo-disabled" src="assets/img/greener/Icon_logistica.svg">
-                <input id="logistic" class="checkmark" value="logistic" type="checkbox" disabled>
-                <div class="checkmark-title-disabled">Logística</div>
-            </div>
-        </div>
     </div>
     <button type="button" id='nextZero' class="btn-next-allow" onClick="slide('next')" disabled>
         <div>Iniciar</div>

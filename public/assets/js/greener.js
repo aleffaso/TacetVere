@@ -1,3 +1,5 @@
+//TODO não permitir mais de um input para o mesmo checkbox
+
 document.querySelector('#event').onchange = () => {
   var checked = document.querySelector('#event').checked;
   if (checked !== true){
@@ -6,6 +8,16 @@ document.querySelector('#event').onchange = () => {
   }else if (checked !== false){
     document.querySelector('#nextZero').disabled = false
     document.querySelector('#nextZero').className = 'btn-next';
+  }
+}
+
+document.querySelector('#custom').onchange = () => {
+  if (document.querySelector('#custom').checked == true){
+    document.querySelector('#customNot').name = ''
+    document.querySelector('#custom').name = 'custom'
+  }else{
+    document.querySelector('#customNot').name = 'custom'
+    document.querySelector('#custom').name = ''
   }
 }
 

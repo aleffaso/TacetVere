@@ -12,7 +12,6 @@ app.get(route, (req, res) => {
 })
 
 app.post('/greener-carbon-management', (req, res) => {
-    
     async function writeData(auth){
         const sheets = google.sheets({ version: 'v4', auth });
         const today = new Date().toLocaleString("pt-BR", {timeZone:"America/Sao_Paulo"});

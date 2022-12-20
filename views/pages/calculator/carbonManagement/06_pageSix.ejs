@@ -82,30 +82,32 @@
                   </div>
                   <p class="message">Enquanto aguarda, conheça melhor do universo Greener</p>
                   <div class="body-box">
-                    <div class="box-info">
-                      <div class="box-icon">
-                        <a href="https://begreener.io/" target="__blank">
-                          <img src="assets/img/greener/Coins.svg">
-                        </a>
+                    <a href="https://begreener.io/" target="__blank">
+                      <div class="box-info">
+                        <div class="box-icon">
+                            <img src="assets/img/greener/Coins.svg">
+                        </div>
+                        <div class="box-text">Acesse a Plataforma de compensação</div>
                       </div>
-                      <div class="box-text">Acesse a Plataforma de compensação</div>
-                    </div>
+                    </a>
+
+                    <a href="https://begreener.io/" target="__blank">
                     <div class="box-info">
-                      <div class="box-icon">
-                        <a href="https://begreener.io/" target="__blank">
-                          <img src="assets/img/greener/second_icon.svg">
-                        </a>
+                        <div class="box-icon">
+                            <img src="assets/img/greener/second_icon.svg">
+                        </div>
+                        <div class="box-text">Acesse nosso site institucional</div>
                       </div>
-                      <div class="box-text">Acesse nosso site institucional</div>
-                    </div>
-                    <div class="box-info">
-                      <div class="box-icon">
-                        <a href="https://begreener.io/" target="__blank">
+                    </a>
+                    
+                    <a href="https://begreener.io/" target="__blank">
+                      <div class="box-info">
+                        <div class="box-icon">
                           <img src="assets/img/greener/Whitepaper.svg">
-                        </a>
+                        </div>
+                        <div class="box-text">Leia nosso White Paper</div>
                       </div>
-                      <div class="box-text">Leia nosso White Paper</div>
-                    </div>
+                    </a>
                   </div>
                 </p>
 
@@ -124,8 +126,8 @@
     <script>
         renderSuccessMessage('Dados enviados com sucesso!')
     </script>
-  <% }else if(message == false){ %> %>
-  <% }else if(message != 200){ %> %>
+  <% }else if(message == false){ %>
+  <% }else if(message != 200){ %>
     <script>
         renderFailMessage('<%=message%>')
     </script>
