@@ -3,9 +3,14 @@ const translateAmount = 100;
 let translate = 0;
 
 faq = (direction) => {
-    direction === "faq" ? translate -= -100: translate += -100;
-    faqBody.style.transform = `translateX(${translate}%)`
+  if (direction === "faq"){
+    faqBody.style.transform = `translateY(${0}%)`
+    document.querySelector('#faqBtn').disabled = true
+  }else if(direction ==='back'){
+    faqBody.style.transform = `translateY(${-100}%)`
+    document.querySelector('#faqBtn').disabled = false
   }
+}
 
 function renderSuccessMessage(title){
     Swal.fire({
