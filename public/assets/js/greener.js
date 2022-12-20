@@ -152,7 +152,7 @@ slideTwo = (direction) => {
     );
 }
 
-export function faq (direction){
+faq = (direction) => {
   if (direction === "faq"){
     faqBody.style.transform = `translateY(${0}%)`
     document.querySelector('#faqBtn').disabled = true
