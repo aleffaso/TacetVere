@@ -11,6 +11,29 @@ document.querySelector('#event').onchange = () => {
   }
 }
 
+document.querySelector('#nextZero').onclick = () => {
+  Swal.fire({
+    title: 'Antes de iniciarmos',
+    html: '<div>Você vai precisar ter as seguintes <br>informações em mãos:</div><br>' +
+          '<div class="body-text-div">' +
+            '- Lorem Ipsum is simply dummy text of the printing <br>' +
+            '- Lorem Ipsum is simply dummy text of the printing <br>' +
+            '- Lorem Ipsum is simply dummy text of the printing <br>' +
+            '- Lorem Ipsum is simply dummy text of the printing <br>' +
+            '- Lorem Ipsum is simply dummy text of the printing <br>' +
+            '- Lorem Ipsum is simply dummy text of the printing <br>' +
+          '</div>',
+    icon: 'warning',
+    confirmButtonColor: '#2FAC66',
+    confirmButtonText: 'Estou pronto para começar!',
+    customClass: "btn-next-allow"
+  }).then((result) => {
+    if (result.isConfirmed) {
+      slide('next')
+    }
+  })
+}
+
 document.querySelector('#custom').onchange = () => {
   if (document.querySelector('#custom').checked == true){
     document.querySelector('#customNot').name = ''

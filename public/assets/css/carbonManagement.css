@@ -623,7 +623,7 @@ h1, h2, h3, h4, h5 , p{
     text-align: center;
     font-weight: 400;
     font-size: 16px;
-    line-height: 16px;
+    line-height: 20px;
     color: var(--title-color);
 }
 
@@ -1233,4 +1233,8 @@ button:hover{
 .last .progress-bar-page{
     margin-left: calc(-300px + (300/8 * 8px));
     width: calc(300/8 * 9px);
+}
+
+.body-text-div{
+    text-align: center;
 }
