@@ -10,14 +10,14 @@
     <div class="body">
         <div id="greenerCalculatorThree">
             <div class="label-placeholder">Quantas horas por dia deve durar?</div>
-            <input id="hoursPerDay" class="border-box" name="hoursPerDay" type="number" min="0">
+            <input id="hoursPerDay" class="border-box" name="hoursPerDay" type="number" min="0" required>
 
             <div class="label-placeholder">Área prevista (em m²)?</div>
-            <input id="predictedArea" class="border-box" name="predictedArea" type="number" min="0">
+            <input id="predictedArea" class="border-box" name="predictedArea" type="number" min="0" required>
             <legend>Dentre a área prevista na resposta acima, qual é a área sob responsabilidade direta da sua organização? Se houver outros CNPJs presentes na área do evento, desconte a área que eles ocupam.</legend>
 
             <div class="label-placeholder">Área sob responsabilidade da organização (em m²)?</div>
-            <input id="predictedResponsibleArea" class="border-box" name="predictedResponsibleArea" type="text" min="0">
+            <input id="predictedResponsibleArea" class="border-box" name="predictedResponsibleArea" type="text" min="0" required>
         </div>
     </div>
     <button id='nextThree' type="button" class="btn-next-allow" onClick="slide('next')" disabled>

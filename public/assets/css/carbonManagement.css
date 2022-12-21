@@ -578,6 +578,38 @@ h1, h2, h3, h4, h5 , p{
     border: 1px solid var(--border-gray);
 }
 
+.container .checkmark-box i[data-tooltip]::after {
+    content: attr(data-tooltip);
+    font-style: normal;
+    position: absolute;
+    width: 280px;
+    padding: 2px 4px;
+    margin-left: 5px;
+    background-color: var(--border-gray);
+    border-radius: 4px;
+    color: var(--title-color);
+    transform: scale(0);
+  }
+  
+  .container .checkmark-box i[data-tooltip]:hover::after {
+    font-size: 10px;
+    text-align: center;
+    transform: scale(1);
+    margin-bottom: -100%;
+  }
+  
+  .container .checkmark-box i {
+    cursor: pointer;
+  }
+
+  .container .checkmark-box .checkmark-title img{
+    background-color: var(--border-gray);
+    padding: 2px 2px;
+    border-radius: 15px;
+    width: 15px;
+    height: 15px;
+  }
+
 .container .checkmark-box .checkmark{
     margin-left: 480px;
     width: 26px;
@@ -587,9 +619,8 @@ h1, h2, h3, h4, h5 , p{
 }
 
 .container .checkmark-sub-title{
+    width: 80%;
     text-align: center;
-    margin-top: 10px;
-    margin-bottom: 20px;
     font-weight: 400;
     font-size: 16px;
     line-height: 16px;
@@ -628,6 +659,14 @@ h1, h2, h3, h4, h5 , p{
     line-height: 24px;
     color: var(--border-gray);
 }
+
+.container .checkmark-box .checkmark-title-disabled img{
+    background-color: var(--border-gray);
+    padding: 2px 2px;
+    border-radius: 15px;
+    width: 15px;
+    height: 15px;
+  }
 
 .container .checkmark-logo{
     position: absolute;

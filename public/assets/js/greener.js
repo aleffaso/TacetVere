@@ -186,6 +186,14 @@ lastDay.onfocus = function (event) {
     this.focus();
 }
 
+document.getElementById("submitForm").addEventListener("click", function(event){
+  const send = confirm('Você deseja enviar formulário?')
+  if(!send){
+    event.preventDefault()
+  }
+});
+
+
 function renderSuccessMessage(title){
   Swal.fire({
     position: 'center',

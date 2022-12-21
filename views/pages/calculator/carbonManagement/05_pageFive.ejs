@@ -10,7 +10,7 @@
     <div class="body">
       <div id="greenerCalculatorFour">
         <div class="label-placeholder">Em qual categoria você diria que esse evento melhor se insere?</div>
-          <select id="category" class="border-box" name="category">
+          <select id="category" class="border-box" name="category" required>
               <option disabled selected value>Selecionar</option>
               <option value="convention">Feira/Convenção/Exposição indoor</option>
               <option value="show-outdoor">Show outdoor</option>
@@ -18,7 +18,7 @@
           </select>
 
           <div id="otherCategoryLabel" class="label-placeholder" style="display: none;">Qual?</div>
-          <input id="otherCategory" class="border-box" name="otherCategory" type="text" style="display: none;">
+          <input id="otherCategory" class="border-box" name="otherCategory" type="text" style="display: none;" required>
 
           <p id="convention" style="display: none; color:#0F0F0F; text-align: center;"></br></br>Neste caso, consideramos que já existe uma infraestrutura previamente estabelecida envolvendo: um imóvel, ar condicionado central e banheiros para realização do evento
           </p>
