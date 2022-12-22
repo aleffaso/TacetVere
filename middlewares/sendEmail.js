@@ -16,25 +16,25 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-async function mailSend(req, res, next){
+async function sendEmail(req, res, next){
     const mailSent = await transporter.sendMail({
         from: process.env.EMAIL,
-        to: process.env.EMAIL,
-        subject: req.body.subject,
-        text:   'Nome: ' + req.body.name + '\n' + 
-                'Telefone: ' + req.body.phone + '\n' +
-                'E-mail: ' + req.body.email + '\n' +
-                'Assunto: ' + req.body.subject + '\n' +
-                'Mensagem: '+ req.body.message
+        to: [process.env.EMAIL, 'falco@tacetvere.com'],
+        subject: 'Notificação - Calculadora',
+        text:   'O usuário ' + req.body.name + ' ' +
+                'preencheu novos dados na calculadora de eventos\n\n' + 
+                'Mensagem automática'
     });
 
     const mailCustomerSent = await transporter.sendMail({
         from: process.env.EMAIL,
         to: req.body.email,
-        subject: 'Mensagem',
-        text:   'Olá ' + req.body.name + '\n\n' + 
-                'Recebemos sua mensagem e em breve entraremos em contato' + '\n\n' + 
-                'Mensagem'
+        subject: 'Confirmação Calculadora Greener',
+        text:   'Olá, ' + req.body.name + '!\n\n' + 
+                'Obrigado por utilizar nossa calculadora Greener!' + '\n\n' + 
+                'Tudo certo por aqui, recebemos seus dados para o cálculo da sua pegada de carbono. Em até 12 horas comerciais entraremos em contato com o resultado. ' + '\n\n' +
+                'Até breve' + '\n\n' +
+                'Equipe Greener.'
     });
 
     next();

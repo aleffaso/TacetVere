@@ -2,6 +2,7 @@ const express = require('express');
 const app = express.Router();
 const authorize = require("../middlewares/googleSheets"); 
 const {google} = require('googleapis');
+const sendEmail = require('../middlewares/sendEmail')
 
 // const CarbonManagement = require('../db/CarbonManagement');
 
@@ -11,7 +12,7 @@ app.get(route, (req, res) => {
     res.render('pages/calculator/carbonManagement/index', {message: false}); 
 })
 
-app.post('/greener-carbon-management', (req, res) => {
+app.post('/greener-carbon-management', sendEmail, (req, res) => {
     async function writeData(auth){
         const sheets = google.sheets({ version: 'v4', auth });
         const today = new Date().toLocaleString("pt-BR", {timeZone:"America/Sao_Paulo"});
@@ -40,7 +41,7 @@ app.post('/greener-carbon-management', (req, res) => {
     authorize().then(writeData).catch(console.error);
 })
 
-app.post('/greener-carbon-management-info', (req, res) => {
+app.post('/greener-carbon-management-info', sendEmail, (req, res) => {
   async function writeData(auth){
       const sheets = google.sheets({ version: 'v4', auth });
       const today = new Date().toLocaleString("pt-BR", {timeZone:"America/Sao_Paulo"});

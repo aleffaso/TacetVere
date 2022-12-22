@@ -228,7 +228,7 @@ document.getElementById("submitFormOne").addEventListener("click", function(even
   }
 });
 
-document.getElementById("submitFormTwo").addEventListener("click", function(event){
+document.getElementById("submitFormThree").addEventListener("click", function(event){
   const send = confirm('Você deseja enviar formulário?')
   if(!send){
     event.preventDefault()
