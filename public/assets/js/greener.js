@@ -3,44 +3,49 @@
 document.querySelector('#event').onchange = () => {
   var checked = document.querySelector('#event').checked;
   if (checked !== true){
+    document.querySelector('#custom').disabled = false
+    document.querySelector('#nextZero').style.display = 'none'
     document.querySelector('#nextZero').disabled = true
     document.querySelector('#nextZero').className = 'btn-next-allow';
   }else if (checked !== false){
+    document.querySelector('#custom').disabled = true
+    document.querySelector('#nextZero').style.display = 'block'
     document.querySelector('#nextZero').disabled = false
     document.querySelector('#nextZero').className = 'btn-next';
-  }
-}
 
-document.querySelector('#nextZero').onclick = () => {
-  Swal.fire({
-    title: 'Antes de iniciarmos',
-    html: '<div>Você vai precisar ter as seguintes <br>informações em mãos:</div><br>' +
-          '<div class="body-text-div">' +
-            '- Lorem Ipsum is simply dummy text of the printing <br>' +
-            '- Lorem Ipsum is simply dummy text of the printing <br>' +
-            '- Lorem Ipsum is simply dummy text of the printing <br>' +
-            '- Lorem Ipsum is simply dummy text of the printing <br>' +
-            '- Lorem Ipsum is simply dummy text of the printing <br>' +
-            '- Lorem Ipsum is simply dummy text of the printing <br>' +
-          '</div>',
-    icon: 'warning',
-    confirmButtonColor: '#2FAC66',
-    confirmButtonText: 'Estou pronto para começar!',
-    customClass: "btn-next-allow"
-  }).then((result) => {
-    if (result.isConfirmed) {
-      slide('next')
-    }
-  })
+    Swal.fire({
+      title: 'Antes de iniciarmos',
+      html: '<div>Você vai precisar ter as seguintes <br>informações em mãos:</div><br>' +
+            '<div class="body-text-div">' +
+              '- Data e local do evento <br>' +
+              '- Tempo de duração por dia <br>' +
+              '- Área total do evento <br>' +
+              '- Área sob responsabilidade da sua organização <br>' +
+              '- A quantidade de combustível usado em veículos de propriedade da organização para a organização e execução do evento <br>' +
+              '- A quantidade a quantidade de gás, de botijão ou encanado, para fornos e fogões <br>' +
+              '- A quantidade de diesel usado em gerador durante o evento <br>' +
+              '- Número de extintores de incêndio <br>' +
+              '- Número de geladeiras, refrigeradores e congeladores <br>' +
+              '- Conta de energia elétrica <br>' +
+            '</div>',
+      icon: 'warning',
+      confirmButtonColor: '#2FAC66',
+      confirmButtonText: 'Estou pronto para começar!',
+      customClass: "btn-next-allow",
+      showCancelButton: true,
+      cancelButtonText:'Voltar',
+      cancelButtonColor: '#BABABA'
+    })
+  }
 }
 
 document.querySelector('#custom').onchange = () => {
   if (document.querySelector('#custom').checked == true){
-    document.querySelector('#customNot').name = ''
-    document.querySelector('#custom').name = 'custom'
+    document.querySelector('#event').disabled = true
+    document.querySelector('#nextSeven').style.display = 'block'
   }else{
-    document.querySelector('#customNot').name = 'custom'
-    document.querySelector('#custom').name = ''
+    document.querySelector('#event').disabled = false
+    document.querySelector('#nextSeven').style.display = 'none'
   }
 }
 
@@ -187,6 +192,13 @@ slideTwo = (direction) => {
     );
 }
 
+slideThree = (direction) => {
+  direction === "next" ? translate -= translateAmount + 1000 : translate += 1200 - translateAmount;
+    pages.forEach(
+      pages => (pages.style.transform = `translateX(${translate}%)`)
+    );
+}
+
 faq = (direction) => {
   if (direction === "faq"){
     faqBody.style.transform = `translateY(${0}%)`
@@ -209,13 +221,19 @@ lastDay.onfocus = function (event) {
     this.focus();
 }
 
-document.getElementById("submitForm").addEventListener("click", function(event){
+document.getElementById("submitFormOne").addEventListener("click", function(event){
   const send = confirm('Você deseja enviar formulário?')
   if(!send){
     event.preventDefault()
   }
 });
 
+document.getElementById("submitFormTwo").addEventListener("click", function(event){
+  const send = confirm('Você deseja enviar formulário?')
+  if(!send){
+    event.preventDefault()
+  }
+});
 
 function renderSuccessMessage(title){
   Swal.fire({

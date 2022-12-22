@@ -2,15 +2,14 @@
     <h1 class="title">
     Para qual segmento <br> será o cálculo?
     </h1>
-    <div class="checkmark-sub-title">Selecione um dos nossos cálculos pré setados, para um cálculo personalizado, selecione “Cálculo Personalizado” e entraremos em contato.</div>
+    <div class="checkmark-sub-title">Selecione uma de nossas calculadoras abaixo para iniciar a gestão do carbono. Caso opte por algo mais customizado, selecione a alternativa “Cálculo Personalizado”, que entraremos em contato.</div>
     <div class="body">
-        <form id="greener-carbon-management" method="POST" action="/greener-carbon-management" onkeydown="return event.key != 'Enter';">
             <div id="startCalculator">
                 <div class="checkmark-box">
                     <img class="checkmark-logo" src="assets/img/greener/Icon_eventos.svg">
                     <input name="type" id="event" class="checkmark" type="checkbox" value="event" required>
                     <div class="checkmark-title">Eventos
-                        <i aria-hidden="true" data-tooltip=" Lorem Ipsum is simply dummy text of the printing">
+                        <i aria-hidden="true" data-tooltip="Estime os gases do efeito estufa emitidos na organização e durante seu evento.">
                             <img src="assets/img/greener/info-solid.svg" alt="">
                         </i>
                     </div>
@@ -19,7 +18,7 @@
                     <img class="checkmark-logo-disabled" src="assets/img/greener/Icon_empresas.svg">
                     <input name="type" id="enterprise" class="checkmark" value="enterprise" type="checkbox" disabled>
                     <div class="checkmark-title-disabled">Empresas
-                        <i aria-hidden="true" data-tooltip=" Lorem Ipsum is simply dummy text of the printing">
+                        <i aria-hidden="true" data-tooltip="Em breve. Estime os gases do efeito estufa emitidos por sua empresa">
                             <img src="assets/img/greener/info-solid.svg" alt="">
                         </i>
                     </div>
@@ -27,8 +26,8 @@
                 <div class="checkmark-box">
                     <img class="checkmark-logo-disabled" src="assets/img/greener/Icon_produtos.svg">
                     <input name="type" id="product" class="checkmark" value="product" type="checkbox" disabled>
-                    <div class="checkmark-title-disabled">Produtos
-                        <i aria-hidden="true" data-tooltip=" Lorem Ipsum is simply dummy text of the printing">
+                    <div class="checkmark-title-disabled">Produtos e Serviços
+                        <i aria-hidden="true" data-tooltip="Em breve. Estime os gases do efeito estufa emitidos por seu produto ou serviço">
                             <img src="assets/img/greener/info-solid.svg" alt="">
                         </i>
                     </div>
@@ -36,8 +35,8 @@
                 <div class="checkmark-box">
                     <img class="checkmark-logo-disabled" src="assets/img/greener/Icon_logistica.svg">
                     <input name="type" id="logistic" class="checkmark" value="logistic" type="checkbox" disabled>
-                    <div class="checkmark-title-disabled">Logística
-                        <i aria-hidden="true" data-tooltip=" Lorem Ipsum is simply dummy text of the printing">
+                    <div class="checkmark-title-disabled">Transporte
+                        <i aria-hidden="true" data-tooltip="Em breve. Estime os gases do efeito estufa emitidos em processos de transporte de pessoas e cargas.">
                             <img src="assets/img/greener/info-solid.svg" alt="">
                         </i>
                     </div>
@@ -45,13 +44,15 @@
 
                 <div class="checkmark-box">
                     <img class="checkmark-logo" src="assets/img/greener/Vector.svg">
-                    <input id="customNot" class="checkmark" value="Não" type="hidden" name="custom">
                     <input id="custom" class="checkmark" value="Sim" type="checkbox" name="custom">
                     <div class="checkmark-title-custom">Cálculo Personalizado</div>
                 </div>
             </div>
     </div>
-    <button type="button" id='nextZero' class="btn-next-allow" onClick="slide('next')" disabled>
+    <button id='nextZero' type="button" class="btn-next-allow" onClick="slide('next')" style="display:none" disabled>
+        <div>Iniciar</div>
+    </button>
+    <button id='nextSeven' type="button" class="btn-next" onClick="slideThree('next')" style="display:none">
         <div>Iniciar</div>
     </button>
 </div>

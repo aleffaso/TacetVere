@@ -370,7 +370,7 @@ h1, h2, h3, h4, h5 , p{
 .container .pages {
   position: absolute;
   display: flex;
-  width: 1200%;
+  width: 1300%;
   box-sizing: border-box; 
 }
 
@@ -593,6 +593,7 @@ h1, h2, h3, h4, h5 , p{
   
   .container .checkmark-box i[data-tooltip]:hover::after {
     font-size: 10px;
+    line-height: 20px;
     text-align: center;
     transform: scale(1);
     margin-bottom: -100%;
@@ -1230,11 +1231,19 @@ button:hover{
     width: calc(300/8 * 9px);
 }
 
+.seven .progress-bar-page{
+    margin-left: calc(-300px + (300/8 * 8px));
+    width: calc(300/8 * 9px);
+}
+
 .last .progress-bar-page{
     margin-left: calc(-300px + (300/8 * 8px));
     width: calc(300/8 * 9px);
 }
 
 .body-text-div{
+    margin: 0 10%;
     text-align: center;
+    font-size: 16px;
+    line-height: 20px;
 }
