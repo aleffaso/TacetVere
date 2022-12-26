@@ -7,7 +7,7 @@
     <h1 class="explanation">
     Uso de combustível <br>em equipamentos
     </h1>
-    <p style="color: #000;">
+    <p class="info-explanation">
       Deixe o campo vazio se não souber estimar, ou preencha com 0 se não for aplicável.
     </p>
     <div class="body">
@@ -21,24 +21,22 @@
           <hr>
         </div>
         <br>
-        <div style="width: 100%;">
-          <div style="width:33%; float: left;">
+          <div class="row-box-2">
               <legend class="title-box">Diesel<br><br></legend>
               <input id="equipment_diesel" class="border-box-rectangle" name="equipment_diesel" type="number" placeholder="Litros" min="0">
           </div>
-          <div style="width:33%; float: right;">
-            <legend class="title-box">Gás natural<br>
+          <div class="row-box-2">
+            <legend class="title-box">Gás natural
               <div class="title-legend">Gás Encanado</div>
             </legend>
             <input id="equipment_gas_natural" class="border-box-rectangle" name="equipment_gas_natural" type="number" placeholder="m³" min="0">
           </div>
-          <div style="width:33%; float: right;">
-              <legend class="title-box">GLP<br>
-                <div class="title-legend">Botijão de Gás</div>
-              </legend>
-              <input id="equipment_glp" class="border-box-rectangle" name="equipment_glp" type="number" placeholder="Kg" min="0">
+          <div class="row-box-2">
+            <legend class="title-box">GLP
+              <div class="title-legend">Botijão de Gás</div>
+            </legend>
+            <input id="equipment_glp" class="border-box-rectangle" name="equipment_glp" type="number" placeholder="Kg" min="0">
           </div>
-        </div>
       </div>
     </div>
     <button id='nextFiveTwo' type="button" class="btn-next" onClick="slide('next')">

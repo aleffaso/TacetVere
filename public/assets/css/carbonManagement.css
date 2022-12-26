@@ -252,107 +252,55 @@ h1, h2, h3, h4, h5 , p{
 # Mobile
 --------------------------------------------------------------*/
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
     .logo{
         position: absolute;
         width: 193px;
         height: 56px;
-        left: 70px;
-        top: 60px;
+        left: 100px;
+        margin-top: 850px;
         border-radius: 0px;
     }
     
-    .converse-conosco-logo{
-        position: absolute;
-        margin-left: 60%;
-        top: -45px;
-    }
-    
     .converse-conosco{
-        position: absolute;
-        top: 700px;
+        margin-top: 820px;
+        margin-left: 0px;
     }
-    
-    .converse-conosco-info {
-        position: absolute;
-        width: 400px;
-        margin-left: -28%;
+
+    .converse-conosco-info{
+        width: 150px;
+        font-size: 14px;
+        line-height: 26px;
+        margin-top: 820px;
         text-align: center;
-        top: 730px;
     }
     
     .converse-conosco-contato {
-        position: absolute;
-        width: 200px;
-        margin-left: -5%;
-        text-align: center;
-        top: 750px;
-    }
-    
-    .WhatsApp-logo{
-        position: absolute;
-        margin-top: -30px;
-        margin-left: 60%;
-    }
-    
-    .WhatsApp{
-        position: absolute;
-        margin-top: 30px;
-        margin-left: 10%;
-        top: 800px;
-    }
-    
-    .WhatsApp-info{
-        position: absolute;
-        width: 400px;
-        margin-left: -28%;
-        text-align: center;
-        top: 870px;
-    }
-    
-    .WhatsApp-contato{
-        position: absolute;
-        width: 147px;
-        height: 36px;
-        left: 140px;
-        top: 900px;
-        font-weight: 900;
-        font-size: 16px;    
-    }
-    
-    .faq-logo{
-        position: absolute;
-        margin-top: 200px;
+        margin-top: 850px;
         margin-left: 0px;
     }
-    
-    .faq .btn-next{
-        position: absolute;
-        margin-top: 50px;
-        margin-left: -120px;
-    }
-    
+
     .faq{
-        display: hidden;
-        position: absolute;
-        width: 400px;
-        text-align: center;
-        margin-left: -80px;
-        margin-top: 470px;
+        margin-top: 830px;
+        margin-left: 0px;
+    }    
+
+    .faq .btn-next{
+        margin-top: 10px;
+        margin-bottom: 30px;
     }
 
     .tacet-vere-logo{
-        position: absolute;
-        width: 300.55px;
+        width: 200px;
         height: auto;
-        margin-top: 230px;
-        margin-left: -110px;
-        padding-bottom: 50px;
+        margin-top: 1250px;
+        margin-left: 90px;
+        padding-bottom: 30px;
     }
 }
 
 /*--------------------------------------------------------------
-# Pages
+# Pages - 13 pages = 1300%
 --------------------------------------------------------------*/
 
 .container{
@@ -444,6 +392,19 @@ h1, h2, h3, h4, h5 , p{
     
 }
 
+.container .info-explanation {
+    width: 486px;
+    height: 0px;
+    left: 99px;
+    top: 62px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: center;
+    color: var(--body-text-color);
+    
+}
+
 .container .body{
     width: 560px;
     height: 390px;
@@ -530,6 +491,21 @@ h1, h2, h3, h4, h5 , p{
     border-radius: 3px;
 }
 
+.container .row-box{
+    display: inline-grid;
+    padding: 60px;
+}
+
+.container .row-box-2{
+    display: inline-grid;
+    padding: 15px;
+}
+
+.container .row-box-3{
+    display: inline-grid;
+    padding: 7px;
+}
+
 .container .title-box{
     font-weight: 900;
     font-size: 24px;
@@ -563,8 +539,8 @@ h1, h2, h3, h4, h5 , p{
 
 .container .title-hr-3{
     font-weight: 700;
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 14px;
+    line-height: 22px;
     color: var(--body-text-color);
 }
 
@@ -757,293 +733,10 @@ button:hover{
 }
 
 /*--------------------------------------------------------------
-# Mobile
---------------------------------------------------------------*/
-
-@media (max-width: 500px) {
-    .container {
-        position: absolute;
-        width: 370px;
-        height: 830px;
-        top: 60px;
-        background: var(--text-color);
-        border-radius: 15px;
-        overflow: hidden;
-        margin-top: 100px;
-        margin-bottom: 100px;
-        margin-left: -572px;
-    }
-
-    .container .pages {
-        position: absolute;
-        display: flex;
-        width: 1000%;
-        box-sizing: border-box; 
-      }
-      
-      .container .page {
-          display: flex;
-          width: 100%;
-          height: 100%;
-          align-items: center;
-          justify-content: center;
-          flex-direction: column;
-          gap: 10px;
-          color: white;
-      }
-      
-      .container .up-logo{
-          position: absolute;
-          width: 300px;
-          padding-bottom: 450px;
-      }
-      
-      .container .start-logo{
-          position: absolute;
-          width: 350px;
-          padding-top: 50px;
-          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),var(--button-color);
-      }
-      
-      .container .title-start{
-          margin-top: 600px;
-          font-size: 26px;
-          line-height: 40px;
-          font-weight: 900;
-          text-align: center;
-          text-transform: uppercase;
-          color: var(--title-color);
-      }
-      
-      .container .title{
-          width: 250px;
-          height: 80px;
-          font-size: 18px;
-          line-height: 40px;
-          font-weight: 900;
-          text-align: center;
-          color: var(--title-color);
-          margin-top: 70px;
-      }
-      
-      .container .event {
-          width: 230px;
-          left: 62px;
-          font-weight: 900;
-          font-size: 12px;
-          line-height: 35px;
-          text-align: center;
-          text-transform: uppercase;
-          margin-top: 20px;
-          color: var(--body-color);
-      }
-      
-      .container .explanation {
-          width: 246px;
-          height: 90px;
-          left: 99px;
-          top: 62px;
-          font-weight: 900;
-          font-size: 14px;
-          line-height: 35px;
-          text-align: center;
-          color: var(--title-color);
-          
-      }
-      
-      .container .body{
-          width: 230px;
-          height: 416px;
-          left: 70px;
-          top: 207px;
-          font-style: normal;
-          font-weight: 500;
-          font-size: 12px;
-          line-height: 21px;
-          color: var(--body-text-color);
-          text-align: justify;
-          margin-top: 30px;
-      }
-      
-      .container .btn-next{
-          width: 200px;
-          height: 60px;
-          border-radius: 8px;
-          cursor: pointer;
-          transition: 0.1s;
-          background: var(--button-color);
-          font-weight: 700;
-          font-size: 16px;
-          line-height: 26px;
-          text-align: center;
-          color: var(--text-color);
-          border-color: transparent;
-      }
-      
-      .container .btn-next-allow{
-          width: 200px;
-          height: 60px;
-          border-radius: 8px;
-          cursor: pointer;
-          transition: 0.1s;
-          background: var(--border-gray);
-          font-weight: 700;
-          font-size: 16px;
-          line-height: 26px;
-          text-align: center;
-          color: var(--text-color);
-          border-color: transparent;
-      }
-      
-      .container .btn-previous{
-          cursor: pointer;
-          transition: 0.1s;
-          background: transparent;
-          font-weight: 700;
-          font-size: 16px;
-          line-height: 26px;
-          text-align: center;
-          color: var(--button-color);
-          border-color: transparent;
-      }
-      
-      .container .border-box{
-          box-sizing: border-box;
-          width: 230px;
-          height: 56px;
-          border: 1px solid var(--border-gray);
-          border-radius: 4px;
-          margin: 15px 0 8px 0;
-      }
-      .container .checkmark-box{
-        width: 221px;
-        height: 50px;
-        padding-top: 10px;
-        margin-bottom: 20px;
-        margin-left: 10px;
-        border-radius: 4px;
-        border: 1px solid var(--border-gray);
-    }
-
-    .container .checkmark-box .checkmark{
-        margin-left: 180px;
-        width: 26px;
-        height: 26px;
-        border-radius: 50%;
-        border: 10px solid #2FAC66;
-    }
-    
-    .container .checkmark-title{
-        position: absolute;
-        padding-left: 50px;
-        margin-top: -30px;
-        margin-left: 10px;
-        font-weight: 700;
-        font-size: 20px;
-        line-height: 24px;
-        color: var(--title-color);
-    }
-    
-    .container .checkmark-logo{
-        position: absolute;
-        margin-top: 0px;
-        margin-left: 15px;
-        color: var(--text-color);
-    }
-
-    .container .border-box{
-        box-sizing: border-box;
-        width: 230px;
-        height: 56px;
-        border: 1px solid var(--border-gray);
-        border-radius: 4px;
-        margin: 15px 0 8px 0;
-    }
-    
-    .container .border-box-rectangle{
-        box-sizing: border-box;
-        width: 100px;
-        height: 55px;
-        border: 1px solid var(--border-gray);
-        border-radius: 3px;
-    }
-    
-    .container .border-box-rectangle-2{
-        box-sizing: border-box;
-        width: 100px;
-        height: 55px;
-        margin-top: 5px;
-        border: 1px solid var(--border-gray);
-        border-radius: 3px;
-    }
-    
-    .container .title-box{
-        font-weight: 900;
-        font-size: 20px;
-        line-height: 24px;
-        margin-bottom: 26px;
-        color: var(--body-text-color);
-    }
-    
-    .container .title-hr{
-        font-weight: 700;
-        font-size: 12px;
-        line-height: 24px;
-        margin-bottom: -3px;
-        color: var(--body-text-color);
-    }
-    
-    .container .title-legend{
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 24px;
-        color: var(--body-text-color);
-    }
-    
-    .container .title-hr-2{
-        font-weight: 700;
-        font-size:12px;
-        line-height: 24px;
-        margin-top: 200px;
-        color: var(--body-text-color);
-    }
-    
-    .container .title-hr-3{
-        font-weight: 700;
-        font-size: 12px;
-        line-height: 24px;
-        color: var(--body-text-color);
-    }
-    select {
-        font-weight: 700;
-        font-size: 10px;
-        padding-left: 10px;
-        padding-top: 7px;
-        -webkit-appearance: none;
-       -moz-appearance: none;
-    }
-    
-    select:valid{
-        font-weight: 700;
-        font-size: 10px;
-        padding-left: 10px;
-    }
-    
-    input{
-        font-weight: 700;
-        font-size: 10px;
-        padding-left: 10px;
-        padding-top: 10px;
-        margin-left: 0.5rem;
-        outline-color: #2fac66;
-    }
-  }
-
-/*--------------------------------------------------------------
 # Last page
 --------------------------------------------------------------*/
 
-  .container-last{
+.container-last{
     position: absolute;
     width: 700px;
     height: 802px;
@@ -1247,3 +940,513 @@ button:hover{
     font-size: 16px;
     line-height: 20px;
 }
+
+/*--------------------------------------------------------------
+# Mobile
+--------------------------------------------------------------*/
+
+@media (max-width: 600px) {
+    .container {
+        position: absolute;
+        width: 90%;
+        height: 850px;
+        top: 20px;
+        background: var(--text-color);
+        border-radius: 15px;
+        overflow: hidden;
+        margin-left: -572px;
+    }
+
+    .container .pages {
+        position: absolute;
+        display: flex;
+        width: 1300%;
+        box-sizing: border-box; 
+      }
+      
+    .container .page {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+        color: white;
+    }
+    
+    .container .up-logo{
+        position: absolute;
+        width: 290px;
+        padding-bottom: 450px;
+    }
+      
+    .container .start-logo{
+        position: absolute;
+        width: 350px;
+        padding-top: 50px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),var(--button-color);
+    }
+    
+    .container .title-start{
+        margin-top: 600px;
+        font-size: 26px;
+        line-height: 40px;
+        font-weight: 900;
+        text-align: center;
+        text-transform: uppercase;
+        color: var(--title-color);
+    }
+      
+    .container .title{
+        width: 250px;
+        height: 80px;
+        font-size: 18px;
+        line-height: 40px;
+        font-weight: 900;
+        text-align: center;
+        color: var(--title-color);
+        margin-top: 70px;
+    }
+    
+    .container .event {
+        width: 230px;
+        left: 62px;
+        font-weight: 900;
+        font-size: 12px;
+        line-height: 35px;
+        text-align: center;
+        text-transform: uppercase;
+        margin-top: 20px;
+        color: var(--body-color);
+    }
+      
+    .container .explanation {
+        width: 300px;
+        height: 90px;
+        left: 99px;
+        top: 62px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+        color: var(--title-color);
+    }
+
+    .container .info-explanation {
+    width: 300px;
+    height: 0px;
+    left: 99px;
+    top: 62px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    color: var(--body-text-color);
+    }
+      
+    .container .body{
+        width: 300px;
+        height: 416px;
+        margin-left: -30px;
+        margin-top: 30px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 21px;
+        color: var(--body-text-color);
+        text-align: justify;
+    }
+      
+    .container .btn-next{
+        width: 200px;
+        height: 60px;
+        margin-top: 30px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.1s;
+        background: var(--button-color);
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 26px;
+        text-align: center;
+        color: var(--text-color);
+        border-color: transparent;
+    }
+      
+    .container .btn-next-allow{
+        width: 200px;
+        height: 60px;
+        margin-top: 30px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.1s;
+        background: var(--border-gray);
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 26px;
+        text-align: center;
+        color: var(--text-color);
+        border-color: transparent;
+    }
+      
+    .container .btn-previous{
+        cursor: pointer;
+        transition: 0.1s;
+        background: transparent;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 26px;
+        text-align: center;
+        color: var(--button-color);
+        border-color: transparent;
+    }
+      
+    .container .checkmark-box{
+        width: 300px;
+        height: 50px;
+        padding-top: 10px;
+        margin-bottom: 20px;
+        border-radius: 4px;
+        border: 1px solid var(--border-gray);
+    }
+
+    .container .checkmark-box .checkmark{
+        margin-left: 250px;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        border: 10px solid #2FAC66;
+    }
+    
+    .container .checkmark-title{
+        position: absolute;
+        padding-left: 50px;
+        margin-top: -30px;
+        margin-left: 10px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+        color: var(--title-color);
+    }
+
+    .container .checkmark-title-disabled{
+        position: absolute;
+        padding-left: 50px;
+        margin-top: -30px;
+        margin-left: 10px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+        color: var(--border-gray);
+    }
+
+    .container .checkmark-title-custom{
+        position: absolute;
+        padding-left: 50px;
+        margin-top: -30px;
+        margin-left: 10px;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 18px;
+        color: var(--title-color);
+    }
+    
+    .container .checkmark-box i[data-tooltip]::after {
+        content: attr(data-tooltip);
+        font-style: normal;
+        position: absolute;
+        width: 100px;
+        padding: 2px 4px;
+        margin-left: 5px;
+        background-color: var(--border-gray);
+        border-radius: 4px;
+        color: var(--title-color);
+        transform: scale(0);
+    }
+      
+    .container .checkmark-box i[data-tooltip]:hover::after {
+    font-size: 8px;
+    line-height: 15px;
+    text-align: center;
+    transform: scale(1);
+    margin-bottom: -100%;
+    }
+      
+    .container .checkmark-box i {
+    cursor: pointer;
+    }
+    
+    legend{
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14px;;
+        padding-left: 10px;
+        padding-top: 10px;
+        text-align: center;
+        color: var(--border-gray)
+    }
+
+    .container .checkmark-logo{
+        position: absolute;
+        margin-top: 0px;
+        margin-left: 15px;
+        color: var(--text-color);
+    }
+
+    .container .label-placeholder{
+        position: absolute;
+        z-index: 100;
+        padding-top: 20px;
+        padding-left: 10px;
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 14px;
+        color: var(--border-gray);
+    }
+
+    .container .label-placeholder .five{
+        font-size: 9px;
+    }
+
+    .container .row-box{
+        width: 40%;
+        display: inline-grid;
+        padding: 45px;
+    }
+
+    .container .row-box-2{
+        display: inline-grid;
+        padding: 0px;
+    }
+
+    .container .row-box-3{
+        display: inline-grid;
+        padding: 10px;
+    }
+
+    .container .border-box{
+        width: 300px;
+        height: 50px;
+        margin-bottom: 20px;
+        border-radius: 4px;
+        border: 1px solid var(--border-gray);
+    }
+    
+    .container .border-box-rectangle{
+        box-sizing: border-box;
+        width: 80px;
+        height: 55px;
+        border: 1px solid var(--border-gray);
+        border-radius: 3px;
+    }
+    
+    .container .border-box-rectangle-2{
+        box-sizing: border-box;
+        width: 100px;
+        height: 55px;
+        margin-top: 5px;
+        border: 1px solid var(--border-gray);
+        border-radius: 3px;
+    }
+    
+    .container .title-box{
+        font-weight: 900;
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 26px;
+        color: var(--body-text-color);
+    }
+    
+    .container .title-hr{
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 24px;
+        margin-bottom: -3px;
+        color: var(--body-text-color);
+    }
+    
+    .container .title-legend{
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 24px;
+        color: var(--body-text-color);
+    }
+    
+    .container .title-hr-2{
+        font-weight: 700;
+        font-size:12px;
+        line-height: 24px;
+        margin-top: 200px;
+        color: var(--body-text-color);
+    }
+    
+    .container .title-hr-3{
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 18px;
+        color: var(--body-text-color);
+    }
+    select {
+        font-weight: 700;
+        font-size: 10px;
+        padding-left: 10px;
+        padding-top: 7px;
+        -webkit-appearance: none;
+       -moz-appearance: none;
+    }
+    
+    select:valid{
+        font-weight: 700;
+        font-size: 10px;
+        padding-left: 10px;
+    }
+    
+    input{
+        font-weight: 700;
+        font-size: 10px;
+        padding-left: 10px;
+        padding-top: 10px;
+        margin-left: 0.5rem;
+        outline-color: #2fac66;
+    }
+
+    /*--------------------------------------------------------------
+# Last page
+--------------------------------------------------------------*/
+
+  .container-last{
+    position: absolute;
+    width: 90%;
+    height: 850px;
+    top: 20px;
+    background: var(--text-color);
+    border-radius: 15px;
+    overflow: hidden;
+    margin-left: -572px;
+   }
+
+    .container-last .pages {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    box-sizing: border-box; 
+    }
+
+    .container-last .page {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+        color: white;
+    }
+
+    .container-last .btn{
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 26px;
+        text-align: center;
+        margin-top: 10px;
+        cursor: pointer;
+        color: var(--button-color);
+    }
+
+    .container-last .title{
+        width: 350px;
+        height: 80px;
+        font-size: 18px;
+        line-height: 40px;
+        font-weight: 900;
+        text-align: center;
+        color: var(--title-color);
+        margin-top: 70px;
+    }
+
+    .container-last .body{
+        width: 350px;
+        margin-top: 30px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 21px;
+        color: var(--body-text-color);
+        text-align: center;
+    }
+
+    .container-last .box{
+        width: 350px;
+        height: 55px;
+        margin-top: 40px;
+        border: 2px solid #2FAC66;
+        border-radius: 8px;
+    }
+
+    .container-last .box .info{
+        color: var(--button-color);
+        text-align: center;
+        margin-top: 10px;
+        font-weight: 700;
+        line-height: 35px;
+        font-size: 14px;
+    }
+
+    .container-last .message{
+        color: var(--title-color);
+        text-align: center;
+        margin-top: 83px;
+        font-weight: 700;
+        line-height: 24px;
+        font-size: 12px;
+    }
+
+    .container-last .body-box{
+        display: flex;
+        gap: 20px;
+        transform:scale(0.6)
+    }
+
+    .container-last .body-box a{
+        text-decoration: none;
+    }
+
+    .container-last .box-info{
+        display: flex;
+        flex-direction: column;
+        gap:10px;
+        width: 154px;
+        height: 109px;
+        align-items: center;
+        border: 2px solid #2FAC66;
+        border-radius: 8px;
+    }
+
+    .container-last .box-icon{
+        margin-top: 10px;
+    }
+
+    .container-last .box-text{
+        width: 127px;
+        height: 34px;
+        font-weight: 700;
+        font-size: 12px;
+        text-align: center;
+        color: var(--title-color);
+    }
+
+    .faqBody{
+        position: relative;
+        z-index: 100;
+        margin-left: 0%;
+        transform: translateY(-100%);
+        width: 100%;
+        height: 900px;
+        transition: all 0.7s;
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+  }
