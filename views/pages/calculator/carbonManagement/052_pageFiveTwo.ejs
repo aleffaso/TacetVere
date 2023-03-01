@@ -1,48 +1,76 @@
 <div class="page fiveTwo">
-    <div class="progress-bar-all"></div>
-    <div class="progress-bar-page"></div>
-    <h1 class="event">
-      Emissões diretas
-    </h1>
-    <h1 class="explanation">
-    Uso de combustível <br>em equipamentos
-    </h1>
-    <p class="info-explanation">
-      Deixe o campo vazio se não souber estimar, ou preencha com 0 se não for aplicável.
-    </p>
-    <div class="body">
-      <div id="greenerCalculatorFiveTwo">
-        <div style="width:28%; float: left;">
-          <div class="title-hr">Em Geradores</div>
-          <hr>
-        </div>
-        <div style="width:64%; float: right;">
-          <div class="title-hr">Fornos, Fogões e Sistemas de Aquecimento</div>
-          <hr>
-        </div>
-        <br>
-          <div class="row-box-2">
-              <legend class="title-box">Diesel<br><br></legend>
-              <input id="equipment_diesel" class="border-box-rectangle" name="equipment_diesel" type="number" placeholder="Litros" min="0">
-          </div>
-          <div class="row-box-2">
-            <legend class="title-box">Gás natural
-              <div class="title-legend">Gás Encanado</div>
-            </legend>
-            <input id="equipment_gas_natural" class="border-box-rectangle" name="equipment_gas_natural" type="number" placeholder="m³" min="0">
-          </div>
-          <div class="row-box-2">
-            <legend class="title-box">GLP
-              <div class="title-legend">Botijão de Gás</div>
-            </legend>
-            <input id="equipment_glp" class="border-box-rectangle" name="equipment_glp" type="number" placeholder="Kg" min="0">
-          </div>
+  <div class="progress-bar-all"></div>
+  <div class="progress-bar-page"></div>
+  <h1 class="event">Emissões diretas</h1>
+  <h1 class="explanation">Uso de combustível <br />em equipamentos</h1>
+  <p class="info-explanation">
+    Deixe o campo vazio se não souber estimar, ou preencha com 0 se não for
+    aplicável.
+  </p>
+  <div class="body">
+    <div id="greenerCalculatorFiveTwo">
+      <div style="width: 28%; float: left">
+        <div class="title-hr">Em Geradores</div>
+        <hr />
+      </div>
+      <div style="width: 64%; float: right">
+        <div class="title-hr">Fornos, Fogões e Sistemas de Aquecimento</div>
+        <hr />
+      </div>
+      <br />
+      <div class="row-box-2">
+        <legend class="title-box">
+          Diesel
+          <div class="title-legend" style="color: white">Diesel</div>
+        </legend>
+        <input
+          id="equipment_diesel"
+          class="border-box-rectangle"
+          name="equipment_diesel"
+          type="number"
+          placeholder="Litros"
+          min="0"
+        />
+      </div>
+      <div class="row-box-2">
+        <legend class="title-box">
+          Gás natural
+          <div class="title-legend">Gás Encanado</div>
+        </legend>
+        <input
+          id="equipment_gas_natural"
+          class="border-box-rectangle"
+          name="equipment_gas_natural"
+          type="number"
+          placeholder="m³"
+          min="0"
+        />
+      </div>
+      <div class="row-box-2">
+        <legend class="title-box">
+          GLP
+          <div class="title-legend">Botijão de Gás</div>
+        </legend>
+        <input
+          id="equipment_glp"
+          class="border-box-rectangle"
+          name="equipment_glp"
+          type="number"
+          placeholder="Kg"
+          min="0"
+        />
       </div>
     </div>
-    <button id='nextFiveTwo' type="button" class="btn-next" onClick="slide('next')">
-      <div>Próximo</div>
-    </button>
-    <button class="btn-previous" type="button" onClick="slide('prev')">
-      < Voltar
-    </button>
+  </div>
+  <button
+    id="nextFiveTwo"
+    type="button"
+    class="btn-next"
+    onClick="slide('next')"
+  >
+    <div>Próximo</div>
+  </button>
+  <button class="btn-previous" type="button" onClick="slide('prev')">
+    < Voltar
+  </button>
 </div>
