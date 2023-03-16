@@ -27,6 +27,7 @@ app.post("/greener-carbon-management", sendEmail, (req, res) => {
       array.splice(15, 0, "");
     } else {
       array.splice(2, 0, "");
+      array.splice(3, 0, "eventos");
     }
 
     const values = [array];
