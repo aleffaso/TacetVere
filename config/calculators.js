@@ -12,7 +12,7 @@ app.get(route, (req, res) => {
   res.render("pages/calculator/carbonManagement/index", { message: false });
 });
 
-app.post("/greener-carbon-management", (req, res) => {
+app.post("/greener-carbon-management", sendEmail, (req, res) => {
   async function writeData(auth) {
     const sheets = google.sheets({ version: "v4", auth });
     const today = new Date().toLocaleString("pt-BR", {
