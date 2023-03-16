@@ -1,38 +1,46 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
   <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
     <title>Greener - Beyond Green Tokens</title>
 
-    <link href="/assets/img/greener/favicon.png" rel="icon">
-
+    <link href="/assets/img/greener/favicon.png" rel="icon" />
 
     <!-- Template Main CSS File -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.css">
-    <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/assets/css/carbonManagement.css" rel="stylesheet">
-
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.css"
+    />
+    <link
+      href="/assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="/assets/css/carbonManagement.css" rel="stylesheet" />
   </head>
 
-  <%- include("../../calculator/carbonManagement/faq.ejs") %> 
+  <%- include("../../calculator/carbonManagement/faq.ejs") %>
 
   <body>
     <div>
       <a href="https://begreener.io/" target="__blank">
-        <img class="logo" src="assets/img/greener/Logo_greener.png">
+        <img class="logo" src="assets/img/greener/Logo_greener.png" />
       </a>
 
       <div>
         <h5 class="converse-conosco">
-          <img class="converse-conosco-logo"src="assets/img/greener/contact.svg">
+          <img
+            class="converse-conosco-logo"
+            src="assets/img/greener/contact.svg"
+          />
           Converse Conosco
         </h5>
       </div>
 
-      <p class="converse-conosco-info">Precisando de ajuda? Contate-nos via e-mail</p>
+      <p class="converse-conosco-info">
+        Precisando de ajuda? Contate-nos via e-mail
+      </p>
       <h5 class="converse-conosco-contato">contact@begreener.io</h5>
 
       <!-- <div>
@@ -50,9 +58,16 @@
       <div>
         <div>
           <h5 class="faq">
-            <img class="faq-logo" src="assets/img/greener/icon_link.svg">
+            <img class="faq-logo" src="assets/img/greener/icon_link.svg" />
             FAQ
-            <button id=faqBtn class="btn-next" type="button" onClick="faq('faq')">Abrir FAQ</button>
+            <button
+              id="faqBtn"
+              class="btn-next"
+              type="button"
+              onClick="faq('faq')"
+            >
+              Abrir FAQ
+            </button>
           </h5>
         </div>
       </div>
@@ -60,7 +75,7 @@
       <div>
         <div>
           <a href="https://www.tacetvere.com/" target="__blank">
-            <img class="tacet-vere-logo" src="assets/img/greener/selo.png">
+            <img class="tacet-vere-logo" src="assets/img/greener/selo.png" />
           </a>
         </div>
       </div>
@@ -69,19 +84,20 @@
     <div>
       <div class="container">
         <div class="pages">
-          <%- include("../../calculator/carbonManagement/000_main.ejs") %> 
-          <%- include("../../calculator/carbonManagement/00_start.ejs") %> 
-          <%- include("../../calculator/carbonManagement/01_agreement.ejs") %> 
-          <%- include("../../calculator/carbonManagement/02_pageTwo.ejs") %>
-          <%- include("../../calculator/carbonManagement/03_pageThree.ejs") %>
-          <%- include("../../calculator/carbonManagement/04_pageFour.ejs") %>
-          <%- include("../../calculator/carbonManagement/05_pageFive.ejs") %> 
-          <%- include("../../calculator/carbonManagement/051_pageFiveOne.ejs") %> 
-          <%- include("../../calculator/carbonManagement/052_pageFiveTwo.ejs") %> 
-          <%- include("../../calculator/carbonManagement/053_pageFiveThree.ejs") %>
-          <%- include("../../calculator/carbonManagement/054_pageFiveFour.ejs") %>
-          <%- include("../../calculator/carbonManagement/submitOther.ejs") %>
-          <%- include("../../calculator/carbonManagement/07_custom.ejs") %>
+          <%-include("../../calculator/carbonManagement/000_main.ejs")%>
+          <%-include("../../calculator/carbonManagement/00_start1.ejs")%>
+          <%-include("../../calculator/carbonManagement/00_start2.ejs")%>
+          <%-include("../../calculator/carbonManagement/01_agreement.ejs")%>
+          <%-include("../../calculator/carbonManagement/02_pageTwo.ejs")%>
+          <%-include("../../calculator/carbonManagement/03_pageThree.ejs")%>
+          <%-include("../../calculator/carbonManagement/04_pageFour.ejs")%>
+          <%-include("../../calculator/carbonManagement/05_pageFive.ejs")%>
+          <%-include("../../calculator/carbonManagement/051_pageFiveOne.ejs")%>
+          <%-include("../../calculator/carbonManagement/052_pageFiveTwo.ejs")%>
+          <%-include("../../calculator/carbonManagement/053_pageFiveThree.ejs")%>
+          <%-include("../../calculator/carbonManagement/054_pageFiveFour.ejs")%>
+          <%-include("../../calculator/carbonManagement/submitOther.ejs")%>
+          <%-include("../../calculator/carbonManagement/07_custom.ejs")%>
         </div>
       </div>
     </div>
@@ -91,14 +107,12 @@
   <script src="/assets/js/greener.js"></script>
 
   <% if(message == 200){ %>
-    <script>
-        renderSuccessMessage('Dados enviados com sucesso!')
-    </script>
-  <% }else if(message == false){ %> %>
-  <% }else if(message != 200){ %> %>
-    <script>
-        renderFailMessage('<%=message%>')
-    </script>
+  <script>
+    renderSuccessMessage("Dados enviados com sucesso!");
+  </script>
+  <% }else if(message == false){ %> %> <% }else if(message != 200){ %> %>
+  <script>
+    renderFailMessage("<%=message%>");
+  </script>
   <% } %>
-
 </html>

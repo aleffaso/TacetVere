@@ -1,0 +1,75 @@
+  <div class="page zero_two">
+    <h1 class="title">Como você se categoriza no evento?</h1>
+    <div class="body">
+      <div id="startCalculatorOne">
+        <form id="greener-carbon-management" method="POST" action="/greener-carbon-management">
+        <div class="checkmark-box">
+          <img
+            class="checkmark-logo"
+            src="assets/img/greener/Icon_eventos.svg"
+          />
+          <input
+            name="categoryOrganizer"
+            id="eventOrganizer"
+            class="checkmark"
+            type="checkbox"
+            value="organizador"
+          />
+          <div class="checkmark-title">Sou Organizador</div>
+        </div>
+        <div class="checkmark-box">
+          <img
+            class="checkmark-logo"
+            src="assets/img/greener/Icon_eventos.svg"
+          />
+          <input
+            name="categoryOrganizer"
+            id="eventExposer"
+            class="checkmark"
+            type="checkbox"
+            value="expositor"
+          />
+          <div class="checkmark-title">Sou Expositor</div>
+        </div>
+        <div>
+          <select
+            id="eventNameExposer"
+            class="border-box-exposer"
+            name="eventNameExposer"
+            style="display: none"
+          >
+            <option disabled selected value>Selecionar</option>
+            <option>ABRIN 2023</option>
+            <option>AUTOCOM 2023</option>
+            <option>ESCOLAR OFFICE BRASIL 2023</option>
+            <option>THE BRAZIL CONFERENCE & EXPO</option>
+            <option>BIO BRAZIL FAIR e NATURALTECH 2023</option>
+            <option>SEAFOOD SHOW LATIN AMERICA 2023</option>
+            <option>VEGFEST 2023</option>
+            <option>Encontro de Liderança 2023 - Reconecta</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <button
+      id="nextZeroOrganizer"
+      type="button"
+      class="btn-next-allow"
+      onClick="slide('next')"
+      style="display: none"
+    >
+      <div>Iniciar</div>
+    </button>
+    <button
+      id="nextZeroExposer"
+      type="button"
+      class="btn-next"
+      onClick="slideZeroStart('next')"
+      style="display: none"
+    >
+      <div>Iniciar</div>
+    </button>
+    <button class="btn-previous" type="button" onClick="slide('prev')">
+      < Voltar
+    </button>
+  </div>

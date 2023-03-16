@@ -12,7 +12,7 @@ app.get(route, (req, res) => {
   res.render("pages/calculator/carbonManagement/index", { message: false });
 });
 
-app.post("/greener-carbon-management", sendEmail, (req, res) => {
+app.post("/greener-carbon-management", (req, res) => {
   async function writeData(auth) {
     const sheets = google.sheets({ version: "v4", auth });
     const today = new Date().toLocaleString("pt-BR", {
@@ -20,6 +20,15 @@ app.post("/greener-carbon-management", sendEmail, (req, res) => {
     });
     const array = Object.values(req.body);
     array.unshift(today);
+
+    if (array[1] == "expositor") {
+      array.splice(3, 0, "eventos");
+      array.splice(6, 0, "");
+      array.splice(15, 0, "");
+    } else {
+      array.splice(2, 0, "");
+    }
+
     const values = [array];
     const resource = {
       values,
