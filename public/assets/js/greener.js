@@ -241,10 +241,21 @@ slide = (direction) => {
   );
 };
 
+slideOne = (direction) => {
+  direction === "next"
+    ? (translate -= translateAmount)
+    : (translate += translateAmount);
+  pages.forEach(
+    (pages) => (pages.style.transform = `translateX(${translate}%)`)
+  );
+  document.querySelector("#greener-carbon-management").reset();
+  document.querySelector("#nextZeroOrganizer").style.display = "none";
+};
+
 slideTwo = (direction) => {
   direction === "next"
     ? (translate -= translateAmount + 400)
-    : (translate += 600 - translateAmount);
+    : (translate += 1200 - translateAmount);
   pages.forEach(
     (pages) => (pages.style.transform = `translateX(${translate}%)`)
   );
@@ -266,6 +277,9 @@ slideZeroStart = (direction) => {
   pages.forEach(
     (pages) => (pages.style.transform = `translateX(${translate}%)`)
   );
+  document.querySelector("#greener-carbon-management").reset();
+  document.querySelector("#nextZeroExposer").style.display = "none";
+  document.querySelector("#eventNameExposer").style.display = "none";
 };
 
 faq = (direction) => {
