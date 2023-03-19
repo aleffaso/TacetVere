@@ -609,6 +609,24 @@ button:hover {
   border: 10px solid #2fac66;
 }
 
+.container .checkmark-box .checkmark-circle {
+  position: absolute;
+  margin: 2px 0 0 20px;
+  z-index: 1;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 1px solid #2fac66;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.container .checkmark-box .checkmark-circle:checked {
+  background: #2fac66;
+}
+
 .container .checkmark-sub-title {
   width: 80%;
   text-align: justify;
@@ -622,6 +640,17 @@ button:hover {
   position: absolute;
   padding-left: 50px;
   margin-top: -30px;
+  margin-left: 15px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 24px;
+  color: var(--title-color);
+}
+
+.container .checkmark-title-circle {
+  position: absolute;
+  padding-left: 50px;
+  margin-top: 0px;
   margin-left: 15px;
   font-weight: 700;
   font-size: 24px;
