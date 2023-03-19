@@ -285,8 +285,8 @@ slideTwo = (direction) => {
 
 slideThree = (direction) => {
   direction === "next"
-    ? (translate -= translateAmount + 1000)
-    : (translate += 1200 - translateAmount);
+    ? (translate -= translateAmount + 1100)
+    : (translate += 1300 - translateAmount);
   pages.forEach(
     (pages) => (pages.style.transform = `translateX(${translate}%)`)
   );
