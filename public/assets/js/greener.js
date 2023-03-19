@@ -19,7 +19,21 @@ document.querySelector("#eventExposer").onchange = () => {
   if (checked == true) {
     document.querySelector("#eventOrganizer").disabled = true;
 
+    document.querySelector("#previousPageFiveOne").style.display = "none";
+    document.querySelector("#previousPageFiveOneExposed").style.display =
+      "block";
+
+    document.querySelector("#slideExpositor").style.display = "block";
+    document.querySelector("#nextFiveOne").style.display = "none";
+
+    document.querySelector("#nextFiveThreePrevious").style.display = "none";
+    document.querySelector("#slideExpositorPrevious").style.display = "block";
+
+    document.querySelector("#ExtinguishFire").style.visibility = "hidden";
+    document.querySelector("#NetEnergy").style.visibility = "hidden";
+
     document.querySelector("#eventNameExposer").style.display = "block";
+
     document.querySelector("#eventNameExposer").onchange = () => {
       var eventNameExposer = document.querySelector("#eventNameExposer").value;
       if (eventNameExposer.length > 0) {
@@ -31,10 +45,6 @@ document.querySelector("#eventExposer").onchange = () => {
         document.querySelector("#nextZeroExposer").style.display = "none";
       }
     };
-
-    document.querySelector("#previousPageFiveOne").style.display = "none";
-    document.querySelector("#previousPageFiveOneExposed").style.display =
-      "block";
   } else {
     document.querySelector("#eventOrganizer").disabled = false;
     document.querySelector("#nextZeroExposer").disabled = true;
@@ -45,6 +55,15 @@ document.querySelector("#eventExposer").onchange = () => {
     document.querySelector("#previousPageFiveOne").style.display = "block";
     document.querySelector("#previousPageFiveOneExposed").style.display =
       "none";
+
+    document.querySelector("#slideExpositor").style.display = "none";
+    document.querySelector("#nextFiveOne").style.display = "block";
+
+    document.querySelector("#nextFiveThreePrevious").style.display = "block";
+    document.querySelector("#slideExpositorPrevious").style.display = "none";
+
+    document.querySelector("#ExtinguishFire").style.visibility = "visible";
+    document.querySelector("#NetEnergy").style.visibility = "visible";
   }
 };
 
@@ -242,14 +261,17 @@ slide = (direction) => {
 };
 
 slideOne = (direction) => {
-  direction === "next"
-    ? (translate -= translateAmount)
-    : (translate += translateAmount);
+  if (direction === "next") {
+    translate -= translateAmount;
+  } else {
+    translate += translateAmount;
+    document.querySelector("#greener-carbon-management").reset();
+    document.querySelector("#nextZeroOrganizer").style.display = "none";
+  }
+
   pages.forEach(
     (pages) => (pages.style.transform = `translateX(${translate}%)`)
   );
-  document.querySelector("#greener-carbon-management").reset();
-  document.querySelector("#nextZeroOrganizer").style.display = "none";
 };
 
 slideTwo = (direction) => {
@@ -271,15 +293,26 @@ slideThree = (direction) => {
 };
 
 slideZeroStart = (direction) => {
-  direction === "next"
-    ? (translate -= translateAmount + 400)
-    : (translate += 600 - translateAmount);
+  if (direction === "next") {
+    translate -= translateAmount + 400;
+  } else {
+    translate += 600 - translateAmount;
+    document.querySelector("#greener-carbon-management").reset();
+    document.querySelector("#nextZeroExposer").style.display = "none";
+    document.querySelector("#eventNameExposer").style.display = "none";
+  }
   pages.forEach(
     (pages) => (pages.style.transform = `translateX(${translate}%)`)
   );
-  document.querySelector("#greener-carbon-management").reset();
-  document.querySelector("#nextZeroExposer").style.display = "none";
-  document.querySelector("#eventNameExposer").style.display = "none";
+};
+
+slideExpositorFunction = (direction) => {
+  direction === "next"
+    ? (translate -= translateAmount + 100)
+    : (translate += 300 - translateAmount);
+  pages.forEach(
+    (pages) => (pages.style.transform = `translateX(${translate}%)`)
+  );
 };
 
 faq = (direction) => {
