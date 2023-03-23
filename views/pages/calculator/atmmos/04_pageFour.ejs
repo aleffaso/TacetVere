@@ -1,0 +1,65 @@
+<div class="page four">
+  <div class="progress-bar-all"></div>
+  <div class="progress-bar-page"></div>
+  <h1 class="event">Evento</h1>
+  <h1 class="explanation">
+    Continuando, sobre o evento, vamos entender melhor o que você está
+    organizando.
+  </h1>
+  <div class="body">
+    <div id="greenerCalculatorThree">
+      <div class="label-placeholder">Quantas horas por dia deve durar?</div>
+      <input
+        id="hoursPerDay"
+        class="border-box"
+        name="hoursPerDay"
+        type="number"
+        min="0"
+      />
+
+      <div class="label-placeholder">Visitantes do evento (nº de pessoas)?</div>
+      <input
+        id="predictedArea"
+        class="border-box"
+        name="numberOfVisitors"
+        type="number"
+        min="0"
+      />
+
+      <legend style="text-align: center">
+        Dentre a área prevista na resposta acima, responda a pergunta abaixo
+      </legend>
+
+      <div>
+        <div class="label-placeholder">
+          <div class="four">
+            Qual área sob responsabilidade da organização (em m²)?
+          </div>
+        </div>
+      </div>
+      <input
+        id="predictedResponsibleArea"
+        class="border-box"
+        name="predictedResponsibleArea"
+        type="text"
+        min="0"
+      />
+      <legend style="text-align: center">
+        Se houver outros CNPJs presentes na área do evento, desconte a área que
+        eles ocupam.
+      </legend>
+    </div>
+  </div>
+  <button
+    id="nextThree"
+    type="button"
+    class="btn-next-allow"
+    onClick="slide('next')"
+    disabled
+  >
+    <div>Próximo</div>
+  </button>
+  <button class="btn-previous" type="button" onClick="slide('prev')">
+    < Voltar
+  </button>
+</div>

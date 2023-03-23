@@ -1,0 +1,39 @@
+<div class="page three">
+  <div class="progress-bar-all"></div>
+  <div class="progress-bar-page"></div>
+  <h1 class="event">Evento</h1>
+  <h1 class="explanation">
+    Certo. Agora vamos entender melhor o que você está organizando.
+  </h1>
+  <div class="body">
+    <div id="greenerCalculatorTwo">
+      <div class="label-placeholder">Qual é o nome do evento?</div>
+      <input id="eventName" class="border-box" name="eventName" type="text" />
+
+      <div class="label-placeholder">Onde será realizado? (Cidade/UF)</div>
+      <input id="uf" class="border-box" name="uf" type="text" />
+
+      <div class="label-placeholder">Quando é o primeiro dia?</div>
+      <input id="firstDay" class="border-box" name="firstDay" type="date" />
+
+      <legend>Obs.: Excluindo o tempo de montagem e desmontagem</legend>
+
+      <div><div class="label-placeholder">Quando é o último dia?</div></div>
+      <input id="lastDay" class="border-box" name="lastDay" type="date" />
+
+      <legend>Obs.: Excluindo o tempo de montagem e desmontagem</legend>
+    </div>
+  </div>
+  <button
+    id="nextTwo"
+    type="button"
+    class="btn-next-allow"
+    onClick="slide('next')"
+    disabled
+  >
+    <div>Próximo</div>
+  </button>
+  <button class="btn-previous" type="button" onClick="slide('prev')">
+    < Voltar
+  </button>
+</div>

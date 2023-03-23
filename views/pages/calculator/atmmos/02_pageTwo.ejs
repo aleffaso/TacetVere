@@ -1,0 +1,54 @@
+<div class="page two">
+  <div class="progress-bar-all"></div>
+  <div class="progress-bar-page"></div>
+  <h1 class="event">Evento</h1>
+  <h1 class="explanation">
+    Para começar, vamos fazer um breve cadastro de seu evento. Ele será
+    essencial para contextualização e para o cálculo das emissões.
+  </h1>
+  <div class="body">
+    <form id="atmmos-carbon-management" method="POST" action="/atmmos-carbon-management">
+    <div id="greenerCalculator">
+      <div class="label-placeholder">Seu melhor e-mail</div>
+      <input id="email" class="border-box" name="email" type="email" />
+
+      <div class="label-placeholder">Seu nome</div>
+      <input id="name" class="border-box" name="name" type="text" />
+
+      <div class="label-placeholder">Sua função</div>
+      <input id="position" class="border-box" name="position" type="text" />
+
+      <div class="label-placeholder">Finalidade desta ação</div>
+      <select id="goal" class="border-box" name="goal">
+        <option disabled selected value>Selecionar</option>
+        <option>Compensar emissões voluntariamente para inovar</option>
+        <option>Compensar emissões a pedido de seu cliente</option>
+        <option>Compensar emissões, assim como seus concorrentes fazem</option>
+        <option>
+          Compensar emissões, como parte da gestão do carbono de sua organização
+        </option>
+        <option value="other">Outros</option>
+      </select>
+      <input
+        id="otherGoal"
+        class="border-box"
+        name="otherGoal"
+        type="text"
+        placeholder="Qual?"
+        style="display: none"
+      />
+    </div>
+  </div>
+  <button
+    type="button"
+    id="nextOne"
+    class="btn-next-allow"
+    onClick="slide('next')"
+    disabled
+  >
+    <div>Próximo</div>
+  </button>
+  <button class="btn-previous" type="button" onClick="slide('prev')">
+    < Voltar
+  </button>
+</div>

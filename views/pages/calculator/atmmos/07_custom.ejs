@@ -1,0 +1,46 @@
+<div class="page seven">
+  <div class="progress-bar-all"></div>
+  <div class="progress-bar-page"></div>
+  <h1 class="event">Outros tipos de cálculo</h1>
+  <h1 class="explanation">
+    Para um cálculo personalizado, nossa equipe fará um atendimento para
+    entender suas necessidades.
+  </h1>
+  <div class="body">
+    <form
+      id="atmmos-carbon-management-info"
+      method="POST"
+      action="/atmmos-carbon-management-info"
+    >
+      <div id="greenerCalculatorSeven">
+        <div class="label-placeholder">Seu nome</div>
+        <input id="name" class="border-box" name="name" type="text" required />
+        <div class="label-placeholder">E-mail</div>
+        <input
+          id="email"
+          class="border-box"
+          name="email"
+          type="email"
+          required
+        />
+        <textarea
+          class="border-box"
+          id="info"
+          name="info"
+          placeholder="Explique mais sobre o que pretende calcular a pegada de carbono"
+        ></textarea>
+      </div>
+    </form>
+  </div>
+  <button
+    id="submitFormThree"
+    class="btn-next"
+    form="atmmos-carbon-management-info"
+    type="submit"
+  >
+    Enviar
+  </button>
+  <button class="btn-previous" type="button" onClick="slideReset('custom')">
+    < Voltar
+  </button>
+</div>

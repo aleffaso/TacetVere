@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Atmmos</title>
+
+    <link href="/assets/img/atmmos/favicon.png" rel="icon">
+
+
+    <!-- Template Main CSS File -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.css">
+    <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/atmmos.css" rel="stylesheet">
+
+  </head>
+
+  <%- include("../../calculator/atmmos/faq.ejs") %> 
+
+  <body>
+    <div>
+      <a href="https://begreener.io/" target="__blank">
+        <img class="logo" src="assets/img/atmmos/logo_slogan.png">
+      </a>
+
+      <div>
+        <h5 class="converse-conosco">
+          <img class="converse-conosco-logo"src="assets/img/greener/contact.svg">
+          Converse Conosco
+        </h5>
+      </div>
+
+      <p class="converse-conosco-info">Precisando de ajuda? Contate-nos via e-mail</p>
+      <h5 class="converse-conosco-contato">atmos@atmos.com</h5>
+
+      <!-- <div>
+        <div>
+          <h5 class="WhatsApp">
+            <img class="WhatsApp-logo" src="assets/img/greener/whatsapp.svg">
+            Whatsapp
+          </h5>
+        </div>
+        <p class="WhatsApp-info">Tire suas dúvidas através de nosso WhatsApp</p>
+        <a href="https://api.whatsapp.com/send?phone=" target="__blank">
+          <h5 class="WhatsApp-contato">+55 11 xxxx-xxxx</h5>
+        </a>
+      </div> -->
+      <div>
+        <div>
+          <h5 class="faq">
+            <img class="faq-logo" src="assets/img/greener/icon_link.svg">
+            FAQ
+            <button class="btn-next" type="button" onClick="faq('faq')">Abrir FAQ</button>
+          </h5>
+        </div>
+      </div>
+
+      <div>
+        <div>
+          <a href="https://www.tacetvere.com/" target="__blank">
+            <img class="tacet-vere-logo" src="assets/img/greener/selo.png">
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="container-last">
+        <div class="pages">
+            <div class="page six">
+              <div class="progress-bar-all"></div>
+              <div class="progress-bar-page"></div>
+                <h1 class="title">
+                Suas informações foram enviadas e <br>estão em análise
+                </h1>
+                <p class="body">
+                  Você receberá um e-mail de confirmação na caixa de entrada do contato informado, em breve retornaremos com o resultado do seu cálculo baseado nas informações preenchidas aqui.
+                  <div class="box">
+                    <p class="info">Prazo médio de até 12 horas em horário comercial</p>
+                  </div>
+                  <p class="message">Enquanto aguarda, conheça melhor do universo Atmmos</p>
+                  <div class="body-box">
+                    <a href="https://google.com/" target="__blank">
+                      <div class="box-info">
+                        <div class="box-icon">
+                            <img src="assets/img/greener/Coins.svg">
+                        </div>
+                        <div class="box-text">Acesse a Plataforma de compensação</div>
+                      </div>
+                    </a>
+
+                    <a href="https://google.com/" target="__blank">
+                    <div class="box-info">
+                        <div class="box-icon">
+                            <img src="assets/img/greener/second_icon.svg">
+                        </div>
+                        <div class="box-text">Acesse nosso site institucional</div>
+                      </div>
+                    </a>
+                    
+                    <a href="https://google.com/" target="__blank">
+                      <div class="box-info">
+                        <div class="box-icon">
+                          <img src="assets/img/greener/Whitepaper.svg">
+                        </div>
+                        <div class="box-text">Leia nosso White Paper</div>
+                      </div>
+                    </a>
+                  </div>
+                </p>
+
+                <a class="btn" href="/atmmos-calculator">
+                    <div>Fazer novo cálculo</div>
+                </a>
+            </div>
+      </div>
+    </div>
+  </body>
+  <!-- Vendor JS Files -->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="/assets/js/sendData.js"></script>
+
+  <% if(message == 200){ %>
+    <script>
+        renderSuccessMessage('Dados enviados com sucesso!')
+    </script>
+  <% }else if(message == false){ %>
+  <% }else if(message != 200){ %>
+    <script>
+        renderFailMessage('<%=message%>')
+    </script>
+  <% } %>
+
+</html>

@@ -1,0 +1,63 @@
+<div class="page fiveThree">
+  <div class="progress-bar-all"></div>
+  <div class="progress-bar-page"></div>
+  <h1 class="event">Emissões diretas</h1>
+  <h1 class="explanation">Emissões Fugitivas</h1>
+  <p class="info-explanation">
+    Deixe o campo vazio se não souber estimar, ou preencha com 0 se não for
+    aplicável.
+  </p>
+  <div class="body">
+    <div id="greenerCalculatorFiveThree">
+      <div class="row-box-3">
+        <div class="title-hr-3">Refrigeradores, freezers, geladeiras</div>
+        <hr />
+        <input
+          id="refrigerators_freezers_fridges"
+          class="border-box-rectangle-2"
+          name="refrigerators_freezers_fridges"
+          type="number"
+          placeholder="Quantidade"
+          min="0"
+        />
+      </div>
+      <div id="ExtinguishFire" class="row-box-3">
+        <div class="title-hr-3">Extintores de Incêndio</div>
+        <hr />
+        <input
+          id="fire_extinguisher"
+          class="border-box-rectangle-2"
+          name="fire_extinguisher"
+          type="number"
+          placeholder="Quantidade"
+          min="0"
+        />
+      </div>
+    </div>
+  </div>
+  <button
+    id="nextFiveThree"
+    type="button"
+    class="btn-next"
+    onClick="slide('next')"
+  >
+    <div>Próximo</div>
+  </button>
+  <button
+    id="nextFiveThreePrevious"
+    class="btn-previous"
+    type="button"
+    onClick="slide('prev')"
+  >
+    < Voltar
+  </button>
+  <button
+    id="slideExpositorPrevious"
+    class="btn-previous"
+    type="button"
+    onClick="slideExpositorFunction('prev')"
+    style="display: none"
+  >
+    < Voltar
+  </button>
+</div>
